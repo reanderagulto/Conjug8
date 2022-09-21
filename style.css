@@ -31,8 +31,8 @@ TABLE OF CONTENTS
     /** Font default */
     --font-family-belleza: 'Belleza', sans-serif;
     --font-family-lato: 'Lato', sans-serif;
-    --font-family-default: var(--font-family-belleza);
-    --font-family-title: var(--font-family-lato);
+    --font-family-default: var(--font-family-lato);
+    --font-family-para: var(--font-family-belleza);
     --font-size-default: max(1.125vw, 18px);
     --font-size-title: max(2.500vw, 40px);
     --font-color-default: #000000;
@@ -52,7 +52,9 @@ TABLE OF CONTENTS
     --primary-text: #221415b3;
     --primary-red: #B32B32;
     --primary-blue: #257CBF;
+    --secondary-blue: #E3F3FF;
     --primary-darker: #1E2328;
+    --secondary-text: #4C4C4C;
 
     /* Transitions */
     --default-transition: .3s cubic-bezier(.4,0,.2,1);
@@ -294,7 +296,7 @@ body{
 }
 
 .sticky {
-    position: sticky
+    position: sticky;
 }
 
 .mt-15 {
@@ -345,9 +347,19 @@ a:hover{
     color: #000;
 }
 
+.aios-btn, .aios-btn-sm{
+    transition: all var(--ease-short-transition);
+}
+
 .aios-btn{
     border: 2px solid;
     border-radius: 40px;
+}
+
+.aios-btn-sm{
+    border: 2px solid;
+    border-radius: 40px;
+    padding: 0.417vw 2.188vw;
 }
 
 .aios-btn-red{
@@ -365,6 +377,20 @@ a:hover{
 .aios-btn-transparent{
     border-color: #FFF;
     color: #FFF;
+}
+
+.section-header {
+    font-size: var(--font-size-title);
+    font-weight: bold;
+    color: var(--primary-red);
+    line-height: 1.2;
+}
+
+p{
+    font-family: var(--font-family-para);
+    line-height: 1.444;
+    font-size: var(--font-size-default);
+    color: var(--secondary-text);
 }
 
 /* 
@@ -403,7 +429,6 @@ header.header{
         header.header .main-menu .menu-main-menu-container ul#nav li.menu-item a, 
         header.header .side-nav a{
             font-size: max(1vw, 16px);
-            font-family: var(--font-family-title);
             line-height: 1.2;
             color: var(--primary-text);
             transition: color var(--ease-short-transition);

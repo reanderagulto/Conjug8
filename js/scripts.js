@@ -29,19 +29,15 @@
             this.onScrollFixed();
         }
         function sliderConfig() {
-            // let $bannerSlider = jQuery('.vs-slider');
-            // $bannerSlider.slick({
-            //     slidesToShow: 1,
-            //     slidesToScroll: 1,
-            //     arrows: true,
-            //     infinite: true,
-            //     // autoplay: true,
-            //     // autoplaySpeed: 3000,
-            //     centerPadding: '8.958vw',
-            //     centerMode: true,
-            //     nextArrow: $('.slider-nav.btn-next'),
-            //     prevArrow: $(''),
-            // });
+            let $bannerSlider = jQuery('.product-slider');
+            $bannerSlider.slick({
+                slidesToShow: 4,
+                slidesToScroll: 1,
+                arrows: true,
+                infinite: true,
+                // autoplay: true,
+                // autoplaySpeed: 3000,
+            });
         }
         /**
          * Instantiate
