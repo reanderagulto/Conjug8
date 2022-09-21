@@ -456,6 +456,117 @@ header.header{
             }
 
 
+/* 
+* 
+* Footer CSS 
+* 
+*/
+
+footer.footer {
+    background-color: var(--primary-darker);
+    color: #FFF;
+    padding: 2.344vw 10vw;
+}
+
+footer.footer .footer-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.footer-smi a i {
+    font-size: 21px;
+}
+
+.footer-smi {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-smi a {
+    padding: 0 0.521vw;
+    transition: all var(--ease-short-transition);
+}
+
+.footer-wrap ul.footernav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-wrap ul.footernav li a {
+    padding: 0 1.125vw;
+    opacity: 0.702;
+    color: #FFF;
+    transition: all var(--ease-short-transition);
+    background-color: var(--primary-darker);
+    color: #FFF;
+    padding: 2.344vw 10vw;
+}
+
+footer.footer .footer-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.footer-smi {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-smi a {
+    padding: 0 0.521vw;
+}
+
+.footer-smi a:hover{
+    color: var(--primary-red) !important;
+}
+
+.footer-smi a i {
+    font-size: 24px;
+}
+
+.footer-wrap ul.footernav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-wrap ul.footernav li a {
+    padding: 0 1.125vw;
+    opacity: 0.702;
+    color: #FFF;
+    transition: all var(--ease-short-transition);
+    font-size: max(1vw, 16px);
+}
+
+.footer-wrap ul.footernav li a:hover {
+    opacity: 1;
+    font-size: max(1vw, 16px);
+}
+
+.footer-wrap ul.footernav li a:hover {
+    opacity: 1;
+}
+
+hr.footer-divider {
+    margin: 2.344vw 0 2.656vw;
+    opacity: 0.2;
+}
+
+footer.footer .copyright {
+    text-align: center;
+    font-size: max(1vw, 16px);
+    font-family: var(--font-family-para);
+    font-weight: 300;
+}
+
+
+
+
 /*******************************************************
  *
  * 4. IP Styles
