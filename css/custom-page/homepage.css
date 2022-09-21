@@ -1,0 +1,95 @@
+/* 
+* 
+* Hero Banner
+*
+*/
+section#hero-banner{
+    background-image: url(../../images/topfold-banner.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+    margin-top: 8vw;
+    position: relative;
+    display: inline-block;
+    padding: 6.250vw 10.375vw 12.688vw;
+    z-index: 99;
+    overflow: hidden;
+}
+
+section#hero-banner::before{
+    content: '';
+    display: block;
+    position: absolute;
+    background-color: var(--primary-red);
+    opacity: 0.949;
+    left: -175px;
+    top: -385px;
+    width: 1129px;
+    height: 970px;
+    transform: rotate(-150deg);
+    z-index: -1;
+}
+
+section#hero-banner::after{
+    content: '';
+    display: block;
+    position: absolute;
+    background-color: var(--primary-blue);
+    opacity: 0.949;
+    left: -636px;
+    top: 405px;
+    width: 815px;
+    height: 815px;
+    transform: rotate(-150deg);
+    z-index: -1;
+}
+
+    .banner-col {
+        width: 100%;
+        display: inline-block;
+        flex-direction: column;
+        z-index: 99;
+    }
+
+    .banner-text-container {
+        color: #FFF;
+        font-weight: bold;
+        line-height: 1.2;
+        width: 50%;
+    }
+
+
+        .banner-text-container h1 {
+            font-size: max(3vw, 48px);
+            font-family: var(--font-family-title);
+            font-weight: bold;
+            line-height: 1.2;
+        }
+
+    .banner-button-container{
+        margin-top: 2.188vw;
+    }
+
+        .banner-button-container .aios-btn.aios-btn-white,
+        .banner-button-container .aios-btn.aios-btn-transparent{
+            padding: 0.875vw 2.625vw;
+            font-size: 1.125vw;
+            font-weight: bold;
+            font-family: var(--font-family-title);
+            margin-right: 1.125vw;
+            transition: background-color var(--ease-short-transition);
+        }
+
+            .banner-button-container .aios-btn.aios-btn-white:hover,
+            .banner-button-container .aios-btn.aios-btn-transparent:hover{
+                color: #FFF;
+                background-color: var(--primary-red);
+            }
+
+/* 
+* 
+* Product Slider Section
+*
+*/
+

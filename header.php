@@ -20,14 +20,23 @@
 
 
 	<header class="header">
-		<div class="container">
-			<div class="logo">
-				<a href="<?php echo esc_url( home_url() ) ?>" class="site-name"><?php bloginfo('name'); ?></a>
+		<div class="header-wrap flex items-center justify-between">
+			<div class="header-logo">
+				<a href="<?php echo esc_url( home_url() ) ?>" class="site-name text-hidden">
+					<img src="<?=do_shortcode('[stylesheet_directory]')?>/images/logo.png" width="79" height="54" alt="Conjug8 Logo" class="block img-responsive">
+				</a>
 			</div>
 
-			<nav class="navigation">
-				<?php wp_nav_menu( array( 'sort_column' => 'menu_order', 'menu_id' => 'nav', 'theme_location' => 'primary-menu' ) ); ?>
-			</nav>
+			<div class="navigation flex items-center">
+				<nav class="main-menu">
+					<?php wp_nav_menu( array( 'sort_column' => 'menu_order', 'menu_id' => 'nav', 'theme_location' => 'primary-menu' ) ); ?>
+				</nav>
+
+				<div class="side-nav flex items-center">
+					<a href="#" class="aios-btn">Medical Practioners Only</a>
+					<a href="#">Cart<img src="<?=do_shortcode('[stylesheet_directory]')?>/images/cart-img.png"></a>
+				</div>
+			</div>
 		</div>
 	</header>
 
@@ -46,6 +55,6 @@
 		<?php if ( !is_home() && !is_page_template( 'template-fullwidth.php' ) && !is_page_template( 'template-homepage.php' ) ) : ?>
 
 		<div id="inner-page-wrapper">
-			<div class="container">
+			<div class="main-wrapper">
 
 		<?php endif ?>

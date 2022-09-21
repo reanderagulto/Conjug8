@@ -6,8 +6,8 @@
 	</main>
 	
 		<footer class="footer">
-			<div class="container">
-				<?php wp_nav_menu( array( 'sort_column' => 'menu_order', 'menu_class' => 'footernav', 'theme_location' => 'primary-menu','depth'=>1 ) ); ?>
+			<div class="footer-wrap">
+				<!-- <?php wp_nav_menu( array( 'sort_column' => 'menu_order', 'menu_class' => 'footernav', 'theme_location' => 'primary-menu','depth'=>1 ) ); ?> -->
 				<div class="copyright">
 					&copy; <?php echo date('Y') ?> Agent Image. <!-- aios shortcode here -->
 				</div>

@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 
-	<!-- your home html -->
-
-	<!-- your home html -->
+/**
+ * Check templates/homepage.php file for homepage contents
+*/
 
 <?php get_footer(); ?>
