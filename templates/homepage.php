@@ -7,6 +7,9 @@
 
 get_header();
 
+$form_name = "Get in Touch";
+$form_ID = get_page_by_title( $form_name, '', 'wpcf7_contact_form' )->ID;
+
 ?>
 <!-- Start Topfold Banner -->
 <section id="hero-banner">
@@ -279,5 +282,33 @@ get_header();
     </div>
 </section>
 <!-- End of Events Section -->
+
+<!-- Start of Get in Touch Section -->
+<section id="contact-section">
+    <div class="contact-wrap flex items-start justify-center">
+        <div class="contact-info">
+            <h2 class="section-header">Get in Touch</h2>
+            <h3 class="section-subheader">Please let us know how we can help you.</h3>
+            <a href="mailto: info@conjug8.ph" class="contact-links flex items-center">
+                <i class="ai-font-envelope"></i>
+                <p>info@conjug8.ph</p>
+            </a>
+            <div class="contact-links flex items-start">
+                <i class="ai-font-location-c"></i>
+                <p>Unit 203 M1 Central, <br />
+                    E. Rodriguez Sr. ave, cor Matimyas st., <br />
+                    Brgy. Don Manuel, Quezon City, Philippines</p>
+            </div>
+            <a href="tel: +632 8252 4028" class="contact-links flex items-center">
+                <i class="ai-font-mobile-b"></i>
+                <p>+632 8252 4028</p>
+            </a>
+        </div>
+        <div class="contact-form">
+            <?= do_shortcode('[contact-form-7 id="' . $form_ID . '" title="' . $form_name . '"]') ?>
+        </div>
+    </div>
+</section>
+<!-- End of Get in Touch Section -->
 
 <?php get_footer(); ?>
