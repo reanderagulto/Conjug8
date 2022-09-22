@@ -393,6 +393,17 @@ p{
     color: var(--secondary-text);
 }
 
+.slider-nav {
+    border-radius: 50%;
+    padding: 0.583vw 0.483vw !important;
+    width: max(2.563vw, 41px);
+    height: max(2.563vw, 41px);
+    background-color: #FFF;
+    color: var(--primary-red);
+    font-size: max(1.094vw, 21px);
+    transition: all var(--ease-short-transition);
+}
+
 /* 
 * 
 * Header CSS 
