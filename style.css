@@ -52,6 +52,7 @@ TABLE OF CONTENTS
     --primary-text: #221415b3;
     --primary-red: #B32B32;
     --primary-blue: #257CBF;
+    --secondary-darker-blue: #325B89;
     --secondary-blue: #E3F3FF;
     --primary-darker: #1E2328;
     --secondary-text: #4C4C4C;
@@ -712,6 +713,53 @@ footer.footer .copyright {
  * 4. IP Styles
  *
  *******************************************************/
+
+section#innerpage-banner {
+    display: block;
+    width: 100%;
+    margin-top: 8vw;
+    background-color: var(--primary-blue);
+    position: relative;
+    overflow: hidden;
+}
+
+section#innerpage-banner::before{
+    content: '';
+    display: block;
+    position: absolute;
+    background-color: var(--primary-red);
+    right: -5.052vw;
+    top: -19.375vw;
+    width: 32.292vw;
+    height: 26.042vw;
+    z-index: 3;
+    transform: rotate(-30deg);
+}
+
+section#innerpage-banner::after{
+    content: '';
+    display: block;
+    position: absolute;
+    background-color: var(--secondary-darker-blue);
+    right: -9.531vw;
+    bottom: -23.125vw;
+    width: 35.521vw;
+    height: 28.802vw;
+    z-index: 1;
+    transform: rotate(-30deg);
+}
+
+section#innerpage-banner .innerpage-banner-wrap {
+    padding: 6.979vw 8.594vw 7.031vw;
+}
+
+.innerpage-banner-wrap h1.inner-section-header {
+    color: #FFF;
+    font-size: max(2.500vw, 48px);
+    font-weight: bold;
+}
+
+
 .ip-banner{
     position: relative;
     width: 100%;
