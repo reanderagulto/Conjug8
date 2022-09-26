@@ -809,7 +809,9 @@ section#innerpage-banner .innerpage-banner-wrap {
                 letter-spacing: 0.01em;
             }
 /* Adjust minimum height of page area */
-#content-sidebar, #content-full{ min-height: 500px; margin-top: 20px;}
+#content-sidebar, #content-full{ 
+    min-height: 500px; margin-top: 8vw;
+}
 
 /** Adjust width of content columns **/
 #content-sidebar #content{ width: 77.08%; }
@@ -838,7 +840,7 @@ section#innerpage-banner .innerpage-banner-wrap {
 #content ol, aside ol,
 #content dl, aside dl,
 #content dir, aside dir,
-#content menu, aside menu { line-height:1.7 }
+#content menu, aside menu { line-height: 1.6; }
 
 /* Style .entry-title(post/page) and .archive-title(category/archive/etc) main headings (h1) */
 #content .entry-title,

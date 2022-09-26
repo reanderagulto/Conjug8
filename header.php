@@ -48,8 +48,8 @@
 		!is_home() && 
 		!is_page_template( 'template-fullwidth.php' ) && 
 		!is_page_template( 'template-homepage.php' ) &&
-		!is_page_template( 'templates/homepage.php' ) &&
-		!in_category('founders') ) : 
+		!is_page_template( 'templates/homepage.php' ) && 
+		!is_singular('founders') ): 
 		?>
 
 		<?php
