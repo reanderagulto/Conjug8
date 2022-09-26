@@ -85,8 +85,43 @@ section#about-content .content-wrap {
     margin: 3.750vw 0;
 }
 
+/* 
+*
+* Mission Vision Section
+*
+*/
+section#mission-vision{
+    position: relative; 
+    width: 100%;
+    display: block;
+    overflow: hidden;
+}
 
-/*  */
+section#mission-vision:before{
+    content: '';
+    display: block;
+    position: absolute;
+    top: -18.802vw;
+    left: -15.885vw;
+    background-color: var(--primary-red);
+    width: 31.250vw;
+    height: 20.833vw;
+    z-index: 6;
+    transform: rotate(60deg);
+}
+
+section#mission-vision:after{
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: -12.448vw;
+    right: -4.063vw;
+    background-color: var(--primary-red);
+    width: 15.625vw;
+    height: 20.833vw;
+    z-index: 6;
+    transform: rotate(60deg);
+}
 
 .mission-vision-wrap .mission-wrap,
 .mission-vision-wrap .vision-wrap{

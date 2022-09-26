@@ -609,3 +609,15 @@ section#contact-section .contact-wrap .contact-form{
     background-color: #FFF;
     color: var(--primary-red);
 }
+
+/* 
+* 
+* Homepage Responsiveness 
+*
+*/
+
+/* iPad(landscape) | iPad(landscape) | Galaxy Tab 4 (landscape) | Galaxy Tab 3 (landscape) */ 
+@media only screen and (max-width: 1199px) {
+
+} 
+

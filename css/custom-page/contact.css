@@ -1,0 +1,87 @@
+/* 
+* 
+* Contact Us Section
+*
+*/
+
+section#contact-section {
+    padding: 6.354vw 10vw 7.135vw 10vw;
+    position: relative; 
+    display: block;
+    overflow: hidden;
+}
+
+section#contact-section .contact-wrap .contact-info,  
+section#contact-section .contact-wrap .contact-form{
+    width: 50%;
+}
+
+.contact-info .section-subheader, 
+.contact-info p{
+    color: #000;
+}
+
+.contact-info .section-header{
+    margin-bottom: 1.510vw;
+}
+
+.contact-info .section-subheader{
+    margin-bottom: 1.875vw;
+    font-size: max(1.250vw, 24px);
+}
+
+.contact-info .contact-links{
+    margin-bottom: 0.885vw;
+}
+
+.contact-info .contact-links i{
+    font-size: max(1.250vw, 24px);
+    display: inline-block;
+    text-align:center;
+    padding-top: 0.573vw;
+    color: var(--primary-blue);
+    background-color: #FFF;
+    height: 2.292vw;
+    width: 2.292vw;
+    border-radius: 50%;
+    margin-right: 0.729vw;
+}
+
+.contact-info .contact-links i.ai-font-envelope{
+    font-size: max(0.938vw, 18px); 
+}
+
+.contact-form {
+    font-family: var(--font-family-para);
+}
+
+.contact-content .aios-form-group{
+    width: 100%;
+}
+
+.contact-content .aios-form-group.flex label{
+    margin-right: 1.688vw;
+    
+}
+.contact-content label span {
+    margin-bottom: 0.750vw;
+    display: block;
+}
+
+.aios-submit{
+    margin-top: 1.563vw;
+}
+
+.aios-submit .aios-btn.aios-btn-red {
+    padding: 0.833vw 1.875vw;
+    font-family: var(--font-family-default);
+}
+
+.aios-submit .aios-btn.aios-btn-red:hover{
+    background-color: #FFF;
+    color: var(--primary-red);
+}
+
+.contact-content .aios-form-control{
+    background-color: var(--secondary-blue);
+}
