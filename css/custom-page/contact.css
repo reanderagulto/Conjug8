@@ -5,7 +5,7 @@
 */
 
 section#contact-section {
-    padding: 6.354vw 10vw 7.135vw 10vw;
+    padding: 6.354vw 10vw 6.250vw 10vw;
     position: relative; 
     display: block;
     overflow: hidden;
@@ -31,7 +31,7 @@ section#contact-section .contact-wrap .contact-form{
 }
 
 .contact-info .contact-links{
-    margin-bottom: 0.885vw;
+    margin-bottom: max(0.885vw, 17px);
 }
 
 .contact-info .contact-links i{
@@ -84,4 +84,43 @@ section#contact-section .contact-wrap .contact-form{
 
 .contact-content .aios-form-control{
     background-color: var(--secondary-blue);
+}
+
+
+/* 
+*
+* Responsiveness
+*
+*/
+@media only screen and (max-width: 991px) {
+    section#contact-section{
+        padding:  6.354vw 6vw 6.250vw 6vw;
+    }
+
+    section#contact-section .contact-wrap{
+        flex-direction: column;
+    }
+
+    section#contact-section .contact-wrap .contact-info, 
+    section#contact-section .contact-wrap .contact-form{
+        width: 100%;
+        margin: max(1.563vw, 30px) 0;
+    }
+
+    .contact-content .aios-form-group {
+        flex-direction: column;
+        justify-content: center;
+        align-items: stretch;
+    }
+
+    .contact-info .contact-links{
+        display: flex; 
+        align-items: start;
+    }
+
+    .contact-info .contact-links i{
+        margin-right: 2.729vw;
+    }
+
+    
 }

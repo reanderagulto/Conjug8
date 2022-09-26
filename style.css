@@ -414,7 +414,7 @@ p{
 
 .aios-form-control{
     border: unset; 
-    height: 3.125vw;
+    height: max(2.604vw, 50px);
     width: 100%;
     padding: 0.938vw 0.667vw;
     font-family: var(--font-family-para);
@@ -427,7 +427,7 @@ p{
 }
 
 .aios-form-control.aios-form-control-big{
-    height: 5.625vw;
+    height: max(4.688vw, 90px);
 }
 
 /* 
@@ -568,7 +568,7 @@ section#newsletter-section:after{
 
 .newsletter-content .newsletter-form input[type='email'] {
     width: 25vw;
-    height: 2.604vw;
+    height: max(2.604vw, 50px);
     border-radius: 45px;
     border: unset;
     color: #000;
@@ -582,9 +582,9 @@ section#newsletter-section:after{
 }
 
 .newsletter-content .newsletter-form .aios-btn.aios-btn-red{
-    height: 2.604vw;
+    height: max(2.604vw, 50px);
     padding: 0.733vw 3.021vw;
-    margin-left: -2.083vw;
+    margin-left: max(-2.083vw, -60px);
     transition: all var(--ease-short-transition);
     z-index: 999;
 }

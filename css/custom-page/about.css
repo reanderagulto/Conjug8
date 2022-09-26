@@ -58,6 +58,11 @@ section#about-content .content-wrap {
     width: 100%;
 }
 
+.content-wrap .section-image .img-container canvas{
+    display: block;
+    width: 100%;
+}
+
 .content-wrap .section-image .img-container img{
     object-fit: cover;
     object-position: center center;
@@ -149,4 +154,33 @@ section#mission-vision:after{
 }
 
 
+/* 
+*
+* Responsiveness
+*
+*/
+@media only screen and (max-width: 991px) {
+    section#about-content .content-wrap{
+        padding: 6.354vw 6vw 6.250vw 6vw;
+    }
 
+    section#icons-section .icons-wrap{
+        padding: 6.354vw 6vw 6.250vw 6vw;
+    }
+
+    .content-wrap .about-section-1{
+        flex-direction: column-reverse;
+    }
+    .content-wrap .about-section-2{
+        flex-direction: column;
+    }
+
+    .content-wrap .section-text, .content-wrap .section-image{
+        width: 100%;
+    }
+
+    .content-wrap .about-section-2 .section-text .section-content, 
+    .content-wrap .about-section-1 .section-text .section-content{
+        margin: 2.240vw;
+    }
+}
