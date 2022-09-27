@@ -150,52 +150,6 @@ foreach ( $fields_to_get as $field ) {
 <?php endif; ?>
 <!-- End of About the Company -->
 
-<!-- Start of Brains Behind the Company -->
-<?php if(!empty($founder_section)): ?>
-<?php 
-    $founder_header = $founder_section[ 'founder_header' ] ?? '';
-    $founders_slider = $founder_section[ 'founders_slider' ];
-?>
-<section id="founders-section">
-    <div class="founder-wrap">
-        <div class="founder-nav flex items-center justify-between">
-            <h2 class="section-header">
-                <?php echo $founder_header ?>
-            </h2>
-            <div class="the-company-nav flex items-center">
-                <button type="button" class="aios-btn-sm aios-btn-red slider-nav founder-prev"><i class="ai-font-arrow-h-p"></i></button>
-                <button type="button" class="aios-btn-sm aios-btn-red slider-nav founder-next"><i class="ai-font-arrow-h-n"></i></button>
-            </div>
-        </div>
-        <?php if(!empty($founders_slider)): ?>
-
-        <?php 
-            $foundersHTML = '';
-            foreach ($founders_slider as $item) {
-                $foundersHTML .= '
-                    <div class="founder-slide">
-                        <div class="founder-img">
-                            <canvas width="' . $item['image']['width'] . '" height="' . $item['image']['height'] . '"></canvas>
-                            <img src="' . $item['image']['url'] . '" width="' . $item['image']['width'] . '" height="' . $item['image']['height'] . '" alt="Neurotain Plus"/>
-                        </div>
-                        <div class="founder-info">
-                            <h3>' . $item['name'] . ' <span>' . $item['title'] . '</span></h3>
-                            <p>' . $item['position'] . '</p>
-                        </div>
-                    </div>
-                ';
-            }
-        ?>
-        <div class="founder-slider">
-            <?php echo $foundersHTML; ?>
-        </div>
-        <?php endif; ?>
-    </div>
-</section>
-<?php 
-    unset($founder_header, $founders_slider, $foundersHTML);
-?>
-<?php endif; ?>
-<!-- End of Brains Behind the Company -->
+<?php echo do_shortcode('[agentpro_board_members_slider]'); ?>
 
 <?php get_footer(); ?>

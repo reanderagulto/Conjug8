@@ -72,8 +72,6 @@ foreach ( $fields_to_get as $field ) {
 
 </div><!-- end #content-full -->
 
-
 <?php echo do_shortcode('[agentpro_board_members_archive]'); ?>
-
 
 <?php get_footer(); ?>

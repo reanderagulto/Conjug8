@@ -586,7 +586,6 @@ section#newsletter-section:after{
     padding: 0.733vw 3.021vw;
     margin-left: max(-2.083vw, -60px);
     transition: all var(--ease-short-transition);
-    z-index: 999;
 }
 
 .newsletter-content .newsletter-form .aios-btn.aios-btn-red:hover{

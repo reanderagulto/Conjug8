@@ -9,6 +9,7 @@ if( !class_exists( 'agentpro_board_members_shortcodes' ) ) {
         */
         function __construct(){
             add_shortcode( 'agentpro_board_members_archive', [ $this, 'agentpro_board_members_archive' ] );
+            add_shortcode( 'agentpro_board_members_slider', [ $this, 'agentpro_board_members_slider' ] );
         }
 
         /* 
@@ -30,16 +31,6 @@ if( !class_exists( 'agentpro_board_members_shortcodes' ) ) {
             ], $atts );
 
             wp_enqueue_style( 'shortcode-archive', get_stylesheet_directory_uri() . '/modules/board-members-post-type/css/shortcode-archive.css' );
-
-            // for shortcode attributes helper
-            if ( $atts[ 'show_attributes' ] ) {
-                echo '<pre>';
-                var_dump( $atts );
-                echo '</pre>';
-                
-                return;
-                exit;
-            }
 
             extract( $atts ); // create variables using the above array keys
 
@@ -161,6 +152,102 @@ if( !class_exists( 'agentpro_board_members_shortcodes' ) ) {
                             ' . $group_content . '
                         </div>
                     ';
+                }
+
+                wp_reset_postdata();
+                wp_reset_query();
+
+            }
+            else{
+                $response = $no_results_text;
+            }
+            return $response;
+        }
+
+        public function agentpro_board_members_slider( $atts ){
+            $atts = shortcode_atts( [
+                'posts_per_page' => -1,
+                'order' => 'ASC',
+                'order_by' => 'date',
+                'thumbnail_size' => 'full',
+                'view_more_link' => home_url() . '/board-members/',
+                'view_more_text' => 'View More Board Members',
+                'with_view_more' => false,
+                'no_results_text' => 'No Board Members Found...',
+                'show_attributes' => false,
+            ], $atts );
+
+            wp_enqueue_style( 'shortcode-slider', get_stylesheet_directory_uri() . '/modules/board-members-post-type/css/shortcode-slider.css' );
+            wp_enqueue_script( 'shortcode-slider', get_stylesheet_directory_uri() . '/modules/board-members-post-type/js/shortcode-slider.js' );
+
+            extract( $atts ); // create variables using the above array keys
+
+            $args = [
+                'post_type' => 'board-members',
+                'post_status' => 'publish',
+                'order' => $order,
+                'orderby' => $order_by,
+                'posts_per_page' => $posts_per_page,
+            ];
+
+            $board_members_query = new WP_Query( $args );
+            $board_members_total = $board_members_query->post_count;
+            
+            if ( $board_members_total > 0 ) {
+                $board_members_posts = $board_members_query->posts;
+                $groupPosts = array_chunk( $board_members_posts, 6 );
+                foreach( $groupPosts as $posts ) {
+                    $row_index = 1;
+                    $column_index = 1;
+                    $delay = 0.1;
+
+                    $group_content = '';
+
+                    /* Start of Founders Section */
+                    $group_content .= '
+                    <div class="founder-wrap">
+                        <div class="founder-nav flex items-center justify-between">
+                            <h2 class="section-header">The Brains Behind The Company</h2>
+                            <div class="the-company-nav flex items-center">
+                                <button type="button" class="aios-btn-sm aios-btn-red slider-nav founder-prev"><i class="ai-font-arrow-h-p"></i></button>
+                                <button type="button" class="aios-btn-sm aios-btn-red slider-nav founder-next"><i class="ai-font-arrow-h-n"></i></button>
+                            </div>
+                        </div>
+                        <div class="founder-slider">
+                    ';
+                    foreach( $posts as $key => $post ) {
+                        $post_id = $post->ID;
+                        $founder_info = get_field('founder_info', $post_id);
+                        $post_title = $post->post_title;
+                        $post_permalink = get_the_permalink( $post_id );
+                        $post_thumbnail_url = get_the_post_thumbnail_url( $post_id, $thumbnail_size );
+                        $group_content .= '
+                            <div class="founder-slide">
+                                <a href="' . $post_permalink . '">
+                                    <div class="founder-img">
+                                        <canvas width="340" height="473"></canvas>
+                                        <img src="' . $post_thumbnail_url . '" width="340" height="473" alt="' . $post_title . '"/>
+                                    </div>
+                                    <div class="founder-info">
+                                        <h3>' . $post_title . ' <span>' . $founder_info['title'] . '</span></h3>
+                                        <p>' . $founder_info['position'] . '</p>
+                                    </div>
+                                </a>
+                            </div>';
+
+                    }
+
+                    $group_content .= '
+                        </div>
+                    </div>
+                    ';
+
+                    $response .= '
+                        <section id="founders-section">
+                            ' . $group_content . '
+                        </div>
+                    ';
+
                 }
 
                 wp_reset_postdata();
