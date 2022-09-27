@@ -16,8 +16,6 @@ foreach ( $fields_to_get as $field ) {
 <div id="<?php echo ai_starter_theme_get_content_id('content-full') ?>" class="founders-single">
 	<article id="content" class="hfeed">
 		
-		<?php do_action('aios_starter_theme_before_inner_page_content') ?>
-		
 		<?php if(have_posts()) : ?>
 		
             <?php while(have_posts()) : the_post(); ?>

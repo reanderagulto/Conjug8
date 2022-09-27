@@ -49,7 +49,8 @@
 		!is_page_template( 'template-fullwidth.php' ) && 
 		!is_page_template( 'template-homepage.php' ) &&
 		!is_page_template( 'templates/homepage.php' ) && 
-		!is_singular('founders') ): 
+		!is_singular('board-members') && 
+		!is_post_type_archive( 'board-members' )): 
 		?>
 
 		<?php

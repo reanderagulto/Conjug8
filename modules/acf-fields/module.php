@@ -1446,7 +1446,7 @@ if( function_exists('acf_add_local_field_group') ) {
     // Founders
     acf_add_local_field_group(array(
         'key' => 'group_63314a9c75b19',
-        'title' => 'Founders',
+        'title' => 'Board Members',
         'fields' => array(
             array(
                 'key' => 'field_63314aa122387',
@@ -1602,7 +1602,7 @@ if( function_exists('acf_add_local_field_group') ) {
                 array(
                     'param' => 'post_type',
                     'operator' => '==',
-                    'value' => 'founders',
+                    'value' => 'board-members',
                 ),
             ),
         ),
