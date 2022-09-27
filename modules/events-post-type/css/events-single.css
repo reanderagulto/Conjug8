@@ -1,0 +1,31 @@
+.innerpage-banner-wrap p{
+    font-size: max(1.250vw, 24px);
+    color: #FFF;
+    margin-top: max(1.094vw, 21px);
+}
+
+div#content-full.events-single{
+    margin-top:6.094vw;
+    margin-bottom: max(6.719vw, 129px);
+    padding: 0 8.646vw;
+}
+
+div#content-full.events-single .video-content .what-plyr {
+    display: inline-block;
+    padding: 0 max(13.542vw, 260px);
+    margin-bottom: 3.646vw;
+}
+
+div#content-full.events-single .video-content .what-plyr .plyr > button.plyr__control{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: transparent url(../../../images/play-button.png) no-repeat;
+    background-size: 100%;
+    margin: auto;
+    cursor: pointer;
+}
+
+div#content-full.events-single .video-content .what-plyr .plyr > button.plyr__control svg, #hp-what .what-plyr .plyr > button.plyr__control span{
+    display: none;
+}

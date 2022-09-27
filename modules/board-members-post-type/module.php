@@ -23,8 +23,8 @@ if ( ! class_exists( 'agentpro_board_members_post_type' ) ) {
             $labels = array(
                 'name'                => _x( 'Board Members', 'Post Type General Name', 'Agent Pro' ),
                 'singular_name'       => _x( 'Board Members', 'Post Type Singular Name', 'Agent Pro' ),
-                'menu_name'           => __( 'Board Members', 'Agent Pro' ),
-                'name_admin_bar'      => __( 'Board Member', 'Agent Pro' ),
+                'menu_name'           => __( 'Conjug8 Board Members', 'Agent Pro' ),
+                'name_admin_bar'      => __( 'Conjug8 Board Member', 'Agent Pro' ),
                 'parent_item_colon'   => __( 'Parent Item:', 'Agent Pro' ),
                 'all_items'           => __( 'All Board Members', 'Agent Pro' ),
                 'add_new_item'        => __( 'Add New Board Member', 'Agent Pro' ),

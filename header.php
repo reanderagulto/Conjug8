@@ -50,7 +50,9 @@
 		!is_page_template( 'template-homepage.php' ) &&
 		!is_page_template( 'templates/homepage.php' ) && 
 		!is_singular('board-members') && 
-		!is_post_type_archive( 'board-members' )): 
+		!is_post_type_archive( 'board-members' ) && 
+		!is_singular('events') && 
+		!is_post_type_archive( 'events' ) ): 
 		?>
 
 		<?php
@@ -67,7 +69,7 @@
 		<section id="innerpage-banner">
 			<div class="innerpage-banner-wrap">
 				<h1 class="inner-section-header">
-					<?php echo $title['main']; ?>
+					<?php echo (!empty($title['main']) ? $title['main'] : get_the_title( get_the_ID() ) ); ?>
 				</h1>
 			</div>
 		</section>

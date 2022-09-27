@@ -1,0 +1,104 @@
+/* 
+* 
+* Events Section
+*
+*/
+
+.events-archive{
+    margin-top: unset !important;
+}
+
+section#events-section .events-wrap {
+    display: block;
+    width: 100%;
+    padding: 6.406vw 8.750vw 6.198vw 8.750vw;
+}
+
+.events-wrap .section-header{
+    margin-bottom: 2.083vw;
+}
+
+.event-container {
+    display: block;
+    width: 100%;
+    position: relative;
+}
+
+.events-content .event {
+    padding: 0 0.833vw;
+    position: relative;
+    width: calc(100% / 3);
+}
+
+.events-content .event h3 {
+    text-align: center;
+    margin-top: 0.729vw;
+    font-size: max(1.250vw, 24px);
+    font-weight: bold;
+}
+
+.events-content .event .event-container .img-container {
+    position: relative;
+    width: 100%;
+}
+
+.events-content .event .event-container img.img-responsive {
+    object-fit: cover;
+    object-position: center center;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    transition: opacity var(--ease-short-transition);
+}
+
+.event-container p.event-date {
+    position: absolute;
+    top: 0.625vw;
+    left: 0.625vw;
+    font-family: var(--font-family-title);
+    color: #FFF;
+    background-color: var(--primary-blue);
+    text-align: center;
+    padding: 0.781vw 1.250vw;
+    border-radius: 5px;
+    font-size: max(1.250vw, 24px);
+    line-height: 1.2;
+    font-weight: bold;
+}
+
+.event-container p.event-date span{
+    display: block;
+}
+
+.event-container .happen-now{
+    position: absolute;
+    bottom: 1.563vw;
+    width: 100%;
+    padding: 0 3.281vw;
+}
+
+.event-container .happen-now p{
+    color: #FFF;
+    font-family: var(--font-family-default);
+    font-size: max(1.250vw, 24px);
+    background-color: var(--primary-red);
+    border-radius: 45px;
+    text-align: center;
+    padding: 0.573vw 1.302vw;
+}
+
+.events-button {
+    text-align: center;
+    margin-top: 4.813vw;
+}
+
+.events-button a.aios-btn.aios-btn-red {
+    padding: 0.833vw 2.083vw;
+}
+
+.events-button a.aios-btn.aios-btn-red:hover{
+    background-color: #FFF;
+    color: var(--primary-red);
+}
