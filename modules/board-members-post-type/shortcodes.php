@@ -20,7 +20,7 @@ if( !class_exists( 'agentpro_board_members_shortcodes' ) ) {
             $atts = shortcode_atts( [
                 'posts_per_page' => -1,
                 'order' => 'ASC',
-                'order_by' => 'title',
+                'order_by' => 'date',
                 'thumbnail_size' => 'full',
                 'view_more_link' => home_url() . '/board-members/',
                 'view_more_text' => 'View More Board Members',
@@ -28,6 +28,8 @@ if( !class_exists( 'agentpro_board_members_shortcodes' ) ) {
                 'no_results_text' => 'No Board Members Found...',
                 'show_attributes' => false,
             ], $atts );
+
+            wp_enqueue_style( 'shortcode-archive', get_stylesheet_directory_uri() . '/modules/board-members-post-type/css/shortcode-archive.css' );
 
             // for shortcode attributes helper
             if ( $atts[ 'show_attributes' ] ) {
@@ -114,90 +116,51 @@ if( !class_exists( 'agentpro_board_members_shortcodes' ) ) {
 
                     $group_content = '';
 
-                    if ( $with_view_more == 'true' ) {
-                        $posts[] = [ 'fc_title_holder' => true ];
-                    }
-
+                    /* Start of board-container */
+                    $group_content .= '
+                    <div class="board-container">
+                        <h2 class="section-header text-center">The Brains Behind The Company</h2>
+                        <div class="board-wrap flex flex-wrap-wrap items-center justify-center">
+                    ';
                     foreach( $posts as $key => $post ) {
-                        if ( ! array_key_exists( 'fc_title_holder', $post ) ) {
-                            $post_id = $post->ID;
-                            $post_title = $post->post_title;
-                            $post_permalink = get_the_permalink( $post_id );
-                            $post_thumbnail_url = get_the_post_thumbnail_url( $post_id, $thumbnail_size );
-                        }
+                        $post_id = $post->ID;
+                        $founder_info = get_field('founder_info', $post_id);
+                        $post_title = $post->post_title;
+                        $post_permalink = get_the_permalink( $post_id );
+                        $post_thumbnail_url = get_the_post_thumbnail_url( $post_id, $thumbnail_size );
+
+                        $group_content .= '
+                            <div class="board-info">
+                                <a href="' . $post_permalink . '">
+                                    <div class="img-container">
+                                        <canvas width="350" height="473"></canvas>
+                                        <img src="' . $post_thumbnail_url . '" class="img-fluid" width="350" height="473" alt="' . $post_title . '">
+                                    </div>
+                                    <div class="content">
+                                        <h3 class="section-header">
+                                            ' . $post_title . '
+                                            <span>' . $founder_info['title'] . '</span>
+                                        </h3>
+                                        <p>' . $founder_info['position'] . '</p>
+
+                                    </div>
+                                </a>
+                            </div>
+                        ';
                         
-                        // canvas size
-                        $canvas_width = $column_settings[ $row_index - 1 ][ 'sizes' ][ $column_index -1 ][ 'width' ];
-                        $canvas_height = $column_settings[ $row_index - 1 ][ 'sizes' ][ $column_index -1 ][ 'height' ];
-                        
-                        if ( $column_index == 1 ) {
-                            // starting tag of .fc-col
-                            $group_content .= '
-                                <div class="fc-col' . $row_index . '">
-                            ';
-                        }
-                        
-                        if ( array_key_exists( 'fc_title_holder', $post ) ) {
-                            $view_more_text = str_replace( '{{tag_span}}', '<span>', $view_more_text );
-                            $view_more_text = str_replace( '{{/tag_span}}', '</span>', $view_more_text );
-                            
-                            $group_content .= '
-                                <div class="fc-list fc-title-holder" data-aios-staggered-child="true" data-aios-animation="fadeInUp" data-aios-animation-delay="' . $delay . 's">
-                                    <a href="' . $view_more_link . '">
-                                        <div class="fc-photo">
-                                            <canvas width="' . $canvas_width . '" height="' . $canvas_height . '"></canvas>
-                                        </div>
-                                        <div class="fc-title-inner">
-                                            <div class="fc-title-content">
-                                                <div class="fc-title">
-                                                    ' . $view_more_text . '
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                            ';
-                        }
-                        else {
-                            $group_content .= '
-                                <div class="fc-list" data-aios-staggered-child="true" data-aios-animation="fadeInUp" data-aios-animation-delay="' . $delay . 's">
-                                    <a href="' . $post_permalink . '">
-                                        <div class="fc-photo" style="background-image: url(' . $post_thumbnail_url . ');">
-                                            <canvas width="' . $canvas_width . '" height="' . $canvas_height . '"></canvas>
-                                        </div>
-                                        <div class="fc-content">
-                                            <div class="fc-label">
-                                                ' . $post_title . '
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                            ';
-                        }
-                        
-                        if ( $column_index == $column_settings[ $row_index - 1 ][ 'items' ] ) {
-                            // closing tag of .fc-col
-                            $group_content .= '
-                                </div><!-- End of .fc-col' . $row_index . '-->
-                            ';
-                        }
-                        
-                        $delay += 0.2;
-                        $column_index++;
-                        
-                        if ( $column_index > $column_settings[ $row_index - 1 ][ 'items' ]  ) {
-                            $row_index++;
-                            $column_index = 1;
-                        }
                     }
+                    $group_content .= '
+                        </div>';
+                        /* End of board-wrap */
+                    $group_content .= 
+                    '</div>';
+                    /* End of board-container */
                     
                     $response .= '
                         <div class="fc-holder" data-aios-staggered-parent="true" data-aios-animation-offset="0.2" data-aios-animation-reset="false">
                             ' . $group_content . '
                         </div>
                     ';
-                    
-
                 }
 
                 wp_reset_postdata();
@@ -207,7 +170,6 @@ if( !class_exists( 'agentpro_board_members_shortcodes' ) ) {
             else{
                 $response = $no_results_text;
             }
-
             return $response;
         }
     }

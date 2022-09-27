@@ -69,7 +69,11 @@ foreach ( $fields_to_get as $field ) {
 		<?php do_action('aios_starter_theme_after_inner_page_content') ?>
 		
     </article><!-- end #content -->
-    
+
 </div><!-- end #content-full -->
+
+
+<?php echo do_shortcode('[agentpro_board_members_archive]'); ?>
+
 
 <?php get_footer(); ?>

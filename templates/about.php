@@ -143,6 +143,8 @@ foreach ( $fields_to_get as $field ) {
 </section>
 <!-- End of Mission Vision Section -->
 
+<?php echo do_shortcode('[agentpro_board_members_archive]'); ?>
+
 <?php endif; ?>
 <!-- End of About Content -->
 <?php get_footer(); ?>
