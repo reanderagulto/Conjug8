@@ -5,6 +5,7 @@
          */
         function __construct() {
             onScrollFixed();
+            burgerMenu();
         }
         function onScrollFixed() {
             this.onScrollFixed = function () {
@@ -27,6 +28,41 @@
             }
             this.onScrollFixed();
         }
+        function burgerMenu() {
+
+			const $menu = $('.burger-menu');
+			const $menuBody = $('.inside-nav');
+			const $close = $('.nav-close');
+			const $menuContainer = $('.navigation');
+
+			let mouse_is_inside = false;
+
+
+			$menu.on('click', function () {
+				$menuBody.addClass('active')
+			});
+			$close.on('click', function () {
+				$menuBody.removeClass('active')
+			});
+
+
+
+			$menuContainer.hover(function () {
+				mouse_is_inside = true;
+				
+			}, function () {
+				mouse_is_inside = false;
+			});
+
+			$menuBody.on('click', function () {
+				if (mouse_is_inside == false) {
+					$menuBody.removeClass('active');
+				}
+			});
+
+
+
+		}
         /**
          * Instantiate
          */

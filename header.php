@@ -21,6 +21,13 @@
 
 	<header class="header">
 		<div class="header-wrap flex items-center justify-between">
+			
+			<div class="burger-menu">
+				<span></span>
+				<span></span>
+				<span></span>
+			</div>
+
 			<div class="header-logo">
 				<a href="<?php echo esc_url( home_url() ) ?>" class="site-name text-hidden">
 					<img src="<?=do_shortcode('[stylesheet_directory]')?>/images/logo.png" width="79" height="54" alt="Conjug8 Logo" class="block img-responsive">
@@ -28,14 +35,19 @@
 			</div>
 
 			<div class="navigation flex items-center">
-				<nav class="main-menu">
-					<?php wp_nav_menu( array( 'sort_column' => 'menu_order', 'menu_id' => 'nav', 'theme_location' => 'primary-menu' ) ); ?>
-				</nav>
+				<div class="inside-nav flex items-center">
+					<nav class="main-menu">
+						<?php wp_nav_menu( array( 'sort_column' => 'menu_order', 'menu_id' => 'nav', 'theme_location' => 'primary-menu' ) ); ?>
+					</nav>
 
-				<div class="side-nav flex items-center">
-					<a href="#" class="aios-btn">Medical Practioners Only</a>
-					<a href="#">Cart<img src="<?=do_shortcode('[stylesheet_directory]')?>/images/cart-img.png"></a>
+					<div class="side-nav">
+						<a href="#" class="aios-btn">Medical Practioners Only</a>
+					</div>
+					
+					<div class="nav-close"> <i class="ai-font-close-g"></i></div>
 				</div>
+
+				<a href="#" class="cart-icon">Cart<img src="<?=do_shortcode('[stylesheet_directory]')?>/images/cart-img.png"></a>
 			</div>
 		</div>
 	</header>

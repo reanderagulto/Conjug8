@@ -355,6 +355,7 @@ a:hover{
 .aios-btn{
     border: 2px solid;
     border-radius: 40px;
+    padding: max(0.729vw, 14px) 2.625vw;
 }
 
 .aios-btn-sm{
@@ -475,7 +476,7 @@ header.header{
                 color: #000;
             }
 
-            header.header .side-nav a:first-of-type{
+            header.header .side-nav a.aios-btn{
                 padding: 1vw 1.375vw;
                 margin-right: 1.875vw;
                 border-color: var(--primary-red);
@@ -483,15 +484,21 @@ header.header{
                 transition: all var(--ease-short-transition);
             }
             
-            header.header .side-nav a:first-of-type:hover{
+            header.header .side-nav a.aios-btn:hover{
                 background-color: var(--primary-red);
                 color: #FFF;
             }
 
-            header.header .side-nav a:last-of-type{
+            header.header .cart-icon{
                 font-size: 0;
             }
 
+
+/* Mobile Navigation */
+header .navigation .nav-close, 
+header.header .burger-menu{
+    display: none;
+}
 
 /* 
 * 

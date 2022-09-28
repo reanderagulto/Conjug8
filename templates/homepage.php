@@ -22,27 +22,25 @@ foreach ( $fields_to_get as $field ) {
 <!-- Start Topfold Banner -->
 <?php if(!empty($topfold_banner)): ?>
 <section id="hero-banner">
-    <div class="banner-col">
-        <div class="banner-text-container">
-            <h1>
-                <?php
-                    // for title
-                    $banner_text = $topfold_banner[ 'banner_text' ] ?? '';
-                    echo (!empty($banner_text) ? do_shortcode( $banner_text ) : '');
-                    unset( $banner_text );
-                ?>
-            </h1>
-        </div>
-        <div class="banner-button-container">
-            <?php $buy_now_link = $topfold_banner[ 'topfold_cta' ][ 'buy_now_link' ]; ?>
-            <?php $topfold_phone = $topfold_banner[ 'topfold_cta' ][ 'topfold_phone_number' ]; ?>
-            <a href="<?php echo (!empty($buy_now_link) ? do_shortcode( $buy_now_link ) : '#' ); ?>" class="aios-btn aios-btn-white">Buy Now</a>
-            <a href="<?php echo (!empty($topfold_phone) ? 'tel: ' . do_shortcode( $topfold_phone ) : '#' ); ?>" class="aios-btn aios-btn-transparent">
-                <?php echo (!empty($topfold_phone) ? do_shortcode( $topfold_phone ) : ''); ?>
-            </a>
-            <?php unset($buy_now_link, $topfold_phone); ?>
-        </div>
-    </div>
+    <div class="banner-wrap-slider">
+        <?php if(!empty($topfold_banner['banner_slider'])): ?>
+            <?php foreach($topfold_banner['banner_slider'] as $banner): ?>
+                <div class="banner-container">
+                    <div class="banner-col">
+                        <?php if(!empty($banner['content'])): ?>
+                            <?php echo $banner['content']; ?>
+                        <?php endif; ?>
+                    </div>
+                    <div class="banner-background">
+                        <?php if(!empty($banner['background_image'])): ?>
+                            <canvas style="background-image: url(<?php echo $banner['background_image']['url'];?>)"></canvas>
+                        <?php endif; ?>
+                    </div>
+                </div>
+            <?php endforeach; ?>
+
+        <?php endif; ?>
+    </div>    
 </section>
 <?php endif; ?>
 <!-- End of Topfold Banner -->
@@ -60,9 +58,9 @@ foreach ( $fields_to_get as $field ) {
                 ?>
             </h2>
             <div class="product-nav flex items-center">
-                <a href="#" class="aios-btn-sm aios-btn-red">View Products</a>
-                <button type="button" class="aios-btn-sm aios-btn-red slider-nav prod-prev"><i class="ai-font-arrow-h-p"></i></button>
-                <button type="button" class="aios-btn-sm aios-btn-red slider-nav prod-next"><i class="ai-font-arrow-h-n"></i></button>
+                <a href="#" class="aios-btn aios-btn-red">View Products</a>
+                <button type="button" class="aios-btn aios-btn-red slider-nav prod-prev"><i class="ai-font-arrow-h-p"></i></button>
+                <button type="button" class="aios-btn aios-btn-red slider-nav prod-next"><i class="ai-font-arrow-h-n"></i></button>
             </div>
         </div>
         <?php 
@@ -97,7 +95,7 @@ foreach ( $fields_to_get as $field ) {
 <!-- Start of Icons  -->
 <section id="icons-section">
     <div class="icons-wrap">
-        <div class="icons-container flex justify-between">
+        <div class="icons-container flex justify-around">
             <div class="icon">
                 <img src="<?=do_shortcode('[stylesheet_directory]')?>/images/lightbulb.png" class="img-responsive" width="68" height="88" alt="Sharp Brain" >
                 <h3>Sharp Brain</h3>
@@ -134,7 +132,7 @@ foreach ( $fields_to_get as $field ) {
                 <?=(!empty($about_subheader) ? do_shortcode($about_subheader) : ''); ?>
             </h3>
             <p><?=(!empty($about_content) ? do_shortcode($about_content) : ''); ?></p>
-            <a href="<?php echo do_shortcode($about_read_more); ?>" class="aios-btn-sm aios-btn-red">Read More</a>
+            <a href="<?php echo do_shortcode($about_read_more); ?>" class="aios-btn aios-btn-red">Read More</a>
         </div>
         <div class="about-img">            
             <div class="img-container">

@@ -14,9 +14,86 @@
 
 /* iPad(portrait) | Galaxy Tab 4(portrait)  */ 
 @media only screen and (max-width: 991px) {
-	
-	/* The following are used on inner pages. Please edit carefully. */
 
+	header.header{
+		height: 81px;
+		padding: 15px 2.042vw;
+	}
+
+	header.header .navigation .nav-close{
+		display: block;
+	}
+
+	header.header .burger-menu{
+		width: 40px;
+		height: 100%;
+		cursor: pointer;
+		display: flex;
+		flex-flow: column;
+	}
+	
+	header.header .burger-menu span{
+		background: var(--primary-red);
+		width: 100%;
+		height: 5px;
+		margin: 3.5px 0;
+		border-radius: 5px;
+	}
+	
+	header .navigation .nav-close {
+		font-size: 40px;
+		color: var(--primary-red);
+		cursor: pointer;
+	}
+	
+	header.header .burger-menu span:nth-of-type(1) {
+		margin-top: 0;
+		width: 30px;
+	}
+	
+	header.header .burger-menu span:last-of-type{
+		margin-bottom: 0;
+		width: 26px;
+	}
+
+	/* Navigation */
+	header.header .navigation .inside-nav{
+		position: fixed;
+		left: -100%;
+		background: #fff;
+		top: 81px;
+		width: 100%;
+		height: 100%;
+		padding: 40px 0;
+		z-index: 1001;
+		transition: all var(--ease-short-transition);
+	}
+
+	header.header .inside-nav.active{
+		left: 0;
+		flex-direction: column;
+		align-items: center;
+		justify-content: space-around;
+		background-color: #f4f4f4;
+	}
+
+	header.header .main-menu .menu-main-menu-container ul#nav li.menu-item{
+		display: block;
+		width: 100%;
+		padding: 19px;
+		text-align: center;
+	}
+
+	header.header .main-menu .menu-main-menu-container ul#nav li.menu-item a, header.header .side-nav a{
+		font-size: 24px;
+	}
+
+	header.header .side-nav a.aios-btn{
+		margin-right: unset;
+		padding: 2vw 6.375vw;
+	}
+
+	/* The following are used on inner pages. Please edit carefully. */
 	.inner {
 	    width: 100%;
 	}
@@ -29,12 +106,39 @@
 	}
 	#content-sidebar #content{
 		width: 100%;
-	}
-	
+	}	
 } 
 
 /* Galaxy Tab 3(portrait) | Galaxy S5(landscape) */ 
 @media only screen and (max-width: 767px) {
+
+	footer.footer{
+		padding-top: 35px;
+	}
+	
+	footer.footer .footer-wrap, 
+	ul#menu-main-menu{
+		flex-direction: column;
+		justify-content: space-evenly;
+	}
+
+	footer.footer .menu-main-menu-container {
+		margin: 40px 0;
+	}
+	
+	footer.footer .menu-main-menu-container ul#menu-main-menu .menu-item {
+		padding: 8px 0;
+	}
+	
+	.footer-smi a {
+		padding: 0 10px;
+	}
+
+	hr.footer-divider{
+		margin: 30px 0 27px;
+	}
+
+
     .ip-banner .container{
         width: 100%;
     }

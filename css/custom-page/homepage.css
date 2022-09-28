@@ -4,20 +4,19 @@
 *
 */
 section#hero-banner{
-    background-image: url(../../images/topfold-banner.png);
-    background-repeat: no-repeat;
-    background-size: cover;
+    display: block;
     height: 100%;
     width: 100%;
-    margin-top: 8vw;
-    position: relative;
-    display: inline-block;
-    padding: 6.250vw 10.375vw 12.688vw;
-    z-index: 99;
-    overflow: hidden;
+    margin-top: 7.8vw;
 }
 
-section#hero-banner::before{
+.banner-container{
+    height: 100%;
+    width: 100%;
+    z-index: 99;
+}
+
+.banner-container::before{
     content: '';
     display: block;
     position: absolute;
@@ -25,13 +24,13 @@ section#hero-banner::before{
     opacity: 0.8;
     left: -10.938vw;
     top: -31.063vw;
-    width: 64.563vw;
+    width: calc(50% / 0.7);
     height: 60.625vw;
     transform: rotate(-150deg);
     z-index: -1;
 }
 
-section#hero-banner::after{
+.banner-container::after{
     content: '';
     display: block;
     position: absolute;
@@ -45,11 +44,30 @@ section#hero-banner::after{
     z-index: -1;
 }
 
+.banner-container .banner-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-height: 100%;
+}
+
+.banner-container .banner-background canvas{
+    position: absolute;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    top: 0;
+    left: 0;
+    min-height: 100%;
+    width: 100%;
+    height: 100vh;
+    z-index: -99;
+}
+
     .banner-col {
-        width: 100%;
-        display: inline-block;
-        flex-direction: column;
         z-index: 99;
+        padding: 6.250vw 10.375vw 12.688vw;
     }
 
     .banner-text-container {
@@ -58,8 +76,6 @@ section#hero-banner::after{
         line-height: 1.2;
         width: 50%;
     }
-
-
         .banner-text-container h1 {
             font-size: max(3vw, 48px);
             font-weight: bold;
@@ -72,10 +88,14 @@ section#hero-banner::after{
 
         .banner-button-container .aios-btn.aios-btn-white,
         .banner-button-container .aios-btn.aios-btn-transparent{
-            padding: 0.875vw 2.625vw;
-            font-size: 1.125vw;
+            font-size: max(1.125vw, 24px);
             font-weight: bold;
-            margin-right: 1.125vw;            
+            margin-right: 1.125vw;
+            color: #FFF;         
+        }
+
+        .banner-button-container .aios-btn.aios-btn-white{
+            color: var(--primary-red);
         }
 
             .banner-button-container .aios-btn.aios-btn-white:hover,
@@ -107,7 +127,7 @@ section#product-section {
     margin-bottom: 1.823vw;
 }
 
-.product-nav .aios-btn-sm.aios-btn-red {
+.product-nav button {
     padding: 0.417vw 1.688vw;
     line-height: 1.2;
     margin: 0 0.521vw;
@@ -161,7 +181,7 @@ section#product-section {
     background-color: #FFF;
     padding: 1.667vw 0.990vw;
     transition: background-color var(--ease-short-transition);
-    height: 4.375vw;
+    min-height: 83px;
 }
 
 .product-slide:hover .product-info{
@@ -173,8 +193,7 @@ section#product-section {
     color: #FFF;
 }
 
-.product-slide .product-info .aios-btn.aios-btn-red {
-    padding: 0.625vw 0.781vw;
+.product-slide .product-info .aios-btn.aios-btn-red {    
     color: #FFF;
     font-size: 16px;
 }
@@ -203,7 +222,7 @@ section#icons-section{
 }
 
 section#icons-section .icons-wrap {
-    padding: 0 15.625vw 4.948vw;
+    padding-bottom: 4.948vw;
 }
 
 section#icons-section .icons-wrap .icons-container .icon {
@@ -618,6 +637,72 @@ section#contact-section .contact-wrap .contact-form{
 
 /* iPad(landscape) | iPad(landscape) | Galaxy Tab 4 (landscape) | Galaxy Tab 3 (landscape) */ 
 @media only screen and (max-width: 1199px) {
+    .banner-container::before{
+        left: -1.938vw;
+        top: -24.063vw;
+        width: 59.563vw;
+        height: 68.625vw;
+    }
 
+    .banner-container::after{
+        left: -36.75vw;
+        top: 32.313vw;
+        width: 46.938vw;
+        height: 50.938vw;
+    }
 } 
 
+@media only screen and (max-width: 991px) {
+    .banner-container {
+        min-height: 100vh !important;
+    }
+
+    .banner-container .banner-background{
+        min-height: 100vh;
+        height: 100%;
+        position: relative;
+    }
+
+    .banner-container .banner-background canvas{   
+        background-size: unset !important; 
+        background-position: right bottom;
+    }    
+
+    .banner-container .banner-background::before{
+        content:'';
+        position:absolute;
+        left:0; top:0;
+        width:100%; height:100%;
+        background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 34%, rgba(255,255,255,0) 67%, rgba(255,255,255,0) 100%);
+        z-index: -9;
+    }
+
+    .banner-container::before{
+        left: -13.938vw;
+        top: -38.063vh;
+        width: 118vw;
+        height: 100vh;
+        opacity: 0.9;
+    }
+
+    .banner-container::after{
+        left: -43.75vw;
+        top: 43.313vh;
+        width: 60.938vw;
+        height: 56.938vw;
+    }
+
+    .banner-text-container{
+        width: 100%
+    }
+
+   .banner-col{
+       padding: 6.25vw 11.375vw 2.688vw;
+       text-align: center;
+   }
+
+   .banner-button-container{
+        justify-content: center;
+
+   }
+}
