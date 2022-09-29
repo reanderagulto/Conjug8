@@ -36,7 +36,7 @@
 			</div><!-- end of #inner-page-wrapper -->
 			<?php else: ?>
 				<!-- Start of Events Section -->
-				<?php if(!empty($events_section)): ?>
+				<!-- <?php if(!empty($events_section)): ?>
 				<?php 
 					$events_header = $events_section[ 'events_header' ] ?? '';
 					$events_read_more = $events_section[ 'events_read_more' ] ?? '';
@@ -80,7 +80,7 @@
 						<?php endif; ?>
 					</div>
 				</section>
-				<?php endif; ?>
+				<?php endif; ?> -->
 				<!-- End of Events Section -->
 
 				<!-- Start of Get in Touch Section -->

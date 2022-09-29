@@ -17,7 +17,7 @@
 
 	header.header{
 		height: 81px;
-		padding: 15px 2.042vw;
+		padding: 15px;
 	}
 
 	header.header .navigation .nav-close{
@@ -59,7 +59,7 @@
 	/* Navigation */
 	header.header .navigation .inside-nav{
 		position: fixed;
-		left: -100%;
+		left: -200%;
 		background: #fff;
 		top: 81px;
 		width: 100%;
@@ -107,6 +107,14 @@
 	#content-sidebar #content{
 		width: 100%;
 	}	
+
+	section#innerpage-banner{
+		margin-top: 81px;
+	}
+
+	section#icons-section .icons-wrap{
+        padding: 6.354vw 6vw 6.250vw 6vw;
+    }
 } 
 
 /* Galaxy Tab 3(portrait) | Galaxy S5(landscape) */ 
@@ -141,6 +149,62 @@
 
     .ip-banner .container{
         width: 100%;
+    }
+
+	.section-header{
+		font-size: 24px;
+	}
+
+	.newsletter-wrap {
+		display: block;
+		padding: 151px 42px;
+	}
+	
+	.newsletter-form.flex.items-center.justify-center {
+		flex-flow: column;
+	}
+	
+	.newsletter-content .newsletter-form input[type='email'] {
+		width: 100%;
+		margin-bottom:  11px;
+	}
+	
+	.newsletter-content .newsletter-form .aios-btn.aios-btn-red {
+		width: 60%;
+	}
+	
+	.newsletter-wrap .newsletter-content .newsletter-header {
+		margin-bottom: 21px;
+	}
+
+	section#contact-section .contact-wrap .contact-info, section#contact-section .contact-wrap .contact-form{
+		width: 100% !important;
+	}
+
+	section#contact-section .contact-wrap {
+		flex-flow: column;
+	}
+	
+	section#contact-section .contact-wrap .contact-form {
+		display: none;
+	}
+	
+	section#contact-section::before {
+		left: unset !important;
+		right: -29.188vw;
+	}
+
+	section#innerpage-banner .innerpage-banner-wrap{
+        padding: 51px 39px 189px;
+        text-align: center;
+    }
+
+	section#icons-section .icons-wrap .icons-container {
+        flex-flow: column;
+    }
+    
+    section#icons-section .icons-wrap .icons-container .icon{
+        margin: 30px 0;
     }
 }
 

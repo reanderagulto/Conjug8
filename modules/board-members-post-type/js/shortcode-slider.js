@@ -16,6 +16,21 @@
                 infinite: true,
                 // autoplay: true,
                 // autoplaySpeed: 3000,
+                responsive: [
+                    {
+                      breakpoint: 992,
+                      settings: {
+                        slidesToShow: 2,
+                      }
+                    },
+                    {
+                      breakpoint: 768,
+                      settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1,
+                      }
+                    }
+                  ],
                 nextArrow: $('.slider-nav.founder-next'),
                 prevArrow: $('.slider-nav.founder-prev'),
             });

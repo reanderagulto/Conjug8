@@ -20,13 +20,14 @@
 
             let $productSlider = jQuery('.product-slider');
             $productSlider.slick({
-                slidesToShow: 4,
+                slidesToShow: 3,
                 slidesToScroll: 1,
                 arrows: true,
                 dots: false,
                 infinite: true,
                 // autoplay: true,
                 // autoplaySpeed: 3000,
+                variableWidth: true,
                 responsive: [
                     {
                       breakpoint: 992,

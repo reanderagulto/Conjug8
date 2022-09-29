@@ -59,8 +59,10 @@ foreach ( $fields_to_get as $field ) {
             </h2>
             <div class="product-nav flex items-center">
                 <a href="#" class="aios-btn aios-btn-red">View Products</a>
-                <button type="button" class="aios-btn aios-btn-red slider-nav prod-prev"><i class="ai-font-arrow-h-p"></i></button>
-                <button type="button" class="aios-btn aios-btn-red slider-nav prod-next"><i class="ai-font-arrow-h-n"></i></button>
+                <div class="slider-navs">
+                    <button type="button" class="aios-btn aios-btn-red slider-nav prod-prev"><i class="ai-font-arrow-h-p"></i></button>
+                    <button type="button" class="aios-btn aios-btn-red slider-nav prod-next"><i class="ai-font-arrow-h-n"></i></button>
+                </div>
             </div>
         </div>
         <?php 
@@ -77,7 +79,7 @@ foreach ( $fields_to_get as $field ) {
                             </div>
                             <div class="product-info">
                                 <h3>' . $item['name'] . ' <span>' . $item['subname'] . '</span></h3>
-                                <a href="' . $item['buy_link'] . '" class="aios-btn aios-btn-red">Buy Now</a>
+                                <a href="' . $item['buy_link'] . '" class="aios-btn-sm aios-btn-red">Buy Now</a>
                             </div>
                         </div>';
                 } ?>

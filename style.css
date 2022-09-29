@@ -355,13 +355,13 @@ a:hover{
 .aios-btn{
     border: 2px solid;
     border-radius: 40px;
-    padding: max(0.729vw, 14px) 2.625vw;
+    padding: max(0.729vw, 14px) max(2.9vw, 36px);
 }
 
 .aios-btn-sm{
     border: 2px solid;
     border-radius: 40px;
-    padding: 0.417vw 2.188vw;
+    padding: max(0.521vw, 10px) max(0.625vw, 12px);
 }
 
 .aios-btn-red{
@@ -397,7 +397,7 @@ p{
 
 .slider-nav {
     border-radius: 50%;
-    padding: 0.583vw 0.483vw !important;
+    padding: max(0.583vw, 8px) max(0.483vw, 10px) !important;
     width: max(2.563vw, 41px);
     height: max(2.563vw, 41px);
     background-color: #FFF;
@@ -602,6 +602,35 @@ section#newsletter-section:after{
 
 /* 
 * 
+* Icons
+*
+*/
+
+section#icons-section{
+    background-color: var(--secondary-blue);
+}
+
+section#icons-section .icons-wrap {
+    padding-bottom: 4.948vw;
+}
+
+section#icons-section .icons-wrap .icons-container .icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+section#icons-section .icons-wrap .icons-container .icon img {
+    margin-bottom: 1.823vw;
+}
+
+section#icons-section .icons-wrap .icons-container .icon h3 {
+    font-size: max(1.667vw, 32px);
+    font-weight: bold;
+}
+
+/* 
+* 
 * Footer CSS 
 * 
 */
@@ -761,7 +790,7 @@ section#innerpage-banner .innerpage-banner-wrap {
 
 .innerpage-banner-wrap h1.inner-section-header {
     color: #FFF;
-    font-size: max(2.500vw, 48px);
+    font-size: max(2.500vw, 30px);
     font-weight: bold;
 }
 

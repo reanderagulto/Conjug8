@@ -164,10 +164,6 @@ section#mission-vision:after{
         padding: 6.354vw 6vw 6.250vw 6vw;
     }
 
-    section#icons-section .icons-wrap{
-        padding: 6.354vw 6vw 6.250vw 6vw;
-    }
-
     .content-wrap .about-section-1{
         flex-direction: column-reverse;
     }
@@ -183,4 +179,18 @@ section#mission-vision:after{
     .content-wrap .about-section-1 .section-text .section-content{
         margin: 2.240vw;
     }
+}
+
+@media only screen and (max-width: 767px) {
+    section#mission-vision .mission-vision-wrap {
+        flex-flow: column;
+    }
+    
+    .mission-vision-wrap .mission-wrap, .mission-vision-wrap .vision-wrap {
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+
 }
