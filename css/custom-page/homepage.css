@@ -658,4 +658,9 @@ section#contact-section .contact-wrap .contact-form{
         width: 100%;
         padding: 0 21px;
     }
+
+    	
+	section#contact-section .contact-wrap .contact-form {
+		display: none;
+	}
 }

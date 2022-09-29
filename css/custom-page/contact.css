@@ -3,7 +3,6 @@
 * Contact Us Section
 *
 */
-
 section#contact-section {
     padding: 6.354vw 10vw 6.250vw 10vw;
     position: relative; 
@@ -22,11 +21,11 @@ section#contact-section .contact-wrap .contact-form{
 }
 
 .contact-info .section-header{
-    margin-bottom: 1.510vw;
+    margin-bottom: max(1.510vw, 24px);
 }
 
 .contact-info .section-subheader{
-    margin-bottom: 1.875vw;
+    margin-bottom: max(1.875vw, 24px);
     font-size: max(1.250vw, 24px);
 }
 
@@ -73,7 +72,6 @@ section#contact-section .contact-wrap .contact-form{
 }
 
 .aios-submit .aios-btn.aios-btn-red {
-    padding: 0.833vw 1.875vw;
     font-family: var(--font-family-default);
 }
 
@@ -119,8 +117,6 @@ section#contact-section .contact-wrap .contact-form{
     }
 
     .contact-info .contact-links i{
-        margin-right: 2.729vw;
+        margin-right: max(2.729vw, 24px);
     }
-
-    
 }

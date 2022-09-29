@@ -185,10 +185,6 @@
 		flex-flow: column;
 	}
 	
-	section#contact-section .contact-wrap .contact-form {
-		display: none;
-	}
-	
 	section#contact-section::before {
 		left: unset !important;
 		right: -29.188vw;

@@ -625,7 +625,7 @@ section#icons-section .icons-wrap .icons-container .icon img {
 }
 
 section#icons-section .icons-wrap .icons-container .icon h3 {
-    font-size: max(1.667vw, 32px);
+    font-size: max(1.667vw, 24px);
     font-weight: bold;
 }
 
