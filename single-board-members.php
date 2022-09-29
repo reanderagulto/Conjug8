@@ -23,7 +23,6 @@ foreach ( $fields_to_get as $field ) {
                 <div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
                     <?php do_action('aios_starter_theme_before_entry_content') ?>
-                    <h1 class="entry-title hidden-md hidden-lg"><?php the_title() ?></h1>
                     <div class="entry entry-content">
                         <div class="founder-wrap">
                             <div class="founder-inner flex items-start justify-between">

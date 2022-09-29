@@ -83,6 +83,6 @@ if ( ! class_exists( 'agentpro_events_post_type' ) ) {
 }
 
 // fallback require for shortcodes.php
-// if ( ! class_exists( 'agentpro_events_shortcodes' ) && file_exists( __DIR__ . '/shortcodes.php' ) ) {
-//     require_once( __DIR__ . '/shortcodes.php' );
-// }
+if ( ! class_exists( 'agentpro_events_shortcodes' ) && file_exists( __DIR__ . '/shortcodes.php' ) ) {
+    require_once( __DIR__ . '/shortcodes.php' );
+}

@@ -33,7 +33,7 @@ section#events-section .events-wrap {
 
 .events-content .event h3 {
     text-align: center;
-    margin-top: 0.729vw;
+    margin: max(0.729vw, 21px) 0;
     font-size: max(1.250vw, 24px);
     font-weight: bold;
 }

@@ -108,7 +108,8 @@
 		width: 100%;
 	}	
 
-	section#innerpage-banner{
+	section#innerpage-banner, 
+	#content-sidebar, #content-full{
 		margin-top: 81px;
 	}
 
@@ -202,10 +203,14 @@
     section#icons-section .icons-wrap .icons-container .icon{
         margin: 30px 0;
     }
+
+
 }
 
 /* Galaxy S5(portrait) | iPod Touch(landscape) | iPod Touch(portrait) */ 
 @media only screen and (max-width: 480px) {
-
+	.aios-btn{
+		padding: max(0.729vw, 14px) max(2.9vw, 20px);
+	}
 }
  

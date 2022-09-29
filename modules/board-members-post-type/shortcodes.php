@@ -48,7 +48,7 @@ if( !class_exists( 'agentpro_board_members_shortcodes' ) ) {
             if ( $board_members_total > 0 ) {
                 $board_members_posts = $board_members_query->posts;
 
-                if ( with_view_more == 'true' ) {
+                if ( $with_view_more == 'true' ) {
                     $groupPosts = array_chunk( $board_members_posts, 4 );
                 }
                 else {

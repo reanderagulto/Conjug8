@@ -35,52 +35,9 @@
 			</div><!-- end of #inner-page-wrapper .inner -->
 			</div><!-- end of #inner-page-wrapper -->
 			<?php else: ?>
+
 				<!-- Start of Events Section -->
-				<!-- <?php if(!empty($events_section)): ?>
-				<?php 
-					$events_header = $events_section[ 'events_header' ] ?? '';
-					$events_read_more = $events_section[ 'events_read_more' ] ?? '';
-					$events_slider = $events_section[ 'events_slider' ];
-				?>
-				<section id="events-section">
-					<div class="events-wrap">
-						<h2 class="section-header text-center">
-							<?= $events_header ?>
-						</h2>
-						<?php if(!empty($events_slider)): ?>
-						<?php 
-							$eventHTML = '';
-							foreach ($events_slider as $item) {
-								$eventHTML .= '
-									<div class="event">
-										<div class="event-container">
-											<div class="img-container">
-												<canvas width="' . $item['image']['width'] . '" height="' . $item['image']['height'] . '"></canvas>
-												<img src="' . $item['image']['url'] . '" alt="' . $item['event_title'] . '" class="img-responsive" width="' . $item['image']['width'] . '" height="' . $item['image']['height'] . '" />
-											</div>
-											<p class="event-date">' . $item['events_date']['event_day'] . ' <span>' . $item['events_date']['event_month'] . '</span></p>
-											<div class="happen-now">
-												<p>Happening Now</p>
-											</div>
-										</div>
-										<h3>' . $item['event_title'] . '</h3>
-									</div>
-								';
-							}
-						?>
-						<div class="events-content flex items-center justify-center">
-							<?php echo $eventHTML; ?>
-						</div>
-						<?php 
-							unset($events_header, $events_read_more, $events_slider, $eventHTML);
-						?>
-						<div class="events-button">
-							<a href="<?= $events_read_more?>" class="aios-btn aios-btn-red">View More</a>
-						</div>
-						<?php endif; ?>
-					</div>
-				</section>
-				<?php endif; ?> -->
+				<?php echo do_shortcode('[agentpro_events_archive posts_per_page="3"]'); ?>
 				<!-- End of Events Section -->
 
 				<!-- Start of Get in Touch Section -->

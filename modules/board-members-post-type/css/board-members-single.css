@@ -56,3 +56,21 @@
 }
 
 
+/* Responsive */
+@media only screen and (max-width: 767px) {
+    .founders-single .founder-wrap .founder-inner{
+        flex-flow: column;
+    }
+
+    .founder-inner .content-left, 
+    .founder-inner .founder-main{
+        width: 100%;
+        margin-bottom: 30px;
+    }
+
+    .founders-single .founder-main .section-header,
+    .founders-single .founder-main .section-subheader{
+        text-align: center;
+    }
+}
+
