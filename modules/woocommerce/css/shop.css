@@ -1,0 +1,156 @@
+/*
+* Overrider of Woocommerce CSS
+*/
+
+.shop-container .shop-wrap .woocommerce .woocommerce-ordering, .woocommerce-page .woocommerce-ordering{
+    float: unset;
+    margin-bottom: 0;
+}
+
+.shop-container .shop-wrap .woocommerce-notices-wrapper{
+    display: none;
+}
+
+.woocommerce .shop-container .shop-wrap .products ul, .woocommerce ul.products{
+    display: flex;
+    flex-flow: row wrap;
+    align-items: flex-start
+}
+
+.woocommerce .shop-container .shop-wrap ul.products.columns-3 li.product, .woocommerce-page ul.products.columns-3 li.product{
+    width: calc(100% / 3);
+}
+
+.woocommerce .shop-container .shop-wrap ul.products li.product{
+    float: unset;
+    margin: unset; 
+}
+
+.woocommerce .shop-container .shop-wrap ul.products li.product .loop-product-wrap {
+    margin: 13px 13px;
+    background-color: #FFF;
+    transition: all var(--ease-short-transition);
+} 
+
+.woocommerce .shop-container .shop-wrap ul.products li.product:hover{
+    cursor: pointer;
+} 
+
+
+.woocommerce .shop-container .shop-wrap ul.products li.product:hover .loop-product-wrap{
+    background-color: var(--primary-blue);
+}
+
+
+.woocommerce .shop-container .shop-wrap ul.products li.product a img{
+    margin-bottom: unset;
+    height: max(17.569vw, 253px);
+    object-fit: cover;
+    object-position: center center;
+}
+
+.woocommerce .shop-container .shop-wrap ul.products li.product .loop-product-wrap .loop-product-content {
+    min-height: max(9.722vw, 140px);
+    padding-top: max(1.181vw, 17px);
+}
+
+.woocommerce .shop-container .shop-wrap ul.products li.product .woocommerce-loop-product__title{
+    padding: 0 max(1.806vw, 26px);
+    color: var(--primary-blue);
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.woocommerce .shop-container .shop-wrap ul.products li.product:hover .woocommerce-loop-product__title{
+    color: #fff;
+}
+
+.woocommerce .shop-container .shop-wrap ul.products li.product .button{
+    background-color: var(--primary-red);
+    color: #FFF;
+    border-radius: 45px;
+    margin: 20px max(1.806vw, 26px);
+    transition: all var(--ease-short-transition);
+    font-size: 16px;
+    padding: 14px 19px;
+}
+
+.woocommerce .shop-container .shop-wrap ul.products li.product .button:hover{
+    background-color: #FFF;
+    color: var(--primary-red);
+}
+
+/* 
+* Custom CSS for Shop page 
+*/
+.shop-container{
+    background-color: var(--secondary-blue);
+}
+
+.shop-container .shop-wrap{
+    padding: 8.542vw 11.458vw 8.264vw;
+}
+
+.shop-container .shop-wrap .shop-before-loop{
+    margin-bottom: max(2.083vw, 30px);
+}
+
+.shop-container .shop-wrap .aios-btn.aios-btn-red{
+    background-color: transparent;
+    color: var(--primary-red);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 16px;
+    font-weight: bold;
+    transition: all var(--ease-short-transition);
+}
+
+.shop-container .shop-wrap .aios-btn.aios-btn-red img{
+    width: 20px;
+    height: 18px;
+    margin-right: 11px;
+}
+
+.shop-container .shop-wrap .aios-btn.aios-btn-red:hover{
+    background-color: var(--primary-red);
+    color: #FFF;
+}
+
+.shop-container .shop-wrap .aios-btn.aios-btn-red:hover img{
+    filter: brightness(0) invert(1);
+}
+
+.shop-container .shop-wrap .woocommerce .woocommerce-ordering, .woocommerce-page .woocommerce-ordering select{
+    font-size: 18px;
+    font-weight: bold;
+    border: 0;
+    height: 35px;
+    background-color: transparent;
+}
+
+.shop-container .shop-wrap .woocommerce .woocommerce-ordering, .woocommerce-page .woocommerce-ordering select:focus-visible {
+    outline: 0;
+}
+
+/* Responsive */
+@media only screen and (max-width: 991px) {
+    .shop-container .shop-wrap{
+        padding: 48px 30px 51px;
+    }
+
+    .woocommerce .shop-container .shop-wrap ul.products.columns-3 li.product, .woocommerce-page ul.products.columns-3 li.product{
+        width: calc(100% / 2);
+    }
+
+    .woocommerce .shop-container .shop-wrap ul.products li.product .loop-product-wrap{
+        text-align: center;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .woocommerce .shop-container .shop-wrap ul.products.columns-3 li.product, .woocommerce-page ul.products.columns-3 li.product{
+        width: 100%;
+    }
+
+}

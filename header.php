@@ -45,7 +45,7 @@
 					<div class="nav-close"> <i class="ai-font-close-g"></i></div>
 				</div>
 
-				<a href="#" class="cart-icon">Cart<img src="<?=do_shortcode('[stylesheet_directory]')?>/images/cart-img.png"></a>
+				<a href="<?php echo esc_url( home_url() ) ?>/cart/" class="cart-icon">Cart<img src="<?=do_shortcode('[stylesheet_directory]')?>/images/cart-img.png"></a>
 			</div>
 		</div>
 	</header>
@@ -56,20 +56,16 @@
 		<!-- ip banner goes here -->
     	<?php if ( 
 		!is_home() && 
-		!is_page_template( 'template-fullwidth.php' ) && 
-		!is_page_template( 'template-homepage.php' ) &&
-		!is_page_template( 'templates/homepage.php' ) && 
-		!is_singular('board-members') && 
-		!is_post_type_archive( 'board-members' ) && 
-		!is_singular('events') && 
-		!is_post_type_archive( 'events' ) && 
-		!is_category( 'blog' ) && 
-		!is_single()): 
+		!is_page_template( 'template-fullwidth.php' ) && !is_page_template( 'template-homepage.php' ) && !is_page_template( 'templates/homepage.php' ) && 
+		!is_singular('board-members') && !is_post_type_archive( 'board-members' ) && 
+		!is_singular('events') && !is_post_type_archive( 'events' ) && 
+		!is_category( 'blog' ) && !is_single() && 
+		!is_product() ): 
 		?>
 
 		<?php
 			// inner page banner (acf) | start
-			$post_fields = get_fields( get_the_ID() );
+			$post_fields = get_fields( );
 			$fields_to_get = array(
 				'title',
 				'post_image'
@@ -82,7 +78,7 @@
 		<section id="innerpage-banner">
 			<div class="innerpage-banner-wrap">
 				<h1 class="inner-section-header">
-					<?php echo (!empty($title['main']) ? $title['main'] : get_the_title( get_the_ID() ) ); ?>
+					<?php echo (!empty($title['main']) ? $title['main'] : get_the_title( ) ); ?>
 				</h1>
 			</div>
 		</section>

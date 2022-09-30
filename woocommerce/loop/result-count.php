@@ -21,7 +21,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 ?>
-<p class="woocommerce-result-count">
+<!-- <p class="woocommerce-result-count">
 	<?php
 	// phpcs:disable WordPress.Security
 	if ( 1 === intval( $total ) ) {
@@ -37,4 +37,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 	}
 	// phpcs:enable WordPress.Security
 	?>
-</p>
+</p> -->
+
+<a href="<?php echo esc_url( home_url() ) ?>/cart/" class="aios-btn aios-btn-red cart-icon"><img src="<?=do_shortcode('[stylesheet_directory]')?>/images/cart-img.png" width="20" height="18"/> View Cart</a>
