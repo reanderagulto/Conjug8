@@ -33,8 +33,8 @@ TABLE OF CONTENTS
     --font-family-lato: 'Lato', sans-serif;
     --font-family-default: var(--font-family-lato);
     --font-family-para: var(--font-family-belleza);
-    --font-size-default: max(1.125vw, 18px);
-    --font-size-title: max(2.500vw, 40px);
+    --font-size-default: max(1.250vw, 18px);
+    --font-size-title: max(2.778vw, 40px);
     --font-color-default: #000000;
     --font-color-title: #6c757d;
 
@@ -398,8 +398,8 @@ p{
 .slider-nav {
     border-radius: 50%;
     padding: max(0.583vw, 8px) max(0.483vw, 10px) !important;
-    width: max(2.563vw, 41px);
-    height: max(2.563vw, 41px);
+    width: max(3.125vw, 45px);
+    height: max(3.125vw, 45px);
     background-color: #FFF;
     color: var(--primary-red);
     font-size: max(1.094vw, 21px);
@@ -443,12 +443,12 @@ header.header{
     z-index: 999;
     width: 100%;
     transition: all var(--ease-long-transition);
-    padding: 2.250vw 10vw;
+    padding: 2.250vw 11.181vw;
     background-color: #fff;
 }
 
     header.header.scrolled{
-        padding: 1.063vw 10vw;
+        padding: max(0.972vw, 14px) 11.181vw;
     }
 
     header.header .header-logo a > img{
@@ -466,7 +466,7 @@ header.header{
 
         header.header .main-menu .menu-main-menu-container ul#nav li.menu-item a, 
         header.header .side-nav a{
-            font-size: max(1vw, 16px);
+            font-size: max(1.111vw, 16px);
             line-height: 1.2;
             color: var(--primary-text);
             transition: color var(--ease-short-transition);
@@ -493,6 +493,31 @@ header.header{
                 font-size: 0;
             }
 
+
+
+.accent-bg .accent-red{
+    position: absolute;
+    display: block;
+    background-color: var(--primary-red);
+}
+
+.accent-bg .accent-blue{
+    position: absolute;
+    display: block;
+    background-color: var(--primary-blue);
+}
+
+.accent-bg .accent-white{
+    position: absolute;
+    display: block;
+    background-color: var(--secondary-blue);
+}
+
+
+.accent-bg{
+    position: absolute;
+    display: block;
+}
 
 /* Mobile Navigation */
 header .navigation .nav-close, 
@@ -531,36 +556,30 @@ section#newsletter-section:after{
     position: relative;
     background-color: var(--primary-blue);
     color: #fff;
-    padding: 4.635vw 23.073vw 5.104vw 22.917vw;
+    padding: 6.181vw 28.194vw 6.806vw 28.056vw;
     text-align: center;
     overflow: hidden;
 }
 
-.newsletter-wrap::before{
-    content: '';
-    display: block;
-    position: absolute;
-    background-color: var(--primary-red);
-    left: -19.427vw;
-    top: -42.552vw;
-    width: 50.677vw;
-    height: 51.927vw;
-    z-index: 5;
+.newsletter-wrap .accent-bg{
     transform: rotate(60deg);
+    top: 9vw;
+    left: 32vw;
 }
 
-.newsletter-wrap::after{
-    content: '';
-    display: block;
-    position: absolute;
-    background-color: #FFF;
-    opacity: 0.8;
-    left: -0.427vw;
-    bottom: -25.552vw;
-    width: 33.677vw;
-    height: 30.927vw;
-    z-index: 5;
-    transform: rotate(60deg);
+.newsletter-wrap .accent-bg .accent-red{
+    top: -9vw;
+    left: -70vw;
+    width: clamp(63.611vw, 916px, 916px);
+    height: clamp(63.681vw, 917px, 917px);
+    
+}
+
+.newsletter-wrap .accent-bg .accent-white{
+    bottom: -70vw;
+    left: -4vw;
+    width: clamp(56.597vw, 815px, 815px);
+    height: clamp(56.597vw, 815px, 815px);
 }
 
 .newsletter-wrap .newsletter-content .newsletter-header {
@@ -574,12 +593,12 @@ section#newsletter-section:after{
 }
 
 .newsletter-content .newsletter-form input[type='email'] {
-    width: 25vw;
-    height: max(2.604vw, 50px);
+    width: max(32.153vw, 463px);
+    height: max(3.472vw, 50px);
     border-radius: 45px;
     border: unset;
     color: #000;
-    padding: 0.938vw 1.667vw;
+    padding: 1.250vw 2.292vw 1.181vw;
     font-family: var(--font-family-para);
     font-size: var(--font-size-default);
 }
@@ -589,9 +608,9 @@ section#newsletter-section:after{
 }
 
 .newsletter-content .newsletter-form .aios-btn.aios-btn-red{
-    height: max(2.604vw, 50px);
+    height: max(3.472vw, 50px);
     padding: 0.733vw 3.021vw;
-    margin-left: max(-2.083vw, -60px);
+    margin-left: max(-3.083vw, -60px);
     transition: all var(--ease-short-transition);
 }
 
@@ -611,7 +630,7 @@ section#icons-section{
 }
 
 section#icons-section .icons-wrap {
-    padding-bottom: 4.948vw;
+    padding: 0 19.653vw 6.319vw 20.069vw;
 }
 
 section#icons-section .icons-wrap .icons-container .icon {
@@ -888,3 +907,70 @@ section#innerpage-banner .innerpage-banner-wrap {
 }
 
 /* MEDIA QUERIES ARE AUTOMATICALLY REMOVED FROM THIS FILE, they must be placed in style-media-queries.css */
+
+ /* Blog Pages */
+ .blog-archive{
+    padding: 8.472vw 11.528vw 8.542vw;
+ }
+
+.blog-archive .blog-archive-wrap{
+    flex-flow: row wrap;
+}
+
+.blog-archive .blog-archive-wrap .category .post, .archive .post{
+    border-bottom: unset !important;
+}
+
+#content .blog-archive .blog-archive-wrap .category-blog{
+    width: calc(100% / 3);
+}
+
+.blog-archive .blog-archive-wrap .entry{
+    display: block;
+    width: 100%;
+    padding: 0 0.972vw;
+}
+
+.blog-archive .blog-archive-wrap h2, aside h2{
+    margin: unset !important;
+}
+
+#content .blog-archive .blog-archive-wrap .archive-thumbnail,
+#content .blog-archive .blog-archive-wrap .archive-content.archive-has-thumbnail{
+    float: unset; 
+    width: 100%;    
+}
+
+#content .blog-archive .blog-archive-wrap .archive-thumbnail img.wp-post-image{
+    width: 100%;
+    height: 100%;
+}
+
+.blog-archive .blog-archive-wrap .entry .archive-content-container{
+    padding: 2.153vw 0 0.417vw;
+}
+
+#content .blog-archive .blog-archive-wrap .entry .archive-date {
+    font-size: max(1.250vw,18px);
+    font-family: var(--font-family-para);
+}
+
+#content .blog-archive .blog-archive-wrap .entry .archive-subtitle {
+    font-size: max(1.667vw, 24px);
+}
+
+#content .blog-archive .blog-archive-wrap .entry p{
+    line-height: 1.444;
+    margin: 15px 0 22px;
+}
+
+#content .blog-archive .blog-archive-wrap .entry .archive-more{
+    font-style: normal;
+    font-weight: bold;
+    color: var(--primary-red);
+    transition: all var(--ease-short-transition);
+}
+
+#content .blog-archive .blog-archive-wrap .entry .archive-more:hover{
+    color: var(--primary-blue);
+}

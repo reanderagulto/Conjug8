@@ -16,32 +16,30 @@ section#hero-banner{
     z-index: 99;
 }
 
-.banner-container::before{
-    content: '';
-    display: block;
-    position: absolute;
-    background-color: var(--primary-red);
-    opacity: 0.8;
-    left: -18.938vw;
-    top: -52.063vw;
-    width: 80.556vw;
-    height: 80.556vw;
+
+.banner-container .accent-bg{
     transform: rotate(-150deg);
     z-index: -1;
+    top: 9vw;
+    left: 32vw;
 }
 
-.banner-container::after{
-    content: '';
-    display: block;
-    position: absolute;
-    background-color: var(--primary-blue);
+.banner-container .accent-bg .accent-red{
+    opacity: 0.8;
+    left: -20.708vw;
+    top: -30.063vw;
+    width: clamp(80.556vw, 1160px, 1160px);
+    height: clamp(80.556vw, 1160px, 1160px);
+    
+}
+
+.banner-container .accent-bg .accent-blue{
     opacity: 0.949;
-    left: -43.75vw;
-    top: 18.313vw;
-    width: max(50.938vw, 815px);
-    height: max(50.938vw, 815px);
-    transform: rotate(-150deg);
-    z-index: -1;
+    left: 0.25vw;
+    bottom: 32.313vw;
+    width: clamp(56.597vw, 815px, 815px);
+    height: clamp(56.597vw, 815px, 815px);
+    
 }
 
 .banner-container .banner-background {
@@ -50,6 +48,7 @@ section#hero-banner{
     left: 0;
     width: 100%;
     min-height: 100%;
+    z-index: -9;
 }
 
 .banner-container .banner-background canvas{
@@ -67,7 +66,7 @@ section#hero-banner{
 
     .banner-col {
         z-index: 99;
-        padding: 6.250vw 10.375vw 12.688vw;
+        padding: 6.875vw 11.528vw 14.028vw;
     }
 
     .banner-text-container {
@@ -77,7 +76,7 @@ section#hero-banner{
         width: 50%;
     }
         .banner-text-container h1 {
-            font-size: max(3vw, 48px);
+            font-size: max(3.333vw, 48px);
             font-weight: bold;
             line-height: 1.2;
         }
@@ -118,7 +117,7 @@ section#product-section {
 }
 
 .product-section-wrap {
-    padding: 7.750vw 0 6.625vw 10vw;;
+    padding: 8.611vw 0 7.014vw 11.458vw;
     overflow: hidden;
 }
 
@@ -144,7 +143,7 @@ section#product-section {
 }
 
 .product-slide {
-    padding-left: 1.719vw;
+    padding-left: 2.222vw;
 }
 
 .product-slide:hover{
@@ -225,7 +224,7 @@ section#about-section {
 section#about-section .about-wrap {
     display: flex;
     justify-content: flex-start;
-    padding: 4.010vw 0 4.010vw 10vw;
+    padding: 2.01vw 0 5.347vw 11.319vw;
 }
 
 section#about-section .about-content,
@@ -532,15 +531,15 @@ section#contact-section .contact-wrap .contact-form{
 
 /* iPad(landscape) | iPad(landscape) | Galaxy Tab 4 (landscape) | Galaxy Tab 3 (landscape) */ 
 @media only screen and (max-width: 1199px) {
-    .banner-container::before{
-        left: -29.938vw;
-        top: -57.063vw;
+    .banner-container .accent-bg{
+        top: 22vw;
+        left: 34vw;
     }
 
-    .banner-container::after{
-        left: -73.75vw;
-        top: 31.313vw;
+    .banner-col{
+        padding: 6.250vw 4.375vw 12.688vw;
     }
+
 } 
 
 @media only screen and (max-width: 991px) {

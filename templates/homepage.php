@@ -32,6 +32,10 @@ foreach ( $fields_to_get as $field ) {
                         <?php endif; ?>
                     </div>
                     <div class="banner-background">
+                        <div class="accent-bg">
+                            <div class="accent-red"></div>
+                            <div class="accent-blue"></div>
+                        </div>
                         <?php if(!empty($banner['background_image'])): ?>
                             <canvas style="background-image: url(<?php echo $banner['background_image']['url'];?>)"></canvas>
                         <?php endif; ?>

@@ -27,7 +27,6 @@
                 infinite: true,
                 // autoplay: true,
                 // autoplaySpeed: 3000,
-                variableWidth: true,
                 responsive: [
                     {
                       breakpoint: 992,

@@ -1,6 +1,10 @@
 			<!-- Start of Newsletter Section -->
 			<section id="newsletter-section">
 				<div class="newsletter-wrap">
+					<div class="accent-bg">
+						<div class="accent-red"></div>
+						<div class="accent-white"></div>
+					</div>
 					<div class="newsletter-content">
 						<h2 class="newsletter-header">Stay updated, stay informed with <br/ > our latest and upcoming activities</h2>
 						<div class="newsletter-form flex items-center justify-center">

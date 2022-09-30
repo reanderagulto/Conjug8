@@ -14,10 +14,8 @@
 
 	<div id="main-wrapper">
 
-
     <?php do_action('aios_landing_page_header'); ?>
     <?php do_action('aios_neighborhoods_header'); ?>
-
 
 	<header class="header">
 		<div class="header-wrap flex items-center justify-between">
@@ -64,7 +62,8 @@
 		!is_singular('board-members') && 
 		!is_post_type_archive( 'board-members' ) && 
 		!is_singular('events') && 
-		!is_post_type_archive( 'events' ) ): 
+		!is_post_type_archive( 'events' ) && 
+		!is_category( 'blog' ) ): 
 		?>
 
 		<?php

@@ -116,6 +116,32 @@
 	section#icons-section .icons-wrap{
         padding: 6.354vw 6vw 6.250vw 6vw;
     }
+
+	/* Blog Page */
+	#content .blog-archive .blog-archive-wrap .category-blog{
+		width: calc(100% / 2);
+	}
+
+	#content .blog-archive .blog-archive-wrap .entry p{
+		display: none;
+	}
+
+	.blog-archive .blog-archive-wrap .entry .archive-content-container{
+		text-align: center;
+	}
+
+	.blog-archive{
+		padding: 61px 19px 50px;
+	}
+
+	#content .blog-archive .blog-archive-wrap .entry .archive-date,
+	#content .blog-archive .blog-archive-wrap .entry .archive-more{
+		font-size: 14px;
+	}
+
+	#content .blog-archive .blog-archive-wrap .entry .archive-subtitle{
+		font-size: 16px;
+	}
 } 
 
 /* Galaxy Tab 3(portrait) | Galaxy S5(landscape) */ 

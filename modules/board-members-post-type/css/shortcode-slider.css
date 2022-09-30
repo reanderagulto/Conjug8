@@ -4,7 +4,7 @@
 *
 */
 section#founders-section .founder-wrap {
-    padding: 4.010vw 0 2.865vw 10vw;
+    padding: 4.010vw 0 7.917vw 11.528vw;
     position: relative;
 }
 
@@ -24,7 +24,7 @@ section#founders-section .founder-wrap {
 }
 
 .founder-slider .founder-slide {
-    padding-left: 1.615vw;
+    padding-left: max(2.222vw, 36px);
     transition: all var(--ease-short-transition);
 }
 
@@ -59,13 +59,14 @@ section#founders-section .founder-wrap {
 }
 
 .founder-slider .founder-slide .founder-info {
-    margin-top: 0.833vw;
+    margin-top: max(1.111vw, 16px);
 }
 
 .founder-slider .founder-slide .founder-info h3 {
     color: var(--primary-red);
     font-size: max(1.250vw, 24px);
     font-weight: bold;
+    margin-bottom: max(0.833vw, 12px);
 }
 
 .founder-slider .founder-slide .founder-info h3 span {
