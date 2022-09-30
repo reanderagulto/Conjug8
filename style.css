@@ -803,7 +803,7 @@ section#innerpage-banner::after{
 }
 
 section#innerpage-banner .innerpage-banner-wrap {
-    padding: 6.979vw 8.594vw 7.031vw;
+    padding: 8.125vw 11.667vw 8.194vw;
 }
 
 .innerpage-banner-wrap h1.inner-section-header {
@@ -973,4 +973,14 @@ section#innerpage-banner .innerpage-banner-wrap {
 
 #content .blog-archive .blog-archive-wrap .entry .archive-more:hover{
     color: var(--primary-blue);
+}
+
+.innerpage-banner-wrap p{
+    font-size: max(1.667vw, 24px);
+    color: #FFF;
+    margin-top: max(1.094vw, 1.458vw);
+}
+
+.blog-single .post.category-blog {
+    padding: 9.653vw 11.319vw 8.542vw !important;
 }

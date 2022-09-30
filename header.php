@@ -63,7 +63,8 @@
 		!is_post_type_archive( 'board-members' ) && 
 		!is_singular('events') && 
 		!is_post_type_archive( 'events' ) && 
-		!is_category( 'blog' ) ): 
+		!is_category( 'blog' ) && 
+		!is_single()): 
 		?>
 
 		<?php
@@ -71,6 +72,7 @@
 			$post_fields = get_fields( get_the_ID() );
 			$fields_to_get = array(
 				'title',
+				'post_image'
 			);
 			foreach ( $fields_to_get as $field ) {
 				${$field} = $post_fields[ 'global_' . $field ];
