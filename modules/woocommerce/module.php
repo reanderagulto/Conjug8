@@ -22,6 +22,8 @@ if( !class_exists('add_woocommerce_support') ){
             if( is_shop() ){
                 wp_enqueue_style( 'shop-style', get_stylesheet_directory_uri() . '/modules/woocommerce/css/shop.css' );
             }
+
+            
         }
 
     }

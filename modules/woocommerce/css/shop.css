@@ -1,7 +1,3 @@
-/*
-* Overrider of Woocommerce CSS
-*/
-
 .shop-container .shop-wrap .woocommerce .woocommerce-ordering, .woocommerce-page .woocommerce-ordering{
     float: unset;
     margin-bottom: 0;
@@ -80,9 +76,6 @@
     color: var(--primary-red);
 }
 
-/* 
-* Custom CSS for Shop page 
-*/
 .shop-container{
     background-color: var(--secondary-blue);
 }

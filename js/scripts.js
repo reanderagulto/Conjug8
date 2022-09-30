@@ -6,6 +6,7 @@
         function __construct() {
             onScrollFixed();
             burgerMenu();
+            onPlusMinus();
         }
         function onScrollFixed() {
             this.onScrollFixed = function () {
@@ -59,10 +60,23 @@
 					$menuBody.removeClass('active');
 				}
 			});
-
-
-
 		}
+
+        function onPlusMinus(){
+            $number = $('input[type="number"].qty');
+            $minus = $('input[type="button"].minus');
+            $plus = $('input[type="button"].plus');
+
+            $minus.on('click', function(){
+                if(parseInt($number.val()) > 1){
+                    $number.val(parseInt($number.val()) - 1);
+                }
+            });
+
+            $plus.on('click', function(){
+                $number.val(parseInt($number.val()) + 1);
+            });
+        }
         /**
          * Instantiate
          */

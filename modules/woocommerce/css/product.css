@@ -1,0 +1,104 @@
+.single-product {
+    background-color: var(--secondary-blue);
+}
+
+.single-product div#primary {
+    padding: 4.583vw 11.458vw 8.472vw;
+    margin-top: 8vw;
+}
+
+.single-product .container {
+    width: 100%;
+}
+
+.woocommerce .single-product .woocommerce-breadcrumb{
+    display: none;
+}
+
+.woocommerce .single-product div.product div.images .woocommerce-product-gallery__image:nth-child(n+2){
+    display: none;
+}
+
+.woocommerce .single-product div.product div.images{
+    margin-bottom: 0;
+}
+
+.woocommerce .single-product div.product .product_title{
+    font-size: var(--font-size-title);
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.woocommerce .single-product div.product p.price, .woocommerce .single-product div.product span.price{
+    font-size: max(2.222vw, 32px);
+    font-family: var(--font-family-default);
+    font-weight: bold;
+    color: var(--primary-blue);
+    margin-bottom: 26px;
+}
+
+.woocommerce .single-product div.product form.cart{
+    display: flex;
+    align-items: center;
+}
+
+.woocommerce .single-product .qty-container{
+    margin-right: 19px;
+    display: flex;
+}
+
+.woocommerce .single-product .quantity .qty{
+    height: 50px;
+    border: 0;
+    appearance: none;
+    -moz-appearance: textfield;
+    width: 1.631em;
+
+}
+
+.woocommerce .single-product .quantity .qty::-webkit-outer-spin-button,
+.woocommerce .single-product .quantity .qty::-webkit-inner-spin-button{
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.woocommerce .single-product .quantity .qty:focus-visible{
+    outline: 0;
+}
+
+.woocommerce .single-product div.product form.cart .button{
+    background-color: var(--primary-red);
+    color: #FFF;
+    border-radius: 45px;
+    transition: all var(--ease-short-transition);
+    font-size: 16px;
+    padding: 14px 39px;
+}
+
+.woocommerce .single-product div.product form.cart .button:hover{
+    background-color: #FFF;
+    color: var(--primary-red);
+    border: 1px solid var(--primary-red);
+}
+
+.woocommerce .single-product .qty-container input[type=button].minus,
+.woocommerce .single-product .qty-container input[type=button].plus{
+    height: 50px;
+    padding: 0 15px !important;
+    border: 0;
+    background-color: #FFF;
+    vertical-align: top;
+    padding: 0 10px;
+    font-size: 32px;
+    font-weight: bold;
+}
+
+.woocommerce .single-product .qty-container input[type=button].minus{
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+}
+
+.woocommerce .single-product .qty-container input[type=button].plus{
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+}

@@ -25,6 +25,7 @@ get_header( 'shop' ); ?>
 	<div class="single-product-header-wrap">
 		<?php dynamic_sidebar( 'wc-product-header-widget' )?>
 	</div>
+	<div class="single-product">
 	<?php
 		/**
 		 * woocommerce_before_main_content hook.
@@ -50,16 +51,7 @@ get_header( 'shop' ); ?>
 		 */
 		do_action( 'woocommerce_after_main_content' );
 	?>
-
-	<?php
-		/**
-		 * woocommerce_sidebar hook.
-		 *
-		 * @hooked woocommerce_get_sidebar - 10
-		 */
-		do_action( 'woocommerce_sidebar' );
-	?>
-
+	</div>
 <?php
 get_footer( 'shop' );
 
