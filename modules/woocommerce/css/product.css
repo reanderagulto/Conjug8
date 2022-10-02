@@ -107,3 +107,114 @@
     margin-bottom: max(1.875vw, 27px);
 
 }
+
+.woocommerce .single-product .single-product-summary{
+    margin-bottom: max(4.653vw, 67px);
+}
+
+.single-product-details-related .product-details {
+    padding: 4.167vw 4.306vw 4.167vw 3.611vw;
+    background-color: #FFF;
+    margin-right: max(2.083vw, 30px);
+    width: 75%;
+}
+
+.single-product-details-related .related-products{
+    width: 24%;
+}
+
+section.related.products h2{
+    margin-bottom: max(2.014vw, 29px);
+    font-size: max(2.222vw, 32px);
+    font-weight: bold;
+    color: var(--primary-red);
+}
+
+section.related.products .products.columns-4 {
+    display: flex; 
+    flex-direction: column;
+}
+
+.woocommerces ection.related.products ul.products.columns-4 li.product, .woocommerce-page ul.products.columns-4 li.product{
+    width: 100%;
+    margin: 0 0 25px 0;
+}
+
+section.related.products .products .loop-product-wrap{
+    background-color: #FFF;
+    transition: all var(--ease-short-transition);
+}
+
+section.related.products .products .loop-product-wrap:hover{
+    background-color: var(--primary-blue);
+}
+
+section.related.products .products .loop-product-wrap:hover .loop-product-content h2{
+    color: #FFF;
+}
+
+section.related.products .products .loop-product-wrap .loop-product-content h2{
+    padding: 22px 19px; 
+    color: var(--primary-blue);
+    transition: all var(--ease-short-transition);
+}
+
+.woocommerce section.related.products ul.products li.product .button{
+    display: none;
+}
+
+.woocommerce section.related.products ul.products li.product a img{
+    margin: unset;
+}
+
+.single-product-details-related .product-details .detail {
+    margin-bottom:  24px;
+}
+
+.single-product-details-related .product-details .detail h2{
+    font-size: max(1.667vw, 24px);
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+
+@media only screen and (max-width: 767px) { 
+    .single-product div#primary{
+        padding: 50px 19px 77px;
+        margin-top: 81px;
+    }
+
+    .woocommerce .single-product .single-product-summary {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .woocommerce .single-product .single-product-summary div.summary {
+        margin-top: 28px;
+        margin-bottom: 0;
+    }
+    
+    .woocommerce .single-product div.product form.cart {
+        justify-content: center;
+        margin-bottom: 0;
+    }
+    
+    .single-product-details-related {
+        flex-direction: column;
+    }
+    
+    .single-product-details-related .product-details {
+        width: 100%;
+        margin-right: unset;
+        margin-bottom: 57px;
+    }
+    
+    .single-product-details-related .related-products{
+        width: 100%;
+    }
+
+    section.related.products h2{
+        text-align: center;
+    }
+    
+}

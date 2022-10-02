@@ -31,3 +31,8 @@ if( !class_exists('add_woocommerce_support') ){
     $add_woocommerce_support = new add_woocommerce_support();
     
 }
+
+// Woocommerce Hook File
+if ( ! class_exists( 'woocommerce_hooks' ) && file_exists( __DIR__ . '/woocommerce-hooks.php' ) ) {
+    require_once( __DIR__ . '/woocommerce-hooks.php' );
+}

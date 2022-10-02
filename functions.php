@@ -75,4 +75,3 @@ function ai_starter_theme_require_child_modules () {
     }
 }
 add_action( 'after_setup_theme', 'ai_starter_theme_require_child_modules' );
-
