@@ -984,3 +984,27 @@ section#innerpage-banner .innerpage-banner-wrap {
 .blog-single .post.category-blog {
     padding: 9.653vw 11.319vw 8.542vw !important;
 }
+
+/* Woocommerce */
+.woocommerce-message {
+    border-top-color: var(--primary-red);
+}
+
+.woocommerce-message::before{ 
+    background-color: #fff;
+}
+
+.woocommerce a.button{
+    background-color: var(--primary-red);
+    color: #FFF;
+    border-radius: 45px;
+    transition: all var(--ease-short-transition);
+    font-size: 16px;
+    padding: 14px 39px;
+}
+
+.woocommerce a.button:hover{
+    background-color: #FFF;
+    color: var(--primary-red);
+    border: 1px solid var(--primary-red);
+}

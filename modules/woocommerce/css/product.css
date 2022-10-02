@@ -102,3 +102,8 @@
     border-top-right-radius: 8px;
     border-bottom-right-radius: 8px;
 }
+
+.woocommerce .single-product .woocommerce-product-details__short-description{
+    margin-bottom: max(1.875vw, 27px);
+
+}
