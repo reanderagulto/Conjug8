@@ -19,7 +19,23 @@ defined( 'ABSPATH' ) || exit;
 
 get_header( 'shop' );
 
+$shop = get_option( 'woocommerce_shop_page_id' );
+
+$title = get_field('global_title', $shop);
+
 ?>
+
+<section id="innerpage-banner">
+	<div class="innerpage-banner-wrap">
+		<h1 class="inner-section-header">
+			<?php echo (!empty($title['main']) ? $title['main'] : get_the_title($shop) ); ?>
+		</h1>
+	</div>
+	<div class="accent-bg">
+		<div class="accent-red"></div>
+		<div class="accent-dark-blue"></div>
+	</div>
+</section>
 
 <div class="main_content-category shop-container" role="main">
 	<div class="shop-wrap">

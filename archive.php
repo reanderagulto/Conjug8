@@ -5,6 +5,10 @@
             <div class="innerpage-banner-wrap">
                 <h1 class="inner-section-header">Blog</h1>
             </div>
+            <div class="accent-bg">
+                <div class="accent-red"></div>
+                <div class="accent-dark-blue"></div>
+            </div>
         </section>
         <?php 
             $post = $posts[0]; // Hack. Set $post so that the_date() works. 

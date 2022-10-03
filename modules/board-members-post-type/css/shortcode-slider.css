@@ -23,6 +23,11 @@ section#founders-section .founder-wrap {
     color: #FFF;
 }
 
+/* .founder-slider .slick-slide{
+	width: max(24.306vw, 350px) !important;
+	height: max(32.847vw, 473px) !important;
+} */
+
 .founder-slider .founder-slide {
     padding-left: max(2.222vw, 36px);
     transition: all var(--ease-short-transition);

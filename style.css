@@ -513,6 +513,11 @@ header.header{
     background-color: var(--secondary-blue);
 }
 
+.accent-bg .accent-dark-blue{
+    position: absolute;
+    display: block;
+    background-color: var(--secondary-darker-blue);
+}
 
 .accent-bg{
     position: absolute;
@@ -536,38 +541,22 @@ section#newsletter-section{
     display: block;
     width: 100%;
     overflow: hidden;
-}
-
-section#newsletter-section:after{
-    content: '';
-    display: block;
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 23.542vw;
-    height: 100%;
-    background-image: url(./images/newsletter-right.png);
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: center;
+    background-color: var(--primary-blue);
+    padding: 6.181vw 28.194vw 6.806vw 28.056vw;
 }
 
 .newsletter-wrap {
-    position: relative;
-    background-color: var(--primary-blue);
     color: #fff;
-    padding: 6.181vw 28.194vw 6.806vw 28.056vw;
     text-align: center;
-    overflow: hidden;
 }
 
-.newsletter-wrap .accent-bg{
+section#newsletter-section .accent-bg{
     transform: rotate(60deg);
-    top: 9vw;
-    left: 32vw;
+    top: 8vw;
+    left: 27vw;
 }
 
-.newsletter-wrap .accent-bg .accent-red{
+section#newsletter-section .accent-bg .accent-red{
     top: -9vw;
     left: -70vw;
     width: clamp(63.611vw, 916px, 916px);
@@ -575,7 +564,7 @@ section#newsletter-section:after{
     
 }
 
-.newsletter-wrap .accent-bg .accent-white{
+section#newsletter-section .accent-bg .accent-white{
     bottom: -70vw;
     left: -4vw;
     width: clamp(56.597vw, 815px, 815px);
@@ -624,7 +613,6 @@ section#newsletter-section:after{
 * Icons
 *
 */
-
 section#icons-section{
     background-color: var(--secondary-blue);
 }
@@ -774,42 +762,41 @@ section#innerpage-banner {
     background-color: var(--primary-blue);
     position: relative;
     overflow: hidden;
+    padding: 8.125vw 11.667vw 8.194vw;
 }
 
-section#innerpage-banner::before{
-    content: '';
-    display: block;
-    position: absolute;
-    background-color: var(--primary-red);
-    right: -5.052vw;
-    top: -19.375vw;
-    width: 32.292vw;
-    height: 26.042vw;
-    z-index: 3;
+section#innerpage-banner .accent-bg{
     transform: rotate(-30deg);
+    right: 18vw;
+    top: -27vw;
 }
 
-section#innerpage-banner::after{
-    content: '';
-    display: block;
-    position: absolute;
-    background-color: var(--secondary-darker-blue);
-    right: -9.531vw;
-    bottom: -23.125vw;
-    width: 35.521vw;
-    height: 28.802vw;
-    z-index: 1;
-    transform: rotate(-30deg);
+section#innerpage-banner .accent-bg .accent-red{
+    width: clamp(80.556vw, 1160px, 1160px);
+    height: clamp(80.556vw, 1160px, 1160px);
+    right: -57.052vw;
+    top: -48.375vw;
+}
+
+section#innerpage-banner .accent-bg .accent-dark-blue{
+    width: clamp(63.611vw, 916px, 916px);
+    height: clamp(63.611vw, 916px, 916px);
+    right: -23.531vw;
+    bottom: -98.125vw;
 }
 
 section#innerpage-banner .innerpage-banner-wrap {
-    padding: 8.125vw 11.667vw 8.194vw;
+    
 }
 
 .innerpage-banner-wrap h1.inner-section-header {
     color: #FFF;
     font-size: max(2.500vw, 30px);
     font-weight: bold;
+}
+
+#content h1, aside h1{
+    margin: unset;
 }
 
 
@@ -942,8 +929,10 @@ section#innerpage-banner .innerpage-banner-wrap {
 }
 
 #content .blog-archive .blog-archive-wrap .archive-thumbnail img.wp-post-image{
-    width: 100%;
-    height: 100%;
+    width: max(24.167vw, 348px);
+    height: max(14.722vw, 212px);
+    object-fit: cover;
+    object-position: center;
 }
 
 .blog-archive .blog-archive-wrap .entry .archive-content-container{

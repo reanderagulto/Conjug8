@@ -31,13 +31,13 @@ foreach ( $fields_to_get as $field ) {
                             <?php echo $banner['content']; ?>
                         <?php endif; ?>
                     </div>
+                    <div class="accent-bg">
+                        <div class="accent-red"></div>
+                        <div class="accent-blue"></div>
+                    </div>
                     <div class="banner-background">
-                        <div class="accent-bg">
-                            <div class="accent-red"></div>
-                            <div class="accent-blue"></div>
-                        </div>
                         <?php if(!empty($banner['background_image'])): ?>
-                            <canvas style="background-image: url(<?php echo $banner['background_image']['url'];?>)"></canvas>
+                            <img src="<?php echo $banner['background_image']['url'];?>" width="<?php echo $banner['background_image']['width'];?>" height="<?php echo $banner['background_image']['height'];?>">
                         <?php endif; ?>
                     </div>
                 </div>

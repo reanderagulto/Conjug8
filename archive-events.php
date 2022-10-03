@@ -10,6 +10,10 @@ get_header();
             Conjug8 Events
         </h1>
     </div>
+    <div class="accent-bg">
+		<div class="accent-red"></div>
+		<div class="accent-dark-blue"></div>
+	</div>
 </section>
 
 <div id="<?php echo ai_starter_theme_get_content_id('content-full') ?>" class="events-archive">
@@ -33,13 +37,13 @@ get_header();
 
                 $group_content = '';
 
+                $group_content .= '<section id="events-section">
+                            <div class="events-wrap">
+                                <h2 class="section-header text-center">Upcoming Events</h2>';
+
                 foreach( $groupPosts as $posts ) {
                     
-                    $group_content .= '<section id="events-section">
-                            <div class="events-wrap">
-                                <h2 class="section-header text-center">Upcoming Events</h2>
-                                <div class="events-content flex flex-wrap-wrap items-center justify-center">
-                    ';
+                    $group_content .= '<div class="events-content flex flex-wrap-wrap items-center justify-center">';
                     foreach( $posts as $key => $post ) {
                         $post_id = $post->ID;
                         $post_title = $post->post_title;
@@ -62,12 +66,10 @@ get_header();
                         ';
                     }          
 
-                    $group_content .= '
-                            </div>
-                        </div>
-                    </div>
-                    ';
+                    $group_content .= '</div>';
                 } 
+                $group_content .= '</div>
+                </div>';
                 echo $group_content;
                 wp_reset_postdata();
                 wp_reset_query();
@@ -97,12 +99,16 @@ get_header();
                 $groupPosts = array_chunk( $events_posts, 6 );
                 $group_content = '';
 
+                $group_content .= '
+                    <section id="completed-events-section">
+                        <div class="completed-events-wrap">
+                        <h2 class="section-header text-center">Completed Events</h2>
+                ';
+
                 foreach( $groupPosts as $posts ) {
 
-                    $group_content .= '<section id="completed-events-section">
-                            <div class="completed-events-wrap">
-                                <h2 class="section-header text-center">Completed Events</h2>
-                                <div class="completed-events-content flex flex-wrap-wrap items-center">
+                    $group_content .= '
+                        <div class="completed-events-content flex flex-wrap-wrap items-center">
                     ';
             
                     foreach( $posts as $key => $post ) {
@@ -130,12 +136,11 @@ get_header();
                         ';
                     }
             
-                    $group_content .= '
-                            </div>
-                        </div>
-                    </div>
-                    ';
+                    $group_content .= '</div>';
                 }
+
+                $group_content .= '</div>
+                </div>';
             
                 echo $group_content;
                 wp_reset_postdata();

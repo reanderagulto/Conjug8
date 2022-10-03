@@ -51,16 +51,16 @@ section#hero-banner{
     z-index: -9;
 }
 
-.banner-container .banner-background canvas{
+.banner-container .banner-background img{
     position: absolute;
-    background-repeat: no-repeat;
+    /* background-repeat: no-repeat;
     background-size: cover;
-    background-position: center center;
+    background-position: center center; */
+    object-fit: cover;
     top: 0;
     left: 0;
     min-height: 100%;
     width: 100%;
-    height: 100vh;
     z-index: -99;
 }
 
@@ -132,12 +132,12 @@ section#product-section {
     margin: 0 0.521vw;
 }
 
-.product-nav .aios-btn-sm.aios-btn-red:hover{
+.product-nav .aios-btn.aios-btn-red:hover{
     background-color: #fff;
     color: var(--primary-red);
 }
 
-.product-nav .slider-nav.aios-btn-sm.aios-btn-red:hover{
+.product-nav .slider-nav.aios-btn.aios-btn-red:hover{
     background-color: var(--primary-red);
     color: #FFF;
 }
@@ -255,7 +255,7 @@ section#about-section .about-content p{
     margin-bottom: 2.552vw;
 }
 
-section#about-section .about-content .aios-btn-sm.aios-btn-red:hover {
+section#about-section .about-content .aios-btn.aios-btn-red:hover {
     background-color: #fff;
     color: var(--primary-red);
 }
@@ -531,22 +531,23 @@ section#contact-section .contact-wrap .contact-form{
 
 /* iPad(landscape) | iPad(landscape) | Galaxy Tab 4 (landscape) | Galaxy Tab 3 (landscape) */ 
 @media only screen and (max-width: 1199px) {
-    .banner-container .accent-bg{
-        top: 22vw;
-        left: 34vw;
-    }
-
     .banner-col{
         padding: 6.250vw 4.375vw 12.688vw;
+    }
+
+    .banner-container .accent-bg .accent-red{
+        left: -298.2px;
+        top: -433px;
+    }
+    
+    .banner-container .accent-bg .accent-blue{
+        left: 3.6px;
+        bottom: 465.3px;
     }
 
 } 
 
 @media only screen and (max-width: 991px) {
-    .banner-container {
-        min-height: 100vh !important;
-    }
-
     .banner-container .banner-background{
         min-height: 100vh;
         height: 100%;
@@ -567,17 +568,20 @@ section#contact-section .contact-wrap .contact-form{
         z-index: -9;
     }
 
-    .banner-container::before{
-        left: -19.938vw;
-        top: -72.063vw;
+    .banner-container .accent-bg{
+        top: -154.29px;
+        left: 654.06px;
+    }
+    
+    .banner-container .accent-bg .accent-red{
         opacity: 0.9;
     }
-
-    .banner-container::after{
-        left: -73.75vw;
-        top: 25.313vw;
+    
+    .banner-container .accent-bg .accent-blue{
+        left: 214.6px;
+      bottom: 460.3px;
     }
-
+    
     .banner-text-container{
         width: 100%
     }

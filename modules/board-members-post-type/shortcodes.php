@@ -124,8 +124,8 @@ if( !class_exists( 'agentpro_board_members_shortcodes' ) ) {
                             <div class="board-info">
                                 <a href="' . $post_permalink . '">
                                     <div class="img-container">
-                                        <canvas width="350" height="473"></canvas>
-                                        <img src="' . $post_thumbnail_url . '" class="img-fluid" width="350" height="473" alt="' . $post_title . '">
+                                        <canvas width="348" height="389"></canvas>
+                                        <img src="' . $post_thumbnail_url . '" class="img-fluid" width="348" height="389" alt="' . $post_title . '">
                                     </div>
                                     <div class="content">
                                         <h3 class="section-header">
@@ -225,8 +225,8 @@ if( !class_exists( 'agentpro_board_members_shortcodes' ) ) {
                             <div class="founder-slide">
                                 <a href="' . $post_permalink . '">
                                     <div class="founder-img">
-                                        <canvas width="340" height="473"></canvas>
-                                        <img src="' . $post_thumbnail_url . '" width="340" height="473" alt="' . $post_title . '"/>
+                                        <canvas width="348" height="389"></canvas>
+                                        <img src="' . $post_thumbnail_url . '" width="348" height="389" alt="' . $post_title . '"/>
                                     </div>
                                     <div class="founder-info">
                                         <h3>' . $post_title . ' <span>' . $founder_info['title'] . '</span></h3>

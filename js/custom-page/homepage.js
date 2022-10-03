@@ -20,7 +20,7 @@
 
             let $productSlider = jQuery('.product-slider');
             $productSlider.slick({
-                slidesToShow: 3,
+                slidesToShow: 4,
                 slidesToScroll: 1,
                 arrows: true,
                 dots: false,

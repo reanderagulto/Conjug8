@@ -60,7 +60,7 @@
 		!is_singular('board-members') && !is_post_type_archive( 'board-members' ) && 
 		!is_singular('events') && !is_post_type_archive( 'events' ) && 
 		!is_category( 'blog' ) && !is_single() && 
-		!is_product() ): 
+		!is_product() && !is_shop() ): 
 		?>
 
 		<?php
@@ -78,8 +78,12 @@
 		<section id="innerpage-banner">
 			<div class="innerpage-banner-wrap">
 				<h1 class="inner-section-header">
-					<?php echo (!empty($title['main']) ? $title['main'] : get_the_title( ) ); ?>
+					<?php echo (!empty($title['main']) ? $title['main'] : get_the_title() ); ?>
 				</h1>
+			</div>
+			<div class="accent-bg">
+				<div class="accent-red"></div>
+				<div class="accent-dark-blue"></div>
 			</div>
 		</section>
 		

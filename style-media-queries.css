@@ -7,8 +7,44 @@
  
 /* iPad(landscape) | iPad(landscape) | Galaxy Tab 4 (landscape) | Galaxy Tab 3 (landscape) */ 
 @media only screen and (max-width: 1199px) {
-	.newsletter-wrap::after{
-		left: -4.427vw;
+	.newsletter-wrap .accent-bg .accent-red{
+		top: -139.6px;
+		left: -952px;
+	}
+	
+	.newsletter-wrap .accent-bg .accent-white{
+		bottom: -994px;
+		left: -12.6px;
+	}
+
+	section#newsletter-section:after{
+		right: -30%;
+		width: 100%;
+	}
+
+	section#newsletter-section .accent-bg {
+		top: 95.92px;
+		left: 323.73px;
+	}
+	
+	section#newsletter-section .accent-bg .accent-red {
+		top: -117.91px;
+		left: -982.3px;
+	}
+	
+	section#newsletter-section .accent-bg .accent-white {
+		bottom: -994.3px;
+    	left: -30.96px;
+	}
+
+	section#innerpage-banner .accent-bg .accent-red {
+		right: -952px;
+		top: -738px;
+	}
+	
+	section#innerpage-banner .accent-bg .accent-dark-blue {
+		right: -257.1px;
+		bottom: -1355.5px;
 	}
 } 
 
@@ -93,6 +129,11 @@
 		padding: 2vw 6.375vw;
 	}
 
+	section#newsletter-section .accent-bg{
+		top: 79.28px;
+		left: 267.57px;
+	}
+
 	/* The following are used on inner pages. Please edit carefully. */
 	.inner {
 	    width: 100%;
@@ -142,6 +183,21 @@
 	#content .blog-archive .blog-archive-wrap .entry .archive-subtitle{
 		font-size: 16px;
 	}
+
+	section#innerpage-banner .accent-bg {
+		right: 216px;
+		top: -323.73px;
+	}
+
+	section#innerpage-banner .accent-bg .accent-dark-blue {
+		right: -262.1px;
+		bottom: -1351.5px;
+	}
+	
+	section#innerpage-banner .accent-bg .accent-red {
+		right: -962px;
+		top: -741px;
+	}
 } 
 
 /* Galaxy Tab 3(portrait) | Galaxy S5(landscape) */ 
@@ -182,9 +238,30 @@
 		font-size: 24px;
 	}
 
-	.newsletter-wrap {
+	section#newsletter-section {
 		display: block;
-		padding: 151px 42px;
+		padding: 184px 38px 62px;
+	}
+
+	section#newsletter-section .accent-bg {
+		position: relative;
+		display: inline-block;
+		height: 100%;
+		width: 100%;
+		min-height: 150px;
+		top: 0px;
+		left: 0px;
+	}
+	
+	section#newsletter-section .accent-bg .accent-red {
+		top: -924px;
+		left: -558px;
+	}
+	
+	section#newsletter-section .accent-bg .accent-white {
+		bottom: unset;
+		top: 22px;
+		left: -681px;
 	}
 	
 	.newsletter-form.flex.items-center.justify-center {
@@ -217,7 +294,7 @@
 		right: -29.188vw;
 	}
 
-	section#innerpage-banner .innerpage-banner-wrap{
+	section#innerpage-banner{
         padding: 51px 39px 189px;
         text-align: center;
     }
@@ -233,7 +310,28 @@
 	.blog-single .post.category-blog {
 		padding: 39px 20px 51px !important;
 	}
+
+	section#innerpage-banner .accent-bg {
+		position: relative;
+		display: inline-block;
+		height: 100%;
+		width: 100%;
+		min-height: 150px;
+		top: 0px;
+		left: 0px;
+		transform: rotate(30deg);
+	}
 	
+	section#innerpage-banner .accent-bg .accent-red {
+		top: 48px;
+		left: 425px;
+	}
+	
+	section#innerpage-banner .accent-bg .accent-dark-blue{
+		bottom: unset;
+		top: 256px;
+		left: -522px;
+	}
 
 
 }
@@ -243,5 +341,27 @@
 	.aios-btn{
 		padding: max(0.729vw, 14px) max(2.9vw, 20px);
 	}
+
+	section#newsletter-section .accent-bg .accent-red{
+		top: -923px;
+		left: -623px;
+	}
+
+	section#newsletter-section .accent-bg .accent-white{
+		top: 22px;
+		left: -760px;
+	}
+
+	section#innerpage-banner .accent-bg .accent-red {
+		top: 47px;
+		left: 287px;
+	}
+	
+	section#innerpage-banner .accent-bg .accent-dark-blue{
+		bottom: unset;
+		top: 222px;
+		left: -654px;
+	}
+	
 }
  
