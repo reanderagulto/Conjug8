@@ -406,6 +406,9 @@ p{
     transition: all var(--ease-short-transition);
 }
 
+.slider-nav i{
+    font-style: normal !important;
+}
 
 /* 
 * 
@@ -996,4 +999,13 @@ section#innerpage-banner .innerpage-banner-wrap {
     background-color: #FFF;
     color: var(--primary-red);
     border: 1px solid var(--primary-red);
+}
+
+.woocommerce a.added_to_cart{
+    display: none;
+}
+
+.woocommerce #respond input#submit.loading::after, .woocommerce a.button.loading::after, .woocommerce button.button.loading::after, .woocommerce input.button.loading::after{
+    top: 33%;
+    right: 0.7em;
 }

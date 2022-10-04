@@ -50,7 +50,7 @@ foreach ( $fields_to_get as $field ) {
 <!-- End of Topfold Banner -->
 
 <!-- Start of Products Slider Section -->
-<?php echo do_shortcode('[featured_products_slider]'); ?>
+<?php echo do_shortcode('[products_slider]'); ?>
 <!-- End of Products Slider Section -->
 
 <!-- Start of Icons  -->

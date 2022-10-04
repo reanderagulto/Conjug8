@@ -17,7 +17,9 @@ if(!class_exists('woocommerce_hooks')) {
             /* 
             * Add actions before updating/reordering
             */   
-            $this->product_details();         
+            $this->product_details();
+            add_action( 'add_meta_boxes', [$this, 'add_featured_metabox'] );
+            add_action( 'save_post', [$this, 'save_featured_metabox'] );
         }        
 
         function product_details(){
@@ -89,8 +91,35 @@ if(!class_exists('woocommerce_hooks')) {
             apply_filters('woocommerce_product_related_products_heading', __( 'Other Products', 'woocommerce' ));
         }
 
-        function related_products(){
+        function add_featured_metabox(){
+            add_meta_box( 'featured_product', __('Featured Product', 'aios-textdomain'), [$this, 'display_featured_metabox'], 'product', 'side', 'high' );
+        }
 
+        function display_featured_metabox( $post ){
+            wp_nonce_field( basename( __FILE__ ), 'featured_product_nonce' );
+            $stored_meta = get_post_meta( $post->ID ); ?>
+            <label for="featured-product">
+                <input type="checkbox" name="featured-product" id="featured-product" value="yes" <?php if ( isset ( $stored_meta['featured-product'] ) ) checked( $stored_meta['featured-product'][0], 'yes' ); ?> />
+                <?php _e( 'Is featured?', 'aios-textdomain' )?>
+            </label>
+        <?php }
+
+        function save_featured_metabox( $post_id ) {
+            $is_autosave = wp_is_post_autosave( $post_id );
+            $is_revision = wp_is_post_revision( $post_id );
+            $is_valid_nonce = ( isset( $_POST[ 'featured_product_nonce' ] ) && wp_verify_nonce( $_POST[ 'featured_product_nonce' ], basename( __FILE__ ) ) ) ? 'true' : 'false';
+
+            // Exits script depending on save status
+            if ( $is_autosave || $is_revision || !$is_valid_nonce ) {
+                return;
+            }
+
+            // Checks for input and saves - save checked as yes and unchecked at no
+            if( isset( $_POST[ 'featured-product' ] ) ) {
+                update_post_meta( $post_id, 'featured-product', 'yes' );
+            } else {
+                update_post_meta( $post_id, 'featured-product', 'no' );
+            }
         }
     }
 

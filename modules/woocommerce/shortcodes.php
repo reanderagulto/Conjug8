@@ -8,10 +8,11 @@ if( !class_exists('woocommerce_featured_product_slider')){
         *
         */
         function __construct(){
-            add_shortcode( 'featured_products_slider', [ $this, 'featured_product_slider' ] );
+            add_shortcode( 'products_slider', [ $this, 'products_slider' ] );
+            add_shortcode( 'featured_products_slider', [ $this, 'featured_products_slider' ] );
         }
 
-        public function featured_product_slider( $atts ){
+        public function products_slider( $atts ){
             $atts = shortcode_atts( [
                 'posts_per_page' => -1,
                 'order' => 'ASC',
@@ -21,16 +22,6 @@ if( !class_exists('woocommerce_featured_product_slider')){
             wp_enqueue_script( 'product-slider', get_stylesheet_directory_uri() . '/modules/woocommerce/js/product.js' );
 
             extract( $atts ); // create variables using the above array keys
-
-            get_header();
-            $post_id = get_the_ID();
-            $post_fields = get_fields( );
-            $fields_to_get = array(
-                'product_section',
-            );
-            foreach ( $fields_to_get as $field ) {
-                ${$field} = $post_fields[ $field ];
-            }
 
             $args = [
                 'post_type' => 'product',
@@ -93,6 +84,80 @@ if( !class_exists('woocommerce_featured_product_slider')){
             }
             else{
                 $return = "No Post Found";
+            }
+            return $return;
+        }
+
+        public function featured_products_slider( $atts ){
+            $atts = shortcode_atts( [
+                'posts_per_page' => -1,
+                'order' => 'ASC',
+            ], $atts );
+
+            extract( $atts ); // create variables using the above array keys
+            
+            wp_enqueue_style( 'product-slider', get_stylesheet_directory_uri() . '/modules/woocommerce/css/product.css' );
+            wp_enqueue_script( 'product-slider', get_stylesheet_directory_uri() . '/modules/woocommerce/js/product.js' );
+
+            $args = [
+                'post_type' => 'product',
+                'post_status' => 'publish',
+                'order' => $order,
+                'posts_per_page' => $posts_per_page,
+                'meta_query' =>[
+                    [
+                        'key' => 'featured-product',
+                        'value' => 'yes',
+                        'compare' => '='
+                    ]
+                ],
+            ];
+
+            $products_query = new WP_Query( $args );
+            $products_total = $products_query->post_count;
+
+            if($products_total > 0){
+                $return = '';
+                $posts = $products_query->posts;
+
+                $return .= '
+                <section class="featured-products">
+                    <div class="featured-products-wrap">
+                        <div class="featured-product-slider">';
+                            foreach( $posts as $key => $post ) {
+                                $post_id = $post->ID;
+                                $post_title = $post->post_title;
+                                $post_thumbnail_url = get_the_post_thumbnail_url( $post_id, 'full' );
+
+                                $return .= '
+                                    <div class="product-slide">
+                                        <div class="img-container">
+                                            <canvas width="482" height="347"></canvas>
+                                            <img src="' . $post_thumbnail_url . '" width="482" height="347"/>
+                                        </div>
+                                        <div class="product-info">
+                                            <h3 class="section-header">' . $post_title . '</h3>
+                                            <a href="?add-to-cart=' . $post_id . '"  data-quantity="1"  class="aios-btn-sm aios-btn-red button product_type_simple add_to_cart_button ajax_add_to_cart" data-product_id="' . $post_id . '" data-product_sku="" aria-label="Add “' . $post_title .  '” to your cart rel="nofollow">Add to Cart</a>
+                                        </div>
+                                    </div>';
+                            }
+                $return .= '
+                        </div>
+                        <div class="slider-navs">
+                            <button type="button" class="aios-btn aios-btn-transparent slider-nav prod-prev"><i class="ai-font-arrow-h-p"></i></button>
+                            <button type="button" class="aios-btn aios-btn-transparent slider-nav prod-next"><i class="ai-font-arrow-h-n"></i></button>
+                        </div>
+                        <div class="accent-bg">
+                            <div class="accent-red">
+                        </div>
+                    </div>
+                </section>';
+
+                wp_reset_postdata();
+                wp_reset_query();
+            }
+            else{
+                $return = "No Product(s) Found";
             }
             return $return;
         }

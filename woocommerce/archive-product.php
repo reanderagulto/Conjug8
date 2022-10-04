@@ -39,6 +39,8 @@ $title = get_field('global_title', $shop);
 
 <div class="main_content-category shop-container" role="main">
 	<div class="shop-wrap">
+		<?php echo do_shortcode('[featured_products_slider]'); ?>
+
 		<!-- Product Loop -->
 		<?php if( woocommerce_product_loop() ): ?>
 			<!--  Woocommerce Before Loop -->

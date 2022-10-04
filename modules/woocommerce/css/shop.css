@@ -68,7 +68,7 @@
     margin: 20px max(1.806vw, 26px);
     transition: all var(--ease-short-transition);
     font-size: 16px;
-    padding: 14px 19px;
+    padding: 14px 30px;
 }
 
 .woocommerce .shop-container .shop-wrap ul.products li.product .button:hover{
@@ -85,6 +85,7 @@
 }
 
 .shop-container .shop-wrap .shop-before-loop{
+    margin-top: max(5vw, 72px);
     margin-bottom: max(2.083vw, 30px);
 }
 
@@ -144,6 +145,14 @@
 @media only screen and (max-width: 767px) {
     .woocommerce .shop-container .shop-wrap ul.products.columns-3 li.product, .woocommerce-page ul.products.columns-3 li.product{
         width: 100%;
+    }
+
+    .shop-container .shop-wrap .aios-btn.aios-btn-red{
+        display: none;
+    }
+
+    .shop-container .shop-wrap .woocommerce .woocommerce-ordering, .woocommerce-page .woocommerce-ordering select{
+        align-self: flex-end;
     }
 
 }
