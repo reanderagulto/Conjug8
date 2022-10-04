@@ -110,8 +110,8 @@ if( !class_exists( 'agentpro_board_members_shortcodes' ) ) {
                     /* Start of board-container */
                     $group_content .= '
                     <div class="board-container">
-                        <h2 class="section-header text-center">The Brains Behind The Company</h2>
-                        <div class="board-wrap flex flex-wrap-wrap items-center justify-center">
+                        <h2 class="section-header text-center" data-aos="fade-up" data-aos-once="true" data-aos-offset="200" data-aos-duration="800">The Brains Behind The Company</h2>
+                        <div class="board-wrap flex flex-wrap-wrap items-center justify-center" data-aos="fade-up" data-aos-once="true" data-aos-offset="200" data-aos-duration="800">
                     ';
                     foreach( $posts as $key => $post ) {
                         $post_id = $post->ID;
@@ -206,14 +206,14 @@ if( !class_exists( 'agentpro_board_members_shortcodes' ) ) {
                     /* Start of Founders Section */
                     $group_content .= '
                     <div class="founder-wrap">
-                        <div class="founder-nav flex items-center justify-between">
+                        <div class="founder-nav flex items-center justify-between" data-aos="fade-up" data-aos-once="true" data-aos-offset="200" data-aos-duration="800">
                             <h2 class="section-header">The Brains Behind The Company</h2>
                             <div class="the-company-nav flex items-center">
                                 <button type="button" class="aios-btn-sm aios-btn-red slider-nav founder-prev"><i class="ai-font-arrow-h-p"></i></button>
                                 <button type="button" class="aios-btn-sm aios-btn-red slider-nav founder-next"><i class="ai-font-arrow-h-n"></i></button>
                             </div>
                         </div>
-                        <div class="founder-slider">
+                        <div class="founder-slider"  data-aos="fade-left" data-aos-once="true" data-aos-offset="200" data-aos-duration="800">
                     ';
                     foreach( $posts as $key => $post ) {
                         $post_id = $post->ID;

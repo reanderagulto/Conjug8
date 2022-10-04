@@ -45,7 +45,7 @@ $title = get_field('global_title', $shop);
 		<?php if( woocommerce_product_loop() ): ?>
 			<!--  Woocommerce Before Loop -->
 			
-			<div class="shop-before-loop flex items-center justify-between">
+			<div class="shop-before-loop flex items-center justify-between" data-aos="fade-up" data-aos-once="true">
 				<?php do_action( 'woocommerce_before_shop_loop' ); ?>	
 			</div>
 			

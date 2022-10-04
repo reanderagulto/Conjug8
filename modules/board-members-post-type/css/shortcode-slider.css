@@ -6,6 +6,7 @@
 section#founders-section .founder-wrap {
     padding: 4.010vw 0 7.917vw 11.528vw;
     position: relative;
+    overflow: hidden;
 }
 
 .founder-wrap .founder-nav {

@@ -7,6 +7,7 @@
             onScrollFixed();
             burgerMenu();
             onPlusMinus();
+            sliderConfig();
         }
         function onScrollFixed() {
             this.onScrollFixed = function () {
@@ -77,6 +78,23 @@
                 $number.val(parseInt($number.val()) + 1);
             });
         }
+
+        function sliderConfig(){
+            let $featuredPost = jQuery('.featured-post-slider');
+            $featuredPost.slick({
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                arrows: true,
+                dots: false,
+                infinite: true,
+                draggable: false,
+                // autoplay: true,
+                // autoplaySpeed: 3000,
+                nextArrow: $('.slider-nav.prod-next'),
+                prevArrow: $('.slider-nav.prod-prev'),
+            });
+        }
+
         /**
          * Instantiate
          */

@@ -25,7 +25,7 @@ if ( empty( $product ) || ! $product->is_visible() ) {
 }
 ?>
 <li <?php wc_product_class( '', $product ); ?>>
-	<div class="loop-product-wrap">
+	<div class="loop-product-wrap" data-aos="fade-up" data-aos-once="true">
 		<?php
 		/**
 		 * Hook: woocommerce_before_shop_loop_item.

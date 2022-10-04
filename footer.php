@@ -4,7 +4,7 @@
 					<div class="accent-red"></div>
 					<div class="accent-white"></div>
 				</div>
-				<div class="newsletter-wrap">
+				<div class="newsletter-wrap" data-aos="fade-up" data-aos-once="true">
 					<div class="newsletter-content">
 						<h2 class="newsletter-header">Stay updated, stay informed with <br/ > our latest and upcoming activities</h2>
 						<div class="newsletter-form flex items-center justify-center">
@@ -55,7 +55,7 @@
 				?>
 				<section id="contact-section">
 					<div class="contact-wrap flex items-start justify-center">
-						<div class="contact-info">
+						<div class="contact-info" data-aos="fade-right" data-aos-once="true">
 							<h2 class="section-header"><?= $contact_header ?></h2>
 							<h3 class="section-subheader"><?= $contact_subheader ?></h3>
 							<a href="<?php echo (!empty($contact_email) ? 'mailto: ' . $contact_email : '#' ); ?>" class="contact-links flex items-center">
@@ -71,7 +71,7 @@
 								<p><?= $contact_phone ?> </p>
 							</a>
 						</div>
-						<div class="contact-form">
+						<div class="contact-form" data-aos="fade-left" data-aos-once="true">
 							<?= do_shortcode('[contact-form-7 id="' . $form_ID . '" title="' . $form_name . '"]') ?>
 						</div>
 					</div>

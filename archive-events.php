@@ -38,7 +38,7 @@ get_header();
                 $group_content = '';
 
                 $group_content .= '<section id="events-section">
-                            <div class="events-wrap">
+                            <div class="events-wrap" data-aos="fade-up" data-aos-once="true">
                                 <h2 class="section-header text-center">Upcoming Events</h2>';
 
                 foreach( $groupPosts as $posts ) {
@@ -102,13 +102,13 @@ get_header();
                 $group_content .= '
                     <section id="completed-events-section">
                         <div class="completed-events-wrap">
-                        <h2 class="section-header text-center">Completed Events</h2>
+                        <h2 class="section-header text-center" data-aos="fade-up" data-aos-once="true">Completed Events</h2>
                 ';
 
                 foreach( $groupPosts as $posts ) {
 
                     $group_content .= '
-                        <div class="completed-events-content flex flex-wrap-wrap items-center">
+                        <div class="completed-events-content flex flex-wrap-wrap items-center" data-aos="fade-up" data-aos-once="true">
                     ';
             
                     foreach( $posts as $key => $post ) {

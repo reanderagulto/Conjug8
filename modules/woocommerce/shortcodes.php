@@ -40,7 +40,7 @@ if( !class_exists('woocommerce_featured_product_slider')){
                 $return .= '
                 <section id="product-section">
                     <div class="product-section-wrap">
-                        <div class="product-header-nav flex items-center justify-between">
+                        <div class="product-header-nav flex items-center justify-between" data-aos="fade-up" data-aos-once="true" data-aos-offset="200" data-aos-duration="800">
                             <h2 class="section-header">Our Products</h2>
                             <div class="product-nav flex items-center">
                                 <a href="' . home_url() . '/products/" class="aios-btn aios-btn-red">View Products</a>
@@ -50,7 +50,7 @@ if( !class_exists('woocommerce_featured_product_slider')){
                                 </div>
                             </div>
                         </div>
-                        <div class="product-slider">';
+                        <div class="product-slider" data-aos="fade-left" data-aos-once="true" data-aos-offset="200" data-aos-duration="800">';
                     foreach( $posts as $key => $post ) {
                         $post_id = $post->ID;
                         $post_title = $post->post_title;
@@ -121,7 +121,7 @@ if( !class_exists('woocommerce_featured_product_slider')){
                 $posts = $products_query->posts;
 
                 $return .= '
-                <section class="featured-products">
+                <section class="featured-products" data-aos="fade-up" data-aos-once="true">
                     <div class="featured-products-wrap">
                         <div class="featured-product-slider">';
                             foreach( $posts as $key => $post ) {

@@ -31,7 +31,7 @@ foreach ( $fields_to_get as $field ) {
 ?>
 <section id="contact-section">
     <div class="contact-wrap flex items-start justify-center">
-        <div class="contact-info">
+        <div class="contact-info" data-aos="fade-right" data-aos-once="true">
             <h2 class="section-header"><?= $contact_header ?></h2>
             <h3 class="section-subheader"><?= $contact_subheader ?></h3>
             <a href="<?php echo (!empty($contact_email) ? 'mailto: ' . $contact_email : '#' ); ?>" class="contact-links flex items-center">
@@ -47,7 +47,7 @@ foreach ( $fields_to_get as $field ) {
                 <p><?= $contact_phone ?> </p>
             </a>
         </div>
-        <div class="contact-form">
+        <div class="contact-form" data-aos="fade-left" data-aos-once="true">
             <?= do_shortcode('[contact-form-7 id="' . $form_ID . '" title="' . $form_name . '"]') ?>
         </div>
     </div>

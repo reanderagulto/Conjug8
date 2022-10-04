@@ -21,7 +21,7 @@ foreach ( $fields_to_get as $field ) {
 <!-- Start of Icons  -->
 <section id="icons-section">
     <div class="icons-wrap">
-        <div class="icons-container flex justify-between">
+        <div class="icons-container flex justify-between" data-aos="fade-up" data-aos-once="true">
             <div class="icon">
                 <img src="<?=do_shortcode('[stylesheet_directory]')?>/images/lightbulb.png" class="img-responsive" width="68" height="88" alt="Sharp Brain" >
                 <h3>Sharp Brain</h3>
@@ -123,7 +123,7 @@ foreach ( $fields_to_get as $field ) {
 ?>
 <section id="mission-vision">
     <div class="mission-vision-wrap flex items-center justify-center">
-        <div class="mission-wrap">
+        <div class="mission-wrap" data-aos="fade-right" data-aos-once="true">
             <h2>
                 <?php echo $missionTitle; ?>
             </h2>
@@ -131,7 +131,7 @@ foreach ( $fields_to_get as $field ) {
                 <?php echo nl2br($missionMsg); ?>
             </p>
         </div>
-        <div class="vision-wrap">
+        <div class="vision-wrap" data-aos="fade-left" data-aos-once="true">
             <h2>
                 <?php echo $visionTitle; ?>
             </h2>

@@ -21,7 +21,7 @@ foreach ( $fields_to_get as $field ) {
 ?>
 <!-- Start Topfold Banner -->
 <?php if(!empty($topfold_banner)): ?>
-<section id="hero-banner">
+<section id="hero-banner" data-aos="fade-up" data-aos-once="true">
     <div class="banner-wrap-slider">
         <?php if(!empty($topfold_banner['banner_slider'])): ?>
             <?php foreach($topfold_banner['banner_slider'] as $banner): ?>
@@ -56,7 +56,7 @@ foreach ( $fields_to_get as $field ) {
 <!-- Start of Icons  -->
 <section id="icons-section">
     <div class="icons-wrap">
-        <div class="icons-container flex justify-around">
+        <div class="icons-container flex justify-around" data-aos="fade-up" data-aos-once="true" data-aos-offset="200" data-aos-duration="800">
             <div class="icon">
                 <img src="<?=do_shortcode('[stylesheet_directory]')?>/images/lightbulb.png" class="img-responsive" width="68" height="88" alt="Sharp Brain" >
                 <h3>Sharp Brain</h3>
@@ -85,7 +85,7 @@ foreach ( $fields_to_get as $field ) {
 ?>
 <section id="about-section">
     <div class="about-wrap">
-        <div class="about-content">
+        <div class="about-content" data-aos="fade-right" data-aos-once="true">
             <h2 class="section-header">
                 <?=(!empty($about_header) ? do_shortcode($about_header) : ''); ?>
             </h2>
@@ -95,7 +95,7 @@ foreach ( $fields_to_get as $field ) {
             <p><?=(!empty($about_content) ? do_shortcode($about_content) : ''); ?></p>
             <a href="<?php echo do_shortcode($about_read_more); ?>" class="aios-btn aios-btn-red">Read More</a>
         </div>
-        <div class="about-img">            
+        <div class="about-img" data-aos="fade-up" data-aos-once="true">            
             <div class="img-container">
                 <canvas width="<?=$about_image['width']; ?>" height="<?=$about_image['height']; ?>" ></canvas>
                 <img src="<?=$about_image['url']; ?>" width="<?=$about_image['width']; ?>" height="<?=$about_image['height']; ?>" class="img-responsive" alt="About the Company">

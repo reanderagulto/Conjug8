@@ -108,8 +108,8 @@ if( !class_exists( 'agentpro_events_shortcodes' ) ) {
 
                     $group_content .= '
                         <div class="events-wrap">
-                            <h2 class="section-header text-center">Upcoming Events</h2>
-                            <div class="events-content flex flex-wrap-wrap items-center justify-center">
+                            <h2 class="section-header text-center" data-aos="fade-up" data-aos-once="true">Upcoming Events</h2>
+                            <div class="events-content flex flex-wrap-wrap items-center justify-center"  data-aos="fade-up" data-aos-once="true">
                     ';
                     foreach( $posts as $key => $post ) {
                         $post_id = $post->ID;
