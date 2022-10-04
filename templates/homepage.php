@@ -50,52 +50,7 @@ foreach ( $fields_to_get as $field ) {
 <!-- End of Topfold Banner -->
 
 <!-- Start of Products Slider Section -->
-<?php if(!empty($product_section)): ?>
-<section id="product-section">
-    <div class="product-section-wrap">
-        <div class="product-header-nav flex items-center justify-between">
-            <h2 class="section-header">
-                <?php 
-                    $product_title = $product_section[ 'product_title' ] ?? '';
-                    echo (!empty($product_title) ? do_shortcode( $product_title ) : '');
-                    unset( $product_title );
-                ?>
-            </h2>
-            <div class="product-nav flex items-center">
-                <a href="#" class="aios-btn aios-btn-red">View Products</a>
-                <div class="slider-navs">
-                    <button type="button" class="aios-btn aios-btn-red slider-nav prod-prev"><i class="ai-font-arrow-h-p"></i></button>
-                    <button type="button" class="aios-btn aios-btn-red slider-nav prod-next"><i class="ai-font-arrow-h-n"></i></button>
-                </div>
-            </div>
-        </div>
-        <?php 
-            $product_slides = $product_section[ 'product_slider' ] ?? '';
-            if ( !empty( $product_slides ) ) {
-                /* For Product Slider */
-                $slidesHTML = '';
-                foreach ($product_slides as $item) {
-                    $slidesHTML .= '
-                        <div class="product-slide">
-                            <div class="product-img">
-                                <canvas width="' . $item['image']['width'] . '" height="' . $item['image']['height'] . '"></canvas>
-                                <img src="' . $item['image']['url'] . '" width="' . $item['image']['width'] . '" height="' . $item['image']['height'] . '" alt="' . $item['image']['alt'] . '"/>
-                            </div>
-                            <div class="product-info">
-                                <h3>' . $item['name'] . ' <span>' . $item['subname'] . '</span></h3>
-                                <a href="' . $item['buy_link'] . '" class="aios-btn-sm aios-btn-red">Buy Now</a>
-                            </div>
-                        </div>';
-                } ?>
-            <div class="product-slider">
-                <?php echo $slidesHTML; ?>
-            </div>          
-            <?php 
-                unset( $product_slides, $slidesHTML);
-            } ?>
-    </div>
-</section>
-<?php endif; ?>
+<?php echo do_shortcode('[featured_products_slider]'); ?>
 <!-- End of Products Slider Section -->
 
 <!-- Start of Icons  -->

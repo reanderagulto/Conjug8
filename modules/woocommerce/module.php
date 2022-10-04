@@ -22,10 +22,7 @@ if( !class_exists('add_woocommerce_support') ){
             if( is_shop() ){
                 wp_enqueue_style( 'shop-style', get_stylesheet_directory_uri() . '/modules/woocommerce/css/shop.css' );
             }
-
-            
         }
-
     }
 
     $add_woocommerce_support = new add_woocommerce_support();
@@ -35,4 +32,9 @@ if( !class_exists('add_woocommerce_support') ){
 // Woocommerce Hook File
 if ( ! class_exists( 'woocommerce_hooks' ) && file_exists( __DIR__ . '/woocommerce-hooks.php' ) ) {
     require_once( __DIR__ . '/woocommerce-hooks.php' );
+}
+
+// fallback require for shortcodes.php
+if ( ! class_exists( 'woocommerce_featured_product_slider' ) && file_exists( __DIR__ . '/shortcodes.php' ) ) {
+    require_once( __DIR__ . '/shortcodes.php' );
 }
