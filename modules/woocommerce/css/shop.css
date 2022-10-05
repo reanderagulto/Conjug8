@@ -13,13 +13,10 @@
     align-items: flex-start
 }
 
-.woocommerce .shop-container .shop-wrap ul.products.columns-3 li.product, .woocommerce-page ul.products.columns-3 li.product{
-    width: calc(100% / 3);
-}
-
 .woocommerce .shop-container .shop-wrap ul.products li.product{
     float: unset;
     margin: unset; 
+    width: calc(100% / 3);
 }
 
 .woocommerce .shop-container .shop-wrap ul.products li.product .loop-product-wrap {
