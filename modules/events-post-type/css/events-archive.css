@@ -161,6 +161,21 @@ section#completed-events-section {
     font-size: var(--font-size-default);
 }
 
+.load-more-container {
+    text-align: center;
+    margin-top: 30px;
+    transition: all var(--ease-short-transition);
+}
+
+.load-more-container .aios-btn{
+    color: #FFF;
+}
+
+.load-more-container .aios-btn:hover{
+    color: var(--primary-red);
+    background-color: #FFF;
+}
+
 
 /* Responsive */
 
@@ -184,8 +199,4 @@ section#completed-events-section {
     section#completed-events-section{
         padding: 51px 25px 59px;
     }
-}
-
-@media only screen and (max-width: 480px) {
-
 }

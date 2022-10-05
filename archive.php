@@ -23,6 +23,9 @@
             <?php echo do_shortcode('[featured_post_slider]'); ?>
             <div class="blog-archive-wrap flex justify-center">
                 <?php get_template_part('loop','archive') ?>
+            </div>
+            <div class="page-links">
+                <?php echo paginate_links(); ?>
             </div>		    
         </div>
 		

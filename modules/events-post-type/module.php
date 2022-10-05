@@ -9,7 +9,11 @@ if ( ! class_exists( 'agentpro_events_post_type' ) ) {
         */
         function __construct() {
             add_action( 'init', array( $this, 'register_post_type' ) );
-            add_action( 'wp_enqueue_scripts', array( $this, 'enqueque_scripts'), 15 );        
+            add_action( 'wp_enqueue_scripts', array( $this, 'enqueque_scripts'), 15 );
+            
+            // Ajax Functions
+            add_action('wp_ajax_completed_events', array($this, 'completed_events'));
+            add_action('wp_ajax_nopriv_completed_events', array($this, 'completed_events'));
         }
 
         /* 
@@ -66,7 +70,7 @@ if ( ! class_exists( 'agentpro_events_post_type' ) ) {
 
             if ( is_post_type_archive( 'events' ) ) {
                 wp_enqueue_style( 'events-archive', get_stylesheet_directory_uri() . '/modules/events-post-type/css/events-archive.css' );
-                wp_enqueue_style( 'events-archive', get_stylesheet_directory_uri() . '/modules/events-post-type/css/events-archive.css' );
+                wp_enqueue_script( 'events-archive', get_stylesheet_directory_uri() . '/modules/events-post-type/js/events-archive.js' );
 
             }
 
@@ -74,6 +78,45 @@ if ( ! class_exists( 'agentpro_events_post_type' ) ) {
                 wp_enqueue_style( 'events-single', get_stylesheet_directory_uri() . '/modules/events-post-type/css/events-single.css' );
                 wp_enqueue_script( 'events-single', get_stylesheet_directory_uri() . '/modules/events-post-type/js/events-single.js' );
             }
+        }
+
+        function completed_events() {
+            $ajaxposts = new WP_Query([
+                'post_type'      => 'events',
+                'post_status'    => 'publish',
+                'order'          => 'DESC',
+                'orderby'        => 'date',
+                'offset'         => $_POST['offset'],
+                'posts_per_page' => 3,
+                'date_query'     => array(
+                    //set date ranges with strings!
+                    'before'     => 'today',
+                    //allow exact matches to be returned
+                    'inclusive' => true,
+                ),
+            ]);
+
+            $max_pages = $ajaxposts->max_num_pages;
+            if($ajaxposts->have_posts()): 
+                while($ajaxposts->have_posts()): $ajaxposts->the_post(); ?>
+                    <div class="completed-events" data-aos="fade-up" data-aos-once="true">
+                        <input type="hidden" id="completed-events" value="<?php echo $max_pages; ?>" />
+                        <a href="<?php the_permalink(); ?>">
+                            <div class="completed-event-container flex items-center justify-center">
+                                <div class="img-container">
+                                    <canvas width="136" height="117"></canvas>
+                                    <img src="<?php the_post_thumbnail_url('full')?>" alt="<?php the_title(); ?>" width="136" height="117" />
+                                </div>
+                                <div class="events-content">
+                                    <h3><?php the_title(); ?></h3>
+                                    <p><?php echo get_the_date( 'F j, Y', get_the_ID() ); ?></p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                <?php endwhile;
+            endif; 
+            wp_die();
         }
 
     }

@@ -33,10 +33,6 @@
 		
 	<?php endwhile; ?>
 
-	<div class="page-links">
-		<?php echo paginate_links(); ?>
-	</div>
-
 <?php else: ?>
 	<p>Coming soon...</p>
 <?php endif ?>
