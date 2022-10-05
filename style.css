@@ -910,6 +910,20 @@ section#innerpage-banner .innerpage-banner-wrap {
     padding: 8.472vw 11.528vw 8.542vw;
  }
 
+ .blog-archive .load-more-container{
+    margin-top: 73px;
+    text-align: center;
+ }
+
+ .blog-archive .load-more-container .aios-btn{
+    color: #FFF;
+ }
+
+ .blog-archive .load-more-container .aios-btn:hover{
+    color: var(--primary-red);   
+    background-color: #FFF;
+ }
+
 .blog-archive .blog-archive-wrap{
     flex-flow: row wrap;
     margin-top: max(8.403vw, 121px);

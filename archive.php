@@ -11,22 +11,35 @@
             </div>
         </section>
         <?php 
-            $post = $posts[0]; // Hack. Set $post so that the_date() works. 
-            $aios_metaboxes_banner_title_layout = get_option( 'aios-metaboxes-banner-title-layout', '' );
-            if ( ! is_custom_field_banner( get_queried_object() ) || $aios_metaboxes_banner_title_layout[1] != 1 ) :
-                $taxonomy_id        = get_queried_object()->term_id;
-                $taxonomy_name      = get_queried_object()->name;
-                $taxonomy_meta      = get_option( "term_meta_" . $taxonomy_id );
-            endif;
+            $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+            $args = array(
+                'post_type' => 'post',
+                'post_status' => 'publish',
+                'posts_per_page' => 6,
+                'orderby' => 'date',
+                'order' => 'DESC',
+                'paged' => $paged,
+            );
+
+            $loop = new WP_Query($args);
         ?>
         <div class="blog-archive">
             <?php echo do_shortcode('[featured_post_slider]'); ?>
-            <div class="blog-archive-wrap flex justify-center">
-                <?php get_template_part('loop','archive') ?>
-            </div>
-            <div class="page-links">
-                <?php echo paginate_links(); ?>
-            </div>		    
+            <?php if($loop->have_posts()): ?>
+                <div class="blog-archive-wrap flex justify-center">
+                <?php 
+                    while($loop->have_posts()): $loop->the_post();
+                        get_template_part('loop','archive');
+                    endwhile;
+                ?>
+                <?php wp_reset_query(); ?>
+                </div> 
+                <?php if($loop->found_posts > 6): ?>
+                <div class="load-more-container" data-aos="fade-up" data-aos-once="true">
+                    <a href="#!" class="aios-btn aios-btn-red" id="see-more-posts">See More Posts</a>
+                </div>
+                <?php endif; ?> 
+            <?php endif; ?>  
         </div>
 		
 		<?php do_action('aios_starter_theme_after_inner_page_content') ?>

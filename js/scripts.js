@@ -8,6 +8,7 @@
             burgerMenu();
             onPlusMinus();
             sliderConfig();
+            showMorePosts();
         }
         function onScrollFixed() {
             this.onScrollFixed = function () {
@@ -92,6 +93,35 @@
                 // autoplaySpeed: 3000,
                 nextArrow: $('.slider-nav.prod-next'),
                 prevArrow: $('.slider-nav.prod-prev'),
+            });
+        }
+
+        function showMorePosts(){
+            let $eventLoadMore = $('#see-more-posts');
+            let currentPage = 6;
+            let paged = 2;
+            let numPost = 0;
+            $eventLoadMore.on('click', function(e){
+                e.preventDefault();
+                paged++;
+                $.ajax({
+                    type: 'POST',
+                    url: '/wp-admin/admin-ajax.php',
+                    dataType: 'html',
+                    data: {
+                      action: 'show_more_posts',
+                      offset: currentPage + numPost,
+                      paged: paged,
+                    },
+                    success: function (res) {                        
+                        numPost = numPost + 3;
+                        $('.blog-archive-wrap').append(res);
+                        let maxnumpage = parseInt($('#posts-max').val());
+                        if(paged == maxnumpage){
+                            $('.load-more-container').hide();
+                        }
+                    },
+                });
             });
         }
         /**

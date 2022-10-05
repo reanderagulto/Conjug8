@@ -6,6 +6,10 @@ if( !class_exists('blog_posts_hooks')) {
         function __construct(){
             $this->blogposts_page();
             add_shortcode( 'featured_post_slider', [ $this, 'featured_post_slider' ] );
+
+            // Ajax Functions
+            add_action('wp_ajax_show_more_posts', array($this, 'show_more_posts'));
+            add_action('wp_ajax_nopriv_show_more_posts', array($this, 'show_more_posts'));
         }
 
         function blogposts_page(){
@@ -116,6 +120,51 @@ if( !class_exists('blog_posts_hooks')) {
 
         }
 
+        function show_more_posts(){
+            $ajaxposts = new WP_Query([
+                'post_type' => 'post',
+                'post_status' => 'publish',
+                'posts_per_page' => 3,
+                'orderby' => 'date',
+                'order' => 'DESC',
+                'offset' => $_POST['offset'],
+            ]);
+
+            $max_pages = $ajaxposts->max_num_pages;
+            if($ajaxposts->have_posts()): 
+                while($ajaxposts->have_posts()): $ajaxposts->the_post(); ?>
+                    <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>  data-aos="fade-up" data-aos-once="true">
+                        <input type="hidden" id="posts-max" value="<?php echo $max_pages; ?>" />
+                        <div class="entry">
+                            <?php if ( has_post_thumbnail() ) : ?>
+                                <div class="archive-thumbnail">
+                                    <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('large'); ?></a>
+                                </div>
+                            <?php endif ?>
+                            <div class="archive-content-container">
+                                <div class="archive-date">
+                                    <?php echo get_the_date( 'F j, Y', get_the_ID() ); ?>
+                                </div>
+                                <div class="archive-content <?php echo has_post_thumbnail() ? "archive-has-thumbnail" : "" ?>">
+                                    <h2 class="archive-subtitle"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+                                    <p>
+                                        <?php if ( has_excerpt( get_the_ID() ) ) : ?>
+                                            <?php the_excerpt(); ?>
+                                        <?php else: ?>
+                                            <?php echo ai_starter_theme_truncate_string( strip_tags( strip_shortcodes( get_the_content() ) ), 75, "..." ) ?>
+                                        <?php endif ?>
+                                    </p>
+                                    <a class="archive-more" href="<?php the_permalink() ?>">Read more</a>
+                                </div>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                    </article>
+                <?php endwhile;
+            endif; 
+            wp_die();
+
+        }
     }
 
     $blog_posts_hooks = new blog_posts_hooks();

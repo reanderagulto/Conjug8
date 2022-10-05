@@ -77,9 +77,11 @@ get_header();
                         <?php wp_reset_query(); ?>
                     </div>
                 </div>
+                <?php if($completed_events->found_posts > 6): ?>
                 <div class="load-more-container" data-aos="fade-up" data-aos-once="true">
                     <a href="#!" class="aios-btn aios-btn-red" id="completed-load-more">See More</a>
                 </div>
+                <?php endif; ?>
             </section>
         <?php endif; ?>
     </section><!-- end #content -->
