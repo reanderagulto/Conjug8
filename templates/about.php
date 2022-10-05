@@ -48,7 +48,7 @@ foreach ( $fields_to_get as $field ) {
 ?>
 <section id="about-content">
     <div class="content-wrap">
-        <div class="about-section-1 flex justify-start items-start">
+        <div class="about-section-1 flex justify-start items-start" data-aos="fade-up" data-aos-once="true">
             <div class="section-text">
                 <?php 
                     $contentHTML = '';
@@ -79,7 +79,7 @@ foreach ( $fields_to_get as $field ) {
                 <?php endif; ?>
             </div>
         </div>
-        <div class="about-section-2 flex justify-center items-center">
+        <div class="about-section-2 flex justify-center items-center" data-aos="fade-up" data-aos-once="true">
             <div class="section-image">
                 <?php if(!empty($section_2['image'])): ?>
                 <div class="img-container">
@@ -143,7 +143,7 @@ foreach ( $fields_to_get as $field ) {
 </section>
 <!-- End of Mission Vision Section -->
 
-<?php echo do_shortcode('[agentpro_board_members_archive]'); ?>
+<?php echo do_shortcode('[agentpro_board_members_about_archive]'); ?>
 
 <?php endif; ?>
 <!-- End of About Content -->
