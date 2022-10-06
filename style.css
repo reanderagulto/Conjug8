@@ -33,8 +33,8 @@ TABLE OF CONTENTS
     --font-family-lato: 'Lato', sans-serif;
     --font-family-default: var(--font-family-lato);
     --font-family-para: var(--font-family-belleza);
-    --font-size-default: 18px;
-    --font-size-title: 40px;
+    --font-size-default: max(1.250vw, 18px);
+    --font-size-title: max(2.778vw, 40px);
     --font-color-default: #000000;
     --font-color-title: #6c757d;
 
