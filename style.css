@@ -1132,3 +1132,13 @@ section.featured-posts .accent-bg .accent-red {
     color: var(--primary-red);
     background-color: #FFF
 }
+
+.use-floating-validation-tip .wpcf7-not-valid-tip {
+    position: absolute;
+    right: 0;
+    top: 0;
+    left: unset;
+    text-align: center;
+    width: 180px;
+    font-size: 14px;
+}

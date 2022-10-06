@@ -5,6 +5,7 @@
          */
         function __construct() {
             sliderConfig();
+            contactFormPopup();
         }
         function sliderConfig() {
             let $topfolderSlider = jQuery('.banner-wrap-slider');
@@ -17,6 +18,22 @@
                 autoplay: true,
                 autoplaySpeed: 5000,
             })
+        }
+
+        function contactFormPopup(){
+            let $contactButton = jQuery('#mobile-contact');
+            let $contactContainer = jQuery('.contact-form');
+            let $contactMain = jQuery('.contact-form-main');
+            let $contactClose = jQuery('#contact-close');
+            $contactButton.on('click', function(){
+                $contactContainer.addClass('active');
+                $contactMain.addClass('mobile');
+            });
+
+            $contactClose.on('click', function(){
+                $contactContainer.removeClass('active');
+                $contactMain.removeClass('mobile');
+            });
         }
         /**
          * Instantiate

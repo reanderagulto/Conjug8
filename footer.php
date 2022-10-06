@@ -70,9 +70,19 @@
 								<i class="ai-font-mobile-b"></i>
 								<p><?= $contact_phone ?> </p>
 							</a>
+
+							<div class="mobile-contact-form">
+								<a href="#" class="aios-btn aios-btn-red" id="mobile-contact">Contact Us</a>
+							</div>
 						</div>
-						<div class="contact-form" data-aos="fade-left" data-aos-once="true">
-							<?= do_shortcode('[contact-form-7 id="' . $form_ID . '" title="' . $form_name . '"]') ?>
+						<div class="contact-form" data-aos="fade-left" data-aos-once="true">							
+							<div class="contact-form-wrap">
+								<div class="contact-form-main">
+									<h3 class="contact-header">Get in Touch</h3>
+									<button class="contact-close ai-font-close-e" id="contact-close"></button>
+									<?= do_shortcode('[contact-form-7 id="' . $form_ID . '" title="' . $form_name . '" html_class="use-floating-validation-tip"]') ?>
+								</div>
+							</div>
 						</div>
 					</div>
 				</section>
