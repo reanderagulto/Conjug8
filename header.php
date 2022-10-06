@@ -134,7 +134,8 @@
 		!is_singular('board-members') && !is_post_type_archive( 'board-members' ) && 
 		!is_singular('events') && !is_post_type_archive( 'events' ) && 
 		!is_category( 'blog' ) && !is_single() && 
-		!is_product() && !is_shop() ): 
+		!is_product() && !is_shop() &&
+		!is_404() ): 
 		?>
 
 		<?php

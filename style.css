@@ -1574,3 +1574,7 @@ em.ai-icon-lock {
     width: 180px;
     font-size: 14px;
 }
+
+p#breadcrumbs{
+    display: none;
+}
