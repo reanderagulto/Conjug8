@@ -13,6 +13,11 @@ section#events-section .events-wrap {
     padding: 6.875vw 11.458vw 7.153vw;
 }
 
+.no-events{
+    text-align: center;
+    padding: 30px;
+}
+
 .events-wrap .section-header,
 .completed-events-wrap .section-header{
     font-size: var(--font-size-title) !important;
@@ -154,6 +159,11 @@ section#completed-events-section {
 
 .completed-event-container .events-content h3{
     font-weight: bold;   
+    line-height: 1;
+}
+
+.completed-event-container .events-content p{
+    line-height: 1.5;
 }
 
 .completed-event-container .events-content h3, 
