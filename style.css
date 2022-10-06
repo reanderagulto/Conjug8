@@ -398,14 +398,18 @@ p{
 }
 
 .slider-nav {
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 17px;
+    color: #fff;
     border-radius: 50%;
-    padding: max(0.583vw, 8px) max(0.483vw, 10px) !important;
-    width: max(3.125vw, 45px);
-    height: max(3.125vw, 45px);
-    background-color: #FFF;
-    color: var(--primary-red);
-    font-size: max(1.094vw, 21px);
-    transition: all var(--ease-short-transition);
+    border: 2px solid #fff;
+    background-color: transparent;
+    width: 45px;
+    height: 45px;
+    padding: 0;
+    font-weight: 700;
+
 }
 
 .slider-nav i{

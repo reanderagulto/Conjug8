@@ -101,8 +101,8 @@ if( !class_exists('blog_posts_hooks')) {
                 $return .= '
                         </div>
                         <div class="slider-navs">
-                            <button type="button" class="aios-btn aios-btn-transparent slider-nav prod-prev"><i class="ai-font-arrow-h-p"></i></button>
-                            <button type="button" class="aios-btn aios-btn-transparent slider-nav prod-next"><i class="ai-font-arrow-h-n"></i></button>
+                            <button type="button" class="aios-btn aios-btn-transparent slider-nav prod-prev ai-font-arrow-b-p"></button>
+                            <button type="button" class="aios-btn aios-btn-transparent slider-nav prod-next ai-font-arrow-b-n"></button>
                         </div>
                         <div class="accent-bg">
                             <div class="accent-red">

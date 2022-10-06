@@ -202,9 +202,13 @@ section#product-section {
 }
 
 .product-nav button {
-    padding: 0.417vw 1.688vw;
-    line-height: 1.2;
-    margin: 0 0.521vw;
+    color: var(--primary-red);
+    border-color: var(--primary-red);
+    margin: 0 10px;
+}
+
+.product-nav .aios-btn.aios-btn-red{
+    margin: 0 10px;
 }
 
 .product-nav .aios-btn.aios-btn-red:hover{

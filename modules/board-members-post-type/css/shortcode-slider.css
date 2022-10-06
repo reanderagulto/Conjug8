@@ -15,8 +15,10 @@ section#founders-section .founder-wrap {
 }
 
 .founder-wrap .founder-nav .the-company-nav .slider-nav {
-    line-height: 1.2;
     margin: 0 0.521vw;
+    color: var(--primary-red);
+    border-color: var(--primary-red);
+    margin: 0 10px;
 }
 
 .the-company-nav .slider-nav.aios-btn-sm.aios-btn-red:hover {
