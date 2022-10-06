@@ -25,7 +25,7 @@ if( !class_exists( 'agentpro_events_shortcodes' ) ) {
                 'view_more_link' => home_url() . '/events/',
                 'view_more_text' => 'View More Board Members',
                 'with_view_more' => false,
-                'no_results_text' => 'No Upcoming Events Found...',
+                'no_results_text' => 'No Board Members Found...',
                 'show_attributes' => false,
             ], $atts );
 
@@ -143,11 +143,16 @@ if( !class_exists( 'agentpro_events_shortcodes' ) ) {
                             ' . $group_content . '
                         </div>
                     ';
+                    
+                    
                 }
 
                 wp_reset_postdata();
                 wp_reset_query();
 
+            }
+            else{
+                $response = $no_results_text;
             }
             return $response;
         }

@@ -55,7 +55,6 @@
 
 /* iPad(portrait) | Galaxy Tab 4(portrait)  */ 
 @media only screen and (max-width: 991px) {
-
 	header.header{
 		height: 81px;
 		padding: 15px;
@@ -228,6 +227,14 @@
 		height: 45px;
 		padding: 5px 10px !important;
     }
+
+	#pojo-a11y-toolbar {
+        display: none;
+    }
+
+    .aios-btn {
+        padding: 14px 30px;
+    }
 } 
 
 /* Galaxy Tab 3(portrait) | Galaxy S5(landscape) */ 
@@ -258,7 +265,6 @@
 	hr.footer-divider{
 		margin: 30px 0 27px;
 	}
-
 
     .ip-banner .container{
         width: 100%;
@@ -300,7 +306,7 @@
 	
 	.newsletter-content .newsletter-form input[type='email'] {
 		width: 100%;
-		margin-bottom:  11px;
+		margin-bottom: 11px;
 	}
 	
 	.newsletter-content .newsletter-form .aios-btn.aios-btn-red {
@@ -382,7 +388,56 @@
         padding: 15px 31px;
         font-size: 16px;
     }
+    #login-form-popup .popup-main {
+        padding: 90px 15px 55px;
+    }
 
+    .popup-wrapper {
+        padding: 25px 15px;
+    }
+
+    .popup-form-col > label, .popup-form-col .forgot-password {
+        font-size: 16px;
+    }
+
+    .popup-form-title {
+        font-size: 30px;
+    }
+
+    .popup-return {
+        left: 15px;
+    }
+
+    .popup-close {
+        right: 15px;
+    }
+
+    .popup-main {
+        padding: 78px 15px 48px;
+    }
+
+    .popup-cta-item {
+        padding: 0 5px;
+    }
+
+    .popup-cta-list {
+        margin: 0 -5px;
+    }
+
+    .popup-cta-title {
+        font-size: 25px;
+    }
+
+    .popup-cta-item a span em {
+        width: 60px;
+        height: 60px;
+        background-size: 42%;
+    }
+
+    .popup-cta-item a {
+        height: 170px;
+        font-size: 20px;
+    }
 
 }
 

@@ -39,7 +39,7 @@
 					</nav>
 
 					<div class="side-nav">
-						<a href="#" class="aios-btn">Medical Practioners Only</a>
+						<a href="#" class="aios-btn trigger-popup">Medical Practioners Only</a>
 					</div>
 					
 					<div class="nav-close"> <i class="ai-font-close-g"></i></div>
@@ -49,6 +49,80 @@
 			</div>
 		</div>
 	</header>
+
+	<div id="choose-login-popup" class="popup-container">
+		<div class="popup-wrapper">
+			<div class="popup-main">
+				<button class="popup-close ai-font-close-e"></button>
+				<div class="popup-content">
+					<div class="popup-cta-container">
+						<div class="popup-cta-title">
+							<h2>Welcome to Conjug8</h2>
+						</div>
+						<div class="popup-cta-list">
+							<div class="popup-cta-item">
+								<a href="<?php echo do_shortcode('[blogurl]');?>/medical-practitioners-portal/">
+									<span>
+									<em class="ai-icon-person"></em>
+									Guest
+									</span>
+								</a>
+							</div>
+							<div class="popup-cta-item">
+								<a href="#" class="trigger-member-popup">
+									<span>
+										<em class="ai-icon-lock"></em>
+										Member
+									</span>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="login-form-popup" class="popup-container">
+		<div class="popup-wrapper">
+			<div class="popup-main">
+				<button class="popup-return"><em class="ai-icon-arrow"></em>Back</button>
+				<button class="popup-close ai-font-close-e"></button>
+				<div class="popup-content">
+					<div class="popup-form-title">
+						<h2>Welcome to Conjug</h2>
+					</div>
+					<div class="popup-form">
+						<form action="#" method="post">
+							<div class="popup-form-row full">
+								<div class="popup-form-col">
+									<label for="popup-username">Username</label>
+									<input type="text" name="popup-username" id="popup-username" required>
+								</div>
+								<div class="popup-form-col">
+									<label for="popup-password">Password</label>
+									<input type="password" name="popup-password" id="popup-password" required>
+								</div>
+							</div>
+							<div class="popup-form-row">
+								<div class="popup-form-col is-option">
+									<label class="checkbox-label" for="remember-me" checked="">
+										<input type="checkbox" name="type[]" id="remember-me">Remember Me
+									</label>
+								</div>
+								<div class="popup-form-col is-button">
+									<button class="forgot-password">Forgot Password</button>
+								</div>
+							</div>
+							<div class="popup-form-row">
+								<button class="popup-submit" type="submit">Login</button>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 
 	<main>
 		<h2 class="aios-starter-theme-hide-title">Main Content</h2>

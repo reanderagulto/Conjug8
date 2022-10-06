@@ -9,6 +9,7 @@
             onPlusMinus();
             sliderConfig();
             showMorePosts();
+            popup();
         }
         function onScrollFixed() {
             this.onScrollFixed = function () {
@@ -123,6 +124,31 @@
                     },
                 });
             });
+        }
+
+        function popup(){
+            $('.trigger-popup').click(function(){
+                $('#choose-login-popup').addClass('active');
+            }); 
+
+            $('.popup-close, .popup-wrapper').click(function(){
+                $('.popup-container').removeClass('active');
+            });
+
+            $('.popup-main').on('click', function (e) {
+                e.stopImmediatePropagation();
+            });
+
+            $('.popup-cta-item .trigger-member-popup').click(function(){
+                $('#login-form-popup').addClass('active');
+                $('#choose-login-popup').removeClass('active');
+            }); 
+
+            $('.popup-return').click(function(){
+                $('#login-form-popup').removeClass('active');
+                $('#choose-login-popup').addClass('active');
+            }); 
+            
         }
         /**
          * Instantiate
