@@ -800,7 +800,7 @@ section#innerpage-banner .accent-bg .accent-dark-blue{
 }
 
 section#innerpage-banner .innerpage-banner-wrap {
-    
+    position: relative;
 }
 
 .innerpage-banner-wrap h1.inner-section-header {
@@ -910,6 +910,27 @@ section#innerpage-banner .innerpage-banner-wrap {
 /* MEDIA QUERIES ARE AUTOMATICALLY REMOVED FROM THIS FILE, they must be placed in style-media-queries.css */
 
  /* Blog Pages */
+ .blog-single section#innerpage-banner {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: left center;
+    height: 100%;
+    width: 100%;
+    position: relative;
+    display: block !important;
+}
+
+.blog-single section#innerpage-banner::before{
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, rgba(37,124,191,1) 26%, rgba(37,124,191,0.14189425770308128) 74%, rgba(255,255,255,0) 90%);
+}
+
  .blog-archive{
     padding: 8.472vw 11.528vw 8.542vw;
  }

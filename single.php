@@ -1,5 +1,6 @@
 <?php 
 	get_header(); 
+	$post_id = get_the_ID();
 	$post_fields = get_fields( get_the_ID() );
 	$fields_to_get = array(
 		'title',
@@ -9,17 +10,18 @@
 	}
 ?>
 <div id="<?php echo ai_starter_theme_get_content_id('content-full') ?>" class="blog-single">
-	<section id="innerpage-banner">
+	<section id="innerpage-banner" style="background-image: url(<?php echo get_the_post_thumbnail_url( $post_id, 'full' )?>)">
 		<div class="innerpage-banner-wrap">
 			<h1 class="inner-section-header">
 				<?php echo get_the_title(get_the_ID()); ?>
 			</h1>
 			<p><?php echo get_the_date( 'F j, Y', $post_id ); ?></p>
 			<?php if(!empty($post_image)): ?>
-			<div class="banner-bg">
-				<img src="<?php echo $post_image['url']; ?>" alt="<?php echo $post_image['alt']; ?>">
-			</div>
 			<?php endif; ?>
+		</div>
+		<div class="accent-bg">
+			<div class="accent-red"></div>
+			<div class="accent-dark-blue"></div>
 		</div>
 	</section>
 
