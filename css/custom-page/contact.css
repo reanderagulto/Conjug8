@@ -34,22 +34,21 @@ section#contact-section .contact-wrap .contact-form{
 }
 
 .contact-info .contact-links i{
-    font-size: max(1.250vw, 24px);
+    font-size: 23px;
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     justify-content: center;
-    text-align: center;
-    padding-top: 0.573vw;
     color: var(--primary-blue);
-    background-color: #FFF;
-    height: 2.292vw;
-    width: 2.292vw;
+    color: #FFF;
+    background-color: var(--primary-blue);
+    width: 43px;
+    height: 43px;
     border-radius: 50%;
     margin-right: 0.729vw;
 }
 
 .contact-info .contact-links i.ai-font-envelope{
-    font-size: max(0.938vw, 18px); 
+    font-size: 15px;
 }
 
 .contact-form {

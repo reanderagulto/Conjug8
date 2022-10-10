@@ -48,7 +48,7 @@ foreach ( $fields_to_get as $field ) {
             </a>
         </div>
         <div class="contact-form" data-aos="fade-left" data-aos-once="true">
-            <?= do_shortcode('[contact-form-7 id="' . $form_ID . '" title="' . $form_name . '"]') ?>
+            <?= do_shortcode('[contact-form-7 id="' . $form_ID . '" title="' . $form_name . '" html_class="use-floating-validation-tip"]') ?>
         </div>
     </div>
 </section>
