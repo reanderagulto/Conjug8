@@ -1,0 +1,116 @@
+
+#add_payment_method .wc-proceed-to-checkout a.checkout-button, 
+.woocommerce-cart .wc-proceed-to-checkout a.checkout-button, 
+.woocommerce-checkout .wc-proceed-to-checkout a.checkout-button{
+    background-color: var(--primary-red) !important;
+    color: #FFF;
+    border-radius: 45px;
+    transition: all var(--ease-short-transition);
+    height: 40px;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px !important;
+    text-align: center !important;
+    width: max(8.264vw, 119px);
+    font-family: var(--font-family-default);
+    padding: unset !important;
+    width: max(15.764vw, 227px);
+}
+
+.cart-page-container{
+    font-size: var(--font-size-default);
+}
+
+.cart-page-container .cart-wrap {
+    padding: 3.125vw 11.667vw 2.194vw;
+}
+
+.cart-page-container .coupon {
+    display: flex;
+    justify-content: space-between;
+}
+
+.cart-page-container .woocommerce .cart .button, 
+.cart-page-container .woocommerce .cart input.button, 
+.cart-page-container .woocommerce #respond input#submit, 
+.cart-page-container .woocommerce a.button, 
+.cart-page-container .woocommerce button.button, 
+.cart-page-container .woocommerce input.button{
+    background-color: var(--primary-red) !important;
+    color: #FFF;
+    border-radius: 45px;
+    transition: all var(--ease-short-transition);
+    height: 50px;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px !important;
+    text-align: center !important;
+    width: max(8.264vw, 119px);
+    font-family: var(--font-family-default);
+    padding: unset !important;
+    width: max(12.986vw, 187px);
+}
+
+.cart-page-container .woocommerce a.button, 
+.cart-page-container .woocommerce button.button, 
+.cart-page-container .woocommerce input.button, 
+.cart-page-container .woocommerce button.button[name="update_cart"]{
+    width: max(9.375vw, 135px);
+}
+
+.cart-page-container .woocommerce #content table.cart td.actions .input-text, 
+.cart-page-container .woocommerce table.cart td.actions .input-text, 
+.cart-page-container .woocommerce-page #content table.cart td.actions .input-text, 
+.cart-page-container .woocommerce-page table.cart td.actions .input-text{
+    width: 100%;
+}
+
+.cart-page-container .select2-container--default .select2-selection--single {
+    height: 50px;
+    height: max(2.604vw, 50px);
+    width: 100%;
+    font-family: var(--font-family-para);
+    font-size: var(--font-size-default);
+    color: var(--primary-darker) !important;
+    display: flex;
+    align-items: center;
+}
+.cart-page-container .select2-container--default .select2-selection--single .select2-selection__arrow{
+    height: 100%;
+}
+
+.cart-page-container .select2-container--default .select2-selection--single .select2-selection__rendered{
+    display: flex;
+    align-items: center;
+}
+
+.cart-page-container .selection{
+    height: 50px;
+}
+
+.cart-page-container .woocommerce form .form-row input.input-text, 
+.cart-page-container .woocommerce form .form-row textarea{
+    border: 1px solid var(--secondary-text);
+    height: max(2.604vw, 50px);
+    width: 100%;
+    padding: 0.938vw 0.667vw;
+    font-family: var(--font-family-para);
+    font-size: var(--font-size-default);
+    color: var(--primary-darker) !important;
+    border-radius: 5px;
+}
+
+@media only screen and (max-width: 767px) {
+
+    .cart-page-container .cart-wrap{
+        padding: 3.125vw 2.667vw 2.194vw;
+    }
+    
+    .cart-page-container .woocommerce a.button, 
+    .cart-page-container .woocommerce button.button, 
+    .cart-page-container .woocommerce input.button, 
+    .cart-page-container .woocommerce button.button[name="update_cart"]{
+        width: auto;
+    }
+}

@@ -1054,6 +1054,7 @@ section#innerpage-banner .innerpage-banner-wrap {
     font-size: 16px;
     text-align: center;
     width: max(8.264vw, 119px);
+    font-family: var(--font-family-default);
 }
 
 .woocommerce a.button:hover{
@@ -1069,6 +1070,51 @@ section#innerpage-banner .innerpage-banner-wrap {
 .woocommerce #respond input#submit.loading::after, .woocommerce a.button.loading::after, .woocommerce button.button.loading::after, .woocommerce input.button.loading::after{
     top: 33%;
     right: 0.7em;
+}
+
+.woocommerce .qty-container {
+    margin-right: 19px;
+    display: flex;
+}
+
+.woocommerce .quantity .qty{
+    height: 50px;
+    border: 0;
+    appearance: none;
+    -moz-appearance: textfield;
+    width: 1.631em;
+}
+
+.woocommerce .quantity .qty::-webkit-outer-spin-button,
+.woocommerce .quantity .qty::-webkit-inner-spin-button{
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.woocommerce .quantity .qty:focus-visible{
+    outline: 0;
+}
+
+.woocommerce .qty-container input[type=button].minus,
+.woocommerce .qty-container input[type=button].plus{
+    height: 50px;
+    padding: 0 15px !important;
+    border: 0;
+    background-color: #FFF;
+    vertical-align: top;
+    padding: 0 10px;
+    font-size: 32px;
+    font-weight: bold;
+}
+
+.woocommerce .qty-container input[type=button].minus{
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+}
+
+.woocommerce .qty-container input[type=button].plus{
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
 }
 
 /* Blog Slider */
