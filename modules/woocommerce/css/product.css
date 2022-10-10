@@ -240,6 +240,7 @@ section#product-section {
     display: block;
     font-size: max(1.250vw, 24px);
     color: var(--primary-blue);
+    margin-right: 15px;
 }
 
 .product-slide .product-info h3 span {
@@ -332,7 +333,6 @@ section.featured-products .slider-navs {
     color: #FFF;
     margin: 0 5px;
 }
-
 
 @media only screen and (max-width: 991px){
     section.featured-products .accent-bg{
@@ -431,7 +431,7 @@ section.featured-products .slider-navs {
     }
     
     .featured-product-slider .product-slide .product-info h3 {
-        margin: 19px  0 39px 0 !important;
+        margin: 19px 0 39px 0 !important;
         font-size: 24px !important;
     }
     
