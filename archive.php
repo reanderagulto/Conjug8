@@ -35,7 +35,7 @@
                 <?php wp_reset_query(); ?>
                 </div> 
                 <?php if($loop->found_posts > 6): ?>
-                <div class="load-more-container" data-aos="fade-up" data-aos-once="true">
+                <div class="load-more-container flex items-center justify-center" data-aos="fade-up" data-aos-once="true">
                     <a href="#!" class="aios-btn aios-btn-red" id="see-more-posts">See More Posts</a>
                 </div>
                 <?php endif; ?> 

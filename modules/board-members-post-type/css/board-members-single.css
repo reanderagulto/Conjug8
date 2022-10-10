@@ -32,7 +32,9 @@
     background-color: var(--primary-blue);
     color: #FFF;
     text-align: center;
-    padding: max(0.729vw, 14px) 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     border-radius: 50%;
     margin: 0 max(0.260vw, 5px);
     
@@ -71,6 +73,12 @@
     .founders-single .founder-main .section-header,
     .founders-single .founder-main .section-subheader{
         text-align: center;
+        font-size: 30px !important;
+    }
+
+    .founders-single .founder-main .section-subheader,
+    .founders-single .founder-main .section-header span{
+        font-size: 16px !important;
     }
 }
 

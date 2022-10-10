@@ -357,13 +357,20 @@ a:hover{
 .aios-btn{
     border: 2px solid;
     border-radius: 40px;
-    padding: max(0.729vw, 14px) max(2.9vw, 36px);
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 }
 
 .aios-btn-sm{
     border: 2px solid;
     border-radius: 40px;
-    padding: max(0.521vw, 10px) max(0.625vw, 12px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 36px;
 }
 
 .aios-btn-red{
@@ -387,12 +394,11 @@ a:hover{
     font-size: var(--font-size-title);
     font-weight: bold;
     color: var(--primary-red);
-    line-height: 1.2;
 }
 
 p{
     font-family: var(--font-family-para);
-    line-height: 1;
+    line-height: 1.6;
     font-size: var(--font-size-default);
     color: var(--secondary-text);
 }
@@ -486,11 +492,12 @@ header.header{
             }
 
             header.header .side-nav a.aios-btn{
-                padding: 1vw 1.375vw;
                 margin-right: 1.875vw;
                 border-color: var(--primary-red);
                 color: var(--primary-red);
                 transition: all var(--ease-short-transition);
+                width: max(15.625vw,225px);
+                height: 45px;
             }
             
             header.header .side-nav a.aios-btn:hover{
@@ -592,7 +599,7 @@ section#newsletter-section .accent-bg .accent-white{
 
 .newsletter-content .newsletter-form input[type='email'] {
     width: max(32.153vw, 463px);
-    height: max(3.472vw, 50px);
+    height: 50px;
     border-radius: 45px;
     border: unset;
     color: #000;
@@ -606,8 +613,8 @@ section#newsletter-section .accent-bg .accent-white{
 }
 
 .newsletter-content .newsletter-form .aios-btn.aios-btn-red{
-    height: max(3.472vw, 50px);
-    padding: 0.733vw 3.021vw;
+    height: 50px;
+    width: max(11.875vw, 171px);
     margin-left: max(-3.083vw, -60px);
     transition: all var(--ease-short-transition);
 }
@@ -942,6 +949,8 @@ section#innerpage-banner .innerpage-banner-wrap {
 
  .blog-archive .load-more-container .aios-btn{
     color: #FFF;
+    width: max(15.764vw, 227px);
+    height: 50px;
  }
 
  .blog-archive .load-more-container .aios-btn:hover{
@@ -1038,8 +1047,13 @@ section#innerpage-banner .innerpage-banner-wrap {
     color: #FFF;
     border-radius: 45px;
     transition: all var(--ease-short-transition);
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     font-size: 16px;
-    padding: 14px 39px;
+    text-align: center;
+    width: max(8.264vw, 119px);
 }
 
 .woocommerce a.button:hover{
@@ -1151,6 +1165,8 @@ section.featured-posts .accent-bg .accent-red {
 #content .post-slide .post-info .archive-more.aios-btn {
     font-style: normal;
     text-decoration: none;
+    height: 50px;
+    width: max(10.486vw, 151px);
 }
 
 #content .post-slide .post-info .archive-more.aios-btn:hover{

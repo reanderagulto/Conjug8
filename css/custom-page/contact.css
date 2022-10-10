@@ -35,8 +35,10 @@ section#contact-section .contact-wrap .contact-form{
 
 .contact-info .contact-links i{
     font-size: max(1.250vw, 24px);
-    display: inline-block;
-    text-align:center;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    text-align: center;
     padding-top: 0.573vw;
     color: var(--primary-blue);
     background-color: #FFF;
@@ -73,6 +75,8 @@ section#contact-section .contact-wrap .contact-form{
 
 .aios-submit .aios-btn.aios-btn-red {
     font-family: var(--font-family-default);
+    width: max(12.986vw, 187px);
+    height: 50px;
 }
 
 .aios-submit .aios-btn.aios-btn-red:hover{

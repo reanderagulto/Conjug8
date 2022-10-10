@@ -72,7 +72,8 @@
     border-radius: 45px;
     transition: all var(--ease-short-transition);
     font-size: 16px;
-    padding: 14px 39px;
+    width: max(11.875vw, 171px);
+    height: 50px;
 }
 
 .woocommerce .single-product div.product form.cart .button:hover{
@@ -207,8 +208,9 @@ section#product-section {
     margin: 0 10px;
 }
 
-.product-nav .aios-btn.aios-btn-red{
+.product-nav a.aios-btn.aios-btn-red{
     margin: 0 10px;
+    width: max(12.014vw, 173px);
 }
 
 .product-nav .aios-btn.aios-btn-red:hover{
@@ -221,8 +223,8 @@ section#product-section {
     color: #FFF;
 }
 
-.product-slide {
-    padding-left: 2.222vw;
+.product-slider .product-slide {
+    padding-right: 2.222vw;
 }
 
 .product-slide:hover{
@@ -266,14 +268,18 @@ section#product-section {
     background-color: var(--primary-blue);
 }
 
-.product-slide:hover .product-info h3
-{
+.product-slide:hover .product-info h3{
     color: #FFF;
 }
 
-.product-slide .product-info .aios-btn-red {    
+.product-slide .product-info a.aios-btn-sm{
     color: #FFF;
+    width: max(6.319vw, 91px);
     font-size: 16px;
+}
+
+.product-slide .product-info a.aios-btn-sm:hover{
+    color: var(--primary-red);
 }
 
 .product-slide .product-info h3 {
@@ -321,10 +327,6 @@ section#product-section {
     font-weight: bold;
     line-height: 1.2;
     margin: 0 0 58px 0  !important;
-}
-
-.featured-product-slider .product-slide .product-info .aios-btn-red{
-    padding: 14px 30px;
 }
 
 .featured-product-slider .product-slide .img-container canvas {
@@ -463,10 +465,6 @@ section.featured-products .slider-navs {
         text-align: center;
     }
 
-    .featured-product-slider .product-slide {
-        flex-direction: column;
-    }
-    
     .featured-product-slider .product-slide .img-container,
     .featured-product-slider .product-slide .product-info{
         width: 100%;
@@ -486,5 +484,15 @@ section.featured-products .slider-navs {
     .featured-product-slider .product-slide .product-info .aios-btn-red {
         margin-bottom: 25px;
     }
+
+    .product-slide .product-info a.aios-btn-sm{
+        width: auto;
+    }
     
+}
+
+@media only screen and (max-width: 480px) { 
+    .featured-product-slider .product-slide {
+        flex-direction: column;
+    }
 }
