@@ -11,6 +11,10 @@
     width: 100%;
 }
 
+.featured-product-slider .product-slide .product-info .aios-btn-red:hover{
+    color: var(--primary-red);
+}
+
 .woocommerce .single-product .woocommerce-breadcrumb{
     display: none;
 }
@@ -30,7 +34,7 @@
 }
 
 .woocommerce .single-product div.product p.price, .woocommerce .single-product div.product span.price{
-    font-size: max(2.222vw, 32px);
+    font-size: max(1.667vw, 32px);
     font-family: var(--font-family-default);
     font-weight: bold;
     color: var(--primary-blue);
@@ -42,65 +46,20 @@
     align-items: center;
 }
 
-.woocommerce .single-product .qty-container{
-    margin-right: 19px;
-    display: flex;
-}
-
-.woocommerce .single-product .quantity .qty{
-    height: 50px;
-    border: 0;
-    appearance: none;
-    -moz-appearance: textfield;
-    width: 1.631em;
-
-}
-
-.woocommerce .single-product .quantity .qty::-webkit-outer-spin-button,
-.woocommerce .single-product .quantity .qty::-webkit-inner-spin-button{
-    -webkit-appearance: none;
-    margin: 0;
-}
-
-.woocommerce .single-product .quantity .qty:focus-visible{
-    outline: 0;
-}
-
 .woocommerce .single-product div.product form.cart .button{
     background-color: var(--primary-red);
     color: #FFF;
     border-radius: 45px;
     transition: all var(--ease-short-transition);
     font-size: 16px;
-    padding: 14px 39px;
+    width: max(8.906vw, 171px);
+    height: 50px;
 }
 
 .woocommerce .single-product div.product form.cart .button:hover{
     background-color: #FFF;
     color: var(--primary-red);
     border: 1px solid var(--primary-red);
-}
-
-.woocommerce .single-product .qty-container input[type=button].minus,
-.woocommerce .single-product .qty-container input[type=button].plus{
-    height: 50px;
-    padding: 0 15px !important;
-    border: 0;
-    background-color: #FFF;
-    vertical-align: top;
-    padding: 0 10px;
-    font-size: 32px;
-    font-weight: bold;
-}
-
-.woocommerce .single-product .qty-container input[type=button].minus{
-    border-top-left-radius: 8px;
-    border-bottom-left-radius: 8px;
-}
-
-.woocommerce .single-product .qty-container input[type=button].plus{
-    border-top-right-radius: 8px;
-    border-bottom-right-radius: 8px;
 }
 
 .woocommerce .single-product .woocommerce-product-details__short-description{
@@ -125,7 +84,8 @@
 
 section.related.products h2{
     margin-bottom: max(2.014vw, 29px);
-    font-size: max(2.222vw, 32px);
+    font-size: max(1.667vw, 32px);
+    line-height: 1;
     font-weight: bold;
     color: var(--primary-red);
 }
@@ -207,8 +167,9 @@ section#product-section {
     margin: 0 10px;
 }
 
-.product-nav .aios-btn.aios-btn-red{
+.product-nav a.aios-btn.aios-btn-red{
     margin: 0 10px;
+    width: max(9.010vw, 173px);
 }
 
 .product-nav .aios-btn.aios-btn-red:hover{
@@ -221,8 +182,8 @@ section#product-section {
     color: #FFF;
 }
 
-.product-slide {
-    padding-left: 2.222vw;
+.product-slider .product-slide {
+    padding-right: 2.222vw;
 }
 
 .product-slide:hover{
@@ -266,20 +227,21 @@ section#product-section {
     background-color: var(--primary-blue);
 }
 
-.product-slide:hover .product-info h3
-{
+.product-slide:hover .product-info h3{
     color: #FFF;
 }
 
-.product-slide .product-info .aios-btn-red {    
+.product-slide .product-info a.aios-btn-sm{
     color: #FFF;
+    width: max(4.740vw, 91px);
     font-size: 16px;
 }
 
 .product-slide .product-info h3 {
     display: block;
-    font-size: max(1.250vw, 24px);
+    font-size: max(1.25vw, 24px);
     color: var(--primary-blue);
+    font-weight: 600;
 }
 
 .product-slide .product-info h3 span {
@@ -321,10 +283,6 @@ section#product-section {
     font-weight: bold;
     line-height: 1.2;
     margin: 0 0 58px 0  !important;
-}
-
-.featured-product-slider .product-slide .product-info .aios-btn-red{
-    padding: 14px 30px;
 }
 
 .featured-product-slider .product-slide .img-container canvas {
@@ -463,10 +421,6 @@ section.featured-products .slider-navs {
         text-align: center;
     }
 
-    .featured-product-slider .product-slide {
-        flex-direction: column;
-    }
-    
     .featured-product-slider .product-slide .img-container,
     .featured-product-slider .product-slide .product-info{
         width: 100%;
@@ -485,6 +439,12 @@ section.featured-products .slider-navs {
     
     .featured-product-slider .product-slide .product-info .aios-btn-red {
         margin-bottom: 25px;
+        width: auto;
+    }   
+}
+
+@media only screen and (max-width: 480px) { 
+    .featured-product-slider .product-slide {
+        flex-direction: column;
     }
-    
 }

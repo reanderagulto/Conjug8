@@ -32,7 +32,7 @@ section#founders-section .founder-wrap {
 } */
 
 .founder-slider .founder-slide {
-    padding-left: max(2.222vw, 36px);
+    padding-right: max(2.222vw, 36px);
     transition: all var(--ease-short-transition);
 }
 
@@ -73,21 +73,36 @@ section#founders-section .founder-wrap {
 .founder-slider .founder-slide .founder-info h3 {
     color: var(--primary-red);
     font-size: max(1.250vw, 24px);
+    line-height: 1.4;
     font-weight: bold;
-    margin-bottom: max(0.833vw, 12px);
 }
 
 .founder-slider .founder-slide .founder-info h3 span {
     display: block;
     font-size: var(--font-size-default);
     color: #000;
+    line-height: 1;
+}
+.founder-slider .founder-slide .founder-info p{
+    line-height: 1;
+    margin-top: 12px;
+    font-size: 18px;
 }
 
 /*
-*
+* Responsive
 *   
 *
 */
+@media only screen and (max-width: 1199px){
+    .founder-slider .founder-slide .founder-info h3 span, 
+    .founder-slider .founder-slide .founder-info p{
+        font-size: 16px;
+    }
+    
+}
+
+
 
 @media only screen and (max-width: 767px) {
     section#icons-section .icons-wrap .icons-container {
@@ -113,12 +128,12 @@ section#founders-section .founder-wrap {
     }
 
     .founder-slider .founder-slide{
-        padding-left: 0;
+        padding-right: 0;
     }
 
     .founder-wrap .founder-nav .the-company-nav{
         position: absolute;
-        bottom: 0;
+        bottom: -15px;
         margin: 40px 0;
         left: 50%;
         transform: translateX(-50%);

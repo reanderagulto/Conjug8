@@ -7,6 +7,14 @@
  
 /* iPad(landscape) | iPad(landscape) | Galaxy Tab 4 (landscape) | Galaxy Tab 3 (landscape) */ 
 @media only screen and (max-width: 1199px) {
+	header.header{
+		padding: 2.250vw 2.181vw;
+	}
+
+	header.header.scrolled{
+		padding: 2.250vw 2.181vw;
+	}
+
 	.newsletter-wrap .accent-bg .accent-red{
 		top: -139.6px;
 		left: -952px;
@@ -104,7 +112,7 @@
 		top: 81px;
 		width: 100%;
 		height: 100%;
-		padding: 40px 0;
+		padding: 40px 20px;
 		z-index: 1001;
 		transition: all var(--ease-short-transition);
 	}
@@ -113,7 +121,6 @@
 		left: 0;
 		flex-direction: column;
 		align-items: center;
-		justify-content: space-around;
 		background-color: #f4f4f4;
 	}
 
@@ -123,14 +130,20 @@
 		padding: 19px;
 		text-align: center;
 	}
+	
 
 	header.header .main-menu .menu-main-menu-container ul#nav li.menu-item a, header.header .side-nav a{
-		font-size: 24px;
+		font-size: 18px;
 	}
 
 	header.header .side-nav a.aios-btn{
 		margin-right: unset;
-		padding: 2vw 6.375vw;
+		font-size: 16px;
+		width: 225px;
+	}
+
+	.side-nav {
+		margin: 69px 0 69px;
 	}
 
 	section#newsletter-section .accent-bg{
@@ -225,15 +238,10 @@
         margin: 0 5px;
 		width: 44px;
 		height: 45px;
-		padding: 5px 10px !important;
     }
 
 	#pojo-a11y-toolbar {
         display: none;
-    }
-
-    .aios-btn {
-        padding: 14px 30px;
     }
 } 
 
@@ -306,15 +314,18 @@
 	
 	.newsletter-content .newsletter-form input[type='email'] {
 		width: 100%;
+		height: 40px;
 		margin-bottom: 11px;
 	}
 	
 	.newsletter-content .newsletter-form .aios-btn.aios-btn-red {
-		width: 60%;
+		width: 129px;
+		height: 40px;
 	}
 	
 	.newsletter-wrap .newsletter-content .newsletter-header {
 		margin-bottom: 21px;
+		font-size: 24px;
 	}
 
 	section#contact-section .contact-wrap .contact-info, section#contact-section .contact-wrap .contact-form{
@@ -443,10 +454,6 @@
 
 /* Galaxy S5(portrait) | iPod Touch(landscape) | iPod Touch(portrait) */ 
 @media only screen and (max-width: 480px) {
-	.aios-btn{
-		padding: max(0.729vw, 14px) max(2.9vw, 20px);
-	}
-
 	section#newsletter-section .accent-bg .accent-red{
 		top: -923px;
 		left: -623px;

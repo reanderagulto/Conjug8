@@ -13,14 +13,14 @@ section#hero-banner {
 .banner-container {
     width: 100%;
     z-index: 99;
-    height: max(41.667vw, 600px);
+    height: 100%;
 }
 
 .banner-container .accent-bg {
     transform: rotate(-150deg);
     z-index: -1;
-    top: 11vw;
-    left: 24vw;
+    top: 7vw;
+    left: 25vw;
 }
 
 .banner-container .accent-bg .accent-red {
@@ -75,9 +75,8 @@ section#hero-banner {
 }
 
 .banner-text-container h1 {
-    font-size: 3vw;
+    font-size: max(2.5vh, 48px);
     font-weight: bold;
-    line-height: 1.2;
 }
 
 .banner-button-container {
@@ -85,14 +84,15 @@ section#hero-banner {
 }
 
 .banner-button-container .aios-btn.aios-btn-white, .banner-button-container .aios-btn.aios-btn-transparent {
-    font-size: 1.500vw;
     font-weight: bold;
     margin-right: 1.250vw;
     color: #FFF;
+    width: max(10.677vw, 205px);
 }
 
 .banner-button-container .aios-btn.aios-btn-white {
     color: var(--primary-red);
+    width: max(8.125vw, 156px);
 }
 
 .banner-button-container .aios-btn.aios-btn-white:hover, .banner-button-container .aios-btn.aios-btn-transparent:hover {
@@ -129,18 +129,19 @@ section#about-section .about-content {
     padding-right: 3.958vw;
 }
 
-section#about-section .about-content h2 {
-    margin-bottom: 1.354vw;
-}
-
 section#about-section .about-content h3 {
-    font-size: max(1.250vw, 24px);
+    font-size: max(1.25vw, 24px);
     font-weight: bold;
-    margin-bottom: 1.094vw;
+    margin: max(1.806vw, 26px) 0 max(1.458vw, 21px);
 }
 
 section#about-section .about-content p {
-    margin-bottom: 2.552vw;
+    margin-bottom: max(3.403vw, 49px);
+}
+
+section#about-section .about-content .aios-btn.aios-btn-red{
+    height: 50px;
+    width: max(8.906vw, 171px);
 }
 
 section#about-section .about-content .aios-btn.aios-btn-red:hover {
@@ -343,7 +344,11 @@ section#contact-section .contact-wrap .contact-info, section#contact-section .co
 }
 
 .contact-info .section-header, .contact-info .section-subheader, .contact-info p {
-    color: #FFF;
+    color: #FFF;    
+}
+
+.contact-info p{
+    font-weight: 300;
 }
 
 .contact-info .section-header {
@@ -360,19 +365,21 @@ section#contact-section .contact-wrap .contact-info, section#contact-section .co
 }
 
 .contact-info .contact-links i {
-    font-size: 18px;
+    font-size: 24px;
     text-align: center;
-    padding-top: 11px;
     color: var(--primary-blue);
     background-color: #FFF;
-    height: max(2.240vw, 35px);
-    width: max(2.240vw, 35px);
+    height: max(2.240vw, 43px);
+    width: max(2.240vw, 43px);
     border-radius: 50%;
     margin-right: 13px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .contact-info .contact-links i.ai-font-envelope {
-    font-size: 13px;
+    font-size: 18px;
 }
 
 .contact-form {
@@ -392,13 +399,16 @@ section#contact-section .contact-wrap .contact-info, section#contact-section .co
     display: block;
 }
 
-.aios-submit {
+.aios-submit {    
     margin-top: 1.563vw;
+    display: flex;
+    align-items: center;
 }
 
 .aios-submit .aios-btn.aios-btn-red {
-    padding: 0.833vw 1.875vw;
     font-family: var(--font-family-default);
+    height: 50px;
+    width: max(9.740vw, 187px);
 }
 
 .aios-submit .aios-btn.aios-btn-red:hover {
@@ -421,6 +431,7 @@ section#contact-section .contact-wrap .contact-info, section#contact-section .co
 .mobile-contact-form .aios-btn{
     background-color: var(--primary-red);
     color: #FFF;
+    width: 141px;
 }
 
 .mobile-contact-form .aios-btn:hover{
@@ -435,6 +446,10 @@ section#contact-section .contact-wrap .contact-info, section#contact-section .co
 */
 /* iPad(landscape) | iPad(landscape) | Galaxy Tab 4 (landscape) | Galaxy Tab 3 (landscape) */
 @media only screen and (max-width: 1199px) {
+    .banner-text-container h1 {
+        font-size: max(3.333vw, 30px);
+    }
+
     .banner-col {
         padding: 6.250vw 4.375vw 12.688vw;
     }
@@ -457,7 +472,7 @@ section#contact-section .contact-wrap .contact-info, section#contact-section .co
         width: 100%;
         height: 100%;
         object-fit: cover;
-        object-position: 90% bottom;
+        object-position: 85% bottom;
     }
 
     .banner-container .banner-background canvas {
@@ -524,7 +539,6 @@ section#contact-section .contact-wrap .contact-info, section#contact-section .co
     .banner-text-container h1 {
         font-size: 30px;
         margin: auto;
-        line-height: 1;
         width: 80%;
     }
 
@@ -534,13 +548,8 @@ section#contact-section .contact-wrap .contact-info, section#contact-section .co
 
     .banner-button-container .aios-btn.aios-btn-white, .banner-button-container .aios-btn.aios-btn-transparent {
         font-size: 15px;
-        width: 40%;
         margin: auto;
         margin-bottom: 9px;
-    }
-
-    .banner-button-container .aios-btn.aios-btn-white{
-        width: 30%;
     }
 
     .contact-info .contact-links i {
@@ -565,10 +574,6 @@ section#contact-section .contact-wrap .contact-info, section#contact-section .co
 
     section#about-section .about-content {
         padding: 33px 24px 58px 21px;
-    }
-
-    section#about-section .about-content a.aios-btn {
-        display: inline-block;
     }
 
     section#about-section .about-img {
@@ -725,7 +730,8 @@ section#contact-section .contact-wrap .contact-info, section#contact-section .co
     }
 
     .banner-container .accent-bg {
-        top: -113.29px;
+        top: -71.29px;
+        left: 566.06px;
     }
     
     .banner-container .accent-bg .accent-red {
@@ -734,7 +740,7 @@ section#contact-section .contact-wrap .contact-info, section#contact-section .co
     
     .banner-container .accent-bg .accent-blue {
         bottom: 561px;
-        left: 89px;
+        left: 42px;
     }
     
     .banner-container .banner-background img {
@@ -744,11 +750,15 @@ section#contact-section .contact-wrap .contact-info, section#contact-section .co
 
 @media only screen and (max-width: 480px) {
     .banner-container .accent-bg {
-        top: -65.29px;
-        left: 507.06px;
+        top: 54.71px;
+        left: 419.06px;
     }
     
     .banner-container .banner-background img {
         object-position: 70% bottom;
+    }
+
+    .banner-text-container h1{
+        width: 100%;
     }
 }

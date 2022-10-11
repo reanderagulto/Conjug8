@@ -39,7 +39,7 @@ section#events-section .events-wrap {
 .events-content .event h3 {
     text-align: center;
     margin: max(1.319vw, 19px) 0;
-    font-size: max(1.667vw, 24px);
+    font-size: max(1.25vw, 24px);
     font-weight: bold;
 }
 
@@ -174,11 +174,16 @@ section#completed-events-section {
 .load-more-container {
     text-align: center;
     margin-top: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     transition: all var(--ease-short-transition);
 }
 
 .load-more-container .aios-btn{
     color: #FFF;
+    width: max(11.875vw, 171px);
+    height: 50px;
 }
 
 .load-more-container .aios-btn:hover{

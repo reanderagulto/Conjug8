@@ -52,6 +52,7 @@
     color: var(--primary-blue);
     font-size: 24px;
     font-weight: bold;
+    text-align: left;
 }
 
 .woocommerce .shop-container .shop-wrap ul.products li.product:hover .woocommerce-loop-product__title{
@@ -65,7 +66,6 @@
     margin: 20px max(1.806vw, 26px);
     transition: all var(--ease-short-transition);
     font-size: 16px;
-    padding: 14px 30px;
 }
 
 .woocommerce .shop-container .shop-wrap ul.products li.product .button:hover{
@@ -91,10 +91,11 @@
     color: var(--primary-red);
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     font-size: 16px;
     font-weight: bold;
     transition: all var(--ease-short-transition);
+    width: max(11.250vw, 162px);
 }
 
 .shop-container .shop-wrap .aios-btn.aios-btn-red img{
@@ -127,21 +128,29 @@
 /* Responsive */
 @media only screen and (max-width: 991px) {
     .shop-container .shop-wrap{
-        padding: 48px 30px 51px;
+        padding: 48px 20px 51px;
     }
 
     .woocommerce .shop-container .shop-wrap ul.products.columns-3 li.product, .woocommerce-page ul.products.columns-3 li.product{
         width: calc(100% / 2);
     }
 
+    .woocommerce .shop-container .shop-wrap ul.products li.product{
+        width: calc(100% / 2);
+    }
+
     .woocommerce .shop-container .shop-wrap ul.products li.product .loop-product-wrap{
-        text-align: center;
+        margin: 14px 10px;
     }
 }
 
 @media only screen and (max-width: 767px) {
     .woocommerce .shop-container .shop-wrap ul.products.columns-3 li.product, .woocommerce-page ul.products.columns-3 li.product{
         width: 100%;
+    }
+
+    .woocommerce .shop-container .shop-wrap ul.products li.product .loop-product-wrap{
+        text-align: center;
     }
 
     .shop-container .shop-wrap .aios-btn.aios-btn-red{
@@ -152,4 +161,28 @@
         align-self: flex-end;
     }
 
+    .woocommerce .shop-container .shop-wrap ul.products li.product .loop-product-wrap{
+        margin: 7px 5px;
+    }
+
+    .shop-container .shop-wrap{
+        padding: 48px 10px 51px;
+    }
+
+    .woocommerce .shop-container .shop-wrap ul.products li.product .woocommerce-loop-product__title{
+        font-size: 16px;
+    }
+
+    .woocommerce .shop-container .shop-wrap ul.products li.product .button{
+        font-size: 10px;
+        width: 100px;
+        height: 30px;
+    }
+
+}
+
+@media only screen and (max-width: 767px) {
+    .woocommerce .shop-container .shop-wrap ul.products li.product{
+        width: 100%;
+    }
 }

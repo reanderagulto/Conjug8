@@ -33,8 +33,8 @@ TABLE OF CONTENTS
     --font-family-lato: 'Lato', sans-serif;
     --font-family-default: var(--font-family-lato);
     --font-family-para: var(--font-family-belleza);
-    --font-size-default: max(1.250vw, 18px);
-    --font-size-title: max(2.778vw, 40px);
+    --font-size-default: max(0.938vw, 18px);
+    --font-size-title: max(2.083vw, 40px);
     --font-color-default: #000000;
     --font-color-title: #6c757d;
 
@@ -357,13 +357,20 @@ a:hover{
 .aios-btn{
     border: 2px solid;
     border-radius: 40px;
-    padding: max(0.729vw, 14px) max(2.9vw, 36px);
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 }
 
 .aios-btn-sm{
     border: 2px solid;
     border-radius: 40px;
-    padding: max(0.521vw, 10px) max(0.625vw, 12px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 36px;
 }
 
 .aios-btn-red{
@@ -387,12 +394,11 @@ a:hover{
     font-size: var(--font-size-title);
     font-weight: bold;
     color: var(--primary-red);
-    line-height: 1.2;
 }
 
 p{
     font-family: var(--font-family-para);
-    line-height: 1;
+    line-height: 1.6;
     font-size: var(--font-size-default);
     color: var(--secondary-text);
 }
@@ -475,22 +481,19 @@ header.header{
 
         header.header .main-menu .menu-main-menu-container ul#nav li.menu-item a, 
         header.header .side-nav a{
-            font-size: max(1.111vw, 16px);
-            line-height: 1.2;
+            font-size: max(0.833vw, 16px);
+            line-height: 1;
             color: var(--primary-text);
             transition: color var(--ease-short-transition);
         }
-
-            header.header .main-menu .menu-main-menu-container ul#nav li.menu-item a:hover{
-                color: #000;
-            }
-
+        
             header.header .side-nav a.aios-btn{
-                padding: 1vw 1.375vw;
                 margin-right: 1.875vw;
                 border-color: var(--primary-red);
                 color: var(--primary-red);
                 transition: all var(--ease-short-transition);
+                width: max(11.719vw,225px);
+                height: 45px;
             }
             
             header.header .side-nav a.aios-btn:hover{
@@ -592,11 +595,11 @@ section#newsletter-section .accent-bg .accent-white{
 
 .newsletter-content .newsletter-form input[type='email'] {
     width: max(32.153vw, 463px);
-    height: max(3.472vw, 50px);
+    height: 50px;
     border-radius: 45px;
     border: unset;
-    color: #000;
-    padding: 1.250vw 2.292vw 1.181vw;
+    color: var(--secondary-text);
+    padding: 0.25vw 2.292vw 0.181vw;
     font-family: var(--font-family-para);
     font-size: var(--font-size-default);
 }
@@ -606,8 +609,8 @@ section#newsletter-section .accent-bg .accent-white{
 }
 
 .newsletter-content .newsletter-form .aios-btn.aios-btn-red{
-    height: max(3.472vw, 50px);
-    padding: 0.733vw 3.021vw;
+    height: 50px;
+    width: max(8.906vw, 171px);
     margin-left: max(-3.083vw, -60px);
     transition: all var(--ease-short-transition);
 }
@@ -637,8 +640,13 @@ section#icons-section .icons-wrap .icons-container .icon {
 }
 
 section#icons-section .icons-wrap .icons-container .icon img {
-    margin-bottom: 1.823vw;
+    margin-bottom: max(1.875vw, 36px);
     transition: all var(--linear-transition);
+}
+
+section#icons-section .icons-wrap .icons-container .icon:nth-of-type(2) img,
+section#icons-section .icons-wrap .icons-container .icon:nth-of-type(3) img{
+    margin-bottom: max(2.396vw, 46px);
 }
 
 section#icons-section .icons-wrap .icons-container .icon:hover img {
@@ -733,16 +741,7 @@ footer.footer .footer-wrap {
     opacity: 0.702;
     color: #FFF;
     transition: all var(--ease-short-transition);
-    font-size: max(1vw, 16px);
-}
-
-.footer-wrap ul.footernav li a:hover {
-    opacity: 1;
-    font-size: max(1vw, 16px);
-}
-
-.footer-wrap ul.footernav li a:hover {
-    opacity: 1;
+    font-size: max(0.833vw, 16px);
 }
 
 hr.footer-divider {
@@ -752,7 +751,7 @@ hr.footer-divider {
 
 footer.footer .copyright {
     text-align: center;
-    font-size: max(1vw, 16px);
+    font-size: max(0.833vw, 16px);
     font-family: var(--font-family-para);
     font-weight: 300;
 }
@@ -942,6 +941,8 @@ section#innerpage-banner .innerpage-banner-wrap {
 
  .blog-archive .load-more-container .aios-btn{
     color: #FFF;
+    width: max(15.764vw, 227px);
+    height: 50px;
  }
 
  .blog-archive .load-more-container .aios-btn:hover{
@@ -1038,8 +1039,14 @@ section#innerpage-banner .innerpage-banner-wrap {
     color: #FFF;
     border-radius: 45px;
     transition: all var(--ease-short-transition);
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     font-size: 16px;
-    padding: 14px 39px;
+    text-align: center;
+    width: max(8.264vw, 119px);
+    font-family: var(--font-family-default);
 }
 
 .woocommerce a.button:hover{
@@ -1055,6 +1062,51 @@ section#innerpage-banner .innerpage-banner-wrap {
 .woocommerce #respond input#submit.loading::after, .woocommerce a.button.loading::after, .woocommerce button.button.loading::after, .woocommerce input.button.loading::after{
     top: 33%;
     right: 0.7em;
+}
+
+.woocommerce .qty-container {
+    margin-right: 19px;
+    display: flex;
+}
+
+.woocommerce .quantity .qty{
+    height: 50px;
+    border: 0;
+    appearance: none;
+    -moz-appearance: textfield;
+    width: 1.631em;
+}
+
+.woocommerce .quantity .qty::-webkit-outer-spin-button,
+.woocommerce .quantity .qty::-webkit-inner-spin-button{
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.woocommerce .quantity .qty:focus-visible{
+    outline: 0;
+}
+
+.woocommerce .qty-container input[type=button].minus,
+.woocommerce .qty-container input[type=button].plus{
+    height: 50px;
+    padding: 0 15px !important;
+    border: 0;
+    background-color: #FFF;
+    vertical-align: top;
+    padding: 0 10px;
+    font-size: 32px;
+    font-weight: bold;
+}
+
+.woocommerce .qty-container input[type=button].minus{
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+}
+
+.woocommerce .qty-container input[type=button].plus{
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
 }
 
 /* Blog Slider */
@@ -1151,6 +1203,8 @@ section.featured-posts .accent-bg .accent-red {
 #content .post-slide .post-info .archive-more.aios-btn {
     font-style: normal;
     text-decoration: none;
+    height: 50px;
+    width: max(10.486vw, 151px);
 }
 
 #content .post-slide .post-info .archive-more.aios-btn:hover{

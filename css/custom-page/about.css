@@ -102,7 +102,7 @@ section#mission-vision{
     overflow: hidden;
 }
 
-section#mission-vision:before{
+.mission-vision-wrap .mission-wrap:before{
     content: '';
     display: block;
     position: absolute;
@@ -115,7 +115,7 @@ section#mission-vision:before{
     transform: rotate(60deg);
 }
 
-section#mission-vision:after{
+.mission-vision-wrap .vision-wrap:after{
     content: '';
     display: block;
     position: absolute;
@@ -133,6 +133,8 @@ section#mission-vision:after{
     padding: 5.938vw 5.729vw 11.667vw 5.781vw;
     text-align: center;
     width: 50%;
+    position: relative;
+    overflow: hidden;
 }
 
 .mission-vision-wrap .mission-wrap{
@@ -178,6 +180,14 @@ section#mission-vision:after{
     .content-wrap .about-section-2 .section-text .section-content, 
     .content-wrap .about-section-1 .section-text .section-content{
         margin: 2.240vw;
+    }
+
+    .mission-vision-wrap h2, .mission-vision-wrap p{
+        font-size: 15px;
+    }
+
+    .mission-vision-wrap h2{
+        font-size: 30px;
     }
 }
 
