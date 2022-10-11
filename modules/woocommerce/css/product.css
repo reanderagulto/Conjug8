@@ -34,7 +34,7 @@
 }
 
 .woocommerce .single-product div.product p.price, .woocommerce .single-product div.product span.price{
-    font-size: max(2.222vw, 32px);
+    font-size: max(1.667vw, 32px);
     font-family: var(--font-family-default);
     font-weight: bold;
     color: var(--primary-blue);
@@ -52,7 +52,7 @@
     border-radius: 45px;
     transition: all var(--ease-short-transition);
     font-size: 16px;
-    width: max(11.875vw, 171px);
+    width: max(8.906vw, 171px);
     height: 50px;
 }
 
@@ -84,7 +84,8 @@
 
 section.related.products h2{
     margin-bottom: max(2.014vw, 29px);
-    font-size: max(2.222vw, 32px);
+    font-size: max(1.667vw, 32px);
+    line-height: 1;
     font-weight: bold;
     color: var(--primary-red);
 }
@@ -168,7 +169,7 @@ section#product-section {
 
 .product-nav a.aios-btn.aios-btn-red{
     margin: 0 10px;
-    width: max(12.014vw, 173px);
+    width: max(9.010vw, 173px);
 }
 
 .product-nav .aios-btn.aios-btn-red:hover{
@@ -232,15 +233,15 @@ section#product-section {
 
 .product-slide .product-info a.aios-btn-sm{
     color: #FFF;
-    width: max(6.319vw, 91px);
+    width: max(4.740vw, 91px);
     font-size: 16px;
 }
 
 .product-slide .product-info h3 {
     display: block;
-    font-size: max(1.250vw, 24px);
+    font-size: max(1.25vw, 24px);
     color: var(--primary-blue);
-    margin-right: 15px;
+    font-weight: 600;
 }
 
 .product-slide .product-info h3 span {
@@ -333,6 +334,7 @@ section.featured-products .slider-navs {
     color: #FFF;
     margin: 0 5px;
 }
+
 
 @media only screen and (max-width: 991px){
     section.featured-products .accent-bg{
@@ -431,7 +433,7 @@ section.featured-products .slider-navs {
     }
     
     .featured-product-slider .product-slide .product-info h3 {
-        margin: 19px 0 39px 0 !important;
+        margin: 19px  0 39px 0 !important;
         font-size: 24px !important;
     }
     

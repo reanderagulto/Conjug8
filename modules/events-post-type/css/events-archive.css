@@ -39,7 +39,7 @@ section#events-section .events-wrap {
 .events-content .event h3 {
     text-align: center;
     margin: max(1.319vw, 19px) 0;
-    font-size: max(1.667vw, 24px);
+    font-size: max(1.25vw, 24px);
     font-weight: bold;
 }
 

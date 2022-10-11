@@ -13,14 +13,14 @@ section#hero-banner {
 .banner-container {
     width: 100%;
     z-index: 99;
-    height: max(41.667vw, 600px);
+    height: 100%;
 }
 
 .banner-container .accent-bg {
     transform: rotate(-150deg);
     z-index: -1;
-    top: 11vw;
-    left: 24vw;
+    top: 7vw;
+    left: 25vw;
 }
 
 .banner-container .accent-bg .accent-red {
@@ -75,7 +75,7 @@ section#hero-banner {
 }
 
 .banner-text-container h1 {
-    font-size: max(3.333vw, 48px);
+    font-size: max(2.5vh, 48px);
     font-weight: bold;
 }
 
@@ -87,12 +87,12 @@ section#hero-banner {
     font-weight: bold;
     margin-right: 1.250vw;
     color: #FFF;
-    width: max(14.236vw, 205px);
+    width: max(10.677vw, 205px);
 }
 
 .banner-button-container .aios-btn.aios-btn-white {
     color: var(--primary-red);
-    width: max(10.833vw, 156px);
+    width: max(8.125vw, 156px);
 }
 
 .banner-button-container .aios-btn.aios-btn-white:hover, .banner-button-container .aios-btn.aios-btn-transparent:hover {
@@ -130,7 +130,7 @@ section#about-section .about-content {
 }
 
 section#about-section .about-content h3 {
-    font-size: max(1.667vw, 24px);
+    font-size: max(1.25vw, 24px);
     font-weight: bold;
     margin: max(1.806vw, 26px) 0 max(1.458vw, 21px);
 }
@@ -141,7 +141,7 @@ section#about-section .about-content p {
 
 section#about-section .about-content .aios-btn.aios-btn-red{
     height: 50px;
-    width: max(11.875vw, 171px);
+    width: max(8.906vw, 171px);
 }
 
 section#about-section .about-content .aios-btn.aios-btn-red:hover {
@@ -344,7 +344,11 @@ section#contact-section .contact-wrap .contact-info, section#contact-section .co
 }
 
 .contact-info .section-header, .contact-info .section-subheader, .contact-info p {
-    color: #FFF;
+    color: #FFF;    
+}
+
+.contact-info p{
+    font-weight: 300;
 }
 
 .contact-info .section-header {
@@ -361,12 +365,12 @@ section#contact-section .contact-wrap .contact-info, section#contact-section .co
 }
 
 .contact-info .contact-links i {
-    font-size: 18px;
+    font-size: 24px;
     text-align: center;
     color: var(--primary-blue);
     background-color: #FFF;
-    height: max(2.240vw, 35px);
-    width: max(2.240vw, 35px);
+    height: max(2.240vw, 43px);
+    width: max(2.240vw, 43px);
     border-radius: 50%;
     margin-right: 13px;
     display: flex;
@@ -375,7 +379,7 @@ section#contact-section .contact-wrap .contact-info, section#contact-section .co
 }
 
 .contact-info .contact-links i.ai-font-envelope {
-    font-size: 13px;
+    font-size: 18px;
 }
 
 .contact-form {
@@ -395,14 +399,16 @@ section#contact-section .contact-wrap .contact-info, section#contact-section .co
     display: block;
 }
 
-.aios-submit {
+.aios-submit {    
     margin-top: 1.563vw;
+    display: flex;
+    align-items: center;
 }
 
 .aios-submit .aios-btn.aios-btn-red {
     font-family: var(--font-family-default);
     height: 50px;
-    width: max(12.986vw, 187px);
+    width: max(9.740vw, 187px);
 }
 
 .aios-submit .aios-btn.aios-btn-red:hover {

@@ -73,6 +73,7 @@ section#founders-section .founder-wrap {
 .founder-slider .founder-slide .founder-info h3 {
     color: var(--primary-red);
     font-size: max(1.250vw, 24px);
+    line-height: 1.4;
     font-weight: bold;
 }
 
@@ -80,7 +81,7 @@ section#founders-section .founder-wrap {
     display: block;
     font-size: var(--font-size-default);
     color: #000;
-    margin-top: max(0.833vw, 12px);
+    line-height: 1;
 }
 .founder-slider .founder-slide .founder-info p{
     line-height: 1;
