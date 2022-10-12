@@ -17,16 +17,6 @@ section#icons-section .icons-wrap .icons-container .icon {
     align-items: center;
 }
 
-section#icons-section .icons-wrap .icons-container .icon img {
-    margin-bottom: 1.823vw;
-}
-
-section#icons-section .icons-wrap .icons-container .icon h3 {
-    font-size: max(1.667vw, 32px);
-    font-weight: bold;
-}
-
-
 /* 
 *
 * About Content
@@ -130,7 +120,7 @@ section#mission-vision{
 
 .mission-vision-wrap .mission-wrap,
 .mission-vision-wrap .vision-wrap{
-    padding: 5.938vw 5.729vw 11.667vw 5.781vw;
+    padding: 5.938vw 5.729vw 8.667vw 5.781vw;
     text-align: center;
     width: 50%;
     position: relative;

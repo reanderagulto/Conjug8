@@ -243,6 +243,10 @@
 	#pojo-a11y-toolbar {
         display: none;
     }
+
+	.newsletter-content .newsletter-form .aios-btn.aios-btn-red{
+		margin-left: -60px;
+	}
 } 
 
 /* Galaxy Tab 3(portrait) | Galaxy S5(landscape) */ 
@@ -421,6 +425,11 @@
     .post-slide .post-info p:nth-of-type(2){
         display: none;
     }
+
+	.blog-archive .load-more-container .aios-btn{
+		height: 40px;
+		width: 184px;
+	}
 
     #content .post-slide .post-info .archive-more.aios-btn{
         display: inline-block;
