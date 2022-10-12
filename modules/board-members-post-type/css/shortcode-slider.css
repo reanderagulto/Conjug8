@@ -94,17 +94,19 @@ section#founders-section .founder-wrap {
 *   
 *
 */
-@media only screen and (max-width: 1199px){
+
+
+@media only screen and (max-width: 767px) {
+
+    .founder-slider .founder-slide .founder-info h3{
+        font-size: 20px;
+    }
+
     .founder-slider .founder-slide .founder-info h3 span, 
     .founder-slider .founder-slide .founder-info p{
         font-size: 16px;
     }
     
-}
-
-
-
-@media only screen and (max-width: 767px) {
     section#icons-section .icons-wrap .icons-container {
         flex-flow: column;
     }

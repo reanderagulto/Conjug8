@@ -44,8 +44,12 @@
 					
 					<div class="nav-close"> <i class="ai-font-close-g"></i></div>
 				</div>
-
-				<a href="<?php echo esc_url( home_url() ) ?>/cart/" class="cart-icon">Cart<img src="<?=do_shortcode('[stylesheet_directory]')?>/images/cart-img.png"></a>
+				
+				<div class="cart-container">
+					<a href="<?php echo esc_url( home_url() ) ?>/cart/" class="cart-icon">Cart<img src="<?=do_shortcode('[stylesheet_directory]')?>/images/cart-img.png"></a>
+					<div class="header-cart-count"><?php echo WC()->cart->get_cart_contents_count(); ?></div>	
+				</div>
+				
 			</div>
 		</div>
 	</header>

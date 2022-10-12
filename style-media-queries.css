@@ -247,6 +247,21 @@
 
 /* Galaxy Tab 3(portrait) | Galaxy S5(landscape) */ 
 @media only screen and (max-width: 767px) {
+	p{
+		font-size: 15px;
+	}
+
+	.aios-btn,
+	.aios-btn-sm{
+		font-size: 15px;
+		height: 40px;
+	}
+
+	.slider-nav{
+		width: 35px;
+		height: 35px;
+		font-size: 12px;
+	}
 
 	footer.footer{
 		padding-top: 35px;
@@ -264,6 +279,11 @@
 	
 	footer.footer .menu-main-menu-container ul#menu-main-menu .menu-item {
 		padding: 8px 0;
+	}
+
+	.footer-wrap ul.footernav li a, 
+	footer.footer .copyright{
+		font-size: 14px;
 	}
 	
 	.footer-smi a {
@@ -283,18 +303,21 @@
 	}
 
 	section#newsletter-section {
-		display: block;
-		padding: 184px 38px 62px;
+		padding: 73px 38px 62px;
+		display: flex;
+		align-items: center;
+		flex-direction: column;
+		justify-content: space-between;
 	}
 
 	section#newsletter-section .accent-bg {
 		position: relative;
 		display: inline-block;
-		height: 100%;
-		width: 100%;
 		min-height: 150px;
-		top: 0px;
-		left: 0px;
+		height: unset;
+		width: unset;
+		top: -211px;
+		left: -222px;
 	}
 	
 	section#newsletter-section .accent-bg .accent-red {
@@ -316,11 +339,14 @@
 		width: 100%;
 		height: 40px;
 		margin-bottom: 11px;
+		font-size: 15px;
+    	text-align: center;
 	}
 	
 	.newsletter-content .newsletter-form .aios-btn.aios-btn-red {
 		width: 129px;
 		height: 40px;
+		margin-left: unset;
 	}
 	
 	.newsletter-wrap .newsletter-content .newsletter-header {
@@ -330,6 +356,8 @@
 
 	section#contact-section .contact-wrap .contact-info, section#contact-section .contact-wrap .contact-form{
 		width: 100% !important;
+		display: flex;
+		flex-direction: column;
 	}
 
 	section#contact-section .contact-wrap {
@@ -454,14 +482,20 @@
 
 /* Galaxy S5(portrait) | iPod Touch(landscape) | iPod Touch(portrait) */ 
 @media only screen and (max-width: 480px) {
+
+	section#newsletter-section .accent-bg {
+		top: -163px;
+		left: -139px;
+	}
+
 	section#newsletter-section .accent-bg .accent-red{
 		top: -923px;
 		left: -623px;
 	}
 
-	section#newsletter-section .accent-bg .accent-white{
-		top: 22px;
-		left: -760px;
+	section#newsletter-section .accent-bg .accent-white {
+		top: 24px;
+		left: -690px;
 	}
 
 	section#innerpage-banner .accent-bg .accent-red {

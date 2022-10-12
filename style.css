@@ -422,6 +422,27 @@ p{
     font-style: normal !important;
 }
 
+.cart-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.cart-container .header-cart-count {
+    position: absolute;
+    top: -6px;
+    right: -9px;
+    background-color: var(--primary-blue);
+    color: #FFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    font-size: 12px;
+}
+
 /* 
 * 
 * Form Controls
@@ -649,7 +670,8 @@ section#icons-section .icons-wrap .icons-container .icon:nth-of-type(3) img{
     margin-bottom: max(2.396vw, 46px);
 }
 
-section#icons-section .icons-wrap .icons-container .icon:hover img {
+section#icons-section .icons-wrap .icons-container .icon img:hover,
+section#icons-section .icons-wrap .icons-container .icon img:focus {
     transform: rotateY(180deg);
 }
 

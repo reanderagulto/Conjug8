@@ -67,16 +67,19 @@
 
         function onPlusMinus(){
             $number = $('input[type="number"].qty');
+            $id = $number.attr('id');
             $minus = $('input[type="button"].minus');
             $plus = $('input[type="button"].plus');
-
+            
             $minus.on('click', function(){
+                console.log($id);
                 if(parseInt($number.val()) > 1){
-                    $number.val(parseInt($number.val()) - 1);
+                    $($id).val(parseInt($number.val()) - 1);
                 }
             });
 
             $plus.on('click', function(){
+                console.log($id);
                 $number.val(parseInt($number.val()) + 1);
             });
         }

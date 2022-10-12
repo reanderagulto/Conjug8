@@ -20,7 +20,6 @@ section#events-section .events-wrap {
 
 .events-wrap .section-header,
 .completed-events-wrap .section-header{
-    font-size: var(--font-size-title) !important;
     margin-bottom: 2.639vw !important;
 }
 
@@ -206,6 +205,16 @@ section#completed-events-section {
     .completed-events{
         width: 100%;
     }
+
+    .events-content .event h3, 
+    .event-container p.event-date{
+        font-size: 20px;
+    }
+    
+    .event-container p.event-date span{
+        font-size: 16px;
+    }
+    
 
     .completed-event-container .events-content h3, .completed-event-container .events-content p{
         font-size: 16px;

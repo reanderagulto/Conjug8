@@ -418,8 +418,6 @@ section#contact-section .contact-wrap .contact-info, section#contact-section .co
 
 .mobile-contact-form{
     display: none;
-    margin-top: 30px;
-    margin-bottom: 48px;
     position: relative;
 }
 
@@ -456,6 +454,10 @@ section#contact-section .contact-wrap .contact-info, section#contact-section .co
 }
 
 @media only screen and (max-width: 991px) {
+    section#contact-section{
+        padding: 6.302vw 7.688vw 6.042vw 8.688vw;
+    }
+
     .banner-container {
         height: 100vh;
     }
@@ -552,12 +554,22 @@ section#contact-section .contact-wrap .contact-info, section#contact-section .co
         margin-bottom: 9px;
     }
 
-    .contact-info .contact-links i {
-        min-width: 35px;
-    }
 }
 
 @media only screen and (max-width: 767px) {
+
+    section#contact-section{
+        padding: 48px 25px 48px 21px;
+    }
+
+    section#about-section .about-content h3{
+        font-size: 20px;
+    }
+
+    .contact-info .section-subheader{
+        font-size: 18px;
+    }
+
     section#about-section .about-img .img-container {
         position: relative;
     }
@@ -572,6 +584,11 @@ section#contact-section .contact-wrap .contact-info, section#contact-section .co
         width: 100%;
     }
 
+    section#about-section .about-content .aios-btn.aios-btn-red{
+        height: 40px;
+        width: 118px;
+    }
+
     section#about-section .about-content {
         padding: 33px 24px 58px 21px;
     }
@@ -582,7 +599,27 @@ section#contact-section .contact-wrap .contact-info, section#contact-section .co
 
     section#about-section .about-img .img-container {
         height: 100%;
+        min-height: 50vh;
     }
+
+    section#about-section .about-img .img-container::before {
+        width: 401px;
+        height: 401px;
+        top: -225px;
+        right: -216px;
+    }
+    
+    section#about-section .about-img .img-container::after {
+        width: 571px;
+        height: 571px;
+        right: -323px;
+        bottom: -390px;
+    }
+
+    section#about-section .about-img .img-container img{
+        object-position: 80%;
+    }
+    
 
     section#icons-section .icons-wrap .icons-container {
         flex-flow: column;
@@ -714,6 +751,21 @@ section#contact-section .contact-wrap .contact-info, section#contact-section .co
         transition: 0.3s all ease-in-out;
         -webkit-appearance: none;
         appearance: none;
+    }
+
+    
+    .contact-info .contact-links i {
+        width: 35px;
+        height: 35px;
+        font-size: 21px;
+    }
+
+    .contact-info .contact-links i.ai-font-envelope {
+        font-size: 14px;
+    }
+
+    .contact-info .contact-links:last-of-type {
+        margin-bottom: 31px;
     }
 
     .contact-close:hover{
