@@ -47,6 +47,10 @@ section#contact-section .contact-wrap .contact-form{
     margin-right: 0.729vw;
 }
 
+.contact-info .contact-links i img {
+    filter: brightness(0) invert(1);
+}
+
 .contact-info .contact-links i.ai-font-envelope{
     font-size: 15px;
 }
@@ -57,6 +61,7 @@ section#contact-section .contact-wrap .contact-form{
 
 .contact-content .aios-form-group{
     width: 100%;
+    margin-bottom: max(1.250vw, 24px);
 }
 
 .contact-content .aios-form-group.flex label{
@@ -70,6 +75,8 @@ section#contact-section .contact-wrap .contact-form{
 
 .aios-submit{
     margin-top: 1.563vw;
+    display: flex;
+    align-items: center;
 }
 
 .aios-submit .aios-btn.aios-btn-red {
@@ -122,4 +129,25 @@ section#contact-section .contact-wrap .contact-form{
     .contact-info .contact-links i{
         margin-right: max(2.729vw, 24px);
     }
+
+    .contact-info .contact-links i {
+        width: 35px;
+        height: 35px;
+        font-size: 21px;
+    }
+
+    .contact-info .contact-links i.envelope img{
+        width: 19px;
+        height: 14px;
+    }
+
+    .contact-info .contact-links i.map-locator img,
+    .contact-info .contact-links i.phone img{
+        width: 13px;
+        height: 18px;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+
 }

@@ -318,8 +318,8 @@ section.featured-products .accent-bg {
 }
 
 section.featured-products .accent-bg .accent-red {
-    right: -413px;
-    bottom: -576px;
+    right: -21.510vw;
+    bottom: -30vw;
     width: clamp(63.611vw, 916px, 916px);
     height: clamp(63.611vw, 916px, 916px);
 }
@@ -341,8 +341,13 @@ section.featured-products .slider-navs {
 
 @media only screen and (max-width: 991px){
     section.featured-products .accent-bg {
-        bottom: -116px;
-        right: -192px;
+        bottom: -194.3px;
+        right: -224.8px;
+    }
+    
+    section.featured-products .accent-bg .accent-red {
+        right: -257.9049px;
+        bottom: -479.6px;
     }
 
     section.featured-products .slider-navs {

@@ -59,9 +59,19 @@
     margin-bottom: 30px;
 }
 
+.checkout-page-container h3{
+    font-size: 24px; 
+    font-weight: bold;
+    margin: 26px 0;
+}
+
 @media only screen and (max-width: 767px) {
 
     .checkout-page-container .checkout-wrap{
         padding: 3.125vw 2.667vw 2.194vw;
+    }
+
+    label.woocommerce-form__label.woocommerce-form__label-for-checkbox.checkbox {
+        margin-left: 30px;
     }
 }

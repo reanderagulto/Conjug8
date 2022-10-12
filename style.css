@@ -507,6 +507,12 @@ header.header{
             padding: 0 1.125vw;
         }
 
+        header.header .main-menu .menu-main-menu-container ul#nav li.menu-item.current-menu-item, 
+        .footer-wrap ul.footernav li.current-menu-item a {
+            font-weight: bold;
+            opacity: 1;
+        }
+
         header.header .main-menu .menu-main-menu-container ul#nav li.menu-item a, 
         header.header .side-nav a{
             font-size: max(0.833vw, 16px);
@@ -622,12 +628,12 @@ section#newsletter-section .accent-bg .accent-white{
 }
 
 .newsletter-content .newsletter-form input[type='email'] {
-    width: max(32.153vw, 463px);
+    width: max(24.115vw, 463px);
     height: 50px;
     border-radius: 45px;
     border: unset;
     color: var(--secondary-text);
-    padding: 0.25vw 2.292vw 0.181vw;
+    padding: 0.25vw 2.292vw 0.25vw;
     font-family: var(--font-family-para);
     font-size: var(--font-size-default);
 }
@@ -705,7 +711,11 @@ footer.footer .footer-wrap {
 }
 
 .footer-smi a i {
-    font-size: 21px;
+    font-size: 26px;
+}
+
+.footer-smi a i.ai-font-youtube {
+    font-size: 31px;
 }
 
 .footer-smi {
@@ -831,9 +841,10 @@ section#innerpage-banner .innerpage-banner-wrap {
     position: relative;
 }
 
-.innerpage-banner-wrap h1.inner-section-header {
+.innerpage-banner-wrap h1.inner-section-header,
+#content-full h1, aside h1 {
     color: #FFF;
-    font-size: max(2.500vw, 30px);
+    font-size: max(2.500vw, 48px);
     font-weight: bold;
 }
 

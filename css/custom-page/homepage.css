@@ -388,6 +388,7 @@ section#contact-section .contact-wrap .contact-info, section#contact-section .co
 
 .contact-content .aios-form-group {
     width: 100%;
+    margin-bottom: max(1.250vw, 24px);
 }
 
 .contact-content .aios-form-group.flex label {
@@ -449,7 +450,7 @@ section#contact-section .contact-wrap .contact-info, section#contact-section .co
     }
 
     .banner-col {
-        padding: 6.250vw 4.375vw 12.688vw;
+        padding: 6.250vw 4.375vw 11.688vw;
     }
 }
 
@@ -689,6 +690,7 @@ section#contact-section .contact-wrap .contact-info, section#contact-section .co
         flex-direction: column;
         flex-grow: 1;
         align-items: stretch;
+        margin-bottom: unset;
     }
 
     .contact-form .contact-form-wrap .contact-form-main{
@@ -731,6 +733,8 @@ section#contact-section .contact-wrap .contact-info, section#contact-section .co
     .aios-submit .aios-btn.aios-btn-red{
         padding: 14px 24px;
         font-size: 15px;
+        height: 45px;
+        width: 141px;
     }
     
     .contact-close{
@@ -760,8 +764,15 @@ section#contact-section .contact-wrap .contact-info, section#contact-section .co
         font-size: 21px;
     }
 
-    .contact-info .contact-links i.ai-font-envelope {
-        font-size: 14px;
+    .contact-info .contact-links i.envelope img{
+        width: 19px;
+        height: 14px;
+    }
+
+    .contact-info .contact-links i.map-locator img,
+    .contact-info .contact-links i.phone img{
+        width: 13px;
+        height: 18px;
     }
 
     .contact-info .contact-links:last-of-type {

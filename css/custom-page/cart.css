@@ -56,7 +56,7 @@
 .cart-page-container .woocommerce button.button, 
 .cart-page-container .woocommerce input.button, 
 .cart-page-container .woocommerce button.button[name="update_cart"]{
-    width: max(9.375vw, 135px);
+    width: max(11.510vw, 221px);
 }
 
 .cart-page-container .woocommerce #content table.cart td.actions .input-text, 
@@ -99,6 +99,12 @@
     font-size: var(--font-size-default);
     color: var(--primary-darker) !important;
     border-radius: 5px;
+}
+
+.cart-page-container h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 26px 0;
 }
 
 @media only screen and (max-width: 767px) {

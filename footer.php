@@ -59,16 +59,16 @@
 							<h2 class="section-header"><?= $contact_header ?></h2>
 							<h3 class="section-subheader"><?= $contact_subheader ?></h3>
 							<a href="<?php echo (!empty($contact_email) ? 'mailto: ' . $contact_email : '#' ); ?>" class="contact-links flex items-center">
-								<i class="ai-font-envelope"></i>
+								<i class="envelope"><img src="<?=do_shortcode('[stylesheet_directory]')?>/images/email-icon.png" class="img-responsive" width="24" height="18"/></i>
 								<p><?= $contact_email ?></p>
 							</a>
 							<div class="contact-links flex items-start">
-								<i class="ai-font-location-c"></i>
+								<i class="map-locator"><img src="<?=do_shortcode('[stylesheet_directory]')?>/images/location-icon.png" class="img-responsive"  width="16" height="21"/></i>
 								<p><?= nl2br($contact_location) ?></p>
 							</div>
-							<a href="<?php echo (!empty($contact_email) ? 'tel: ' . $contact_phone : '#' ); ?>" class="contact-links flex items-center">
-								<i class="ai-font-mobile-b"></i>
-								<p><?= $contact_phone ?> </p>
+							<a href="<?php echo (!empty($contact_phone) ? 'tel: ' . $contact_phone : '#' ); ?>" class="contact-links flex items-center">
+								<i class="phone"><img src="<?=do_shortcode('[stylesheet_directory]')?>/images/mobile-icon.png" class="img-responsive" width="15" height="22"/></i>
+								<p><?= $contact_phone ?> </p>								
 							</a>
 
 							<div class="mobile-contact-form">
