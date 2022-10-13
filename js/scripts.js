@@ -10,6 +10,7 @@
             sliderConfig();
             showMorePosts();
             popup();
+            addedToCart();
         }
         function onScrollFixed() {
             this.onScrollFixed = function () {
@@ -152,6 +153,21 @@
                 $('#choose-login-popup').addClass('active');
             }); 
             
+        }
+
+        function addedToCart(){
+            jQuery(document.body).on('click', '.ajax_add_to_cart', function(event){
+                let $this = $(this); // Get button jQuery Object and set it in a variable
+
+                jQuery(document.body).on('added_to_cart', function(event,b,data){
+                    $this.text("Added to Cart");
+                    setTimeout(function() {
+                        $this.text("Add to Cart");
+                        $this.removeClass('added');
+                    }, 800);
+                });
+            });
+                
         }
         /**
          * Instantiate

@@ -64,10 +64,14 @@
     color: #FFF;
     border-radius: 45px;
     margin: 20px max(1.806vw, 26px);
-    transition: all var(--ease-short-transition);
+    transition: background color var(--ease-short-transition);
     font-size: 16px;
     width: max(6.198vw, 119px);
     position: relative;
+}
+
+.woocommerce .shop-container .shop-wrap ul.products li.product .button.added{
+    font-size: 14px;
 }
 
 .woocommerce .shop-container .shop-wrap ul.products li.product .button:hover{

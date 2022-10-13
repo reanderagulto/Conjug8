@@ -1111,6 +1111,7 @@ section#innerpage-banner .innerpage-banner-wrap {
     position: absolute;
     right: -28px;
     color: var(--primary-red);
+    content: '';
 }
 
 .woocommerce #respond input#submit.loading::after, .woocommerce a.button.loading::after, .woocommerce button.button.loading::after, .woocommerce input.button.loading::after{
