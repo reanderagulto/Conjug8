@@ -76,6 +76,9 @@ if ( ! class_exists( 'agentpro_events_post_type' ) ) {
         function custom_metabox(){
             add_action( 'add_meta_boxes', [$this, 'add_featured_metabox'] );
             add_action( 'save_post', [$this, 'save_featured_metabox'] );
+
+            add_action( 'add_meta_boxes', [$this, 'add_show_livestream'] );
+            add_action( 'save_post', [$this, 'save_livestream_event'] );
         }
 
         function add_featured_metabox(){
@@ -106,6 +109,37 @@ if ( ! class_exists( 'agentpro_events_post_type' ) ) {
                 update_post_meta( $post_id, 'featured-event', 'yes' );
             } else {
                 update_post_meta( $post_id, 'featured-event', 'no' );
+            }
+        }
+
+        function add_show_livestream(){
+            add_meta_box( 'livestream_event', __('Live Stream Event', 'aios-events'), [$this, 'display_livestream_event'], 'events', 'side', 'high' );
+        }
+
+        function display_livestream_event( $post ){
+            wp_nonce_field( basename( __FILE__ ), 'livestream_event_nonce' );
+            $stored_meta = get_post_meta( $post->ID ); ?>
+            <label for="livestream_event">
+                <input type="checkbox" name="livestream-event" id="livestream-event" value="yes" <?php if ( isset ( $stored_meta['livestream-event'] ) ) checked( $stored_meta['livestream-event'][0], 'yes' ); ?> />
+                <?php _e( 'Show Livestream Video?', 'aios-events' )?>
+            </label>
+        <?php }
+
+        function save_livestream_event( $post_id ) {
+            $is_autosave = wp_is_post_autosave( $post_id );
+            $is_revision = wp_is_post_revision( $post_id );
+            $is_valid_nonce = ( isset( $_POST[ 'livestream_event_nonce' ] ) && wp_verify_nonce( $_POST[ 'livestream_event_nonce' ], basename( __FILE__ ) ) ) ? 'true' : 'false';
+
+            // Exits script depending on save status
+            if ( $is_autosave || $is_revision || !$is_valid_nonce ) {
+                return;
+            }
+
+            // Checks for input and saves - save checked as yes and unchecked at no
+            if( isset( $_POST[ 'livestream-event' ] ) ) {
+                update_post_meta( $post_id, 'livestream-event', 'yes' );
+            } else {
+                update_post_meta( $post_id, 'livestream-event', 'no' );
             }
         }
 

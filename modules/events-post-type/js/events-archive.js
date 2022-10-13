@@ -7,6 +7,7 @@
             completedEvents();
             upcomingEvents();
             sliderConfig();
+            videoPlayer();
         }
 
         function completedEvents(){
@@ -82,6 +83,27 @@
                 prevArrow: $('.slider-nav.prod-prev'),
             });
         
+        }
+
+        function videoPlayer(){
+            let $videoContainer = $('.live-event-container');
+
+            if(typeof w.Plyr === 'function'){
+                var $target = $videoContainer.find('.what-plyr video');
+                var plyr = new Plyr($target[0], {
+                    controls: [
+                        'play-large', 
+                        'play', 
+                        'progress', 
+                        'current-time', 
+                        'mute', 
+                        'volume', 
+                        'settings', 
+                        'fullscreen'
+                    ],
+                });
+
+            }
         }
 
         /**

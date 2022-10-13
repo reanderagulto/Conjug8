@@ -313,6 +313,82 @@ section.featured-events .accent-bg .accent-red {
     background-color: #FFF
 }
 
+/* Live Event */
+
+.live-event-wrap {
+    padding: 6.875vw 13.542vw 1.153vw;
+}
+
+.video-content {
+    position: relative;
+    width: 100%;
+    display: block;
+}
+
+.video-content .event-title{
+    display: block;
+    position: absolute;
+    bottom: 40px;
+    left: 30px;
+    font-size: 32px;
+    color: #FFF;
+}
+
+.video-content .live-badge{
+    display: block;
+    position: absolute;
+    top: 20px;
+    left: 21px;
+    font-size: 19px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    background-color: rgb(245, 62, 64);
+    text-transform: uppercase;
+    color: #fff;
+    width: 66px;
+    height: 33px;
+    border-radius: 3px;
+}
+
+.live-event-container .video-content .what-plyr .plyr > button.plyr__control{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: transparent url(../../../images/play-button.png) no-repeat;
+    background-size: 100%;
+    margin: auto;
+    cursor: pointer;
+}
+
+.live-event-container .video-content .what-plyr .plyr > button.plyr__control svg{
+    display: none;
+}
+
+.live-event-wrap .happening-now-badge{
+    width: max(13.021vw, 250px);
+    height: 44px;
+    margin-bottom: 18px;
+}
+
+.live-event-wrap .happening-now-badge span{
+    margin-right: 10px;
+}
+
+.live-event-container-wrapper {
+    background-color: var(--primary-blue);
+    text-align: center;
+    padding: 0 55px 60px
+}
+
+.live-event-container h2.section-header {
+    margin: unset !important;
+    padding: 52px 0 41px;
+    font-size: var(--font-size-title) !important;
+    color: #FFF;
+}
+
 
 /* Responsive */
 @media only screen and (max-width: 991px) {

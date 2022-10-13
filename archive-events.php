@@ -2,6 +2,32 @@
 
 get_header(); 
 
+$args = [
+    'post_type' => 'events',
+    'post_status' => 'publish', 
+    'order' => 'ASC',
+    'posts_per_page' => -1,
+    'date_query'     => array(
+        array(
+            'year'  => $today['year'],
+            'month' => $today['mon'],
+            'day'   => $today['mday'],
+        ),
+        //allow exact matches to be returned
+        'inclusive' => true,
+    ),
+    'meta_query' =>[
+        [
+            'key' => 'livestream-event',
+            'value' => 'yes',
+            'compare' => '='
+        ]
+    ],
+];
+
+$posts_query = new WP_Query( $args );
+$happening_now = $posts_query->post_count;
+wp_reset_query();
 ?>
 
 <section id="innerpage-banner">
@@ -19,9 +45,13 @@ get_header();
 <div class="events-archive">
 	<section class="hfeed">
 
-        <section class="featured-section">
-            <?php echo do_shortcode('[featured_events_slider]'); ?>
-        </section>
+        <?php if($happening_now > 0): ?>
+            <?php echo do_shortcode('[happening_now]'); ?>
+        <?php else: ?>
+            <section class="featured-section" data-aos="fade-up" data-aos-once="true">
+                <?php echo do_shortcode('[featured_events_slider]'); ?>
+            </section>
+        <?php endif; ?>
         
         <!-- Upcoming Events -->
         <?php

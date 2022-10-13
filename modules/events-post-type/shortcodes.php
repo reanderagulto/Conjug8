@@ -10,6 +10,7 @@ if( !class_exists( 'agentpro_events_shortcodes' ) ) {
         function __construct(){
             add_shortcode( 'agentpro_events_archive', [ $this, 'agentpro_events_archive' ] );
             add_shortcode( 'featured_events_slider', [ $this, 'featured_events_slider' ] );
+            add_shortcode( 'happening_now', [ $this, 'happening_now' ]);
         }
 
         /* 
@@ -138,9 +139,10 @@ if( !class_exists( 'agentpro_events_shortcodes' ) ) {
         
             $posts_query = new WP_Query( $args );
             $posts_total = $posts_query->post_count;
+            $return = '';
         
             if($posts_total > 0){
-                $return = '';
+                
                 $posts = $posts_query->posts;
         
                 $return .= '
@@ -179,11 +181,87 @@ if( !class_exists( 'agentpro_events_shortcodes' ) ) {
                 wp_reset_postdata();
                 wp_reset_query();
             }
-            else{
-                $return = "No Post(s) Found";
-            }
             return $return;
         
+        }
+
+        public function happening_now($atts){
+            $atts = shortcode_atts( [
+                'posts_per_page' => 1,
+                'order' => 'ASC',
+            ], $atts );
+
+            extract( $atts ); // create variables using the above array keys
+
+            wp_enqueue_style( 'event-slider', get_stylesheet_directory_uri() . '/modules/events-post-type/css/events-archive.css' );
+            wp_enqueue_script( 'event-slider', get_stylesheet_directory_uri() . '/modules/events-post-type/js/events-archive.js' );
+
+            $args = [
+                'post_type' => 'events',
+                'post_status' => 'publish', 
+                'order' => $order,
+                'posts_per_page' => $posts_per_page,
+                'date_query'     => array(
+                    array(
+                        'year'  => $today['year'],
+                        'month' => $today['mon'],
+                        'day'   => $today['mday'],
+                    ),
+                    //allow exact matches to be returned
+                    'inclusive' => true,
+                ),
+                'meta_query' =>[
+                    [
+                        'key' => 'livestream-event',
+                        'value' => 'yes',
+                        'compare' => '='
+                    ]
+                ],
+            ];
+
+            $posts_query = new WP_Query( $args );
+            $posts_total = $posts_query->post_count;
+            $return = '';
+
+            if($posts_total > 0){
+                $group_html = '';
+
+                $posts = $posts_query->posts;
+                foreach( $posts as $key => $post ) {
+                    $post_id = $post->ID;
+                    $post_title = $post->post_title;
+                    $post_url = get_permalink($post_id);
+                    $event_banner = get_field('event_banner', $post_id);
+                    $group_html .= '
+                            <div class="live-event-wrap">
+                                <div class="happening-now-badge aios-btn aios-btn-red"><span class="ai-font-play-button-a"></span> Happening Now</div>
+                                <div class="live-event-container-wrapper">
+                                    <div class="live-event-container">
+                                        <h2 class="section-header">' . $post_title . '</h2>
+                                        <div class="video-content">
+                                            <div class="live-badge">Live</div>
+                                            <div class="what-plyr">
+                                                <video id="player" playsinline controls data-poster="' . $event_banner[ 'thumbnail_image' ]['url'] . '" poster="' . $event_banner[ 'thumbnail_image' ]['url'] . '">
+                                                    <source src="' . $event_banner['video_link'] . '" type="video/mp4" />
+                                                </video>
+                                            </div>
+                                            <div class="event-title">' . $post_title . '</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>';
+                }
+                $return = '<section class="live-event" data-aos="fade-up" data-aos-once="true">' 
+                            . $group_html . 
+                          '</section>';
+            }
+            else{
+                $return = '<div>No Posts</div>';
+            }
+
+            return $return;
+
         }
     }
 
