@@ -20,6 +20,10 @@ foreach ( $fields_to_get as $field ) {
         </h1>
         <p><?php echo get_the_date( 'F j, Y', $post_id ); ?></p>
     </div>
+    <div class="accent-bg">
+        <div class="accent-red"></div>
+        <div class="accent-dark-blue"></div>
+    </div>
 </section>
 
 <div id="<?php echo ai_starter_theme_get_content_id('content-full') ?>" class="events-single">

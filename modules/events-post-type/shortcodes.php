@@ -9,6 +9,7 @@ if( !class_exists( 'agentpro_events_shortcodes' ) ) {
         */
         function __construct(){
             add_shortcode( 'agentpro_events_archive', [ $this, 'agentpro_events_archive' ] );
+            add_shortcode( 'featured_events_slider', [ $this, 'featured_events_slider' ] );
         }
 
         /* 
@@ -108,6 +109,81 @@ if( !class_exists( 'agentpro_events_shortcodes' ) ) {
                 $response = $no_results_text;
             }
             return $response;
+        }
+
+        public function featured_events_slider( $atts ){
+            $atts = shortcode_atts( [
+                'posts_per_page' => -1,
+                'order' => 'ASC',
+            ], $atts );
+        
+            extract( $atts ); // create variables using the above array keys
+
+            wp_enqueue_style( 'event-slider', get_stylesheet_directory_uri() . '/modules/events-post-type/css/events-archive.css' );
+            wp_enqueue_script( 'event-slider', get_stylesheet_directory_uri() . '/modules/events-post-type/js/events-archive.js' );
+        
+            $args = [
+                'post_type' => 'events',
+                'post_status' => array('publish', 'future'),
+                'order' => $order,
+                'posts_per_page' => $posts_per_page,
+                'meta_query' =>[
+                    [
+                        'key' => 'featured-event',
+                        'value' => 'yes',
+                        'compare' => '='
+                    ]
+                ],
+            ];
+        
+            $posts_query = new WP_Query( $args );
+            $posts_total = $posts_query->post_count;
+        
+            if($posts_total > 0){
+                $return = '';
+                $posts = $posts_query->posts;
+        
+                $return .= '
+                <section class="featured-events">
+                    <div class="featured-events-wrap">
+                        <div class="featured-event-slider">';
+                            foreach( $posts as $key => $post ) {
+                                $post_id = $post->ID;
+                                $post_title = $post->post_title;
+                                $post_thumbnail_url = get_the_post_thumbnail_url( $post_id, 'full' );
+                                $post_date = get_the_date( 'F j, Y', get_the_ID());
+                                $post_url = get_permalink($post_id);
+        
+                                $return .= '
+                                    <div class="event-slide" style="background-image: url(' . $post_thumbnail_url . ')">
+                                        <div class="event-info">
+                                            <h3 class="section-header">' . $post_title . '</h3>
+                                            <p>' . $post_date . '</p>
+                                            <p>' . ai_starter_theme_truncate_string( strip_tags( strip_shortcodes( $post->post_content ) ), 150, "..." ) . '</p>
+                                            <a class="events-more aios-btn aios-btn-red" href="' . $post_url . '">Learn more</a>
+                                        </div>
+                                    </div>';
+                            }
+                $return .= '
+                        </div>
+                        <div class="slider-navs">
+                            <button type="button" class="aios-btn aios-btn-transparent slider-nav prod-prev ai-font-arrow-b-p"></button>
+                            <button type="button" class="aios-btn aios-btn-transparent slider-nav prod-next ai-font-arrow-b-n"></button>
+                        </div>
+                        <div class="accent-bg">
+                            <div class="accent-red">
+                        </div>
+                    </div>
+                </section>';
+        
+                wp_reset_postdata();
+                wp_reset_query();
+            }
+            else{
+                $return = "No Post(s) Found";
+            }
+            return $return;
+        
         }
     }
 

@@ -18,6 +18,11 @@ get_header();
 
 <div class="events-archive">
 	<section class="hfeed">
+
+        <section class="featured-section">
+            <?php echo do_shortcode('[featured_events_slider]'); ?>
+        </section>
+        
         <!-- Upcoming Events -->
         <?php
             $args = [

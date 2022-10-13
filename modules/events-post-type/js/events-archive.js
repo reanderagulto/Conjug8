@@ -6,6 +6,7 @@
         function __construct() {
             completedEvents();
             upcomingEvents();
+            sliderConfig();
         }
 
         function completedEvents(){
@@ -64,6 +65,23 @@
                     },
                 });
             });
+        }
+
+        function sliderConfig() {
+            let $featuredevent = jQuery('.featured-event-slider');
+            $featuredevent.slick({
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                arrows: true,
+                dots: false,
+                infinite: true,
+                draggable: false,
+                // autoplay: true,
+                // autoplaySpeed: 3000,
+                nextArrow: $('.slider-nav.prod-next'),
+                prevArrow: $('.slider-nav.prod-prev'),
+            });
+        
         }
 
         /**
