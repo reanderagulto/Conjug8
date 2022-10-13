@@ -102,6 +102,11 @@ if(!class_exists('woocommerce_hooks')) {
                 echo '<span class="product-generic-name">' . $product_attributes['generic_name'] . '</span>';
             }, 6 );
             
+            add_filter( 'woocommerce_output_related_products_args', function(){
+                $args['posts_per_page'] = 3; // 4 related products
+                $args['columns'] = 1; // arranged in 2 columns
+                return $args;
+            }, 20 );
         }
 
         
