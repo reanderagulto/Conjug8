@@ -483,7 +483,7 @@ p{
 header.header{
     position: fixed;
     top: 0;
-    z-index: 999;
+    z-index: 9999999999999999;
     width: 100%;
     transition: all var(--ease-short-transition);
     padding: 2.250vw 11.181vw;

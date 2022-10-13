@@ -463,35 +463,15 @@ section#contact-section .contact-wrap .contact-info, section#contact-section .co
         height: 100vh;
     }
 
-    .banner-container .banner-background {
-        height: auto;
-        min-height: 100%;
-        position: absolute;
-        top: 330px;
-    }
-
-    .banner-container .banner-background img {
-        display: block;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        object-position: 85% bottom;
-    }
-
-    .banner-container .banner-background canvas {
-        background-size: unset !important;
-        background-position: right bottom;
-    }
-
     .banner-container .banner-background::before {
         content: '';
         position: absolute;
         left: 0;
-        top: -236px;
+        top: -94px;
         width: 100%;
         height: 100%;
-        background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 34%, rgba(255,255,255,0) 67%, rgba(255,255,255,0) 100%);
-        z-index: -9;
+        background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 25%, rgba(255,255,255,0) 37%, rgba(255,255,255,0) 100%);
+        z-index: 99;
         opacity: 1;
     }
 
@@ -510,9 +490,9 @@ section#contact-section .contact-wrap .contact-info, section#contact-section .co
     
     .banner-container .accent-bg .accent-blue {
         bottom: 562px;
-        left: 74px;
-        width: 1200px;
-        height: 1200px;
+        left: 185px;
+        width: 400px;
+        height: 450px;
     }
 
     .banner-text-container {
@@ -522,7 +502,7 @@ section#contact-section .contact-wrap .contact-info, section#contact-section .co
 
     .banner-col {
         text-align: center;
-        /* padding: 51px 25px 50px; */
+        padding: 51px 25px 50px;
         position: relative;
         top: 0;
         left: 0;
@@ -554,6 +534,46 @@ section#contact-section .contact-wrap .contact-info, section#contact-section .co
         margin: auto;
         margin-bottom: 9px;
     }
+
+    .banner-container .banner-background {
+        display: block;
+        position: relative;
+        width: 100%;
+        height: 100%;
+        min-height: unset;
+        top: unset;
+        left: unset;
+    }
+    
+    .banner-image {
+        content: '';
+        position: absolute;
+        top: 100px;
+        left: 0;
+        width: 100%;
+        height: 750px;
+    }
+    
+    .banner-container .banner-background img {
+        position: unset;
+        top: unset;
+        left: unset;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: right top;
+    }
+    
+    .banner-container .accent-bg {
+        top: -42.29px;
+    left: 672.06px;
+    }
+    
+    .banner-container .accent-bg .accent-red {
+        top: -541px;
+        left: -428px;
+    }
+    
 
 }
 
@@ -600,7 +620,7 @@ section#contact-section .contact-wrap .contact-info, section#contact-section .co
 
     section#about-section .about-img .img-container {
         height: 100%;
-        min-height: 50vh;
+        min-height: 450px;
     }
 
     section#about-section .about-img .img-container::before {
@@ -792,36 +812,58 @@ section#contact-section .contact-wrap .contact-info, section#contact-section .co
         padding: 51px 25px 50px;
     }
 
-    .banner-container .accent-bg {
-        top: -71.29px;
-        left: 566.06px;
+    .banner-image {
+        height: 650px;
     }
     
-    .banner-container .accent-bg .accent-red {
-        left: -342px;
+    .banner-container {
+        height: 900px;
+    }
+    
+    .banner-container .accent-bg {
+        top: -73.29px;
+        left: 541.06px;
+    }
+    
+    .banner-container .banner-background img {
+        object-position: 90% top;
     }
     
     .banner-container .accent-bg .accent-blue {
         bottom: 561px;
-        left: 42px;
+        left: 168px;
     }
     
-    .banner-container .banner-background img {
-        object-position: 75% bottom;
-    }
+    
 }
 
 @media only screen and (max-width: 480px) {
-    .banner-container .accent-bg {
-        top: 54.71px;
-        left: 419.06px;
-    }
-    
-    .banner-container .banner-background img {
-        object-position: 70% bottom;
+    .banner-container{
+        height: 800px;
     }
 
-    .banner-text-container h1{
-        width: 100%;
+    .banner-container .accent-bg .accent-red {
+        width: 700px;
+        height: 700px;
+        left: -255px;
+    }
+    
+    .banner-image {
+        height: 450px;
+        top: 115px;
+    }
+    
+    .banner-container .accent-bg {
+        top: -15.29px;
+        left: 430.06px;
+    }
+    
+    .banner-container .accent-bg .accent-blue {
+        bottom: 564px;
+        left: 77px;
+    }
+
+    .banner-container .banner-background img{
+        object-position: 90% top;
     }
 }

@@ -36,9 +36,11 @@ foreach ( $fields_to_get as $field ) {
                         <div class="accent-blue"></div>
                     </div>
                     <div class="banner-background">
-                        <?php if(!empty($banner['background_image'])): ?>
-                            <img src="<?php echo $banner['background_image']['url'];?>" width="<?php echo $banner['background_image']['width'];?>" height="<?php echo $banner['background_image']['height'];?>">
-                        <?php endif; ?>
+                        <div class="banner-image">
+                            <?php if(!empty($banner['background_image'])): ?>
+                                <img src="<?php echo $banner['background_image']['url'];?>" width="<?php echo $banner['background_image']['width'];?>" height="<?php echo $banner['background_image']['height'];?>">
+                            <?php endif; ?>
+                        </div>
                     </div>
                 </div>
             <?php endforeach; ?>
