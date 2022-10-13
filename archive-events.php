@@ -23,9 +23,9 @@ get_header();
             $args = [
                 'post_type'      => 'events',
                 'post_status'    => 'future',
-                'order'          => 'ASC',
+                'order'          => 'DESC',
                 'orderby'        => 'date',
-                'posts_per_page' => -1,
+                'posts_per_page' => 6,
             ];
             $events_query = new WP_Query( $args );
         ?>
@@ -33,14 +33,27 @@ get_header();
             <section id="events-section">
                 <div class="events-wrap">
                     <h2 class="section-header text-center" data-aos="fade-up" data-aos-once="true">Upcoming Events</h2>
-                    <div class="events-content flex flex-wrap-wrap items-center justify-center" data-aos="fade-up" data-aos-once="true">
+                    <div class="upcoming-events-contents events-content flex flex-wrap-wrap items-center justify-center">
                         <?php 
-                            while($events_query->have_posts()): $events_query->the_post();
-                                get_template_part('loop', 'upcoming-events');
-                            endwhile;
-                        ?>
+                            while($events_query->have_posts()): $events_query->the_post(); ?>
+                                <div class="event" data-aos="fade-up" data-aos-once="true">
+                                    <div class="event-container">
+                                        <div class="img-container">
+                                            <canvas width="350" height="299"></canvas>
+                                            <img src="<?php the_post_thumbnail_url('full')?>" alt="<?php the_title(); ?>" width="350" height="299" />
+                                        </div>
+                                        <p class="event-date"><?php echo get_the_date( 'j', get_the_ID() ); ?> <span><?php echo get_the_date( 'M', get_the_ID() ); ?></span></p>
+                                    </div>
+                                    <h3><?php the_title(); ?></h3>
+                                </div>
+                            <?php endwhile; ?>                        
                         <?php wp_reset_query(); ?>
                     </div>
+                    <?php if($events_query->found_posts > 6): ?>
+                    <div class="upcoming-load-more-container" data-aos="fade-up" data-aos-once="true">
+                        <a href="#!" class="aios-btn aios-btn-red" id="upcoming-load-more">View More</a>
+                    </div>
+                    <?php endif; ?>
                 </div>
             </section>
         <?php endif; ?>

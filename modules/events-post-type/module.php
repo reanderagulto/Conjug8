@@ -14,6 +14,10 @@ if ( ! class_exists( 'agentpro_events_post_type' ) ) {
             // Ajax Functions
             add_action('wp_ajax_completed_events', array($this, 'completed_events'));
             add_action('wp_ajax_nopriv_completed_events', array($this, 'completed_events'));
+
+            add_action('wp_ajax_upcoming_events', array($this, 'upcoming_events'));
+            add_action('wp_ajax_nopriv_upcoming_events', array($this, 'upcoming_events'));
+
         }
 
         /* 
@@ -113,6 +117,34 @@ if ( ! class_exists( 'agentpro_events_post_type' ) ) {
                                 </div>
                             </div>
                         </a>
+                    </div>
+                <?php endwhile;
+            endif; 
+            wp_die();
+        }
+
+        function upcoming_events() {
+            $ajaxposts = new WP_Query([
+                'post_type'      => 'events',
+                'post_status'    => 'future',
+                'order'          => 'DESC',
+                'orderby'        => 'date',
+                'offset'         => $_POST['offset'],
+                'posts_per_page' => 3,
+            ]);
+            $max_pages = $ajaxposts->max_num_pages;
+            if($ajaxposts->have_posts()): 
+                while($ajaxposts->have_posts()): $ajaxposts->the_post(); ?>
+                    <div class="event" data-aos="fade-up" data-aos-once="true">
+                    <input type="hidden" id="upcoming-events" value="<?php echo $max_pages; ?>" />
+                        <div class="event-container">
+                            <div class="img-container">
+                                <canvas width="350" height="299"></canvas>
+                                <img src="<?php the_post_thumbnail_url('full')?>" alt="<?php the_title(); ?>" width="350" height="299" />
+                            </div>
+                            <p class="event-date"><?php echo get_the_date( 'j', get_the_ID() ); ?> <span><?php echo get_the_date( 'M', get_the_ID() ); ?></span></p>
+                        </div>
+                        <h3><?php the_title(); ?></h3>
                     </div>
                 <?php endwhile;
             endif; 

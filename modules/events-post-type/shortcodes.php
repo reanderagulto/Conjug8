@@ -14,18 +14,19 @@ if( !class_exists( 'agentpro_events_shortcodes' ) ) {
         /* 
         *
         * Function Name: agentpro_events_archive() 
-        * Generate Archive List of Board Members
+        * Generate Archive List of Events
         */
         public function agentpro_events_archive( $atts ){
             $atts = shortcode_atts( [
                 'posts_per_page' => -1,
                 'order' => 'ASC',
                 'order_by' => 'date',
+                'post_status' => 'future',
                 'thumbnail_size' => 'full',
                 'view_more_link' => home_url() . '/events/',
-                'view_more_text' => 'View More Board Members',
+                'view_more_text' => 'View More',
                 'with_view_more' => false,
-                'no_results_text' => 'No Board Members Found...',
+                'no_results_text' => 'No Events Found...',
                 'show_attributes' => false,
             ], $atts );
 
@@ -35,7 +36,7 @@ if( !class_exists( 'agentpro_events_shortcodes' ) ) {
 
             $args = [
                 'post_type' => 'events',
-                'post_status' => 'future',
+                'post_status' => $post_status,
                 'order' => $order,
                 'orderby' => $order_by,
                 'posts_per_page' => $posts_per_page,
@@ -46,13 +47,7 @@ if( !class_exists( 'agentpro_events_shortcodes' ) ) {
 
             if ( $events_total > 0 ) {
                 $events_posts = $events_query->posts;
-
-                if ( $with_view_more == 'true' ) {
-                    $groupPosts = array_chunk( $events_posts, 4 );
-                }
-                else {
-                    $groupPosts = array_chunk( $events_posts, 6 );
-                }
+                $groupPosts = array_chunk( $events_posts, 6 );
 
                 $group_content = '';
 
@@ -60,51 +55,6 @@ if( !class_exists( 'agentpro_events_shortcodes' ) ) {
                     $row_index = 1;
                     $column_index = 1;
                     $delay = 0.1;
-                    $column_settings = [
-                        [
-                            "items" => 3,
-                            "sizes" => [
-                                [
-                                    "width" => 660,
-                                    "height" => 373
-                                ],
-                                [
-                                    "width" => 327,
-                                    "height" => 183
-                                ],
-                                [
-                                    "width" => 327,
-                                    "height" => 183
-                                ]
-                            ]
-                        ],
-                        [
-                            "items" => 1,
-                            "sizes" => [
-                                [
-                                    "width" => 960,
-                                    "height" => 800
-                                ]
-                            ]
-                        ],
-                        [
-                            "items" => 3,
-                            "sizes" => [
-                                [
-                                    "width" => 327,
-                                    "height" => 183
-                                ],
-                                [
-                                    "width" => 327,
-                                    "height" => 183
-                                ],
-                                [
-                                    "width" => 327,
-                                    "height" => 183
-                                ]
-                            ]
-                        ]
-                    ];
 
                     $group_content .= '
                         <div class="events-wrap">
@@ -132,6 +82,10 @@ if( !class_exists( 'agentpro_events_shortcodes' ) ) {
                             </div>
                         ';
                     }          
+                    
+                    if ( $with_view_more == 'true' ) {
+                        $group_content  .= '<a href="' . $view_more_link . '" class="view-more aios-btn aios-btn-red">' . $view_more_text . '</a>';
+                    }
 
                     $group_content .= '
                         </div>
@@ -141,8 +95,7 @@ if( !class_exists( 'agentpro_events_shortcodes' ) ) {
                     $response .= '
                         <section id="events-section">
                             ' . $group_content . '
-                        </div>
-                    ';
+                        </div>';
                     
                     
                 }
