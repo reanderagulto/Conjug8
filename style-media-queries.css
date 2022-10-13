@@ -25,11 +25,6 @@
 		left: -12.6px;
 	}
 
-	section#newsletter-section:after{
-		right: -30%;
-		width: 100%;
-	}
-
 	section#newsletter-section .accent-bg {
 		top: 95.92px;
 		left: 323.73px;
@@ -358,6 +353,16 @@
 		font-size: 24px;
 	}
 
+	section#newsletter-section:after{
+		/* right: -30%; */
+		/* width: 100%; */
+		transform: scale(1);
+		width: 100%;
+		top: unset;
+		bottom: -110px;
+		right: -249px;
+	}
+
 	section#contact-section .contact-wrap .contact-info, section#contact-section .contact-wrap .contact-form{
 		width: 100% !important;
 		display: flex;
@@ -516,6 +521,13 @@
 		bottom: unset;
 		top: 222px;
 		left: -654px;
+	}
+
+	section#newsletter-section:after{
+		transform: scale(0.8);
+		width: 100%;
+		bottom: -115px;
+		right: -202px;
 	}
 	
 }

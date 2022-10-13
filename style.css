@@ -591,9 +591,25 @@ section#newsletter-section{
     padding: 6.181vw 28.194vw 6.806vw 28.056vw;
 }
 
+section#newsletter-section:after{
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    right: -51px;
+    width: 23.542vw;
+    height: 100%;
+    background-image: url(images/newsletter-right.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    transform: scale(2);
+}
+
 .newsletter-wrap {
     color: #fff;
     text-align: center;
+    z-index: 999999;
 }
 
 section#newsletter-section .accent-bg{
