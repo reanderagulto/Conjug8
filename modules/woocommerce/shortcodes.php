@@ -60,6 +60,7 @@ if( !class_exists('woocommerce_featured_product_slider')){
                         $attachment = wp_get_attachment_image_src( $post_thumbnail_id, 'full' );
                         $width = $attachment[1];
                         $height = $attachment[2];
+                        $product_attributes = get_field('product_attributes', $post_id);
 
                         $return .= '
                         <div class="product-slide">
@@ -68,7 +69,10 @@ if( !class_exists('woocommerce_featured_product_slider')){
                                 <img src="' . $post_thumbnail_url . '" width="' . $width . '" height="' . $height . '"/>
                             </div>
                             <div class="product-info">
-                                <h3>' . $post_title . '</h3>
+                                <h3>' 
+                                    . $post_title . 
+                                    '<span>' . $product_attributes['generic_name'] . '</span>
+                                </h3>
                                 <a href="' . $post_permalink . '" class="aios-btn-sm aios-btn-red">Buy Now</a>
                             </div>
                         </div>';

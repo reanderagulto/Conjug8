@@ -251,7 +251,9 @@ section#product-section {
     display: block;
     color: #4C4C4C;
     font-size: var(--font-size-default);
-    padding-top: 0.469vw;
+    padding-top: 9px;
+    font-weight: normal;
+    font-family: var(--font-family-belleza);
 }
 
 

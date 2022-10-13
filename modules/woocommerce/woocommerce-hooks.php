@@ -89,7 +89,25 @@ if(!class_exists('woocommerce_hooks')) {
             );
 
             apply_filters('woocommerce_product_related_products_heading', __( 'Other Products', 'woocommerce' ));
+
+            add_action( 'woocommerce_after_shop_loop_item_title', function(){
+                global $product; 
+
+                $product_id = $product->get_id(); // The product ID
+            
+                // Your custom field "Book author"
+                $product_attributes = get_field('product_attributes', $product_id);
+            
+                // Displaying your custom field under the title
+                echo '<span class="product-generic-name">' . $product_attributes['generic_name'] . '</span>';
+            }, 6 );
+            
         }
+
+        
+function custom_action_after_single_product_title() { 
+
+}
 
         function add_featured_metabox(){
             add_meta_box( 'featured_product', __('Featured Product', 'aios-textdomain'), [$this, 'display_featured_metabox'], 'product', 'side', 'high' );

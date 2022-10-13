@@ -1308,6 +1308,25 @@ if( function_exists('acf_add_local_field_group') ) {
                 'layout' => 'block',
                 'sub_fields' => array(
                     array(
+                        'key' => 'field_63392c03cef599',
+                        'label' => 'Generic Name',
+                        'name' => 'generic_name',
+                        'type' => 'text',
+                        'instructions' => '',
+                        'required' => 0,
+                        'conditional_logic' => 0,
+                        'wrapper' => array(
+                            'width' => '',
+                            'class' => '',
+                            'id' => '',
+                        ),
+                        'default_value' => '',
+                        'placeholder' => '',
+                        'prepend' => '',
+                        'append' => '',
+                        'maxlength' => '',
+                    ),
+                    array(
                         'key' => 'field_63392c03cef54',
                         'label' => 'Manufacturer',
                         'name' => 'manufacturer',

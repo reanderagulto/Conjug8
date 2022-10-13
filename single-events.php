@@ -39,7 +39,7 @@ foreach ( $fields_to_get as $field ) {
                     <div class="entry entry-content">
                         <div class="events-wrap">
                             <div class="events-inner">
-                                <?php if(!empty($event_banner)): ?>
+                                <?php if(!empty($event_banner[ 'video_link' ])): ?>
                                 <div class="video-content text-center">
                                     <div class="what-plyr">
                                         <video id="player" playsinline controls data-poster="<?php echo $event_banner[ 'thumbnail_image' ]['url']; ?>" poster="<?php echo $event_banner[ 'thumbnail_image' ]['url']; ?>">

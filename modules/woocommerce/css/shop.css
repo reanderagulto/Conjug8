@@ -55,6 +55,16 @@
     text-align: left;
 }
 
+.woocommerce .shop-container .shop-wrap ul.products li.product .product-generic-name{
+    padding: 0 max(1.806vw, 26px);
+    font-size: var(--font-size-default);
+    font-family: var(--font-family-belleza);
+    text-align: left;
+    margin-top: 9px;
+    display: block;
+    color: #4C4C4C;
+}
+
 .woocommerce .shop-container .shop-wrap ul.products li.product:hover .woocommerce-loop-product__title{
     color: #fff;
 }
@@ -64,7 +74,7 @@
     color: #FFF;
     border-radius: 45px;
     margin: 20px max(1.806vw, 26px);
-    transition: background color var(--ease-short-transition);
+    transition: all var(--ease-short-transition);
     font-size: 16px;
     width: max(6.198vw, 119px);
     position: relative;
