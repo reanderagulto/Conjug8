@@ -80,10 +80,6 @@
     position: relative;
 }
 
-.woocommerce .shop-container .shop-wrap ul.products li.product .button.added{
-    font-size: 14px;
-}
-
 .woocommerce .shop-container .shop-wrap ul.products li.product .button:hover{
     background-color: #FFF;
     color: var(--primary-red);

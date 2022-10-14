@@ -671,7 +671,7 @@ section#contact-section .contact-wrap .contact-info, section#contact-section .co
 
 	section#contact-section .contact-wrap .contact-form {
         position: fixed;
-        z-index: 9999;
+        z-index: 99999999999999;
         top: 50%;
         transform: translateY(-50%);
         left: 0;

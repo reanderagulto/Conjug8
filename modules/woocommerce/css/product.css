@@ -270,6 +270,11 @@ section#product-section {
     font-family: var(--font-family-belleza);
 }
 
+.featured-product-slider .product-slide .product-info h3 span{
+    color: #FFF;
+    font-size: 24px;
+}
+
 
 /* Featured Product Slider */
 .featured-product-slider .product-slide {
@@ -505,6 +510,10 @@ section.featured-products .slider-navs {
 
     .product-slider .product-slide .product-info h3{
         font-size: 20px;
+    }
+
+    .featured-product-slider .product-slider .product-slide .product-info h3 span{
+        font-size: 14px;
     }
     
     .featured-product-slider .product-slide .product-info h3 {

@@ -158,12 +158,12 @@
         function addedToCart(){
             jQuery(document.body).on('click', '.ajax_add_to_cart', function(event){
                 let $this = $(this); // Get button jQuery Object and set it in a variable
-
                 jQuery(document.body).on('added_to_cart', function(event,b,data){
-                    $this.text("Added to Cart");
+                    $('.cart-button-container').addClass('added');
+                    $('.header-cart-count').text(parseInt($('.header-cart-count').text()) + 1);
                     setTimeout(function() {
-                        $this.text("Add to Cart");
                         $this.removeClass('added');
+                        $('.cart-button-container').removeClass('added');
                     }, 800);
                 });
             });

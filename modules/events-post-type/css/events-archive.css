@@ -401,6 +401,11 @@ section.featured-events .accent-bg .accent-red {
     color: #FFF;
 }
 
+@media only screen and (max-width: 1199px) {
+    .event-container .happen-now p{
+        font-size: 18px;
+    }
+}
 
 /* Responsive */
 @media only screen and (max-width: 991px) {
