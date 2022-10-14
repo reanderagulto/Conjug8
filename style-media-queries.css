@@ -40,20 +40,11 @@
     	left: -30.96px;
 	}
 
-	section#innerpage-banner .accent-bg .accent-red {
-		right: -952px;
-		top: -738px;
-	}
-	
-	section#innerpage-banner .accent-bg .accent-dark-blue {
-		right: -257.1px;
-		bottom: -1355.5px;
+	section#innerpage-banner .accent-bg {
+		top: -479px;
+		right: -89px;
 	}
 
-	section.featured-posts .accent-bg .accent-red{
-		right: -402px;
-    	bottom: -480px;
-	}
 } 
 
 /* iPad(portrait) | Galaxy Tab 4(portrait)  */ 
@@ -197,8 +188,8 @@
 	}
 
 	section#innerpage-banner .accent-bg {
-		right: 216px;
-		top: -323.73px;
+		right: 167px;
+		top: -356.73px;
 	}
 
 	section#innerpage-banner .accent-bg .accent-dark-blue {
@@ -207,7 +198,7 @@
 	}
 	
 	section#innerpage-banner .accent-bg .accent-red {
-		right: -962px;
+		right: -902px;
 		top: -741px;
 	}
 
@@ -241,6 +232,10 @@
 
 	.newsletter-content .newsletter-form .aios-btn.aios-btn-red{
 		margin-left: -60px;
+	}
+
+	.innerpage-banner-wrap h1.inner-section-header, #content-full h1, aside h1{
+		font-size: 30px;
 	}
 } 
 

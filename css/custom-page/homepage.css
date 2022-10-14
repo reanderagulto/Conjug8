@@ -19,7 +19,7 @@ section#hero-banner {
 .banner-container .accent-bg {
     transform: rotate(-150deg);
     z-index: -1;
-    top: 7vw;
+    top: min(9.563vw, 126px);
     left: 25vw;
 }
 
@@ -452,6 +452,11 @@ section#contact-section .contact-wrap .contact-info, section#contact-section .co
     .banner-col {
         padding: 6.250vw 4.375vw 11.688vw;
     }
+
+    .banner-container .accent-bg {
+        top: 150px;
+        left: 320px;
+    }
 }
 
 @media only screen and (max-width: 991px) {
@@ -864,6 +869,6 @@ section#contact-section .contact-wrap .contact-info, section#contact-section .co
     }
 
     .banner-container .banner-background img{
-        object-position: 90% top;
+        object-position: 80% top;
     }
 }

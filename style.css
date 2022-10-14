@@ -614,23 +614,23 @@ section#newsletter-section:after{
 
 section#newsletter-section .accent-bg{
     transform: rotate(60deg);
-    top: 8vw;
-    left: 27vw;
+    top: -430px;
+    left: 10px;
 }
 
 section#newsletter-section .accent-bg .accent-red{
-    top: -9vw;
-    left: -70vw;
-    width: clamp(63.611vw, 916px, 916px);
-    height: clamp(63.681vw, 917px, 917px);
+    top: -300px;
+    left: -300px;
+    width: 916px;
+    height: 916px;
     
 }
 
 section#newsletter-section .accent-bg .accent-white{
-    bottom: -70vw;
-    left: -4vw;
-    width: clamp(56.597vw, 815px, 815px);
-    height: clamp(56.597vw, 815px, 815px);
+    bottom: -931px;
+    left: 655px;
+    width: 816px;
+    height: 815px;
 }
 
 .newsletter-wrap .newsletter-content .newsletter-header {
@@ -835,22 +835,22 @@ section#innerpage-banner {
 
 section#innerpage-banner .accent-bg{
     transform: rotate(-30deg);
-    right: 18vw;
-    top: -27vw;
+    right: -42px;
+    top: -409px;
 }
 
 section#innerpage-banner .accent-bg .accent-red{
-    width: clamp(80.556vw, 1160px, 1160px);
-    height: clamp(80.556vw, 1160px, 1160px);
-    right: -57.052vw;
-    top: -48.375vw;
+    width: 1160px;
+    height: 1160px;
+    top: -738px;
+    right: -601px;
 }
 
 section#innerpage-banner .accent-bg .accent-dark-blue{
-    width: clamp(63.611vw, 916px, 916px);
-    height: clamp(63.611vw, 916px, 916px);
-    right: -23.531vw;
-    bottom: -98.125vw;
+    width: 916px;
+    height: 915px;
+    right: 19px;
+    bottom: -1355px;
 }
 
 section#innerpage-banner .innerpage-banner-wrap {
