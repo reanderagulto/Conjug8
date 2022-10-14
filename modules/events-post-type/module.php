@@ -199,11 +199,17 @@ if ( ! class_exists( 'agentpro_events_post_type' ) ) {
         function upcoming_events() {
             $ajaxposts = new WP_Query([
                 'post_type'      => 'events',
-                'post_status'    => 'future',
-                'order'          => 'DESC',
+                'post_status'    => array('publish', 'future'),
+                'order'          => 'ASC',
                 'orderby'        => 'date',
                 'offset'         => $_POST['offset'],
                 'posts_per_page' => 3,
+                'date_query' => array(
+                    array(
+                        'after' => date('Y-m-d'),
+                        'inclusive' => true,
+                    )
+                ),
             ]);
             $max_pages = $ajaxposts->max_num_pages;
             if($ajaxposts->have_posts()): 

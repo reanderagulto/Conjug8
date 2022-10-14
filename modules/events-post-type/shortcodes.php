@@ -23,7 +23,7 @@ if( !class_exists( 'agentpro_events_shortcodes' ) ) {
                 'posts_per_page' => -1,
                 'order' => 'ASC',
                 'order_by' => 'date',
-                'post_status' => 'future',
+                'post_status' => array('publish', 'future'),
                 'thumbnail_size' => 'full',
                 'view_more_link' => home_url() . '/events/',
                 'view_more_text' => 'View More',
@@ -42,6 +42,12 @@ if( !class_exists( 'agentpro_events_shortcodes' ) ) {
                 'order' => $order,
                 'orderby' => $order_by,
                 'posts_per_page' => $posts_per_page,
+                'date_query' => array(
+                    array(
+                        'after' => date('Y-m-d'),
+                        'inclusive' => true,
+                    )
+                ),
             ];
 
             $events_query = new WP_Query( $args );
@@ -70,29 +76,44 @@ if( !class_exists( 'agentpro_events_shortcodes' ) ) {
                         $day = date('j', strtotime($post->post_date));
                         $post_permalink = get_the_permalink( $post_id );
                         $post_thumbnail_url = get_the_post_thumbnail_url( $post_id, $thumbnail_size );
+                        $get_post_status = $post->post_status;
                         
                         $group_content .= '
-                            <div class="event">
-                                <div class="event-container">
+                            <div class="event">';
+                            if($get_post_status == 'publish'){
+                                $group_content .= '<a href="' . $post_permalink . '">';
+                            }
+                        $group_content .= '<div class="event-container">
                                     <div class="img-container">
                                         <canvas width="350" height="299"></canvas>
                                         <img src="' . $post_thumbnail_url . '" alt="' . $post_title . '" width="350" height="299" />
                                     </div>
-                                    <p class="event-date">' . $day . ' <span>' . $month . '</span></p>
-                                </div>
-                                <h3>' . $post_title . '</h3>
-                            </div>
+                                    <p class="event-date">' . $day . ' <span>' . $month . '</span></p>';
+                                    if($get_post_status == 'publish'){
+                                        $group_content .= '<div class="happen-now">
+                                            <p>Happening Now</p>
+                                        </div>';
+                                    }
+                        $group_content .= '</div>
+                                <h3>' . $post_title . '</h3>';
+                        if($get_post_status == 'publish'){
+                            $group_content .= '</a>';
+                        }
+                        $group_content .= '</div>
                         ';
                     }          
                     
-                    if ( $with_view_more == 'true' ) {
-                        $group_content  .= '<a href="' . $view_more_link . '" class="view-more aios-btn aios-btn-red">' . $view_more_text . '</a>';
-                    }
-
                     $group_content .= '
-                        </div>
-                    </div>
-                    ';
+                        </div>'; 
+
+                        if ( $with_view_more == 'true' ) {
+                            $group_content  .= '
+                                <div class="view-more-container" data-aos="fade-up" data-aos-once="true">
+                                    <a href="' . $view_more_link . '" class="view-more aios-btn aios-btn-red">' . $view_more_text . '</a>
+                                </div>
+                            ';
+                        }
+                    $group_content .= '</div>';
 
                     $response .= '
                         <section id="events-section">

@@ -45,6 +45,7 @@
             let paged = 2;
             let numPost = 0;
             $eventLoadMore.on('click', function(e){
+                console.log("Clicked");
                 e.preventDefault();
                 paged++;
                 $.ajax({
@@ -64,6 +65,9 @@
                             $('.upcoming-load-more-container').hide();
                         }
                     },
+                    error: function(res, a){
+                        console.log(res);
+                    }
                 });
             });
         }

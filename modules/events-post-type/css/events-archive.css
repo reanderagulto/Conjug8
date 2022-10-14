@@ -87,7 +87,9 @@ section#events-section .events-wrap {
     position: absolute;
     bottom: 1.563vw;
     width: 100%;
-    padding: 0 3.281vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .event-container .happen-now p{
@@ -97,7 +99,11 @@ section#events-section .events-wrap {
     background-color: var(--primary-red);
     border-radius: 45px;
     text-align: center;
-    padding: 0.573vw 1.302vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 44px;
+    width: max(11.667vw, 224px);
 }
 
 .events-button {
@@ -191,6 +197,12 @@ section#completed-events-section {
 .upcoming-load-more-container .aios-btn:hover{
     color: var(--primary-red);
     background-color: #FFF;
+}
+
+.view-more-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 a.view-more{

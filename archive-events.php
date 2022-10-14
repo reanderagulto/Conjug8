@@ -7,6 +7,13 @@ $args = [
     'post_status' => 'publish', 
     'order' => 'ASC',
     'posts_per_page' => -1,
+    'meta_query' =>[
+        [
+            'key' => 'livestream-event',
+            'value' => 'yes',
+            'compare' => '='
+        ]
+    ],
     'date_query'     => array(
         array(
             'year'  => $today['year'],
@@ -16,13 +23,6 @@ $args = [
         //allow exact matches to be returned
         'inclusive' => true,
     ),
-    'meta_query' =>[
-        [
-            'key' => 'livestream-event',
-            'value' => 'yes',
-            'compare' => '='
-        ]
-    ],
 ];
 
 $posts_query = new WP_Query( $args );
@@ -57,10 +57,16 @@ wp_reset_query();
         <?php
             $args = [
                 'post_type'      => 'events',
-                'post_status'    => 'future',
-                'order'          => 'DESC',
+                'post_status'    => array('publish', 'future'),
+                'order'          => 'ASC',
                 'orderby'        => 'date',
                 'posts_per_page' => 6,
+                'date_query' => array(
+                    array(
+                        'after' => date('Y-m-d'),
+                        'inclusive' => true,
+                    )
+                ),
             ];
             $events_query = new WP_Query( $args );
         ?>
@@ -68,18 +74,29 @@ wp_reset_query();
             <section id="events-section">
                 <div class="events-wrap">
                     <h2 class="section-header text-center" data-aos="fade-up" data-aos-once="true">Upcoming Events</h2>
-                    <div class="upcoming-events-contents events-content flex flex-wrap-wrap items-center justify-center">
+                    <div class="upcoming-events-contents events-content flex flex-wrap-wrap items-center">
                         <?php 
                             while($events_query->have_posts()): $events_query->the_post(); ?>
                                 <div class="event" data-aos="fade-up" data-aos-once="true">
+                                <?php if(get_post_status() == 'publish'): ?>
+                                    <a href="<?php echo get_the_permalink(); ?>">
+                                <?php endif;?>
                                     <div class="event-container">
                                         <div class="img-container">
                                             <canvas width="350" height="299"></canvas>
                                             <img src="<?php the_post_thumbnail_url('full')?>" alt="<?php the_title(); ?>" width="350" height="299" />
                                         </div>
                                         <p class="event-date"><?php echo get_the_date( 'j', get_the_ID() ); ?> <span><?php echo get_the_date( 'M', get_the_ID() ); ?></span></p>
+                                        <?php if(get_post_status() == 'publish'): ?>
+                                        <div class="happen-now">
+                                            <p>Happening Now</p>
+                                        </div>
+                                        <?php endif; ?>
                                     </div>
                                     <h3><?php the_title(); ?></h3>
+                                <?php if(get_post_status() == 'publish'): ?>
+                                    </a>
+                                <?php endif;?>
                                 </div>
                             <?php endwhile; ?>                        
                         <?php wp_reset_query(); ?>
