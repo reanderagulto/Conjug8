@@ -71,7 +71,12 @@ section#events-section .events-wrap {
     color: #FFF;
     background-color: var(--primary-blue);
     text-align: center;
-    padding: max(0.885vw, 17px) max(1.250vw, 19px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 76px;
+    height: 75px;
     border-radius: 5px;
     font-size: max(1.250vw, 24px);
     line-height: 1.2;
@@ -405,29 +410,47 @@ section.featured-events .accent-bg .accent-red {
     .event-container .happen-now p{
         font-size: 18px;
     }
+
+    section.featured-events .accent-bg{
+        bottom: -114px;
+        right: -230px;
+    }
 }
 
 /* Responsive */
-@media only screen and (max-width: 991px) {
+@media only screen and (max-width: 991px) {    
     .events-content .event, 
     .completed-events{
         width: calc(100% / 2);
     }
+
+    .live-event-wrap,
+    section.featured-section,
+    section#events-section .events-wrap,
+    section#completed-events-section
+    {
+        padding: 48px 20px 51px;
+    }
 }
 
 @media only screen and (max-width: 767px) {
-    .events-content .event, 
     .completed-events{
         width: 100%;
     }
 
     .events-content .event h3, 
     .event-container p.event-date{
-        font-size: 20px;
+        font-size: 16px;
+    }
+
+    .event-container p.event-date{
+        font-size: 12px;
+        width: 40px;
+        height: 37px;
     }
     
     .event-container p.event-date span{
-        font-size: 16px;
+        font-size: 10px;
     }
     
 
@@ -437,5 +460,87 @@ section.featured-events .accent-bg .accent-red {
 
     section#completed-events-section{
         padding: 51px 25px 59px;
+    }
+
+    section.featured-events{
+        overflow: unset;
+    }
+    
+    section.featured-events .accent-bg,
+    .event-slide .event-info p:nth-of-type(2){
+        display: none;
+    }
+
+    .event-slide .event-info{
+        width: 100%;
+        text-align: center;
+        padding: 102px 54px 30px;
+    }
+
+    .event-slide .event-info .events-more.aios-btn{
+        margin: auto;
+        font-size: 16px;
+        height: 40px;
+        width: 123px;
+    }
+
+    .event-slide .event-info h3.section-header{
+        font-size: 24px !important;
+    }
+
+    .event-slide .event-info p:nth-of-type(1){
+        font-size: 20px
+    }
+
+    section.featured-events .slider-navs{
+        position: relative;
+        display: block;
+        text-align: center;
+        bottom: -3px;
+        right: 0;
+        margin-top: 30px;
+    }
+
+    section.featured-events .slider-navs button{
+        border-color: var(--primary-red);
+        color: var(--primary-red);
+    }
+
+    .featured-event-slider .event-slide::before {
+        background: rgb(37,124,191);
+        background: linear-gradient(0deg, rgba(37,124,191,0.7875525210084033) 74%, rgba(37,124,191,0.14329481792717091) 99%, rgba(255,255,255,0) 100%);
+    }
+
+    .live-event-wrap .happening-now-badge{
+        font-size: 12px;
+        height: 27px;
+        width: 134px;
+    }
+
+    .live-event-container h2.section-header{
+        display: none;
+    }
+
+    .live-event-container-wrapper{
+        padding: 13px 14px;
+    }
+
+    .video-content .live-badge{
+        font-size: 13px;
+        width: 41px;
+        height: 20px;
+        top: 13px;
+        left: 13px;
+    }
+
+    .video-content .event-title{
+        font-size: 17px;
+        left: 13px;
+        bottom: 20px;
+    }
+
+    .live-event-container .video-content .what-plyr .plyr > button.plyr__control{
+        width: 60px;
+        height: 60px
     }
 }

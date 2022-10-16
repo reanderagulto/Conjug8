@@ -6,7 +6,7 @@
 				</div>
 				<div class="newsletter-wrap" data-aos="fade-up" data-aos-once="true">
 					<div class="newsletter-content">
-						<h2 class="newsletter-header">Stay updated, stay informed with <br/ > our latest and upcoming activities</h2>
+						<h2 class="newsletter-header">Stay updated, stay informed with our latest and upcoming activities</h2>
 						<div class="newsletter-form flex items-center justify-center">
 							<input type="email" name="newsletter-email" id="newsletter-email" placeholder="Insert your email">
 							<button type="submit" class="aios-btn aios-btn-red">Submit</button>

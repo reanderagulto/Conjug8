@@ -158,15 +158,24 @@
         function addedToCart(){
             jQuery(document.body).on('click', '.ajax_add_to_cart', function(event){
                 let $this = $(this); // Get button jQuery Object and set it in a variable
+                let $id = $this.attr('data-product_id');
+                if($this.hasClass('btn-slider')){
+                    $('#slider-' + $id).addClass('added');
+                    console.log($id);
+                }
+                else if($this.hasClass('btn-loop')){
+                    $('#loop-product-' + $id).addClass('added');
+                }
+                $('.header-cart-count').text(parseInt($('.header-cart-count').text()) + 1);
                 jQuery(document.body).on('added_to_cart', function(event,b,data){
-                    $('.cart-button-container').addClass('added');
-                    $('.header-cart-count').text(parseInt($('.header-cart-count').text()) + 1);
                     setTimeout(function() {
                         $this.removeClass('added');
-                        $('.cart-button-container').removeClass('added');
-                    }, 800);
+                        $('#slider-' + $id).removeClass('added');
+                        $('#loop-product-' + $id).removeClass('added');
+                    }, 300);
                 });
             });
+            
                 
         }
         /**

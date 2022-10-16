@@ -377,6 +377,10 @@ section.featured-products .slider-navs {
         bottom: -178px;
         right: -300px;
     }
+
+    .featured-product-slider .product-slide .product-info{
+        padding-left: 50px;
+    }
 }
 
 @media only screen and (max-width: 991px){
@@ -499,13 +503,12 @@ section.featured-products .slider-navs {
 
     .featured-product-slider .product-slide .img-container,
     .featured-product-slider .product-slide .product-info{
-        width: 100%;
+        height: 200px;
     }
     
     .featured-product-slider .product-slide .product-info {
-        align-items: center;
-        padding: 0;
-        justify-content: space-between;
+        padding-left: 30px;
+        justify-content: space-between;             
     }
 
     .product-slider .product-slide .product-info h3{
@@ -518,16 +521,43 @@ section.featured-products .slider-navs {
     
     .featured-product-slider .product-slide .product-info h3 {
         margin: 19px  0 39px 0 !important;
+        font-size: 18px !important;
+    }
+
+    .featured-product-slider .product-slide .product-info h3 span{
+        font-size: 16px;
     }
     
     .featured-product-slider .product-slide .product-info .aios-btn-red {
         margin-bottom: 25px;
         width: auto;
     }   
+
+    .featured-product-slider .product-slide .product-info a.aios-btn-sm,
+    .cart-button-container .added-cart-text {
+        font-size: 10px;
+        height: 23px;
+        width: 88px;
+    }
 }
 
 @media only screen and (max-width: 480px) { 
-    .featured-product-slider .product-slide {
-        flex-direction: column;
+    .featured-product-slider .product-slide .img-container, .featured-product-slider .product-slide .product-info {
+        height: 129px;
+        padding-left: 20px;
+    }
+    
+    .featured-product-slider .product-slide .img-container {
+        width: 158px;
+    }
+    
+    .featured-product-slider .product-slide .product-info h3 {
+        font-size: 18px !important;
+        margin: 19px 0 9px 0 !important;
+    }
+    
+    .featured-product-slider .product-slide .product-info h3 span {
+        padding-top: 6px;
+        font-size: 16px;
     }
 }

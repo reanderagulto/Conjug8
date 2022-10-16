@@ -73,7 +73,7 @@
     background-color: var(--primary-red);
     color: #FFF;
     border-radius: 45px;
-    margin: 20px max(1.806vw, 26px);
+    margin: unset;
     transition: all var(--ease-short-transition);
     font-size: 16px;
     width: max(6.198vw, 119px);
@@ -151,6 +151,16 @@
     outline: 0;
 }
 
+@media only screen and (max-width: 1199px) {
+    .shop-container .shop-wrap {
+        padding: 7.542vw 2.458vw 8.264vw;
+    }
+
+    .featured-product-slider .product-slide .product-info{
+        padding-left: 30px;
+    }
+}
+
 /* Responsive */
 @media only screen and (max-width: 991px) {
     .shop-container .shop-wrap{
@@ -171,20 +181,25 @@
 }
 
 @media only screen and (max-width: 767px) {
-    .woocommerce .shop-container .shop-wrap ul.products.columns-3 li.product, .woocommerce-page ul.products.columns-3 li.product{
-        width: 100%;
+
+    .shop-container .shop-wrap .shop-before-loop{
+        margin-top: 51px;
+        margin-bottom: 17px;
+        justify-content: flex-end;
     }
 
-    .woocommerce .shop-container .shop-wrap ul.products li.product .loop-product-wrap{
-        text-align: center;
+    .woocommerce .shop-container .shop-wrap ul.products li.product .loop-product-wrap .loop-product-content{
+        min-height: 83px;
+        padding-top: 11px;
+        display: flex;
+        flex-direction: column;
     }
-
     .shop-container .shop-wrap .aios-btn.aios-btn-red{
         display: none;
     }
 
     .shop-container .shop-wrap .woocommerce .woocommerce-ordering, .woocommerce-page .woocommerce-ordering select{
-        align-self: flex-end;
+        font-size: 14px;
     }
 
     .woocommerce .shop-container .shop-wrap ul.products li.product .loop-product-wrap{
@@ -196,15 +211,28 @@
     }
 
     .woocommerce .shop-container .shop-wrap ul.products li.product .woocommerce-loop-product__title{
-        font-size: 20px;
+        font-size: 16px;
+        padding: 0 14px;
     }
 
-    .woocommerce .shop-container .shop-wrap ul.products li.product .button{
-        width: 123px;
-        height: 35px;
+    .woocommerce .shop-container .shop-wrap ul.products li.product .product-generic-name{
+        font-size: 14px;
+        padding: 0 14px;
+    }
+
+    .woocommerce .shop-container .shop-wrap ul.products li.product .button, 
+    .loop-cart-button-container .added-cart-text{
+        width: 80px;
+        height: 20px;
+        font-size: 10px;
+    }
+
+    .loop-cart-button-container {
+        margin: unset;
+        padding: 9px 14px;
     }
 
     .woocommerce .shop-container .shop-wrap ul.products li.product{
-        width: 100%;
+        width: 50%;
     }
 }   

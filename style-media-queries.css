@@ -25,6 +25,10 @@
 		left: -12.6px;
 	}
 
+	section#innerpage-banner{
+		padding: 8.125vw 4.181vw 8.194vw
+	}
+
 	section#newsletter-section .accent-bg {
 		top: 95.92px;
 		left: 323.73px;
@@ -346,6 +350,7 @@
 	.newsletter-wrap .newsletter-content .newsletter-header {
 		margin-bottom: 21px;
 		font-size: 24px;
+		
 	}
 
 	section#newsletter-section:after{
@@ -374,8 +379,13 @@
 	}
 
 	section#innerpage-banner{
-        padding: 51px 39px 189px;
-        text-align: center;
+		padding: 51px 39px 189px;
+		text-align: center;
+		display: flex;
+		align-items: center;
+		flex-direction: column;
+		justify-content: space-between;
+		height: 412px;
     }
 
 	section#icons-section .icons-wrap .icons-container {
@@ -393,23 +403,29 @@
 	section#innerpage-banner .accent-bg {
 		position: relative;
 		display: inline-block;
-		height: 100%;
-		width: 100%;
+		height: unset;
+		width: unset;
 		min-height: 150px;
-		top: 0px;
-		left: 0px;
+		right: unset;
+		top: 15px;
+		left: 80px;
+		
 		transform: rotate(30deg);
 	}
 	
 	section#innerpage-banner .accent-bg .accent-red {
-		top: 48px;
-		left: 425px;
+		top: 79px;
+		left: -40px;
+		width: 700px;
+		height: 500px;
 	}
 	
 	section#innerpage-banner .accent-bg .accent-dark-blue{
 		bottom: unset;
-		top: 256px;
-		left: -522px;
+		top: 257px;
+		left: -467px;
+		height: 300px;
+		width: 399px;
 	}
 
 	.post-slide .post-info{
@@ -509,17 +525,6 @@
 	section#newsletter-section .accent-bg .accent-white {
 		top: 24px;
 		left: -690px;
-	}
-
-	section#innerpage-banner .accent-bg .accent-red {
-		top: 47px;
-		left: 287px;
-	}
-	
-	section#innerpage-banner .accent-bg .accent-dark-blue{
-		bottom: unset;
-		top: 222px;
-		left: -654px;
 	}
 
 	section#newsletter-section:after{
