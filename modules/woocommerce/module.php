@@ -12,6 +12,10 @@ if( !class_exists('add_woocommerce_support') ){
             
             add_theme_support( 'woocommerce');
             add_action( 'wp_enqueue_scripts', array( $this, 'enqueque_scripts'), 15 );
+
+            // Ajax
+            add_action('wp_ajax_cart_count_retriever', array( $this, 'cart_count_retriever'));
+            add_action('wp_ajax_nopriv_cart_count_retriever', array( $this, 'cart_count_retriever'));
         }
 
         function enqueque_scripts(){
@@ -22,6 +26,12 @@ if( !class_exists('add_woocommerce_support') ){
             if( is_shop() ){
                 wp_enqueue_style( 'shop-style', get_stylesheet_directory_uri() . '/modules/woocommerce/css/shop.css' );
             }
+        }
+
+        function cart_count_retriever() {
+            global $wpdb;
+            echo WC()->cart->get_cart_contents_count();
+            wp_die();
         }
     }
 

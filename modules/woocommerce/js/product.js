@@ -54,7 +54,7 @@
                 prevArrow: $('.slider-nav.prod-prev'),
             });
 
-        }
+        }        
         
         /**
          * Instantiate

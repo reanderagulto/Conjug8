@@ -636,7 +636,9 @@ section#newsletter-section .accent-bg .accent-white{
 .newsletter-wrap .newsletter-content .newsletter-header {
     font-size: var(--font-size-title);
     font-weight: bold;
+    margin: auto;
     margin-bottom: 1.406vw;
+    width: 630px;
 }
 
 .newsletter-content .newsletter-form {
@@ -697,11 +699,6 @@ section#icons-section .icons-wrap .icons-container .icon img {
 section#icons-section .icons-wrap .icons-container .icon:nth-of-type(2) img,
 section#icons-section .icons-wrap .icons-container .icon:nth-of-type(3) img{
     margin-bottom: 46px;
-}
-
-section#icons-section .icons-wrap .icons-container .icon img:hover,
-section#icons-section .icons-wrap .icons-container .icon img:focus {
-    transform: rotateY(180deg);
 }
 
 section#icons-section .icons-wrap .icons-container .icon h3 {

@@ -11,6 +11,7 @@
             showMorePosts();
             popup();
             addedToCart();
+            refreshCartItems();
         }
         function onScrollFixed() {
             this.onScrollFixed = function () {
@@ -68,20 +69,23 @@
 
         function onPlusMinus(){
             $number = $('input[type="number"].qty');
-            $id = $number.attr('id');
             $minus = $('input[type="button"].minus');
             $plus = $('input[type="button"].plus');
             
             $minus.on('click', function(){
-                console.log($id);
-                if(parseInt($number.val()) > 1){
-                    $($id).val(parseInt($number.val()) - 1);
+                let $this = $(this);
+                let $id = $this.attr('id').split('-')[1];
+                if(parseInt($('#' + $id).val()) > 1){
+                    $('#' + $id).val(parseInt($('#' + $id).val()) - 1);
                 }
+                $('#' + $id).trigger('change');
             });
 
             $plus.on('click', function(){
-                console.log($id);
-                $number.val(parseInt($number.val()) + 1);
+                let $this = $(this);
+                let $id = $this.attr('id').split('-')[1];
+                $('#' + $id).val(parseInt($('#' + $id).val()) + 1);
+                $('#' + $id).trigger('change');
             });
         }
 
@@ -152,7 +156,6 @@
                 $('#login-form-popup').removeClass('active');
                 $('#choose-login-popup').addClass('active');
             }); 
-            
         }
 
         function addedToCart(){
@@ -170,13 +173,34 @@
                 jQuery(document.body).on('added_to_cart', function(event,b,data){
                     setTimeout(function() {
                         $this.removeClass('added');
-                        $('#slider-' + $id).removeClass('added');
-                        $('#loop-product-' + $id).removeClass('added');
                     }, 300);
                 });
+            });   
+
+            $('.added-cart-text').on('click', function(){
+                let $this = $(this);
+                $this.parent().removeClass('added');
             });
-            
-                
+
+            $('button[name="update_cart"]').on('click', function(){
+                jQuery(document.body).on('updated_cart_totals', function(event, b, data){
+                    refreshCartItems();
+                });
+            });
+        }
+
+        function refreshCartItems(){
+            $.ajax({
+                type: 'POST',
+                url: '/wp-admin/admin-ajax.php',
+                data: {
+                  action: 'cart_count_retriever',
+                },
+                success: function (res) {                        
+                    $('.header-cart-count').text(res);
+                    console.log(res);
+                },
+            });
         }
         /**
          * Instantiate

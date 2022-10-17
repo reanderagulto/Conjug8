@@ -119,6 +119,12 @@ section#contact-section .contact-wrap .contact-form{
         flex-direction: column;
         justify-content: center;
         align-items: stretch;
+        margin-bottom: unset;
+    }
+
+    .contact-content .aios-form-group.flex label {
+        margin-left: unset;
+        margin-bottom: 24px;
     }
 
     .contact-info .contact-links{

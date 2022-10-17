@@ -49,10 +49,18 @@
 		right: -89px;
 	}
 
+	.newsletter-wrap .newsletter-content .newsletter-header{
+		width: unset;
+	}
+
 } 
 
 /* iPad(portrait) | Galaxy Tab 4(portrait)  */ 
 @media only screen and (max-width: 991px) {
+	section#newsletter-section{
+		padding: 6.181vw 17.194vw 6.806vw 17.194vw;
+	}
+
 	header.header{
 		height: 81px;
 		padding: 15px;
@@ -261,6 +269,10 @@
 		font-size: 16px;
 	}
 
+	.blog-archive .blog-archive-wrap{
+		margin-top: 51px;
+	}
+
 	footer.footer{
 		padding-top: 35px;
 	}
@@ -350,6 +362,7 @@
 	.newsletter-wrap .newsletter-content .newsletter-header {
 		margin-bottom: 21px;
 		font-size: 24px;
+		width: 268px;
 		
 	}
 
@@ -436,7 +449,17 @@
 
     .post-slide .post-info p:nth-of-type(1){
         margin-bottom: 17px !important;
+		font-size: 20px;
     }
+
+	.post-slide .post-info h3.section-header {
+		font-size: 24px !important;
+	}
+
+	.featured-post-slider .post-slide::before{
+		background: rgb(37,124,191);
+		background: linear-gradient(0deg, rgba(37,124,191,0.7875525210084033) 74%, rgba(37,124,191,0.14329481792717091) 99%, rgba(255,255,255,0) 100%);
+	}
 
     .post-slide .post-info p:nth-of-type(2){
         display: none;
@@ -448,9 +471,14 @@
 	}
 
     #content .post-slide .post-info .archive-more.aios-btn{
-        display: inline-block;
-        padding: 15px 31px;
-        font-size: 16px;
+		display: flex;
+		font-size: 16px;
+		text-align: center;
+		justify-content: center;
+		align-items: center;
+		height: 40px;
+		width: 139px;
+		margin: auto;
     }
     #login-form-popup .popup-main {
         padding: 90px 15px 55px;

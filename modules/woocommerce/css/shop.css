@@ -232,6 +232,11 @@
         padding: 9px 14px;
     }
 
+    .loop-cart-button-container .added-cart-text{
+        margin: 9px 14px;
+        transform: translateX(-200%);
+    }
+
     .woocommerce .shop-container .shop-wrap ul.products li.product{
         width: 50%;
     }

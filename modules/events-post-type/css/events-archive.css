@@ -30,7 +30,7 @@ section#events-section .events-wrap {
 }
 
 .events-content .event {
-    padding: 0 0.833vw;
+    padding: 0 0.833vw 24px;
     position: relative;
     width: calc(100% / 3);
 }
@@ -40,6 +40,7 @@ section#events-section .events-wrap {
     margin: max(1.319vw, 19px) 0;
     font-size: max(1.25vw, 24px);
     font-weight: bold;
+    height: 23px;
 }
 
 .events-content .event .event-container .img-container {
@@ -251,16 +252,16 @@ section.featured-events .slider-navs {
 
 section.featured-events .accent-bg {
     transform: rotate(-30deg);
-    bottom: -16.208vw;
-    right: -18.75vw;
+    bottom: -88px;
+    right: -280px;
     opacity: 0.8;
 }
 
 section.featured-events .accent-bg .accent-red {
     right: -413px;
     bottom: -530px;
-    width: clamp(63.611vw, 916px, 916px);
-    height: clamp(63.611vw, 916px, 916px);
+    width: 916px;
+    height: 916px;
 }
 
 .featured-event-slider .event-slide {
@@ -289,6 +290,7 @@ section.featured-events .accent-bg .accent-red {
     color: #FFF;
     padding: max(3.403vw, 49px) 0 max(2.708vw, 39px) max(3.611vw, 52px);
     position: relative;
+    height: 550px;
 }
 
 .event-slide .event-info h3.section-header {
@@ -427,13 +429,17 @@ section.featured-events .accent-bg .accent-red {
     .live-event-wrap,
     section.featured-section,
     section#events-section .events-wrap,
-    section#completed-events-section
-    {
+    section#completed-events-section{
         padding: 48px 20px 51px;
     }
 }
 
 @media only screen and (max-width: 767px) {
+
+    .home .events-content .event, .completed-events{
+        width: 100%;
+    }
+
     .completed-events{
         width: 100%;
     }
@@ -441,6 +447,7 @@ section.featured-events .accent-bg .accent-red {
     .events-content .event h3, 
     .event-container p.event-date{
         font-size: 16px;
+        height: 48px;
     }
 
     .event-container p.event-date{
@@ -504,6 +511,11 @@ section.featured-events .accent-bg .accent-red {
     section.featured-events .slider-navs button{
         border-color: var(--primary-red);
         color: var(--primary-red);
+    }
+
+    .featured-event-slider .event-slide{
+        height: 300px;
+        background-position: center center;
     }
 
     .featured-event-slider .event-slide::before {
