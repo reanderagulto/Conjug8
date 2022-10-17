@@ -164,7 +164,6 @@
                 let $id = $this.attr('data-product_id');
                 if($this.hasClass('btn-slider')){
                     $('#slider-' + $id).addClass('added');
-                    console.log($id);
                 }
                 else if($this.hasClass('btn-loop')){
                     $('#loop-product-' + $id).addClass('added');
@@ -187,6 +186,12 @@
                     refreshCartItems();
                 });
             });
+
+            $('.woocommerce a.remove').on('click', function(){
+                jQuery(document.body).on('updated_cart_totals', function(event, b, data){
+                    refreshCartItems();
+                });                
+            })
         }
 
         function refreshCartItems(){
@@ -198,7 +203,6 @@
                 },
                 success: function (res) {                        
                     $('.header-cart-count').text(res);
-                    console.log(res);
                 },
             });
         }

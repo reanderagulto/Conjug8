@@ -210,8 +210,8 @@ if( !class_exists( 'agentpro_board_members_shortcodes' ) ) {
                         <div class="founder-nav flex items-center justify-between" data-aos="fade-up" data-aos-once="true" data-aos-offset="200" data-aos-duration="800">
                             <h2 class="section-header">The Brains Behind The Company</h2>
                             <div class="the-company-nav flex items-center">
-                                <button type="button" class="aios-btn-sm aios-btn-red slider-nav founder-prev ai-font-arrow-b-p"></button>
-                                <button type="button" class="aios-btn-sm aios-btn-red slider-nav founder-next ai-font-arrow-b-n"></button>
+                                <button type="button" class="aios-btn-sm aios-btn-red slider-nav founder-prev ai-icon-prev"></button>
+                                <button type="button" class="aios-btn-sm aios-btn-red slider-nav founder-next ai-icon-next"></button>
                             </div>
                         </div>
                         <div class="founder-slider"  data-aos="fade-left" data-aos-once="true" data-aos-offset="200" data-aos-duration="800">

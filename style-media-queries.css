@@ -61,6 +61,11 @@
 		padding: 6.181vw 17.194vw 6.806vw 17.194vw;
 	}
 
+	.newsletter-wrap .newsletter-content .newsletter-header{
+		font-size: 30px;
+		width: 350px;
+	}
+
 	header.header{
 		height: 81px;
 		padding: 15px;
@@ -224,12 +229,15 @@
     
     section.featured-posts .slider-navs {
         position: relative;
-        display: block;
+        display: flex;
+		align-items: center;
+		justify-content: center;
         text-align: center;
         bottom: -3px;
         right: 0;
         margin-top: 20px;
     }
+
     .featured-posts-wrap .slider-navs button{
         border-color: var(--primary-red);
         color: var(--primary-red);
@@ -237,6 +245,10 @@
 		width: 44px;
 		height: 45px;
     }
+
+	.featured-posts-wrap .slider-navs button:before{
+		filter: unset;
+	}
 
 	#pojo-a11y-toolbar {
         display: none;

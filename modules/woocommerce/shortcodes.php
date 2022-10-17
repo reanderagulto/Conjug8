@@ -45,8 +45,8 @@ if( !class_exists('woocommerce_featured_product_slider')){
                             <div class="product-nav flex items-center">
                                 <a href="' . home_url() . '/products/" class="aios-btn aios-btn-red">View Products</a>
                                 <div class="slider-navs">
-                                    <button type="button" class="aios-btn aios-btn-red slider-nav prod-prev ai-font-arrow-b-p"></button>
-                                    <button type="button" class="aios-btn aios-btn-red slider-nav prod-next ai-font-arrow-b-n"></button>
+                                    <button type="button" class="aios-btn aios-btn-red slider-nav prod-prev ai-icon-prev"></button>
+                                    <button type="button" class="aios-btn aios-btn-red slider-nav prod-next ai-icon-next"></button>
                                 </div>
                             </div>
                         </div>
@@ -157,8 +157,8 @@ if( !class_exists('woocommerce_featured_product_slider')){
                 $return .= '
                         </div>
                         <div class="slider-navs">
-                            <button type="button" class="aios-btn aios-btn-transparent slider-nav prod-prev ai-font-arrow-b-p"></button>
-                            <button type="button" class="aios-btn aios-btn-transparent slider-nav prod-next ai-font-arrow-b-n"></button>
+                            <button type="button" class="aios-btn aios-btn-transparent slider-nav prod-prev ai-icon-prev"></button>
+                            <button type="button" class="aios-btn aios-btn-transparent slider-nav prod-next ai-icon-next"></button>
                         </div>
                         <div class="accent-bg">
                             <div class="accent-red">

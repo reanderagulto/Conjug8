@@ -410,8 +410,16 @@ p{
     color: var(--secondary-text);
 }
 
+.slider-navs{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
 .slider-nav {
-    display: inline-block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     vertical-align: middle;
     font-size: 17px;
     color: #fff;
@@ -422,11 +430,29 @@ p{
     height: 45px;
     padding: 0;
     font-weight: 700;
-
+    position: relative;
 }
 
 .slider-nav i{
     font-style: normal !important;
+}
+
+.ai-icon-prev:before,
+.ai-icon-next:before{
+    content: '';
+    width: 18px;
+    height: 11px;
+    background-image: url(images/svg/ai-icon-angle-up-solid.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.ai-icon-prev:before{
+    transform: rotate(-90deg);
+}
+
+.ai-icon-next:before{
+    transform: rotate(90deg);
 }
 
 .cart-container {
@@ -654,6 +680,12 @@ section#newsletter-section .accent-bg .accent-white{
     padding: 0.25vw 2.292vw 0.25vw;
     font-family: var(--font-family-para);
     font-size: var(--font-size-default);
+    line-height: 1.2;
+    font-weight: normal;
+}
+
+.newsletter-content .newsletter-form input[type='email']::placeholder {
+    opacity: 0.8;
 }
 
 .newsletter-content .newsletter-form input[type='email']:focus-visible {
@@ -665,6 +697,7 @@ section#newsletter-section .accent-bg .accent-white{
     width: max(8.906vw, 171px);
     margin-left: max(-3.083vw, -60px);
     transition: all var(--ease-short-transition);
+    z-index: 999999;
 }
 
 .newsletter-content .newsletter-form .aios-btn.aios-btn-red:hover{
@@ -689,16 +722,19 @@ section#icons-section .icons-wrap .icons-container .icon {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: flex-end;
 }
 
 section#icons-section .icons-wrap .icons-container .icon img {
-    margin-bottom: max(1.875vw, 36px);
+    margin-bottom: 36px;
     transition: all var(--linear-transition);
 }
 
-section#icons-section .icons-wrap .icons-container .icon:nth-of-type(2) img,
+section#icons-section .icons-wrap .icons-container .icon:nth-of-type(2) img{
+    margin-bottom: 39px;
+}
 section#icons-section .icons-wrap .icons-container .icon:nth-of-type(3) img{
-    margin-bottom: 46px;
+    margin-bottom: 41px;
 }
 
 section#icons-section .icons-wrap .icons-container .icon h3 {
@@ -1206,6 +1242,10 @@ section.featured-posts .slider-navs {
     margin: 0 5px;
 }
 
+.featured-posts-wrap .slider-navs button:before{
+    filter: brightness(0) invert(1);
+}
+
 section.featured-posts .accent-bg {
     transform: rotate(-30deg);
     bottom: -16.208vw;
@@ -1415,15 +1455,16 @@ button:focus-visible, a:focus-visible {
     background-color: rgba(255,255,255,.20);
     background-position: center;
     background-repeat: no-repeat;
-    background-size: auto;
+    background-size: 30px 34px;
 }
 
 em.ai-icon-person {
-    background-image: url(images/ai-icon-person.png);
+    background-image: url(images/svg/ai-icon-user-a.svg);
 }
 
 em.ai-icon-lock {
-    background-image: url(images/ai-icon-lock.png);
+    background-image: url(images/svg/ai-icon-lock-b.svg);
+    
 }
 
 .popup-close {
@@ -1535,11 +1576,13 @@ em.ai-icon-lock {
 }
 
 .popup-form-col input#popup-username {
-    background-image: url(images/ai-icon-at.png);
+    background-image: url(images/svg/ai-icon-at.svg);
+    background-size: 19px 19px;
 }
 
 .popup-form-col input#popup-password {
-    background-image: url(images/ai-icon-lock-a.png);
+    background-image: url(images/svg/ai-icon-lock-a.svg);
+    background-size: 16px 18px;
 }
 
 .popup-form-row.full .popup-form-col {
@@ -1662,12 +1705,13 @@ em.ai-icon-lock {
 }
 
 .popup-return em.ai-icon-arrow {
-    background-image: url(images/ai-icon-arrow.png);
+    background-image: url(images/svg/ai-icon-arrow.svg);
     width: 19px;
     height: 12px;
     margin-right: 8px;
     background-position: center;
     background-repeat: no-repeat;
+    background-size: cover;
     display: inline-block;
     vertical-align: middle;
     -webkit-transition: 0.3s all ease-in-out;
@@ -1749,4 +1793,8 @@ p#breadcrumbs{
 .cart-button-container.added .added-cart-text,
 .loop-cart-button-container.added .added-cart-text{
     transform: translateX(0);
+}
+
+#add_payment_method table.cart img, .woocommerce-cart table.cart img, .woocommerce-checkout table.cart img{
+    width: 130px;
 }

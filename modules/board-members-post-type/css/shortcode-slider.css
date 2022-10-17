@@ -26,6 +26,10 @@ section#founders-section .founder-wrap {
     color: #FFF;
 }
 
+.the-company-nav .slider-nav.aios-btn-sm.aios-btn-red:hover:before{
+    filter: brightness(0) invert(1);
+}
+
 /* .founder-slider .slick-slide{
 	width: max(24.306vw, 350px) !important;
 	height: max(32.847vw, 473px) !important;

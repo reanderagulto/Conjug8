@@ -9,7 +9,7 @@
 	<?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
-	<script id="63466cf99e01ab090f534a11" src="https://dashboard.chatfuel.com/integration/fb-entry-point.js" async defer></script>
+	<script id="634cb618c6dd566cecc110cb" src="https://dashboard.chatfuel.com/integration/fb-entry-point.js" async defer></script>
 	<?php if ( has_action( 'aios_seotools_gtm_body' ) ) { do_action('aios_seotools_gtm_body'); } ?>
 	<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar("Mobile Header") ) : ?><?php endif ?>
 
@@ -47,7 +47,7 @@
 				</div>
 				
 				<div class="cart-container">
-					<a href="<?php echo esc_url( home_url() ) ?>/cart/" class="cart-icon">Cart<img src="<?=do_shortcode('[stylesheet_directory]')?>/images/cart-img.png" width="24" height="21"></a>
+					<a href="<?php echo esc_url( home_url() ) ?>/cart/" class="cart-icon">Cart<img src="<?=do_shortcode('[stylesheet_directory]')?>/images/svg/ai-icon-cart.svg" width="24" height="21"></a>
 					<div class="header-cart-count"><?php echo WC()->cart->get_cart_contents_count(); ?></div>	
 				</div>
 				
