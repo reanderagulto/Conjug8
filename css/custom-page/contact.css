@@ -33,6 +33,15 @@ section#contact-section .contact-wrap .contact-form{
     margin-bottom: max(0.885vw, 17px);
 }
 
+.contact-info a {
+    transition: all var(--ease-short-transition);
+}
+
+.contact-info a:hover {
+    color: var(--primary-red);
+    opacity: 0.8;
+}
+
 .contact-info .contact-links i{
     font-size: 23px;
     display: flex;

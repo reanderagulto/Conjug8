@@ -109,7 +109,7 @@ section#events-section .events-wrap {
     align-items: center;
     justify-content: center;
     height: 44px;
-    width: max(11.667vw, 224px);
+    width: max(11.667vw, 129px);
 }
 
 .events-button {
@@ -213,7 +213,6 @@ section#completed-events-section {
 }
 
 a.view-more{
-    margin-top: 54px;
     width: max(8.906vw, 171px);
 }
 
@@ -455,6 +454,11 @@ section.featured-events .accent-bg .accent-red {
 
     .home .events-content .event, .completed-events{
         width: 100%;
+        padding: unset;
+    }
+
+    .view-more-container{
+        margin-top: 27px;
     }
 
     .completed-events{
@@ -464,20 +468,36 @@ section.featured-events .accent-bg .accent-red {
     .events-content .event h3, 
     .event-container p.event-date{
         font-size: 16px;
-        height: 48px;
+        height: 55px;
+        margin: unset;
+    }
+
+    .events-content .event .event-container .img-container {
+        min-height: 115px;
+    }
+
+    .events-content .event h3{
+        padding-top: 21px;
     }
 
     .event-container p.event-date{
         font-size: 12px;
         width: 40px;
         height: 37px;
+        top: 11px;
+        left: 11px;
+        margin: unset;
+    }
+
+    .event-container .happen-now p{
+        font-size: 14px;
+        height: 30px;
     }
     
     .event-container p.event-date span{
         font-size: 10px;
     }
     
-
     .completed-event-container .events-content h3, .completed-event-container .events-content p{
         font-size: 16px;
     }

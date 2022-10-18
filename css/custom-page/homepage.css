@@ -75,7 +75,7 @@ section#hero-banner {
 }
 
 .banner-text-container h1 {
-    font-size: max(2.5vh, 48px);
+    font-size: max(2.5vw, 30px);
     font-weight: bold;
 }
 
@@ -362,6 +362,15 @@ section#contact-section .contact-wrap .contact-info, section#contact-section .co
 
 .contact-info .contact-links {
     margin-bottom: max(0.885vw, 17px);
+}
+
+.contact-info a {
+    transition: all var(--ease-short-transition);
+}
+
+.contact-info a:hover {
+    color: var(--primary-red);
+    opacity: 0.8;
 }
 
 .contact-info .contact-links i {

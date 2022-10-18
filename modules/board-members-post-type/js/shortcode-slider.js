@@ -9,7 +9,7 @@
         function sliderConfig() {
             let $founderSlider = jQuery('.founder-slider');
             $founderSlider.slick({
-                slidesToShow: 4,
+                slidesToShow: 3,
                 slidesToScroll: 1,
                 arrows: true,
                 dots: false,

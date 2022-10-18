@@ -34,18 +34,18 @@ foreach ( $fields_to_get as $field ) {
         <div class="contact-info" data-aos="fade-right" data-aos-once="true">
             <h2 class="section-header"><?= $contact_header ?></h2>
             <h3 class="section-subheader"><?= $contact_subheader ?></h3>
-            <a href="<?php echo (!empty($contact_email) ? 'mailto: ' . $contact_email : '#' ); ?>" class="contact-links flex items-center">
-                <i class="envelope"><img src="<?=do_shortcode('[stylesheet_directory]')?>/images/email-icon.png" class="img-responsive" width="24" height="18"/></i>
-                <p><?= $contact_email ?></p>
-            </a>
+            <div class="contact-links flex items-center">
+                <i class="envelope"><img src="<?=do_shortcode('[stylesheet_directory]')?>/images/svg/ai-icon-envelope.svg" class="img-responsive" width="24" height="18"/></i>
+                <p><?php echo do_shortcode( '[mail_to email="' . $contact_email . '"]' . $contact_email . '[/mail_to]' ); ?></p>
+            </div>
             <div class="contact-links flex items-start">
-                <i class="map-locator"><img src="<?=do_shortcode('[stylesheet_directory]')?>/images/location-icon.png" class="img-responsive"  width="16" height="21"/></i>
+                <i class="map-locator"><img src="<?=do_shortcode('[stylesheet_directory]')?>/images/svg/ai-icon-locator.svg" class="img-responsive"  width="16" height="21"/></i>
                 <p><?= nl2br($contact_location) ?></p>
             </div>
-            <a href="<?php echo (!empty($contact_email) ? 'tel: ' . $contact_phone : '#' ); ?>" class="contact-links flex items-center">
-                <i class="phone"><img src="<?=do_shortcode('[stylesheet_directory]')?>/images/mobile-icon.png" class="img-responsive" width="15" height="22"/></i>
-                <p><?= $contact_phone ?> </p>
-            </a>
+            <div class="contact-links flex items-center">
+                <i class="phone"><img src="<?=do_shortcode('[stylesheet_directory]')?>/images/svg/ai-icon-mobile.svg" class="img-responsive" width="15" height="22"/></i>
+                <p><?php echo do_shortcode( '[ai_phone href="' . $contact_phone. '"]' . $contact_phone . '[/ai_phone]' ); ?></p>					
+            </div>
         </div>
         <div class="contact-form" data-aos="fade-left" data-aos-once="true">
             <?= do_shortcode('[contact-form-7 id="' . $form_ID . '" title="' . $form_name . '" html_class="use-floating-validation-tip"]') ?>
