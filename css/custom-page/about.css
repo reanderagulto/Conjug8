@@ -8,7 +8,9 @@ section#icons-section{
 }
 
 section#icons-section .icons-wrap {
-    padding: 6.250vw 15.625vw 2.734vw;
+    width: 1140px;
+    margin: auto;
+    padding: 6.250vw 1.625vw 2.734vw;
 }
 
 section#icons-section .icons-wrap .icons-container .icon {
@@ -28,7 +30,8 @@ section#about-content {
 }
 
 section#about-content .content-wrap {
-    padding: 2.734vw 8.333vw 3.255vw 8.854vw;
+    width: 1140px;
+    margin: auto;
 }
 
 .content-wrap .section-text .content-header {
@@ -153,7 +156,13 @@ section#mission-vision{
 */
 @media only screen and (max-width: 991px) {
     section#about-content .content-wrap{
-        padding: 6.354vw 6vw 6.250vw 6vw;
+        width: 100%;
+        padding: 51px 21px 51px;
+    }
+
+
+    section#icons-section .icons-wrap{
+        width: 100%;
     }
 
     .content-wrap .about-section-1{

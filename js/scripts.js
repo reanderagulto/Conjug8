@@ -4,6 +4,7 @@
          * Construct.
          */
         function __construct() {
+            refreshCartItems();
             onScrollFixed();
             burgerMenu();
             onPlusMinus();
@@ -11,7 +12,6 @@
             showMorePosts();
             popup();
             addedToCart();
-            refreshCartItems();
         }
         function onScrollFixed() {
             this.onScrollFixed = function () {
@@ -51,8 +51,6 @@
 				$menuBody.removeClass('active')
 			});
 
-
-
 			$menuContainer.hover(function () {
 				mouse_is_inside = true;
 				
@@ -69,10 +67,7 @@
 
         function onPlusMinus(){
             $number = $('input[type="number"].qty');
-            $minus = $('input[type="button"].minus');
-            $plus = $('input[type="button"].plus');
-            
-            $minus.on('click', function(){
+            jQuery(document.body).on('click','input[type="button"].minus', function(){
                 let $this = $(this);
                 let $id = $this.attr('id').split('-')[1];
                 if(parseInt($('#' + $id).val()) > 1){
@@ -81,7 +76,7 @@
                 $('#' + $id).trigger('change');
             });
 
-            $plus.on('click', function(){
+            jQuery(document.body).on('click', 'input[type="button"].plus', function(){
                 let $this = $(this);
                 let $id = $this.attr('id').split('-')[1];
                 $('#' + $id).val(parseInt($('#' + $id).val()) + 1);
@@ -181,16 +176,20 @@
                 $this.parent().removeClass('added');
             });
 
-            $('button[name="update_cart"]').on('click', function(){
-                jQuery(document.body).on('updated_cart_totals', function(event, b, data){
-                    refreshCartItems();
+            jQuery(document.body).on('click', 'button[name="update_cart"]', function(){
+                let ek = $('.input-text.qty').map((_,el) => el.value).get();
+                let total = 0;
+                ek.forEach(element => {
+                    total += parseInt(element);
                 });
+                $('.header-cart-count').text(total);
             });
 
-            $('.woocommerce a.remove').on('click', function(){
-                jQuery(document.body).on('updated_cart_totals', function(event, b, data){
-                    refreshCartItems();
-                });                
+            jQuery(document.body).on('click', '.woocommerce a.remove', function(){
+                let $this = $(this);
+                $id = $this.attr('data-product_id');
+                $qty = $this.parent().siblings(".product-quantity").find('.quantity .qty-container .input-text.qty').val();
+                $('.header-cart-count').text(parseInt($('.header-cart-count').text()) - $qty);
             })
         }
 
