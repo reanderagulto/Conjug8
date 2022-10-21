@@ -20,7 +20,7 @@
                 paged++;
                 $.ajax({
                     type: 'POST',
-                    url: '/wp-admin/admin-ajax.php',
+                    url: ajaxurl,
                     dataType: 'html',
                     data: {
                       action: 'completed_events',
@@ -50,7 +50,7 @@
                 paged++;
                 $.ajax({
                     type: 'POST',
-                    url: '/wp-admin/admin-ajax.php',
+                    url: ajaxurl,
                     dataType: 'html',
                     data: {
                       action: 'upcoming_events',

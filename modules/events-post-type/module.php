@@ -149,6 +149,8 @@ if ( ! class_exists( 'agentpro_events_post_type' ) ) {
                 wp_enqueue_style( 'events-archive', get_stylesheet_directory_uri() . '/modules/events-post-type/css/events-archive.css' );
                 wp_enqueue_script( 'events-archive', get_stylesheet_directory_uri() . '/modules/events-post-type/js/events-archive.js' );
 
+                wp_localize_script('events-archive', 'ajaxurl', admin_url( 'admin-ajax.php' ));
+
             }
 
             if ( is_singular( 'events' ) ) {

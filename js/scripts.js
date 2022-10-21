@@ -110,7 +110,7 @@
                 paged++;
                 $.ajax({
                     type: 'POST',
-                    url: '/wp-admin/admin-ajax.php',
+                    url: ajaxurl,
                     dataType: 'html',
                     data: {
                       action: 'show_more_posts',
@@ -153,7 +153,7 @@
             }); 
         }
 
-        function addedToCart(){
+        function addedToCart(){ 
             jQuery(document.body).on('click', '.ajax_add_to_cart', function(event){
                 let $this = $(this); // Get button jQuery Object and set it in a variable
                 let $id = $this.attr('data-product_id');
@@ -196,7 +196,7 @@
         function refreshCartItems(){
             $.ajax({
                 type: 'POST',
-                url: '/wp-admin/admin-ajax.php',
+                url: ajaxurl,
                 data: {
                   action: 'cart_count_retriever',
                 },
