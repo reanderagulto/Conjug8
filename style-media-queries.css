@@ -337,7 +337,8 @@
 		height: 490px;
 	}
 
-	section#newsletter-section .wpcf7 form.invalid .wpcf7-response-output {
+	section#newsletter-section .wpcf7 form.invalid .wpcf7-response-output,
+	section#newsletter-section .wpcf7 form .wpcf7-response-output {
 		margin: 10px;
 		font-size: 14px;
 	}
