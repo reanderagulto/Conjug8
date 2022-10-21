@@ -1263,8 +1263,8 @@ section.featured-posts .slider-navs {
 
 section.featured-posts .accent-bg {
     transform: rotate(-30deg);
-    bottom: -16.208vw;
-    right: -18.75vw;
+    bottom: -252px;
+    right: 0;
     opacity: 0.8;
 }
 

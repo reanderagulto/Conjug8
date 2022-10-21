@@ -7,6 +7,7 @@ function register_ai_child_starter_theme_sidebars() {
 		'Header: Logo',
 		'Home: Slider',
 		'Footer: Form',
+		'Icons',
 	];
 
 	foreach ($items as $item) {

@@ -58,20 +58,7 @@ foreach ( $fields_to_get as $field ) {
 <!-- Start of Icons  -->
 <section id="icons-section">
     <div class="icons-wrap">
-        <div class="icons-container flex justify-around" data-aos="fade-up" data-aos-once="true" data-aos-offset="200" data-aos-duration="800">
-            <div class="icon">
-                <img src="<?=do_shortcode('[stylesheet_directory]')?>/images/svg/ai-icon-bulb.svg" class="img-responsive" width="88" height="88" alt="Sharp Brain" >
-                <h3>Sharp Brain</h3>
-            </div>
-            <div class="icon">
-                <img src="<?=do_shortcode('[stylesheet_directory]')?>/images/svg/ai-icon-brain.svg" class="img-responsive" width="83" height="83" alt="Sound Mind" >
-                <h3>Sound Mind</h3>
-            </div>
-            <div class="icon">
-                <img src="<?=do_shortcode('[stylesheet_directory]')?>/images/svg/ai-icon-heart.svg" class="img-responsive" width="77" height="77" alt="Healty Life" >
-                <h3>Healthy Life</h3>
-            </div>
-        </div>
+        <?php dynamic_sidebar('Icons'); ?>
     </div>
 </section>
 <!-- End of Icons -->
