@@ -476,6 +476,10 @@ p{
     font-size: 10px;
 }
 
+.cart-container .header-cart-count img{
+    border-radius: 50%;
+}
+
 /* 
 * 
 * Form Controls
