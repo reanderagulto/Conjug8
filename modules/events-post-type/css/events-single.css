@@ -24,3 +24,36 @@ div#content-full.events-single .video-content .what-plyr .plyr > button.plyr__co
 div#content-full.events-single .video-content .what-plyr .plyr > button.plyr__control svg, #hp-what .what-plyr .plyr > button.plyr__control span{
     display: none;
 }
+
+@media only screen and (max-width: 991px) {
+    div#content-full.events-single {
+        padding: 0 20px;
+        margin-top: 50px;
+        margin-bottom: 118px;
+    }
+
+    div#content-full.events-single .video-content .what-plyr {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 3.646vw;
+        padding: unset;
+        width: 100%;
+    }
+
+    div#content-full.events-single .video-content .what-plyr .plyr > button.plyr__control {
+        width: 60px;
+        height: 60px;
+    }
+
+    .innerpage-banner-wrap p{
+        font-size: 20px;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    div#content-full.events-single .video-content .what-plyr .plyr > button.plyr__control {
+        width: 40px;
+        height: 40px;
+    }
+}
