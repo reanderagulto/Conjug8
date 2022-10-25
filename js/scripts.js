@@ -10,6 +10,7 @@
             onPlusMinus();
             sliderConfig();
             showMorePosts();
+            loadPosts();
             popup();
             addedToCart();
         }
@@ -100,12 +101,38 @@
             });
         }
 
-        function showMorePosts(){
-            let $eventLoadMore = $('#see-more-posts');
+        function loadPosts(){
+            let post_per_page = 6;
+            let paged = 1;
+            let offset = 0;            
+            $.ajax({
+                type: 'POST',
+                url: ajaxurl,
+                dataType: 'html',
+                data: {
+                    action: 'show_more_posts',
+                    offset: offset,
+                    paged: paged,
+                    post_per_page: post_per_page,
+                },
+                success: function (res) {      
+                    $('.blog-archive-wrap').html(res);
+                    let maxPost = parseInt($('#posts-max').val());
+                    if(maxPost > 1){
+                        let html = '<div class="load-more-container flex items-center justify-center" data-aos="fade-up" data-aos-once="true"><a href="#!" class="aios-btn aios-btn-red" id="see-more-posts">See More Posts</a></div>';
+                        $('.blog-archive').append(html);
+                    }
+                },
+            });
+        }
+
+        function showMorePosts(){            
             let currentPage = 6;
+            let post_per_page = 3;
             let paged = 2;
             let numPost = 0;
-            $eventLoadMore.on('click', function(e){
+            jQuery(document.body).on('click', '#see-more-posts' ,function(e){
+                console.log();
                 e.preventDefault();
                 paged++;
                 $.ajax({
@@ -116,12 +143,14 @@
                       action: 'show_more_posts',
                       offset: currentPage + numPost,
                       paged: paged,
+                      post_per_page: post_per_page,
                     },
                     success: function (res) {                        
                         numPost = numPost + 3;
                         $('.blog-archive-wrap').append(res);
                         let maxnumpage = parseInt($('#posts-max').val());
-                        if(paged == maxnumpage){
+                        console.log(paged);
+                        if(paged >= maxnumpage){
                             $('.load-more-container').hide();
                         }
                     },

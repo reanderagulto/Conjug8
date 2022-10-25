@@ -121,18 +121,23 @@ if( !class_exists('blog_posts_hooks')) {
         }
 
         function show_more_posts(){
-            $ajaxposts = new WP_Query([
+
+            $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+            $args = array(
                 'post_type' => 'post',
                 'post_status' => 'publish',
-                'posts_per_page' => 3,
+                'posts_per_page' => $_POST['post_per_page'],
                 'orderby' => 'date',
                 'order' => 'DESC',
+                'paged' => $paged,
                 'offset' => $_POST['offset'],
-            ]);
+            );
+
+            $ajaxposts = new WP_Query($args);
 
             $max_pages = $ajaxposts->max_num_pages;
-            if($ajaxposts->have_posts()): 
-                while($ajaxposts->have_posts()): $ajaxposts->the_post(); ?>
+            if($ajaxposts->have_posts()): ?>
+                <?php while($ajaxposts->have_posts()): $ajaxposts->the_post(); ?>
                     <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>  data-aos="fade-up" data-aos-once="true">
                         <input type="hidden" id="posts-max" value="<?php echo $max_pages; ?>" />
                         <div class="entry">
@@ -160,8 +165,8 @@ if( !class_exists('blog_posts_hooks')) {
                             <div class="clearfix"></div>
                         </div>
                     </article>
-                <?php endwhile;
-            endif; 
+                <?php endwhile; ?>
+            <?php endif;
             wp_die();
 
         }
