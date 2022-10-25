@@ -40,7 +40,7 @@
 					</nav>
 
 					<div class="side-nav">
-						<a href="https://www.neurology.org/user/login" target="_blank" class="aios-btn trigger-popup-menu">Medical Practioners Only</a>
+						<a href="https://www.neurology.org/user/login" target="_blank" class="aios-btn trigger-popup-menu">Medical Practitioners Only</a>
 					</div>
 					
 					<div class="nav-close"> <i class="ai-font-close-g"></i></div>

@@ -65,6 +65,41 @@
     margin: 26px 0;
 }
 
+fieldset#cynder-paymongo-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.woocommerce-checkout #payment ul.payment_methods li input[type="text"],
+.woocommerce-checkout #payment ul.payment_methods li input[type="password"]{
+    border: 1px solid var(--secondary-text);
+    height: max(2.604vw, 50px);
+    width: 100%;
+    padding: 0.938vw 0.667vw;
+    font-family: var(--font-family-para);
+    font-size: var(--font-size-default);
+    color: var(--primary-darker) !important;
+    border-radius: 5px;
+}
+
+.woocommerce form .form-row label{
+    line-height: 1.6 !important;
+}
+
+.woocommerce-notice.woocommerce-notice--success {
+    font-size: var(--font-size-title);
+    font-family: var(--font-family-lato);
+    color: #000;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+h2.woocommerce-order-details__title {
+    margin-bottom: 20px;
+    font-size: 24px;
+    font-weight: 700;
+}
+
 @media only screen and (max-width: 767px) {
 
     .checkout-page-container .checkout-wrap{
@@ -73,5 +108,22 @@
 
     label.woocommerce-form__label.woocommerce-form__label-for-checkbox.checkbox {
         margin-left: 30px;
+    }
+
+    .woocommerce ul.order_details {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .woocommerce ul.order_details li {
+        margin-bottom: 15px;
+    }
+
+    .woocommerce-notice.woocommerce-notice--success{
+        font-size: 24px;
+    }
+
+    h2.woocommerce-order-details__title {
+        font-size: 18px;
     }
 }
