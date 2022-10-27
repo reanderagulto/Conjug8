@@ -166,7 +166,7 @@ if ( ! class_exists( 'agentpro_events_post_type' ) ) {
                 'order'          => 'DESC',
                 'orderby'        => 'date',
                 'offset'         => $_POST['offset'],
-                'posts_per_page' => 3,
+                'posts_per_page' => $_POST['post_per_page'],
                 'date_query'     => array(
                     //set date ranges with strings!
                     'before'     => 'today',
@@ -205,7 +205,7 @@ if ( ! class_exists( 'agentpro_events_post_type' ) ) {
                 'order'          => 'ASC',
                 'orderby'        => 'date',
                 'offset'         => $_POST['offset'],
-                'posts_per_page' => 3,
+                'posts_per_page' => $_POST['post_per_page'],
                 'date_query' => array(
                     array(
                         'after' => date('Y-m-d'),
@@ -218,14 +218,25 @@ if ( ! class_exists( 'agentpro_events_post_type' ) ) {
                 while($ajaxposts->have_posts()): $ajaxposts->the_post(); ?>
                     <div class="event" data-aos="fade-up" data-aos-once="true">
                     <input type="hidden" id="upcoming-events" value="<?php echo $max_pages; ?>" />
+                    <?php if(get_post_status() == 'publish'): ?>
+                        <a href="<?php echo get_the_permalink(); ?>">
+                    <?php endif;?>
                         <div class="event-container">
                             <div class="img-container">
                                 <canvas width="350" height="299"></canvas>
                                 <img src="<?php the_post_thumbnail_url('full')?>" alt="<?php the_title(); ?>" width="350" height="299" />
                             </div>
-                            <p class="event-date"><?php echo get_the_date( 'j', get_the_ID() ); ?> <span><?php echo get_the_date( 'M', get_the_ID() ); ?></span></p>
+                            <p class="event-date"><?php echo get_the_date( 'j', get_the_ID() ); ?> <span><?php echo get_the_date( 'M', get_the_ID() ); ?></span></p>                        
+                            <?php if(get_post_status() == 'publish'): ?>
+                            <div class="happen-now">
+                                <p>Happening Now</p>
+                            </div>
+                            <?php endif; ?>
+                            <h3><?php the_title(); ?></h3>
                         </div>
-                        <h3><?php the_title(); ?></h3>
+                    <?php if(get_post_status() == 'publish'): ?>
+                        </a>
+                    <?php endif;?>
                     </div>
                 <?php endwhile;
             endif; 

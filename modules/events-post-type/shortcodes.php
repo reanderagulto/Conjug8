@@ -141,9 +141,6 @@ if( !class_exists( 'agentpro_events_shortcodes' ) ) {
         
             extract( $atts ); // create variables using the above array keys
 
-            wp_enqueue_style( 'event-slider', get_stylesheet_directory_uri() . '/modules/events-post-type/css/events-archive.css' );
-            wp_enqueue_script( 'event-slider', get_stylesheet_directory_uri() . '/modules/events-post-type/js/events-archive.js' );
-        
             $args = [
                 'post_type' => 'events',
                 'post_status' => array('publish', 'future'),
@@ -215,7 +212,6 @@ if( !class_exists( 'agentpro_events_shortcodes' ) ) {
             extract( $atts ); // create variables using the above array keys
 
             wp_enqueue_style( 'event-slider', get_stylesheet_directory_uri() . '/modules/events-post-type/css/events-archive.css' );
-            wp_enqueue_script( 'event-slider', get_stylesheet_directory_uri() . '/modules/events-post-type/js/events-archive.js' );
 
             $args = [
                 'post_type' => 'events',
