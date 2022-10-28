@@ -111,6 +111,7 @@ if(!class_exists('woocommerce_hooks')) {
         }
 
         function custom_checkout_field(){
+            /* Custom Checkout Fields */
             add_action(
                 'woocommerce_after_order_notes', 
                 function($checkout){
@@ -119,31 +120,50 @@ if(!class_exists('woocommerce_hooks')) {
                         woocommerce_form_field(
                             'hospital_name', 
                             array(
-                                'type' => 'text',
-                                'class' => array(
-                                    'my-field-class form-row-wide'
-                                ) ,
-                                'label' => __('Hospital\'s Name') ,
-                                'placeholder' => __('Hospital') ,
-                            ) ,
+                                'type'          => 'text',
+                                'class'         => array('my-field-class form-row-wide'),
+                                'label'         => __('Hospital\'s Name'),
+                                'placeholder'   => __('Enter Hospital Name'),
+                            ),
                             $checkout->get_value('hospital_name')
                         );
                         woocommerce_form_field(
                             'doctor_name', 
                             array(
-                                'type' => 'text',
-                                'class' => array(
-                                    'my-field-class form-row-wide'
-                                ) ,
-                                'label' => __('Doctor\'s Name') ,
-                                'placeholder' => __('Doctor') ,
+                                'type'          => 'text',
+                                'class'         => array('my-field-class form-row-wide'),
+                                'label'         => __('Doctor\'s Name'),
+                                'placeholder'   => __('Enter Doctor\'s Name'),
                             ) ,
-                            $checkout->get_value('hospital_name')
+                            $checkout->get_value('doctor_name')
                         );
                     echo '</div>';
                 }
             );
 
+
+            /* Save Custom Checkout Fields in Order Metadata */
+            add_action(
+                'woocommerce_checkout_update_order_meta', 
+                function($order_id){
+                    if( isset($_POST['hospital_name']) ){
+                        update_post_meta($order_id, 'hospital_name', sanitize_text_field( $_POST['hospital_name']) );
+                    }
+
+                    if( isset($_POST['doctor_name']) ){
+                        update_post_meta($order_id, 'doctor_name', sanitize_text_field( $_POST['doctor_name']) );
+                    }
+                }
+            );
+
+            /* Show Custom Checkout Fields in Woocommerce Admin */
+            add_action(
+                'woocommerce_admin_order_data_after_billing_address',
+                function($order){
+                    echo '<p><strong>'.__('Hospital\'s Name').':</strong> <p>' . get_post_meta( $order->id, 'hospital_name', true ) . '</p></p>';
+                    echo '<p><strong>'.__('Doctor\'s Name').':</strong> <p>' . get_post_meta( $order->id, 'doctor_name', true ) . '</p></p>';
+                }
+            );
         }
 
         function add_featured_metabox(){
