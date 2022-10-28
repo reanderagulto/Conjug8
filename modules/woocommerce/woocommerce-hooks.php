@@ -18,6 +18,7 @@ if(!class_exists('woocommerce_hooks')) {
             * Add actions before updating/reordering
             */   
             $this->product_details();
+            $this->custom_checkout_field();
             add_action( 'add_meta_boxes', [$this, 'add_featured_metabox'] );
             add_action( 'save_post', [$this, 'save_featured_metabox'] );
         }        
@@ -109,10 +110,41 @@ if(!class_exists('woocommerce_hooks')) {
             }, 20 );
         }
 
-        
-function custom_action_after_single_product_title() { 
+        function custom_checkout_field(){
+            add_action(
+                'woocommerce_after_order_notes', 
+                function($checkout){
+                    echo '<div id="custom_checkout_field">
+                        <h3>' . __('Other Details') . '</h3>';
+                        woocommerce_form_field(
+                            'hospital_name', 
+                            array(
+                                'type' => 'text',
+                                'class' => array(
+                                    'my-field-class form-row-wide'
+                                ) ,
+                                'label' => __('Hospital\'s Name') ,
+                                'placeholder' => __('Hospital') ,
+                            ) ,
+                            $checkout->get_value('hospital_name')
+                        );
+                        woocommerce_form_field(
+                            'doctor_name', 
+                            array(
+                                'type' => 'text',
+                                'class' => array(
+                                    'my-field-class form-row-wide'
+                                ) ,
+                                'label' => __('Doctor\'s Name') ,
+                                'placeholder' => __('Doctor') ,
+                            ) ,
+                            $checkout->get_value('hospital_name')
+                        );
+                    echo '</div>';
+                }
+            );
 
-}
+        }
 
         function add_featured_metabox(){
             add_meta_box( 'featured_product', __('Featured Product', 'aios-textdomain'), [$this, 'display_featured_metabox'], 'product', 'side', 'high' );
