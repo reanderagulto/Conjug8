@@ -18,6 +18,7 @@ if(!class_exists('woocommerce_hooks')) {
             * Add actions before updating/reordering
             */   
             $this->product_details();
+            $this->custom_checkout_fields();
             add_action( 'add_meta_boxes', [$this, 'add_featured_metabox'] );
             add_action( 'save_post', [$this, 'save_featured_metabox'] );
         }        
@@ -109,10 +110,26 @@ if(!class_exists('woocommerce_hooks')) {
             }, 20 );
         }
 
-        
-function custom_action_after_single_product_title() { 
-
-}
+        function custom_checkout_fields(){
+            add_action(
+                'woocommerce_after_order_notes', 
+                function($checkout){
+                    echo '<div id="custom_checkout_field"><h2>' . __('New Heading') . '</h2>';
+                    woocommerce_form_field('custom_field_name', 
+                        array(
+                            'type' => 'text',
+                            'class' => array(
+                                    'my-field-class form-row-wide'
+                                ) ,
+                            'label' => __('Custom Additional Field') ,
+                            'placeholder' => __('New Custom Field') ,
+                        ) ,
+                        $checkout->get_value('custom_field_name')
+                    );
+                    echo '</div>';
+                }
+            );
+        }
 
         function add_featured_metabox(){
             add_meta_box( 'featured_product', __('Featured Product', 'aios-textdomain'), [$this, 'display_featured_metabox'], 'product', 'side', 'high' );
