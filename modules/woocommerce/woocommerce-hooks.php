@@ -36,6 +36,18 @@ if(!class_exists('woocommerce_hooks')) {
                             echo '<p>' . $product_attributes['manufacturer'] . '</p>';
                             echo '</div>';
                         }
+                        if(!empty($product_attributes['distributor'])) {
+                            echo '<div class="detail">';
+                            echo '<h2>Distributor</h2>';
+                            echo '<p>' . $product_attributes['distributor'] . '</p>';
+                            echo '</div>';
+                        }
+                        if(!empty($product_attributes['marketer'])) {
+                            echo '<div class="detail">';
+                            echo '<h2>Marketer</h2>';
+                            echo '<p>' . $product_attributes['marketer'] . '</p>';
+                            echo '</div>';
+                        }
                         if(!empty($product_attributes['contents'])) {
                             echo '<div class="detail">';
                             echo '<h2>Contents</h2>';
@@ -52,6 +64,18 @@ if(!class_exists('woocommerce_hooks')) {
                             echo '<div class="detail">';
                             echo '<h2>Dosage/Direction for Use</h2>';
                             echo '<p>' . $product_attributes['dosage_direction_for_use'] . '</p>';
+                            echo '</div>';
+                        }
+                        if(!empty($product_attributes['administration'])) {
+                            echo '<div class="detail">';
+                            echo '<h2>Administration</h2>';
+                            echo '<p>' . $product_attributes['administration'] . '</p>';
+                            echo '</div>';
+                        }
+                        if(!empty($product_attributes['contraindications'])) {
+                            echo '<div class="detail">';
+                            echo '<h2>Contraindications</h2>';
+                            echo '<p>' . $product_attributes['contraindications'] . '</p>';
                             echo '</div>';
                         }
                         if(!empty($product_attributes['special_precautions'])) {

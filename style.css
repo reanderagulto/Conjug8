@@ -1813,3 +1813,7 @@ p#breadcrumbs{
 #add_payment_method table.cart img, .woocommerce-cart table.cart img, .woocommerce-checkout table.cart img{
     width: 130px;
 }
+
+.main-wrapper div#sidebar{
+    margin-top: 8vw;
+}
