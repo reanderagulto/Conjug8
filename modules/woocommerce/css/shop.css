@@ -43,9 +43,9 @@
 .woocommerce .shop-container .shop-wrap ul.products li.product a img{
     margin-bottom: unset;
     height: max(17.569vw, 253px);
-    object-fit: cover;
+    object-fit: scale-down;
     object-position: center;
-
+    background-color: #FFF;
 }
 
 .woocommerce .shop-container .shop-wrap ul.products li.product .loop-product-wrap .loop-product-content {

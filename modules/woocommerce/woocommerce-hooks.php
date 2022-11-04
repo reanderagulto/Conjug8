@@ -163,6 +163,7 @@ if(!class_exists('woocommerce_hooks')) {
                                 'class'         => array('my-field-class form-row-wide'),
                                 'label'         => __('Hospital\'s Name'),
                                 'placeholder'   => __('Enter Hospital Name'),
+                                'required'      => true,
                             ),
                             $checkout->get_value('hospital_name')
                         );
@@ -173,6 +174,7 @@ if(!class_exists('woocommerce_hooks')) {
                                 'class'         => array('my-field-class form-row-wide'),
                                 'label'         => __('Doctor\'s Name'),
                                 'placeholder'   => __('Enter Doctor\'s Name'),
+                                'required'      => true,
                             ) ,
                             $checkout->get_value('doctor_name')
                         );
