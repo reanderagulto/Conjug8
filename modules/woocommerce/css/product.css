@@ -114,6 +114,10 @@ section.related.products .products .loop-product-wrap .loop-product-content{
 
 }
 
+.products .loop-product-wrap .loop-product-image {
+    border: solid 4px var(--primary-red);
+}
+
 section.related.products .products .loop-product-wrap:hover .loop-product-content h2{
     color: #FFF;
 }
@@ -214,6 +218,7 @@ section#product-section .slick-list {
 .product-slide .product-img {
     display: block;
     position: relative;
+    border: solid 4px var(--primary-red);
 }
 
 .product-slide .product-img canvas {
@@ -294,6 +299,7 @@ section#product-section .slick-list {
     width: 35%;
     height: 100%;
     position: relative;
+    border: solid 4px var(--primary-red);
 }
 
 .featured-product-slider .product-slide .product-info {
@@ -377,6 +383,52 @@ section.featured-products .slider-navs {
 
 .featured-products-wrap .slider-navs button:before {
     filter: brightness(0) invert(1);
+}
+
+
+.woocommerce div.product form.cart .variations td, .woocommerce div.product form.cart .variations th{
+    font-size: var(--font-size-default);
+    font-family: var(--font-family-default);
+    color: #000;
+}
+
+.woocommerce .single-product div.product form.variations_form .single_variation_wrap{
+    margin-top: 20px;
+}
+
+.woocommerce .single-product div.product form.variations_form{
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+.woocommerce .single-product div.product .single_variation{
+    display: block;
+    margin-bottom: 20px;
+}
+
+.woocommerce div.product form.cart .variations select {
+    height: 50px;
+    height: max(2.604vw, 50px);
+    width: 100%;
+    font-family: var(--font-family-para);
+    font-size: var(--font-size-default);
+    color: var(--primary-darker) !important;
+    display: flex;
+    align-items: center;
+    border-radius: 5px;
+}
+
+.product-type-variable p.price{
+    display: none;
+}
+
+.woocommerce div.product div.images .wpgs-for .slick-list img{
+    border: solid 4px var(--primary-red);
+}
+
+.woocommerce div.product div.images img{
+    background-color: #FFF;
 }
 
 @media only screen and (max-width: 1199px){

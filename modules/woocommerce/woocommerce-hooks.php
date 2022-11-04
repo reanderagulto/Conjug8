@@ -27,85 +27,100 @@ if(!class_exists('woocommerce_hooks')) {
             add_action( 
                 'woocommerce_after_single_product_summary', 
                 function(){
-                    $product_attributes = get_field('product_attributes');
+                    global $product;
+                    $prefix = 'aios_';
+                    $post_id = $product->get_id();
+                    $manufacturer = get_post_meta( $post_id, 'aios_manufacturer',  true);
+                    $distributor = get_post_meta( $post_id, 'aios_distributor',  true);
+                    $marketer = get_post_meta( $post_id, 'aios_marketer',  true);
+                    $contents = get_post_meta( $post_id, 'aios_contents',  true);
+                    $indications_uses = get_post_meta( $post_id, 'aios_indications_uses',  true);
+                    $dosage_direction_for_use = get_post_meta( $post_id, 'aios_dosage_direction_for_use',  true);
+                    $administration = get_post_meta( $post_id, 'aios_administration',  true);
+                    $contraindications = get_post_meta( $post_id, 'aios_contraindications',  true);
+                    $special_precautions = get_post_meta( $post_id, 'aios_special_precautions',  true);
+                    $atc_classification = get_post_meta( $post_id, 'aios_atc_classification',  true);
+                    $presentation_packaging = get_post_meta( $post_id, 'aios_presentation_packaging',  true);
+                    $regulatory_classification = get_post_meta( $post_id, 'aios_regulatory_classification',  true);
+
 
                     echo '<div class="product-details">';
-                        if(!empty($product_attributes['manufacturer'])) {
+                        if(!empty($manufacturer)) {
                             echo '<div class="detail">';
                             echo '<h2>Manufacturer</h2>';
-                            echo '<p>' . $product_attributes['manufacturer'] . '</p>';
+                            echo '<p>' . $manufacturer. '</p>';
                             echo '</div>';
                         }
-                        if(!empty($product_attributes['distributor'])) {
+                        if(!empty($distributor)) {
                             echo '<div class="detail">';
                             echo '<h2>Distributor</h2>';
-                            echo '<p>' . $product_attributes['distributor'] . '</p>';
+                            echo '<p>' . $distributor . '</p>';
                             echo '</div>';
                         }
-                        if(!empty($product_attributes['marketer'])) {
+                        if(!empty($marketer)) {
                             echo '<div class="detail">';
                             echo '<h2>Marketer</h2>';
-                            echo '<p>' . $product_attributes['marketer'] . '</p>';
+                            echo '<p>' . $marketer . '</p>';
                             echo '</div>';
                         }
-                        if(!empty($product_attributes['contents'])) {
+                        if(!empty($contents)) {
                             echo '<div class="detail">';
                             echo '<h2>Contents</h2>';
-                            echo '<p>' . $product_attributes['contents'] . '</p>';
+                            echo '<p>' . $contents . '</p>';
                             echo '</div>';
                         }
-                        if(!empty($product_attributes['indications_uses'])) {
+                        if(!empty($indications_uses)) {
                             echo '<div class="detail">';
                             echo '<h2>Indications/Uses</h2>';
-                            echo '<p>' . $product_attributes['indications_uses'] . '</p>';
+                            echo '<p>' . $indications_uses . '</p>';
                             echo '</div>';
                         }
-                        if(!empty($product_attributes['dosage_direction_for_use'])) {
+                        if(!empty($dosage_direction_for_use)) {
                             echo '<div class="detail">';
                             echo '<h2>Dosage/Direction for Use</h2>';
-                            echo '<p>' . $product_attributes['dosage_direction_for_use'] . '</p>';
+                            echo '<p>' . $dosage_direction_for_use . '</p>';
                             echo '</div>';
                         }
-                        if(!empty($product_attributes['administration'])) {
+                        if(!empty($administration)) {
                             echo '<div class="detail">';
                             echo '<h2>Administration</h2>';
-                            echo '<p>' . $product_attributes['administration'] . '</p>';
+                            echo '<p>' . $administration . '</p>';
                             echo '</div>';
                         }
-                        if(!empty($product_attributes['contraindications'])) {
+                        if(!empty( $contraindications)) {
                             echo '<div class="detail">';
                             echo '<h2>Contraindications</h2>';
-                            echo '<p>' . $product_attributes['contraindications'] . '</p>';
+                            echo '<p>' .  $contraindications . '</p>';
                             echo '</div>';
                         }
-                        if(!empty($product_attributes['special_precautions'])) {
+                        if(!empty($special_precautions)) {
                             echo '<div class="detail">';
                             echo '<h2>Special Precautions</h2>';
-                            echo '<p>' . $product_attributes['special_precautions'] . '</p>';
+                            echo '<p>' . $special_precautions . '</p>';
                             echo '</div>';
                         }
                         echo '<div class="detail">';
                         woocommerce_product_description_tab();
                         echo '</div>';
-                        if(!empty($product_attributes['atc_classification'])) {
+                        if(!empty($atc_classification)) {
                             echo '<div class="detail">';
                             echo '<h2>ATC Classification</h2>';
-                            echo '<p>' . $product_attributes['atc_classification'] . '</p>';
+                            echo '<p>' . $atc_classification . '</p>';
                             echo '</div>';
                         }
-                        if(!empty($product_attributes['presentation_packaging'])) {
+                        if(!empty($presentation_packaging)) {
                             echo '<div class="detail">';
                             echo '<h2>Presentation / Packaging</h2>';
-                            echo '<p>' . $product_attributes['presentation_packaging'] . '</p>';
+                            echo '<p>' . $presentation_packaging. '</p>';
                             echo '</div>';
                         }
-                        if(!empty($product_attributes['regulatory_classification'])) {
+                        if(!empty($regulatory_classification)) {
                             echo '<div class="detail">';
                             echo '<h2>Regulatory Classification</h2>';
-                            echo '<p>' . $product_attributes['regulatory_classification'] . '</p>';
+                            echo '<p>' . $regulatory_classification . '</p>';
                             echo '</div>';
                         }
-                    echo '</div>';
+                    echo '</div>';  
                     
                     echo '<div class="related-products">';
                         woocommerce_output_related_products();
@@ -121,10 +136,10 @@ if(!class_exists('woocommerce_hooks')) {
                 $product_id = $product->get_id(); // The product ID
             
                 // Your custom field "Book author"
-                $product_attributes = get_field('product_attributes', $product_id);
+                $generic_name = get_post_meta($product_id, 'aios_genericname', true);
             
                 // Displaying your custom field under the title
-                echo '<span class="product-generic-name">' . $product_attributes['generic_name'] . '</span>';
+                echo '<span class="product-generic-name">' . $generic_name . '</span>';
             }, 6 );
             
             add_filter( 'woocommerce_output_related_products_args', function(){

@@ -16,6 +16,9 @@ if( !class_exists('add_woocommerce_support') ){
             // Ajax
             add_action('wp_ajax_cart_count_retriever', array( $this, 'cart_count_retriever'));
             add_action('wp_ajax_nopriv_cart_count_retriever', array( $this, 'cart_count_retriever'));
+
+            // Custom Metabox
+            $this->custom_metabox();
         }
 
         function enqueque_scripts(){
@@ -33,6 +36,147 @@ if( !class_exists('add_woocommerce_support') ){
             echo WC()->cart->get_cart_contents_count();
             wp_die();
         }
+
+        function custom_metabox(){
+            add_action( 'add_meta_boxes', [$this, 'product_custom_metabox']);
+            add_action( 'save_post', [$this, 'save_metabox']);
+        }
+
+        function product_custom_metabox(){
+            add_meta_box(
+                'custom_product_meta_box',
+                __( 'Product Attributes <em>(optional)</em>', 'cmb' ),
+                [$this, 'display_metabox'],
+                'product',
+                'normal',
+                'high'
+            );
+        }
+
+        function display_metabox( $post ){
+            $prefix = 'aios_';
+            $genericname = get_post_meta($post->ID, $prefix.'genericname', true) ? get_post_meta($post->ID, $prefix.'genericname', true) : '';
+            $manufacturer = get_post_meta($post->ID, $prefix.'manufacturer', true) ? get_post_meta($post->ID, $prefix.'manufacturer', true) : '';
+            $distributor = get_post_meta($post->ID, $prefix.'distributor', true) ? get_post_meta($post->ID, $prefix.'distributor', true) : '';
+            $marketer = get_post_meta($post->ID, $prefix.'marketer', true) ? get_post_meta($post->ID, $prefix.'marketer', true) : '';
+            $contents = get_post_meta($post->ID, $prefix.'contents', true) ? get_post_meta($post->ID, $prefix.'contents', true) : '';
+            $indications_uses = get_post_meta($post->ID, $prefix.'indications_uses', true) ? get_post_meta($post->ID, $prefix.'indications_uses', true) : '';
+            $dosage_direction_for_use = get_post_meta($post->ID, $prefix.'dosage_direction_for_use', true) ? get_post_meta($post->ID, $prefix.'dosage_direction_for_use', true) : '';
+            $administration = get_post_meta($post->ID, $prefix.'administration', true) ? get_post_meta($post->ID, $prefix.'administration', true) : '';
+            $contraindications = get_post_meta($post->ID, $prefix.'contraindications', true) ? get_post_meta($post->ID, $prefix.'contraindications', true) : '';
+            $special_precautions = get_post_meta($post->ID, $prefix.'special_precautions', true) ? get_post_meta($post->ID, $prefix.'special_precautions', true) : '';
+            $atc_classification = get_post_meta($post->ID, $prefix.'atc_classification', true) ? get_post_meta($post->ID, $prefix.'atc_classification', true) : '';
+            $presentation_packaging  = get_post_meta($post->ID, $prefix.'presentation_packaging ', true) ? get_post_meta($post->ID, $prefix.'presentation_packaging ', true) : '';
+            $regulatory_classification  = get_post_meta($post->ID, $prefix.'regulatory_classification ', true) ? get_post_meta($post->ID, $prefix.'regulatory_classification ', true) : ''; ?>
+            
+            <div class="flex">
+                <label for="genericname">
+                    <strong><?php _e( 'Generic Name', 'aios-products' )?></strong> <br/>
+                    <input type="text" name="genericname" id="genericname" value="<?php echo (isset($genericname) ? $genericname : ''); ?>" style="width: 100%; margin: 15px 0;"/>
+                </label>
+
+                <label for="manufacturer">
+                    <strong><?php _e( 'Manufacturer', 'aios-products' )?></strong> <br/>
+                    <input type="text" name="manufacturer" id="manufacturer" value="<?php echo (isset($manufacturer) ? $manufacturer : ''); ?>" style="width: 100%; margin: 15px 0;"/>
+                </label>
+
+                <label for="distributor">
+                    <strong><?php _e( 'Distributor', 'aios-products' )?></strong> <br/>
+                    <input type="text" name="distributor" id="distributor" value="<?php echo (isset($distributor) ? $distributor : ''); ?>" style="width: 100%; margin: 15px 0;"/>
+                </label>
+
+                <label for="marketer">
+                    <strong><?php _e( 'Marketer', 'aios-products' )?></strong> <br/>
+                    <input type="text" name="marketer" id="marketer" value="<?php echo (isset($marketer) ? $marketer : ''); ?>" style="width: 100%; margin: 15px 0;"/>
+                </label>
+
+                <label for="contents">
+                    <strong><?php _e( 'Contents', 'aios-products' )?></strong> <br/>
+                    <input type="text" name="contents" id="contents" value="<?php echo (isset($contents) ? $contents : ''); ?>" style="width: 100%; margin: 15px 0;"/>
+                </label>
+
+                <label for="indications_usesindications_uses">
+                    <strong><?php _e( 'Indications/Uses', 'aios-products' )?></strong> <br/>
+                    <textarea type="text" name="indications_uses" id="indications_uses" rows="6" style="width: 100%; margin: 15px 0;"><?php echo (isset($indications_uses) ? $indications_uses : ''); ?></textarea>
+                </label>
+                
+                <label for="dosage_direction_for_use">
+                    <strong><?php _e( 'Dosage/Direction for Use', 'aios-products' )?></strong> <br/>
+                    <textarea type="text" name="dosage_direction_for_use" id="dosage_direction_for_use" rows="6" style="width: 100%; margin: 15px 0;"><?php echo (isset($dosage_direction_for_use) ? $dosage_direction_for_use : ''); ?></textarea>
+                </label>
+
+                <label for="administration">
+                    <strong><?php _e( 'Administration', 'aios-products' )?></strong> <br/>
+                    <input type="text" name="administration" id="administration" value="<?php echo (isset($administration) ? $administration : ''); ?>" style="width: 100%; margin: 15px 0;"/>
+                </label>
+
+                <label for="contraindications">
+                    <strong><?php _e( 'Contraindications', 'aios-products' )?></strong> <br/>
+                    <input type="text" name="contraindications" id="contraindications" value="<?php echo (isset($contraindications) ? $contraindications : ''); ?>" style="width: 100%; margin: 15px 0;"/>
+                </label>
+
+                <label for="special_precautions">
+                    <strong><?php _e( 'Dosage/Direction for Use', 'aios-products' )?></strong> <br/>
+                    <textarea type="text" name="special_precautions" id="special_precautions" rows="6" style="width: 100%; margin: 15px 0;"><?php echo (isset($special_precautions) ? $special_precautions : ''); ?></textarea>
+                </label>
+
+                <label for="atc_classification">
+                    <strong><?php _e( 'ATC Classification', 'aios-products' )?></strong> <br/>
+                    <input type="text" name="atc_classification" id="atc_classification" value="<?php echo (isset($atc_classification) ? $atc_classification : ''); ?>" style="width: 100%; margin: 15px 0;"/>
+                </label>
+
+                <label for="presentation_packagingpresentation_packaging">
+                    <strong><?php _e( 'Presentation / Packaging', 'aios-products' )?></strong> <br/>
+                    <input type="text" name="presentation_packaging" id="presentation_packaging" value="<?php echo (isset($presentation_packaging) ? $presentation_packaging : ''); ?>" style="width: 100%; margin: 15px 0;"/>
+                </label>
+
+                <label for="regulatory_classification">
+                    <strong><?php _e( 'Regulatory Classification', 'aios-products' )?></strong> <br/>
+                    <input type="text" name="regulatory_classification" id="regulatory_classification" value="<?php echo (isset($regulatory_classification) ? $regulatory_classification : ''); ?>" style="width: 100%; margin: 15px 0;"/>
+                </label>
+                
+            </div>
+
+        <?php 
+            echo '<input type="hidden" name="custom_product_field_nonce" value="' . wp_create_nonce() . '">';
+        }
+
+        function save_metabox( $post_id ){
+            $prefix = 'aios_';
+            if ( ! isset( $_POST[ 'custom_product_field_nonce' ] ) ) {
+                return $post_id;
+            }
+            $nonce = $_REQUEST[ 'custom_product_field_nonce' ];
+            if ( ! wp_verify_nonce( $nonce ) ) {
+                return $post_id;
+            }
+            if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
+                return $post_id;
+            }
+            if ( 'product' == $_POST[ 'post_type' ] ){
+                if ( ! current_user_can( 'edit_product', $post_id ) )
+                    return $post_id;
+            } else {
+                if ( ! current_user_can( 'edit_post', $post_id ) )
+                    return $post_id;
+            }
+
+            update_post_meta( $post_id, $prefix.'genericname', wp_kses_post($_POST[ 'genericname' ]) );
+            update_post_meta( $post_id, $prefix.'manufacturer', wp_kses_post($_POST[ 'manufacturer' ]) );
+            update_post_meta( $post_id, $prefix.'distributor', wp_kses_post($_POST[ 'distributor' ]) );
+            update_post_meta( $post_id, $prefix.'marketer', wp_kses_post($_POST[ 'marketer' ]) );
+            update_post_meta( $post_id, $prefix.'contents', wp_kses_post($_POST[ 'contents' ]) );
+            update_post_meta( $post_id, $prefix.'indications_uses', wp_kses_post($_POST[ 'indications_uses' ]) );
+            update_post_meta( $post_id, $prefix.'dosage_direction_for_use', wp_kses_post($_POST[ 'dosage_direction_for_use' ]) );
+            update_post_meta( $post_id, $prefix.'administration', wp_kses_post($_POST[ 'administration' ]) );
+            update_post_meta( $post_id, $prefix.'contraindications', wp_kses_post($_POST[ 'contraindications' ]) );
+            update_post_meta( $post_id, $prefix.'special_precautions', wp_kses_post($_POST[ 'special_precautions' ]) );
+            update_post_meta( $post_id, $prefix.'atc_classification', wp_kses_post($_POST[ 'atc_classification' ]) );
+            update_post_meta( $post_id, $prefix.'presentation_packaging', wp_kses_post($_POST[ 'presentation_packaging' ]) );
+            update_post_meta( $post_id, $prefix.'regulatory_classification', wp_kses_post($_POST[ 'regulatory_classification' ]) );
+
+        }
+        
     }
 
     $add_woocommerce_support = new add_woocommerce_support();
