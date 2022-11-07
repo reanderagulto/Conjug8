@@ -1817,3 +1817,30 @@ p#breadcrumbs{
 .main-wrapper div#sidebar{
     margin-top: 8vw;
 }
+
+.main_upload ul li {
+    margin-bottom: 10px;
+}
+
+.main_upload > span > ul {
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+.main_upload > span > ul li:first-child{
+    display: none;
+}
+
+.main_upload > span > ul li:nth-child(2){
+    font-size: 0;
+}
+
+.main_upload > span > ul li:last-child{
+    display: flex;
+    font-size: 0;
+    flex-flow: row wrap;
+}
+
+.main_upload > span > ul li:last-child img {
+    width: 50% !important;
+}

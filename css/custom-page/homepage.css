@@ -98,11 +98,31 @@ section#hero-banner {
     margin-right: 1.250vw;
     color: #FFF;
     width: max(10.677vw, 205px);
+    height: 60px;
 }
 
 .banner-button-container .aios-btn.aios-btn-white {
     color: var(--primary-red);
     width: max(8.125vw, 156px);
+}
+
+.banner-button-container .aios-btn.aios-btn-transparent{
+    font-size: 24px;
+    letter-spacing: 0.2em;
+    width: max(10.677vw, 235px);
+}
+
+.banner-button-container a > span {
+    display: flex;
+    flex-direction: column;
+    font-size: 16px;
+    letter-spacing: 0.2em;
+}
+
+.banner-button-container a > span em{
+    font-style: normal;
+    text-align: center;
+    letter-spacing: 0.3em;
 }
 
 .banner-button-container .aios-btn.aios-btn-white:hover, .banner-button-container .aios-btn.aios-btn-transparent:hover {
@@ -550,6 +570,11 @@ section#contact-section .contact-wrap .contact-info, section#contact-section .co
         font-size: 15px;
         margin: auto;
         margin-bottom: 9px;
+        height: 45px;
+    }
+
+    .banner-button-container a > span{
+        font-size: 12px;
     }
 
     .banner-container .banner-background {

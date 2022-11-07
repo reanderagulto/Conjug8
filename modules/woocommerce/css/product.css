@@ -169,16 +169,26 @@ section#product-section {
 }
 
 section#product-section .slick-list {
-    padding-right: 132px !important;
+    /* padding-right: 132px !important; */
+}
+
+section#product-section .slick-slide {
+    transform: scale(0.9);
+    transition: all var(--ease-short-transition);
+}
+
+section#product-section .slick-slide.slick-current {
+    transform: scale(1);
 }
 
 .product-section-wrap {
-    padding: 8.611vw 0 7.014vw 11.458vw;
+    padding: 8.611vw 0 7.014vw 0;
     overflow: hidden;
 }
 
 .product-header-nav{
     margin-right: 7.750vw;
+    margin-left: 11.458vw;
     margin-bottom: 1.823vw;
 }
 
@@ -207,10 +217,6 @@ section#product-section .slick-list {
     filter: brightness(0) invert(1);
 }
 
-.product-slider .product-slide {
-    padding-right: 2.222vw;
-}
-
 .product-slide:hover{
     cursor: pointer;
 }
@@ -227,7 +233,7 @@ section#product-section .slick-list {
 }
 
 .product-slide .product-img img {
-    object-fit: cover;
+    object-fit: contain;
     object-position: center center;
     position: absolute;
     top: 0;
@@ -458,6 +464,25 @@ section.featured-products .slider-navs {
         right: 12px;
     }
 
+    .product-section-wrap{
+        padding: 59px 10px 40px 10px;
+    }
+
+   /*.product-header-nav{
+        margin-left: unset;
+    }
+
+    section#product-section .slick-list {
+        padding-right: 132px !important;
+    }
+    
+    section#product-section .slick-slide {
+        transform: scale(1);
+    }
+
+    .product-slider .product-slide {
+        padding-right: 2.222vw;
+    } */
 }
 
 @media only screen and (max-width: 767px) { 
@@ -471,7 +496,7 @@ section.featured-products .slider-navs {
     }
 
     section#product-section .slick-list {
-        padding-right: 79px !important;
+        /* padding-right: 79px !important; */
     }
     
     section.featured-products .slider-navs {
@@ -537,10 +562,6 @@ section.featured-products .slider-navs {
 
     .product-header-nav{
         justify-content: center;
-    }
-
-    .product-section-wrap{
-        padding: 59px 0px 40px 20px;
     }
     
     .product-slider{

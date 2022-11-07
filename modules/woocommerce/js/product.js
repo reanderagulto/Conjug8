@@ -14,6 +14,8 @@
                 arrows: true,
                 dots: false,
                 infinite: true,
+                centerMode: true,
+                centerPadding: '100px',
                 // autoplay: true,
                 // autoplaySpeed: 3000,
                 responsive: [
@@ -21,18 +23,23 @@
                       breakpoint: 1200,
                       settings: {
                         slidesToShow: 3,
+                        centerPadding: '0px',
                       }
                     },
                     {
                       breakpoint: 992,
                       settings: {
                         slidesToShow: 2,
+                        centerMode: false,
+                        centerPadding: '0px',
                       }
                     },
                     {
                       breakpoint: 768,
                       settings: {
                         slidesToShow: 1,
+                        centerMode: false,
+                        centerPadding: '0px',
                       }
                     }
                   ],
