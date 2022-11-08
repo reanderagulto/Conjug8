@@ -1822,25 +1822,30 @@ p#breadcrumbs{
     margin-bottom: 10px;
 }
 
-.main_upload > span > ul {
+.main_upload > span > ul,
+.main_upload > ul:last-of-type {
     display: flex;
     flex-direction: column-reverse;
 }
 
-.main_upload > span > ul li:first-child{
+.main_upload > span > ul li:first-child,
+.main_upload > ul:last-of-type li:first-child{
     display: none;
 }
 
-.main_upload > span > ul li:nth-child(2){
+.main_upload > span > ul li:nth-child(2),
+.main_upload > ul:last-of-type li:nth-child(2){
     font-size: 0;
 }
 
-.main_upload > span > ul li:last-child{
+.main_upload > span > ul li:last-child, 
+.main_upload > ul:last-of-type li:last-child{
     display: flex;
     font-size: 0;
     flex-flow: row wrap;
 }
 
-.main_upload > span > ul li:last-child img {
+.main_upload > span > ul li:last-child img,
+.main_upload > ul:last-of-type li:last-child img {
     width: 50% !important;
 }

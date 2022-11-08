@@ -225,6 +225,7 @@ section#product-section .slick-slide.slick-current {
     display: block;
     position: relative;
     border: solid 4px var(--primary-red);
+    background-color: #FFF;
 }
 
 .product-slide .product-img canvas {
