@@ -19,6 +19,7 @@ if(!class_exists('woocommerce_hooks')) {
             */   
             $this->product_details();
             $this->custom_checkout_field();
+            $this->cash_on_delivery_status();
             add_action( 'add_meta_boxes', [$this, 'add_featured_metabox'] );
             add_action( 'save_post', [$this, 'save_featured_metabox'] );
         }        
@@ -237,6 +238,54 @@ if(!class_exists('woocommerce_hooks')) {
                 update_post_meta( $post_id, 'featured-product', 'no' );
             }
         }
+        
+        function cash_on_delivery_status(){
+            // register new post status
+            register_post_status(
+                'wc-cash-on-delivery', 
+                array(
+                    'label' => 'Cash on Delivery', 
+                    'public' => true, 
+                    'show_in_admin_status_list' => true,
+                    'show_in_admin_all_list' => true,
+                    'exclude_from_search'   => false,
+                    'label_count'           => _n_noop( 'Cash on Delivery (%s)', 'Cash on Delivery (%s)' )
+                )
+            );
+
+            // add custom status to admin order dropdown
+            add_filter('wc_order_statuses', function($order_statuses){
+                $new_order_statuses = array();
+                foreach ($order_statuses as $key => $status){
+                    $new_order_statuses[ $key ] = $status;
+                    if ( 'wc-pending' === $key ) {
+                        $new_order_statuses['wc-cash-on-delivery'] = 'Cash on Delivery';
+                    }
+                }
+                return $new_order_statuses;
+            });
+
+            // change order status if Payment method is COD
+            add_action( 
+                'woocommerce_thankyou_cod', 
+                function($order_id){
+                    $order = wc_get_order($order_id);
+                    $order->update_status('wc-cash-on-delivery');                    
+                }, 
+                10, 1
+            );
+
+            // Set Order as Editable
+            add_filter( 'wc_order_is_editable', 
+                function($is_editable, $order){                    
+                    if($order->get_status() == 'cash-on-delivery'){
+                        $is_editable = true;
+                    }
+                    return $is_editable;
+                }, 
+            10, 2);
+        }
+
     }
 
     $woocommerce_hooks = new woocommerce_hooks();
