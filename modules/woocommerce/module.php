@@ -67,7 +67,14 @@ if( !class_exists('add_woocommerce_support') ){
             $special_precautions = get_post_meta($post->ID, $prefix.'special_precautions', true) ? get_post_meta($post->ID, $prefix.'special_precautions', true) : '';
             $atc_classification = get_post_meta($post->ID, $prefix.'atc_classification', true) ? get_post_meta($post->ID, $prefix.'atc_classification', true) : '';
             $presentation_packaging  = get_post_meta($post->ID, $prefix.'presentation_packaging ', true) ? get_post_meta($post->ID, $prefix.'presentation_packaging ', true) : '';
-            $regulatory_classification  = get_post_meta($post->ID, $prefix.'regulatory_classification ', true) ? get_post_meta($post->ID, $prefix.'regulatory_classification ', true) : ''; ?>
+            $regulatory_classification  = get_post_meta($post->ID, $prefix.'regulatory_classification ', true) ? get_post_meta($post->ID, $prefix.'regulatory_classification ', true) : ''; 
+            $mims_class = !empty(get_post_meta($post->ID, $prefix.'mims_class', true)) ? get_post_meta($post->ID, $prefix.'mims_class', true) : ''; 
+            $storage = get_post_meta($post->ID, $prefix.'storage', true) ? get_post_meta($post->ID, $prefix.'storage', true) : '';
+            $active_ingredient = get_post_meta($post->ID, $prefix.'active_ingredient', true) ? get_post_meta($post->ID, $prefix.'active_ingredient', true) : ''; 
+            $inn = get_post_meta($post->ID, $prefix.'inn', true) ? get_post_meta($post->ID, $prefix.'inn', true) : ''; 
+            $pharmaceutical_form = get_post_meta($post->ID, $prefix.'pharmaceutical_form', true) ? get_post_meta($post->ID, $prefix.'pharmaceutical_form', true) : ''; 
+            $importer = get_post_meta($post->ID, $prefix.'importer', true) ? get_post_meta($post->ID, $prefix.'importer', true) : ''; 
+            ?>
             
             <div class="flex">
                 <label for="genericname">
@@ -85,6 +92,11 @@ if( !class_exists('add_woocommerce_support') ){
                     <input type="text" name="distributor" id="distributor" value="<?php echo (isset($distributor) ? $distributor : ''); ?>" style="width: 100%; margin: 15px 0;"/>
                 </label>
 
+                <label for="importer">
+                    <strong><?php _e( 'Importer', 'aios-products' )?></strong> <br/>
+                    <input type="text" name="importer" id="importer" value="<?php echo (isset($importer) ? $importer : ''); ?>" style="width: 100%; margin: 15px 0;"/>
+                </label>
+
                 <label for="marketer">
                     <strong><?php _e( 'Marketer', 'aios-products' )?></strong> <br/>
                     <input type="text" name="marketer" id="marketer" value="<?php echo (isset($marketer) ? $marketer : ''); ?>" style="width: 100%; margin: 15px 0;"/>
@@ -93,6 +105,31 @@ if( !class_exists('add_woocommerce_support') ){
                 <label for="contents">
                     <strong><?php _e( 'Contents', 'aios-products' )?></strong> <br/>
                     <input type="text" name="contents" id="contents" value="<?php echo (isset($contents) ? $contents : ''); ?>" style="width: 100%; margin: 15px 0;"/>
+                </label>
+
+                <label for="active_ingredient">
+                    <strong><?php _e( 'Active Ingredient(s)', 'aios-products' )?></strong> <br/>
+                    <input type="text" name="active_ingredient" id="active_ingredient" value="<?php echo (isset($active_ingredient) ? $active_ingredient : ''); ?>" style="width: 100%; margin: 15px 0;"/>
+                </label>
+
+                <label for="mims_class">
+                    <strong><?php _e( 'MIMS Class', 'aios-products' )?></strong> <br/>
+                    <input type="text" name="mims_class" id="mims_class" value="<?php echo (isset($mims_class) ? $mims_class : ''); ?>" style="width: 100%; margin: 15px 0;"/>
+                </label>
+
+                <label for="inn">
+                    <strong><?php _e( 'INN (International Name)', 'aios-products' )?></strong> <br/>
+                    <input type="text" name="inn" id="inn" value="<?php echo (isset($inn) ? $inn : ''); ?>" style="width: 100%; margin: 15px 0;"/>
+                </label>
+
+                <label for="storage">
+                    <strong><?php _e( 'Storage', 'aios-products' )?></strong> <br/>
+                    <input type="text" name="storage" id="storage" value="<?php echo (isset($storage) ? $storage : ''); ?>" style="width: 100%; margin: 15px 0;"/>
+                </label>
+
+                <label for="pharmaceutical_form">
+                    <strong><?php _e( 'Pharmaceutical form', 'aios-products' )?></strong> <br/>
+                    <input type="text" name="pharmaceutical_form" id="pharmaceutical_form" value="<?php echo (isset($pharmaceutical_form) ? $pharmaceutical_form : ''); ?>" style="width: 100%; margin: 15px 0;"/>
                 </label>
 
                 <label for="indications_usesindications_uses">
@@ -174,7 +211,13 @@ if( !class_exists('add_woocommerce_support') ){
             update_post_meta( $post_id, $prefix.'atc_classification', wp_kses_post($_POST[ 'atc_classification' ]) );
             update_post_meta( $post_id, $prefix.'presentation_packaging', wp_kses_post($_POST[ 'presentation_packaging' ]) );
             update_post_meta( $post_id, $prefix.'regulatory_classification', wp_kses_post($_POST[ 'regulatory_classification' ]) );
-
+            update_post_meta( $post_id, $prefix.'mims_class', wp_kses_post($_POST[ 'mims_class' ]) );
+            update_post_meta( $post_id, $prefix.'storage', wp_kses_post($_POST[ 'storage' ]) );
+            update_post_meta( $post_id, $prefix.'active_ingredient', wp_kses_post($_POST[ 'active_ingredient' ]) );
+            update_post_meta( $post_id, $prefix.'inn', wp_kses_post($_POST[ 'inn' ]) );
+            update_post_meta( $post_id, $prefix.'pharmaceutical_form', wp_kses_post($_POST[ 'pharmaceutical_form' ]) );
+            update_post_meta( $post_id, $prefix.'importer', wp_kses_post($_POST[ 'importer' ]) );
+            
         }
         
     }

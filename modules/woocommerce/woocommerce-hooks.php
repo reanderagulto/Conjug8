@@ -43,7 +43,12 @@ if(!class_exists('woocommerce_hooks')) {
                     $atc_classification = get_post_meta( $post_id, 'aios_atc_classification',  true);
                     $presentation_packaging = get_post_meta( $post_id, 'aios_presentation_packaging',  true);
                     $regulatory_classification = get_post_meta( $post_id, 'aios_regulatory_classification',  true);
-
+                    $mims_class = get_post_meta( $post_id, 'aios_mims_class',  true);
+                    $storage = get_post_meta( $post_id, 'aios_storage',  true);
+                    $active_ingredient = get_post_meta( $post_id, 'aios_active_ingredient',  true);
+                    $inn = get_post_meta( $post_id, 'aios_inn',  true);
+                    $pharmaceutical_form = get_post_meta( $post_id, 'aios_pharmaceutical_form',  true);
+                    $importer = get_post_meta( $post_id, 'aios_importer',  true);
 
                     echo '<div class="product-details">';
                         if(!empty($manufacturer)) {
@@ -58,6 +63,12 @@ if(!class_exists('woocommerce_hooks')) {
                             echo '<p>' . $distributor . '</p>';
                             echo '</div>';
                         }
+                        if(!empty($importer)) {
+                            echo '<div class="detail">';
+                            echo '<h2>Importer</h2>';
+                            echo '<p>' . $importer . '</p>';
+                            echo '</div>';
+                        }
                         if(!empty($marketer)) {
                             echo '<div class="detail">';
                             echo '<h2>Marketer</h2>';
@@ -68,6 +79,36 @@ if(!class_exists('woocommerce_hooks')) {
                             echo '<div class="detail">';
                             echo '<h2>Contents</h2>';
                             echo '<p>' . $contents . '</p>';
+                            echo '</div>';
+                        }
+                        if(!empty($active_ingredient)) {
+                            echo '<div class="detail">';
+                            echo '<h2>Active Ingredient(s)</h2>';
+                            echo '<p>' . $active_ingredient . '</p>';
+                            echo '</div>';
+                        }
+                        if(!empty($mims_class)) {
+                            echo '<div class="detail">';
+                            echo '<h2>MIMS Class</h2>';
+                            echo '<p>' . $mims_class . '</p>';
+                            echo '</div>';
+                        }
+                        if(!empty($inn)) {
+                            echo '<div class="detail">';
+                            echo '<h2>INN (International Name)</h2>';
+                            echo '<p>' . $inn . '</p>';
+                            echo '</div>';
+                        }
+                        if(!empty($storage)) {
+                            echo '<div class="detail">';
+                            echo '<h2>Storage</h2>';
+                            echo '<p>' . $storage . '</p>';
+                            echo '</div>';
+                        }
+                        if(!empty($pharmaceutical_form)) {
+                            echo '<div class="detail">';
+                            echo '<h2>Pharmaceutical form</h2>';
+                            echo '<p>' . $pharmaceutical_form . '</p>';
                             echo '</div>';
                         }
                         if(!empty($indications_uses)) {
@@ -265,12 +306,22 @@ if(!class_exists('woocommerce_hooks')) {
                 return $new_order_statuses;
             });
 
-            // change order status if Payment method is COD
+            /*
+            * Override default order status. - Custom Work 
+             */
             add_action( 
-                'woocommerce_thankyou_cod', 
+                'woocommerce_thankyou', 
                 function($order_id){
                     $order = wc_get_order($order_id);
-                    $order->update_status('wc-cash-on-delivery');                    
+                    $fme_total = intval($order->get_meta('fme_total'));
+                    if($fme_total > 0){ 
+                        $order->update_status('wc-pending');
+                    }
+                    else{
+                        if($order->get_payment_method() == 'cod'){
+                            $order->update_status('wc-cash-on-delivery');
+                        }
+                    }
                 }, 
                 10, 1
             );

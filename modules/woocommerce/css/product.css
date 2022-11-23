@@ -143,6 +143,8 @@ section.related.products .products .loop-product-wrap .loop-product-content .pro
 
 .woocommerce section.related.products ul.products li.product a img{
     margin: unset;
+    object-fit: scale-down;
+    background-color: #fff;
 }
 
 .single-product-details-related .product-details .detail {
