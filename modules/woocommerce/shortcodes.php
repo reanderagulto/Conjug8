@@ -132,7 +132,7 @@ if( !class_exists('woocommerce_featured_product_slider')){
                                 $post_id = $post->ID;
                                 $post_title = $post->post_title;
                                 $post_thumbnail_url = get_the_post_thumbnail_url( $post_id, 'full' );
-                                $product_attributes = get_field('product_attributes', $post_id);
+                                $generic_name = get_post_meta($product_id, 'aios_genericname', true);
 
                                 $return .= '
                                     <div class="product-slide">
@@ -143,7 +143,7 @@ if( !class_exists('woocommerce_featured_product_slider')){
                                         <div class="product-info">
                                             <h3 class="section-header">' 
                                             . $post_title .
-                                            '<span>' . $product_attributes['generic_name'] . '</span>
+                                            '<span>' . $generic_name . '</span>
                                             </h3>
                                             <div class="cart-button-container" id="slider-' . $post_id . '">
                                                 <a href="?add-to-cart=' . $post_id . '"  data-quantity="1" class="aios-btn-sm aios-btn-red button product_type_simple add_to_cart_button ajax_add_to_cart btn-slider" data-product_id="' . $post_id . '" data-product_sku="" aria-label="Add “' . $post_title .  '” to your cart rel="nofollow">

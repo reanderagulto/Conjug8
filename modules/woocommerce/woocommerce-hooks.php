@@ -315,7 +315,7 @@ if(!class_exists('woocommerce_hooks')) {
                     $order = wc_get_order($order_id);
                     $fme_total = intval($order->get_meta('fme_total'));
                     if($fme_total > 0){ 
-                        $order->update_status('wc-pending');
+                        $order->update_status('wc-on-hold');
                     }
                     else{
                         if($order->get_payment_method() == 'cod'){

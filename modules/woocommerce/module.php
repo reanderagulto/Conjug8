@@ -66,8 +66,8 @@ if( !class_exists('add_woocommerce_support') ){
             $contraindications = get_post_meta($post->ID, $prefix.'contraindications', true) ? get_post_meta($post->ID, $prefix.'contraindications', true) : '';
             $special_precautions = get_post_meta($post->ID, $prefix.'special_precautions', true) ? get_post_meta($post->ID, $prefix.'special_precautions', true) : '';
             $atc_classification = get_post_meta($post->ID, $prefix.'atc_classification', true) ? get_post_meta($post->ID, $prefix.'atc_classification', true) : '';
-            $presentation_packaging  = get_post_meta($post->ID, $prefix.'presentation_packaging ', true) ? get_post_meta($post->ID, $prefix.'presentation_packaging ', true) : '';
-            $regulatory_classification  = get_post_meta($post->ID, $prefix.'regulatory_classification ', true) ? get_post_meta($post->ID, $prefix.'regulatory_classification ', true) : ''; 
+            $presentation_packaging  = get_post_meta($post->ID, $prefix.'presentation_packaging', true) ? get_post_meta($post->ID, $prefix.'presentation_packaging', true) : '';
+            $regulatory_classification  = get_post_meta($post->ID, $prefix.'regulatory_classification', true) ? get_post_meta($post->ID, $prefix.'regulatory_classification', true) : ''; 
             $mims_class = !empty(get_post_meta($post->ID, $prefix.'mims_class', true)) ? get_post_meta($post->ID, $prefix.'mims_class', true) : ''; 
             $storage = get_post_meta($post->ID, $prefix.'storage', true) ? get_post_meta($post->ID, $prefix.'storage', true) : '';
             $active_ingredient = get_post_meta($post->ID, $prefix.'active_ingredient', true) ? get_post_meta($post->ID, $prefix.'active_ingredient', true) : ''; 
