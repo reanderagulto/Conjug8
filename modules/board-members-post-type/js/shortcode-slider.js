@@ -14,6 +14,9 @@
                 arrows: true,
                 dots: false,
                 infinite: true,
+                centerMode: true,
+                centerPadding: '100px',
+                draggable: false,
                 // autoplay: true,
                 // autoplaySpeed: 3000,
                 responsive: [

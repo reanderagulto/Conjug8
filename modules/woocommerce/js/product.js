@@ -5,6 +5,7 @@
          */
         function __construct() {
             sliderConfig();
+            productLink();
         }
         function sliderConfig() {
             let $productSlider = jQuery('.product-slider');
@@ -60,8 +61,15 @@
                 nextArrow: $('.slider-nav.prod-next'),
                 prevArrow: $('.slider-nav.prod-prev'),
             });
-
-        }        
+        }      
+        
+        function productLink(){
+          let productSlide = jQuery('.single-product-slide');
+          productSlide.on('click', function(){
+            let url = $(this).attr('data-url');
+            w.location.href = url;
+          });
+        }
         
         /**
          * Instantiate

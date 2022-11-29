@@ -4,18 +4,15 @@
 *
 */
 section#founders-section .founder-wrap {
-    padding: 4.010vw 0 7.917vw 11.528vw;
+    padding: 4.010vw 0 7.917vw 0;
     position: relative;
     overflow: hidden;
 }
 
-section#founders-section .slick-list {
-    padding-right: 132px !important;
-}
-
 .founder-wrap .founder-nav {
     margin-right: 7.750vw;
-    margin-bottom: 2.083vw;
+    margin-left: 11.458vw;
+    margin-bottom: 1.823vw;
 }
 
 .founder-wrap .founder-nav .the-company-nav .slider-nav {
@@ -40,7 +37,6 @@ section#founders-section .slick-list {
 } */
 
 .founder-slider .founder-slide {
-    padding-right: max(2.222vw, 36px);
     transition: all var(--ease-short-transition);
 }
 
@@ -56,10 +52,6 @@ section#founders-section .slick-list {
 .founder-slider .founder-slide .founder-img canvas {
     display: block;
     width: 100%;
-}
-
-.founder-slider .founder-slide:hover .founder-img img{
-    opacity: 1;
 }
 
 .founder-slider .founder-slide .founder-img img {
@@ -95,6 +87,19 @@ section#founders-section .slick-list {
     line-height: 1;
     margin-top: 12px;
     font-size: 18px;
+}
+
+.founder-slider .slick-slide {
+    transform: scale(0.9);
+    transition: all var(--ease-short-transition);
+}
+
+.founder-slider .slick-slide.slick-current.slick-active{
+    transform: scale(1);
+}
+
+.founder-slider .slick-slide.slick-current.slick-active .founder-slide .founder-img img{
+    opacity: 1;
 }
 
 /*

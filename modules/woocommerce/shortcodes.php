@@ -131,28 +131,30 @@ if( !class_exists('woocommerce_featured_product_slider')){
                             foreach( $posts as $key => $post ) {
                                 $post_id = $post->ID;
                                 $post_title = $post->post_title;
+                                $post_permalink = get_the_permalink( $post_id );
                                 $post_thumbnail_url = get_the_post_thumbnail_url( $post_id, 'full' );
-                                $generic_name = get_post_meta($product_id, 'aios_genericname', true);
-
+                                $generic_name = get_post_meta($post_id, 'aios_genericname', true);
+                                
                                 $return .= '
-                                    <div class="product-slide">
-                                        <div class="img-container">
-                                            <canvas width="482" height="347"></canvas>
-                                            <img src="' . $post_thumbnail_url . '" width="482" height="347"/>
-                                        </div>
-                                        <div class="product-info">
-                                            <h3 class="section-header">' 
+                                <div class="product-slide single-product-slide" data-url="' . $post_permalink . '">
+                                    <div class="img-container">
+                                        <canvas width="482" height="347"></canvas>
+                                        <img src="' . $post_thumbnail_url . '" width="482" height="347"/>
+                                    </div>
+                                    <div class="product-info">
+                                        <h3 class="section-header">' 
                                             . $post_title .
                                             '<span>' . $generic_name . '</span>
-                                            </h3>
-                                            <div class="cart-button-container" id="slider-' . $post_id . '">
-                                                <a href="?add-to-cart=' . $post_id . '"  data-quantity="1" class="aios-btn-sm aios-btn-red button product_type_simple add_to_cart_button ajax_add_to_cart btn-slider" data-product_id="' . $post_id . '" data-product_sku="" aria-label="Add “' . $post_title .  '” to your cart rel="nofollow">
-                                                    Add to Cart                                                
-                                                </a>
-                                                <div class="added-cart-text"><span class="ai-font-check"></span> Added</div>
-                                            </div>
+                                        </h3>
+                                        <div class="cart-button-container" id="slider-' . $post_id . '">
+                                            <a href="?add-to-cart=' . $post_id . '"  data-quantity="1" class="aios-btn-sm aios-btn-red button product_type_simple add_to_cart_button ajax_add_to_cart btn-slider" data-product_id="' . $post_id . '" data-product_sku="" rel="nofollow">
+                                                Add to Cart                                                
+                                            </a>
+                                            <div class="added-cart-text"><span class="ai-font-check"></span> Added</div>
                                         </div>
-                                    </div>';
+                                    </div>
+                                </div>  
+                            ';
                             }
                 $return .= '
                         </div>
