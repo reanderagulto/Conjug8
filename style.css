@@ -1849,3 +1849,47 @@ p#breadcrumbs{
 .main_upload > ul:last-of-type li:last-child img {
     width: 50% !important;
 }
+
+/* Account Page */
+.woocommerce form .form-row input.input-text, .woocommerce form .form-row textarea {
+    border: 1px solid var(--secondary-text);
+    height: max(2.604vw, 50px);
+    width: 100%;
+    padding: 0.938vw 0.667vw;
+    font-family: var(--font-family-para);
+    font-size: var(--font-size-default);
+    color: var(--primary-darker) !important;
+    border-radius: 5px;
+}
+
+.woocommerce .woocommerce-form-login .woocommerce-form-login__submit {
+    background-color: var(--primary-red) !important;
+    color: #FFF;
+    border-radius: 45px;
+    transition: all var(--ease-short-transition);
+    height: 50px;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px !important;
+    text-align: center !important;
+    width: max(8.264vw, 119px);
+    font-family: var(--font-family-default);
+    padding: unset !important;
+    width: max(12.986vw, 187px);
+    border: 2px solid var(--primary-red);
+}
+
+.woocommerce .woocommerce-form-login .woocommerce-form-login__rememberme {
+    display: block;
+}
+
+#content-full.my-account {
+    width: 1140px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.woocommerce #respond input#submit:hover, .woocommerce a.button:hover, .woocommerce button.button:hover, .woocommerce input.button:hover{
+    background-color: #FFF !important;
+    color: var(--primary-red) !important;
+}

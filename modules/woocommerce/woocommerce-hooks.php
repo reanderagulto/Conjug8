@@ -316,6 +316,10 @@ if(!class_exists('woocommerce_hooks')) {
                     $fme_total = intval($order->get_meta('fme_total'));
                     if($fme_total > 0){ 
                         $order->update_status('wc-on-hold');
+                        if(is_user_logged_in()){
+                            $current_user = wp_get_current_user();
+                        }
+                        
                     }
                     else{
                         if($order->get_payment_method() == 'cod'){
@@ -334,7 +338,7 @@ if(!class_exists('woocommerce_hooks')) {
                     }
                     return $is_editable;
                 }, 
-            10, 2);
+            10, 2); 
         }
 
     }
