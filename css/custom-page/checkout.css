@@ -95,7 +95,8 @@ fieldset#cynder-paymongo-form {
     margin-bottom: 30px;
 }
 
-h2.woocommerce-order-details__title {
+h2.woocommerce-order-details__title, 
+h2.woocommerce-column__title {
     margin-bottom: 20px;
     font-size: 24px;
     font-weight: 700;

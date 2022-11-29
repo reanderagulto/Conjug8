@@ -20,6 +20,7 @@ if(!class_exists('woocommerce_hooks')) {
             $this->product_details();
             $this->custom_checkout_field();
             $this->cash_on_delivery_status();
+            $this->pwd_senior_coupon();
             add_action( 'add_meta_boxes', [$this, 'add_featured_metabox'] );
             add_action( 'save_post', [$this, 'save_featured_metabox'] );
         }        
@@ -314,18 +315,15 @@ if(!class_exists('woocommerce_hooks')) {
                 function($order_id){
                     $order = wc_get_order($order_id);
                     $fme_total = intval($order->get_meta('fme_total'));
+
+                    if($order->get_payment_method() == 'cod'){
+                        $order->update_status('wc-cash-on-delivery');
+                    }
+
                     if($fme_total > 0){ 
                         $order->update_status('wc-on-hold');
-                        if(is_user_logged_in()){
-                            $current_user = wp_get_current_user();
-                        }
-                        
                     }
-                    else{
-                        if($order->get_payment_method() == 'cod'){
-                            $order->update_status('wc-cash-on-delivery');
-                        }
-                    }
+
                 }, 
                 10, 1
             );
@@ -339,6 +337,30 @@ if(!class_exists('woocommerce_hooks')) {
                     return $is_editable;
                 }, 
             10, 2); 
+        }
+
+        function pwd_senior_coupon(){
+            // Apply Coupon on Customer with PWD ID/Senior Citizen ID
+            add_action(
+                'woocommerce_before_cart', 
+                function(){
+                    $coupon_code = 'pwd-senior-citizen';
+                    if(is_user_logged_in()){
+                        $current_user = wp_get_current_user();
+                        $id = get_current_user_id();
+                        $user_image = get_field('customer_id', 'user_' . $id);
+                        if(!empty($user_image)){
+                            if ( WC()->cart->has_discount( $coupon_code ) ) return;
+                            WC()->cart->apply_coupon( $coupon_code );
+                            wc_print_notices();
+                        }
+                        else{
+                            if ( WC()->cart->has_discount( $coupon_code ) ) return;
+                            WC()->cart->remove_coupon( $coupon_code );
+                        }
+                    }
+                }
+            );
         }
 
     }
