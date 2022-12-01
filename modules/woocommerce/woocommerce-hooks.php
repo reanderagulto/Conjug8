@@ -21,6 +21,7 @@ if(!class_exists('woocommerce_hooks')) {
             $this->custom_checkout_field();
             $this->cash_on_delivery_status();
             $this->pwd_senior_coupon();
+            $this->add_upload_notes();
             add_action( 'add_meta_boxes', [$this, 'add_featured_metabox'] );
             add_action( 'save_post', [$this, 'save_featured_metabox'] );
         }        
@@ -280,6 +281,15 @@ if(!class_exists('woocommerce_hooks')) {
                 update_post_meta( $post_id, 'featured-product', 'no' );
             }
         }
+
+        function add_upload_notes(){
+            add_action(
+                'woocommerce_after_order_notes', 
+                function($checkout){
+                    echo '<label style="margin-top: 15px; margin-bottom: 5px;"><em>Note: Discounts will be reflected once your ID is validated.</em></label>';
+                }
+            );
+        }
         
         function cash_on_delivery_status(){
             // register new post status
@@ -295,18 +305,6 @@ if(!class_exists('woocommerce_hooks')) {
                 )
             );
 
-            // add custom status to admin order dropdown
-            add_filter('wc_order_statuses', function($order_statuses){
-                $new_order_statuses = array();
-                foreach ($order_statuses as $key => $status){
-                    $new_order_statuses[ $key ] = $status;
-                    if ( 'wc-pending' === $key ) {
-                        $new_order_statuses['wc-cash-on-delivery'] = 'Cash on Delivery';
-                    }
-                }
-                return $new_order_statuses;
-            });
-
             /*
             * Override default order status. - Custom Work 
              */
@@ -314,33 +312,16 @@ if(!class_exists('woocommerce_hooks')) {
                 'woocommerce_thankyou', 
                 function($order_id){
                     $order = wc_get_order($order_id);
-                    $fme_total = intval($order->get_meta('fme_total'));
-
-                    if($order->get_payment_method() == 'cod'){
-                        $order->update_status('wc-cash-on-delivery');
-                    }
-
-                    if($fme_total > 0){ 
+                    if(!empty($order->get_items('fee')) > 0 || $order->get_payment_method() == 'cod'){
                         $order->update_status('wc-on-hold');
                     }
-
                 }, 
                 10, 1
             );
-
-            // Set Order as Editable
-            add_filter( 'wc_order_is_editable', 
-                function($is_editable, $order){                    
-                    if($order->get_status() == 'cash-on-delivery'){
-                        $is_editable = true;
-                    }
-                    return $is_editable;
-                }, 
-            10, 2); 
         }
 
         function pwd_senior_coupon(){
-            // Apply Coupon on Customer with PWD ID/Senior Citizen ID
+            // Apply Coupon on Customer with PWD ID/Senior Citize n ID
             add_action(
                 'woocommerce_before_cart', 
                 function(){
@@ -362,8 +343,8 @@ if(!class_exists('woocommerce_hooks')) {
                 }
             );
         }
-
+        
     }
-
+ 
     $woocommerce_hooks = new woocommerce_hooks();
 }

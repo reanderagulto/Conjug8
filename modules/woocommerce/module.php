@@ -17,6 +17,13 @@ if( !class_exists('add_woocommerce_support') ){
             add_action('wp_ajax_cart_count_retriever', array( $this, 'cart_count_retriever'));
             add_action('wp_ajax_nopriv_cart_count_retriever', array( $this, 'cart_count_retriever'));
 
+            // Admin JS
+            add_action('admin_enqueue_scripts', array( $this, 'product_admin' )); 
+
+            // Ajax Admin JS
+            add_action('wp_ajax_product_admin_approve', array($this, 'product_admin_approve'));
+			add_action('wp_ajax_nopriv_product_admin_approve', array($this, 'product_admin_approve'));
+
             // Custom Metabox
             $this->custom_metabox();
         }
@@ -29,6 +36,35 @@ if( !class_exists('add_woocommerce_support') ){
             if( is_shop() ){
                 wp_enqueue_style( 'shop-style', get_stylesheet_directory_uri() . '/modules/woocommerce/css/shop.css' );
             }
+
+        }
+
+        public function product_admin(){
+            if(is_admin()){
+
+                wp_enqueue_script( 'product-admin', get_stylesheet_directory_uri() . '/modules/woocommerce/js/admin.js' );
+                wp_localize_script('product-admin', 'ajaxurl', array('ajaxurl' => admin_url('admin-ajax.php')));
+                
+            }
+        }
+
+        public function product_admin_approve(){
+            // Update Order Status
+            $postID = $_POST['edit_post_id'];
+            $order = wc_get_order($postID);
+            $order->update_status('wc-processing');
+
+            // Upload Attachment
+            // $image = site_url() . '/wp-content/uploads/' . $order->get_items('fee');
+            // $user_id = $order->get_user_id();
+            // $user_fullname = get_userdata($user_id)->first_name . ' ' . get_userdata($user_id)->first_name;
+            // $file_array  = [ 'name' => wp_basename( $image ), 'tmp_name' => download_url( $image ) ];
+            // $desc = 'Senior Citizen/PWD ID for ' . $user_fullname;
+
+            // Do the validation and storage stuff.
+            // $id = media_handle_sideload( $file_array, 0, $desc );
+            
+            echo "Done";
         }
 
         function cart_count_retriever() {
@@ -219,7 +255,6 @@ if( !class_exists('add_woocommerce_support') ){
             update_post_meta( $post_id, $prefix.'importer', wp_kses_post($_POST[ 'importer' ]) );
             
         }
-        
     }
 
     $add_woocommerce_support = new add_woocommerce_support();

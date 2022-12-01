@@ -1293,7 +1293,7 @@ if( function_exists('acf_add_local_field_group') ) {
         'title' => 'Customer ID',
         'fields' => array(
             array(
-                'key' => 'field_63854dcca5873',
+                'key' => 'senior_pwd_id',
                 'label' => 'Customer ID (PWD, Senior Citizen)',
                 'name' => 'customer_id',
                 'type' => 'image',
