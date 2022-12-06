@@ -51,19 +51,39 @@ if( !class_exists('add_woocommerce_support') ){
         public function product_admin_approve(){
             // Update Order Status
             $postID = $_POST['edit_post_id'];
+            $file = basename($_POST['edit_url']);
             $order = wc_get_order($postID);
             $order->update_status('wc-processing');
-
-            // Upload Attachment
-            // $image = site_url() . '/wp-content/uploads/' . $order->get_items('fee');
-            // $user_id = $order->get_user_id();
-            // $user_fullname = get_userdata($user_id)->first_name . ' ' . get_userdata($user_id)->first_name;
-            // $file_array  = [ 'name' => wp_basename( $image ), 'tmp_name' => download_url( $image ) ];
-            // $desc = 'Senior Citizen/PWD ID for ' . $user_fullname;
-
-            // Do the validation and storage stuff.
-            // $id = media_handle_sideload( $file_array, 0, $desc );
             
+            // Upload Attachment
+            $order_items = $order->get_items('fee');
+            $ctr = 1;
+            $user_id = $order->get_user_id();
+            $user_fullname = get_userdata($user_id)->first_name . ' ' . get_userdata($user_id)->first_name;
+            foreach( $order_items as $key => $product ) {
+                if($file === $product['name']){
+                    if($ctr == 1){
+                        $image = site_url() . '/wp-content/uploads/' . $product['name'];
+                        $file_array  = [ 'name' => wp_basename( $image ), 'tmp_name' => download_url( $image ) ];
+                        $desc = 'Senior Citizen/PWD ID for ' . $user_fullname;
+                        $id = media_handle_sideload( $file_array, 0, $desc );
+                        update_field('senior_pwd_id', $id, 'user_' . $user_id);
+                    }
+                    else{
+                        $image = site_url() . '/wp-content/uploads/' . $product['name'];
+                        $file_array  = [ 'name' => wp_basename( $image ), 'tmp_name' => download_url( $image ) ];
+                        $desc = 'Senior Citizen/PWD ID for ' . $user_fullname;
+                        $id = media_handle_sideload( $file_array, 0, $desc );
+                        $row = array(
+                            'prescription_images' => $id,
+                        );
+                        add_row('prescription_field', $row, 'user_' . $user_id);
+                    }
+                }
+                $ctr++; 
+                
+            }
+
             echo "Done";
         }
 
