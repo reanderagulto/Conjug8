@@ -674,3 +674,17 @@ section.featured-products .slider-navs {
         
 
 }
+
+/* Temporary */
+.woocommerce-variation-add-to-cart{
+    display: none;
+}
+
+.woocommerce ul.products li.product .onsale, 
+.woocommerce span.onsale {
+    display: none;
+}
+
+.loop-cart-button-container{
+    display: none;
+}

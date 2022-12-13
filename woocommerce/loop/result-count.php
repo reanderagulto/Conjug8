@@ -39,4 +39,4 @@ if ( ! defined( 'ABSPATH' ) ) {
 	?>
 </p> -->
 
-<a href="<?php echo esc_url( home_url() ) ?>/cart/" class="aios-btn aios-btn-red cart-icon"><img src="<?=do_shortcode('[stylesheet_directory]')?>/images/cart-img.png" width="20" height="18"/> View Cart</a>
+<!-- <a href="<?php echo esc_url( home_url() ) ?>/cart/" class="aios-btn aios-btn-red cart-icon"><img src="<?=do_shortcode('[stylesheet_directory]')?>/images/cart-img.png" width="20" height="18"/> View Cart</a> -->

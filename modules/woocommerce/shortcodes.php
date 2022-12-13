@@ -1,5 +1,11 @@
 <?php 
 
+/* 
+<a href="?add-to-cart=' . $post_id . '"  data-quantity="1" class="aios-btn-sm aios-btn-red button product_type_simple add_to_cart_button ajax_add_to_cart btn-slider" data-product_id="' . $post_id . '" data-product_sku="" aria-label="Add “' . $post_title .  '” to your cart rel="nofollow">
+    Add to Cart                                                
+</a>
+ */
+
 if( !class_exists('woocommerce_featured_product_slider')){
     class woocommerce_featured_product_slider{
         /* 
@@ -146,9 +152,6 @@ if( !class_exists('woocommerce_featured_product_slider')){
                                             '<span>' . $product_attributes['generic_name'] . '</span>
                                             </h3>
                                             <div class="cart-button-container" id="slider-' . $post_id . '">
-                                                <a href="?add-to-cart=' . $post_id . '"  data-quantity="1" class="aios-btn-sm aios-btn-red button product_type_simple add_to_cart_button ajax_add_to_cart btn-slider" data-product_id="' . $post_id . '" data-product_sku="" aria-label="Add “' . $post_title .  '” to your cart rel="nofollow">
-                                                    Add to Cart                                                
-                                                </a>
                                                 <div class="added-cart-text"><span class="ai-font-check"></span> Added</div>
                                             </div>
                                         </div>

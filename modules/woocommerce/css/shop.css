@@ -147,8 +147,8 @@
     align-items: center;
     line-height: 1.6;
     padding-right: 33px;
-    text-align: right;
-    direction: rtl;
+    /* text-align: right;
+    direction: rtl; */
 }
 
 form.woocommerce-ordering:after {
