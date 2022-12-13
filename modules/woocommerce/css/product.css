@@ -118,6 +118,11 @@ section.related.products .products .loop-product-wrap .loop-product-content{
     border: solid 4px var(--primary-red);
 }
 
+.products .loop-product-wrap .loop-product-image .onsale, 
+.woocommerce span.onsale {
+    display: none;
+}
+
 section.related.products .products .loop-product-wrap:hover .loop-product-content h2{
     color: #FFF;
 }
@@ -143,6 +148,8 @@ section.related.products .products .loop-product-wrap .loop-product-content .pro
 
 .woocommerce section.related.products ul.products li.product a img{
     margin: unset;
+    object-fit: scale-down;
+    background-color: #fff;
 }
 
 .single-product-details-related .product-details .detail {

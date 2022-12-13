@@ -2,7 +2,7 @@
 #add_payment_method .wc-proceed-to-checkout a.checkout-button, 
 .woocommerce-cart .wc-proceed-to-checkout a.checkout-button, 
 .woocommerce-checkout .wc-proceed-to-checkout a.checkout-button{
-    background-color: var(--primary-red) !important;
+    background-color: var(--primary-red);
     color: #FFF;
     border-radius: 45px;
     transition: all var(--ease-short-transition);
@@ -37,7 +37,7 @@
 .cart-page-container .woocommerce a.button, 
 .cart-page-container .woocommerce button.button, 
 .cart-page-container .woocommerce input.button{
-    background-color: var(--primary-red) !important;
+    background-color: var(--primary-red);
     color: #FFF;
     border-radius: 45px;
     transition: all var(--ease-short-transition);
@@ -50,6 +50,7 @@
     font-family: var(--font-family-default);
     padding: unset !important;
     width: max(12.986vw, 187px);
+    border: 2px solid var(--primary-red);
 }
 
 .cart-page-container .woocommerce a.button, 

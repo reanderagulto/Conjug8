@@ -29,7 +29,7 @@
 
 			<div class="header-logo">
 				<a href="<?php echo esc_url( home_url() ) ?>" class="site-name text-hidden">
-					<img src="<?=do_shortcode('[stylesheet_directory]')?>/images/new-logo.png" width="79" height="54" alt="Conjug8 Logo" class="block img-responsive">
+					<img src="<?=do_shortcode('[stylesheet_directory]')?>/images/new-logo.png" width="156" height="146" alt="Conjug8 Logo" class="block img-responsive">
 				</a> 
 			</div>
 

@@ -21,7 +21,7 @@ if( !class_exists('woocommerce_featured_product_slider')){
         public function products_slider( $atts ){
             $atts = shortcode_atts( [
                 'posts_per_page' => -1,
-                'order' => 'ASC',
+                'order' => 'desc',
             ], $atts );
 
             wp_enqueue_style( 'product-slider', get_stylesheet_directory_uri() . '/modules/woocommerce/css/product.css' );
@@ -32,7 +32,9 @@ if( !class_exists('woocommerce_featured_product_slider')){
             $args = [
                 'post_type' => 'product',
                 'post_status' => 'publish',
-                'order' => $order,
+                'orderby' => 'meta_value_num',
+                'order' => $order, 
+                'meta_key' => '_price',
                 'posts_per_page' => $posts_per_page,
             ];
 
@@ -137,25 +139,27 @@ if( !class_exists('woocommerce_featured_product_slider')){
                             foreach( $posts as $key => $post ) {
                                 $post_id = $post->ID;
                                 $post_title = $post->post_title;
+                                $post_permalink = get_the_permalink( $post_id );
                                 $post_thumbnail_url = get_the_post_thumbnail_url( $post_id, 'full' );
-                                $product_attributes = get_field('product_attributes', $post_id);
-
+                                $generic_name = get_post_meta($post_id, 'aios_genericname', true);
+                                
                                 $return .= '
-                                    <div class="product-slide">
-                                        <div class="img-container">
-                                            <canvas width="482" height="347"></canvas>
-                                            <img src="' . $post_thumbnail_url . '" width="482" height="347"/>
-                                        </div>
-                                        <div class="product-info">
-                                            <h3 class="section-header">' 
+                                <div class="product-slide single-product-slide" data-url="' . $post_permalink . '">
+                                    <div class="img-container">
+                                        <canvas width="482" height="347"></canvas>
+                                        <img src="' . $post_thumbnail_url . '" width="482" height="347"/>
+                                    </div>
+                                    <div class="product-info">
+                                        <h3 class="section-header">' 
                                             . $post_title .
-                                            '<span>' . $product_attributes['generic_name'] . '</span>
-                                            </h3>
-                                            <div class="cart-button-container" id="slider-' . $post_id . '">
-                                                <div class="added-cart-text"><span class="ai-font-check"></span> Added</div>
-                                            </div>
+                                            '<span>' . $generic_name . '</span>
+                                        </h3>
+                                        <div class="cart-button-container" id="slider-' . $post_id . '">
+                                            <div class="added-cart-text"><span class="ai-font-check"></span> Added</div>
                                         </div>
-                                    </div>';
+                                    </div>
+                                </div>  
+                            ';
                             }
                 $return .= '
                         </div>

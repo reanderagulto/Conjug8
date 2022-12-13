@@ -123,20 +123,18 @@ if( !class_exists( 'agentpro_board_members_shortcodes' ) ) {
 
                         $group_content .= '
                             <div class="board-info" data-aos="fade-up" data-aos-once="true" data-aos-offset="200" data-aos-duration="800">
-                                <a href="' . $post_permalink . '">
-                                    <div class="img-container">
-                                        <canvas width="346" height="261"></canvas>
-                                        <img src="' . $post_thumbnail_url . '"  width="346" height="261" alt="' . $post_title . '">
-                                    </div>
-                                    <div class="content">
-                                        <h3 class="section-header">
-                                            ' . $post_title . '
-                                            <span>' . $founder_info['title'] . '</span>
-                                        </h3>
-                                        <p>' . $founder_info['position'] . '</p>
+                                <div class="img-container">
+                                    <canvas width="346" height="261"></canvas>
+                                    <img src="' . $post_thumbnail_url . '"  width="346" height="261" alt="' . $post_title . '">
+                                </div>
+                                <div class="content">
+                                    <h3 class="section-header">
+                                        ' . $post_title . '
+                                        <span>' . $founder_info['title'] . '</span>
+                                    </h3>
+                                    <p>' . $founder_info['position'] . '</p>
 
-                                    </div>
-                                </a>
+                                </div>
                             </div>
                         ';
                         
@@ -224,16 +222,14 @@ if( !class_exists( 'agentpro_board_members_shortcodes' ) ) {
                         $post_thumbnail_url = get_the_post_thumbnail_url( $post_id, $thumbnail_size );
                         $group_content .= '
                             <div class="founder-slide">
-                                <a href="' . $post_permalink . '">
-                                    <div class="founder-img">
-                                        <canvas width="348" height="389"></canvas>
-                                        <img src="' . $post_thumbnail_url . '" width="348" height="389" alt="' . $post_title . '"/>
-                                    </div>
-                                    <div class="founder-info">
-                                        <h3>' . $post_title . ' <span>' . $founder_info['title'] . '</span></h3>
-                                        <p>' . $founder_info['position'] . '</p>
-                                    </div>
-                                </a>
+                                <div class="founder-img">
+                                    <canvas width="348" height="389"></canvas>
+                                    <img src="' . $post_thumbnail_url . '" width="348" height="389" alt="' . $post_title . '"/>
+                                </div>
+                                <div class="founder-info">
+                                    <h3>' . $post_title . ' <span>' . $founder_info['title'] . '</span></h3>
+                                    <p>' . $founder_info['position'] . '</p>
+                                </div>
                             </div>';
 
                     }
@@ -366,7 +362,7 @@ if( !class_exists( 'agentpro_board_members_shortcodes' ) ) {
 
                         $group_content .= '
                             <div class="board-info-container" data-aos="fade-up" data-aos-once="true" data-aos-offset="200" data-aos-duration="800">
-                                <a href="' . $post_permalink . '">
+                                <a href="#">
                                     <div class="img-container">
                                         <canvas width="295" height="295"></canvas>
                                         <img src="' . $post_thumbnail_url . '" width="295" height="295" alt="' . $post_title . '">

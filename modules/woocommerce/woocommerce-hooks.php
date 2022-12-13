@@ -22,6 +22,9 @@ if(!class_exists('woocommerce_hooks')) {
             */   
             $this->product_details();
             $this->custom_checkout_field();
+            $this->cash_on_delivery_status();
+            $this->pwd_senior_coupon();
+            $this->add_upload_notes();
             add_action( 'add_meta_boxes', [$this, 'add_featured_metabox'] );
             add_action( 'save_post', [$this, 'save_featured_metabox'] );
         }        
@@ -45,7 +48,12 @@ if(!class_exists('woocommerce_hooks')) {
                     $atc_classification = get_post_meta( $post_id, 'aios_atc_classification',  true);
                     $presentation_packaging = get_post_meta( $post_id, 'aios_presentation_packaging',  true);
                     $regulatory_classification = get_post_meta( $post_id, 'aios_regulatory_classification',  true);
-
+                    $mims_class = get_post_meta( $post_id, 'aios_mims_class',  true);
+                    $storage = get_post_meta( $post_id, 'aios_storage',  true);
+                    $active_ingredient = get_post_meta( $post_id, 'aios_active_ingredient',  true);
+                    $inn = get_post_meta( $post_id, 'aios_inn',  true);
+                    $pharmaceutical_form = get_post_meta( $post_id, 'aios_pharmaceutical_form',  true);
+                    $importer = get_post_meta( $post_id, 'aios_importer',  true);
 
                     echo '<div class="product-details">';
                         if(!empty($manufacturer)) {
@@ -60,6 +68,12 @@ if(!class_exists('woocommerce_hooks')) {
                             echo '<p>' . $distributor . '</p>';
                             echo '</div>';
                         }
+                        if(!empty($importer)) {
+                            echo '<div class="detail">';
+                            echo '<h2>Importer</h2>';
+                            echo '<p>' . $importer . '</p>';
+                            echo '</div>';
+                        }
                         if(!empty($marketer)) {
                             echo '<div class="detail">';
                             echo '<h2>Marketer</h2>';
@@ -70,6 +84,36 @@ if(!class_exists('woocommerce_hooks')) {
                             echo '<div class="detail">';
                             echo '<h2>Contents</h2>';
                             echo '<p>' . $contents . '</p>';
+                            echo '</div>';
+                        }
+                        if(!empty($active_ingredient)) {
+                            echo '<div class="detail">';
+                            echo '<h2>Active Ingredient(s)</h2>';
+                            echo '<p>' . $active_ingredient . '</p>';
+                            echo '</div>';
+                        }
+                        if(!empty($mims_class)) {
+                            echo '<div class="detail">';
+                            echo '<h2>MIMS Class</h2>';
+                            echo '<p>' . $mims_class . '</p>';
+                            echo '</div>';
+                        }
+                        if(!empty($inn)) {
+                            echo '<div class="detail">';
+                            echo '<h2>INN (International Name)</h2>';
+                            echo '<p>' . $inn . '</p>';
+                            echo '</div>';
+                        }
+                        if(!empty($storage)) {
+                            echo '<div class="detail">';
+                            echo '<h2>Storage</h2>';
+                            echo '<p>' . $storage . '</p>';
+                            echo '</div>';
+                        }
+                        if(!empty($pharmaceutical_form)) {
+                            echo '<div class="detail">';
+                            echo '<h2>Pharmaceutical form</h2>';
+                            echo '<p>' . $pharmaceutical_form . '</p>';
                             echo '</div>';
                         }
                         if(!empty($indications_uses)) {
@@ -240,7 +284,70 @@ if(!class_exists('woocommerce_hooks')) {
                 update_post_meta( $post_id, 'featured-product', 'no' );
             }
         }
-    }
 
+        function add_upload_notes(){
+            add_action(
+                'woocommerce_after_order_notes', 
+                function($checkout){
+                    echo '<label style="margin-top: 15px; margin-bottom: 5px;"><em>Note: Discounts will be reflected once your ID is validated.</em></label>';
+                }
+            );
+        }
+        
+        function cash_on_delivery_status(){
+            // register new post status
+            register_post_status(
+                'wc-cash-on-delivery', 
+                array(
+                    'label' => 'Cash on Delivery', 
+                    'public' => true, 
+                    'show_in_admin_status_list' => true,
+                    'show_in_admin_all_list' => true,
+                    'exclude_from_search'   => false,
+                    'label_count'           => _n_noop( 'Cash on Delivery (%s)', 'Cash on Delivery (%s)' )
+                )
+            );
+
+            /*
+            * Override default order status. - Custom Work 
+             */
+            add_action( 
+                'woocommerce_thankyou', 
+                function($order_id){
+                    $order = wc_get_order($order_id);
+                    if(!empty($order->get_items('fee')) > 0 || $order->get_payment_method() == 'cod'){
+                        $order->update_status('wc-on-hold');
+                    }
+                }, 
+                10, 1
+            );
+        }
+
+        function pwd_senior_coupon(){
+            // Apply Coupon on Customer with PWD ID/Senior Citize n ID
+            add_action(
+                'woocommerce_before_cart', 
+                function(){
+                    $coupon_code = 'pwd-senior-citizen';
+                    if(is_user_logged_in()){
+                        $current_user = wp_get_current_user();
+                        $id = get_current_user_id();
+                        $user_image = get_field('customer_id', 'user_' . $id);
+                        if(!empty($user_image)){
+                            if ( WC()->cart->has_discount( $coupon_code ) ) return;
+                            WC()->cart->apply_coupon( $coupon_code );
+                            wc_print_notices();
+                        }
+                        else{
+                            if ( WC()->cart->has_discount( $coupon_code ) ) return;
+                            WC()->cart->remove_coupon( $coupon_code );
+                        }
+                    }
+                }
+            );
+        }
+        
+    }
+ 
     $woocommerce_hooks = new woocommerce_hooks();
 }
