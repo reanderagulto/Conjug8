@@ -29,7 +29,7 @@
 
 			<div class="header-logo">
 				<a href="<?php echo esc_url( home_url() ) ?>" class="site-name text-hidden">
-					<img src="<?=do_shortcode('[stylesheet_directory]')?>/images/logo.png" width="79" height="54" alt="Conjug8 Logo" class="block img-responsive">
+					<img src="<?=do_shortcode('[stylesheet_directory]')?>/images/new-logo.png" width="156" height="146" alt="Conjug8 Logo" class="block img-responsive">
 				</a> 
 			</div>
 
@@ -39,9 +39,9 @@
 						<?php wp_nav_menu( array( 'sort_column' => 'menu_order', 'menu_id' => 'nav', 'theme_location' => 'primary-menu' ) ); ?>
 					</nav>
 
-					<div class="side-nav">
+					<!-- <div class="side-nav">
 						<a href="https://www.neurology.org/user/login" target="_blank" class="aios-btn trigger-popup-menu">Medical Practitioners Only</a>
-					</div>
+					</div> -->
 					
 					<div class="nav-close"> <i class="ai-font-close-g"></i></div>
 				</div>

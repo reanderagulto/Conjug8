@@ -15,7 +15,7 @@ if( !class_exists('woocommerce_featured_product_slider')){
         public function products_slider( $atts ){
             $atts = shortcode_atts( [
                 'posts_per_page' => -1,
-                'order' => 'ASC',
+                'order' => 'desc',
             ], $atts );
 
             wp_enqueue_style( 'product-slider', get_stylesheet_directory_uri() . '/modules/woocommerce/css/product.css' );
@@ -26,7 +26,9 @@ if( !class_exists('woocommerce_featured_product_slider')){
             $args = [
                 'post_type' => 'product',
                 'post_status' => 'publish',
-                'order' => $order,
+                'orderby' => 'meta_value_num',
+                'order' => $order, 
+                'meta_key' => '_price',
                 'posts_per_page' => $posts_per_page,
             ];
 
