@@ -119,13 +119,13 @@ if(!class_exists('woocommerce_hooks')) {
                         if(!empty($indications_uses)) {
                             echo '<div class="detail">';
                             echo '<h2>Indications/Uses</h2>';
-                            echo '<p>' . $indications_uses . '</p>';
+                            echo '<p>' . nl2br($indications_uses) . '</p>';
                             echo '</div>';
                         }
                         if(!empty($dosage_direction_for_use)) {
                             echo '<div class="detail">';
                             echo '<h2>Dosage/Direction for Use</h2>';
-                            echo '<p>' . $dosage_direction_for_use . '</p>';
+                            echo '<p>' . nl2br($dosage_direction_for_use) . '</p>';
                             echo '</div>';
                         }
                         if(!empty($administration)) {
@@ -143,12 +143,12 @@ if(!class_exists('woocommerce_hooks')) {
                         if(!empty($special_precautions)) {
                             echo '<div class="detail">';
                             echo '<h2>Special Precautions</h2>';
-                            echo '<p>' . $special_precautions . '</p>';
+                            echo '<p>' . nl2br($special_precautions) . '</p>';
                             echo '</div>';
                         }
-                        echo '<div class="detail">';
-                        woocommerce_product_description_tab();
-                        echo '</div>';
+                        // echo '<div class="detail">';
+                        // woocommerce_product_description_tab();
+                        // echo '</div>';
                         if(!empty($atc_classification)) {
                             echo '<div class="detail">';
                             echo '<h2>ATC Classification</h2>';
@@ -315,6 +315,7 @@ if(!class_exists('woocommerce_hooks')) {
                 'woocommerce_thankyou', 
                 function($order_id){
                     $order = wc_get_order($order_id);
+                    var_dump($order);
                     if(!empty($order->get_items('fee')) > 0 || $order->get_payment_method() == 'cod'){
                         $order->update_status('wc-on-hold');
                     }

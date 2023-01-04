@@ -46,7 +46,7 @@
 			<?php else: ?>
 
 				<!-- Start of Events Section -->
-				<!-- <?php echo do_shortcode('[agentpro_events_archive posts_per_page="3" order="ASC" with_view_more="true"]'); ?> -->
+				<?php echo do_shortcode('[agentpro_events_archive posts_per_page="3" order="ASC" with_view_more="true"]'); ?>
 				<!-- End of Events Section -->
 
 				<!-- Start of Get in Touch Section -->

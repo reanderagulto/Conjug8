@@ -138,6 +138,7 @@ h2.woocommerce-column__title {
     
     .woocommerce ul.order_details li {
         margin-bottom: 15px;
+        border-right: 0px !important;
     }
 
     .woocommerce-notice.woocommerce-notice--success{
@@ -147,4 +148,6 @@ h2.woocommerce-column__title {
     h2.woocommerce-order-details__title {
         font-size: 18px;
     }
+
+
 }

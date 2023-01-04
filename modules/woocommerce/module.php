@@ -209,7 +209,7 @@ if( !class_exists('add_woocommerce_support') ){
                 </label>
 
                 <label for="special_precautions">
-                    <strong><?php _e( 'Dosage/Direction for Use', 'aios-products' )?></strong> <br/>
+                    <strong><?php _e( 'Special Precautions', 'aios-products' )?></strong> <br/>
                     <textarea type="text" name="special_precautions" id="special_precautions" rows="6" style="width: 100%; margin: 15px 0;"><?php echo (isset($special_precautions) ? $special_precautions : ''); ?></textarea>
                 </label>
 

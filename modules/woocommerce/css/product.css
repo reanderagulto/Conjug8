@@ -683,6 +683,8 @@ section.featured-products .slider-navs {
 }
 
 /* Temporary */
+/* .woocommerce .single-product div.product form.cart .quantity,
+.woocommerce .single-product div.product form.cart .button, 
 .woocommerce-variation-add-to-cart{
     display: none;
 }
@@ -694,4 +696,4 @@ section.featured-products .slider-navs {
 
 .loop-cart-button-container{
     display: none;
-}
+} */

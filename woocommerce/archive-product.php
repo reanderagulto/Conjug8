@@ -27,9 +27,9 @@ $title = get_field('global_title', $shop);
 
 <section id="innerpage-banner">
 	<div class="innerpage-banner-wrap">
-		<h1 class="inner-section-header">
+		<h2 class="inner-section-header test">
 			<?php echo (!empty($title['main']) ? $title['main'] : get_the_title($shop) ); ?>
-		</h1>
+		</h2>
 	</div>
 	<div class="accent-bg">
 		<div class="accent-red"></div>

@@ -12,7 +12,7 @@ get_header(); ?>
 					<canvas width="1440" height="315" style="background-image: url('<?php echo get_stylesheet_directory_uri();?>/images/shareholders-portal/shareholders-banner.jpg');"></canvas>
 					<div class="ip-sp-hero-banner-title">
 						<div class="custom-container">
-							<h1>Medical Practitioner's Portal</h1>
+							<h2>Medical Practitioner's Portal</h2>
 						</div>
 					</div>
 				</div>

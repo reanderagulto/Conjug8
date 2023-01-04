@@ -1893,3 +1893,37 @@ p#breadcrumbs{
     background-color: #FFF !important;
     color: var(--primary-red) !important;
 }
+
+header.header .main-menu .menu-main-menu-container ul#nav li.menu-item a:hover, header.header .side-nav a:hover {
+    color: var(--primary-red);
+}
+header.header .cart-icon:hover {
+    opacity: 0.7;
+}
+.founder-slider .founder-slide{
+    cursor: default !important;
+}
+.wpcf7 form .wpcf7-response-output {
+    text-align: center;
+}
+.grecaptcha-badge{
+    z-index: 10000;
+}
+.footer-wrap ul.footernav li a:hover {
+    opacity: 0.4;
+}
+.woocommerce .single-product div.product form.cart{
+    display: flex !important;
+    align-items: center;
+}
+.ip-sp-hero-banner-title h2 {
+    font-size: 48px;
+    color: #fff;
+    line-height: 1;
+    font-weight: 700;
+}
+.test{
+    color: #FFF;
+    font-size: max(2.500vw, 48px);
+    font-weight: bold;
+}

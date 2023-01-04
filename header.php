@@ -45,14 +45,14 @@
 					
 					<div class="nav-close"> <i class="ai-font-close-g"></i></div>
 				</div>
-				
-				<!-- <div class="cart-container">
+								
+				<div class="cart-container">
 					<a href="<?php echo esc_url( home_url() ) ?>/cart/" class="cart-icon">Cart<img src="<?=do_shortcode('[stylesheet_directory]')?>/images/svg/ai-icon-cart.svg" width="24" height="21"></a>
 					<div class="header-cart-count">
 						<img src="<?=do_shortcode('[stylesheet_directory]')?>/images/svg/spinner.svg" alt="spinner">
 					</div>	
-				</div> -->
-				
+				</div> 
+			
 			</div>
 		</div>
 	</header>

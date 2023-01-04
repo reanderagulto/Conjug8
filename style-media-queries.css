@@ -52,11 +52,22 @@
 	.newsletter-wrap .newsletter-content .newsletter-header{
 		width: unset;
 	}
-
+	section#icons-section .icons-wrap {
+		width: 100% !important;
+	}
+	section#about-content .content-wrap {
+		width: 100% !important;
+	}
 } 
 
 /* iPad(portrait) | Galaxy Tab 4(portrait)  */ 
 @media only screen and (max-width: 991px) {
+
+	section#product-section .slick-slide {
+	    transform: scale(1) !important;
+	    padding-right: 10px;
+	}
+
 	section#newsletter-section{
 		padding: 6.181vw 17.194vw 6.806vw 17.194vw;
 	}
@@ -237,6 +248,13 @@
 	}
 } 
 
+@media only screen and (max-width: 768px){
+	.woocommerce div.product div.images,.woocommerce-page div.product div.images{
+		width: 60%;
+		margin-right: 35px;
+	}
+}
+
 /* Galaxy Tab 3(portrait) | Galaxy S5(landscape) */ 
 @media only screen and (max-width: 767px) {
 	p{
@@ -412,7 +430,7 @@
 		right: -29.188vw;
 	}
 
-	section#innerpage-banner{
+	/* section#innerpage-banner{
 		padding: 51px 39px 189px;
 		text-align: center;
 		display: flex;
@@ -420,7 +438,16 @@
 		flex-direction: column;
 		justify-content: space-between;
 		height: 412px;
-    }
+    } */
+	section#innerpage-banner {
+		padding: 51px 39px 51px;
+		text-align: center;
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		height: auto;
+		align-items: center;
+	}
 
 	section#icons-section .icons-wrap .icons-container {
         flex-flow: column;
@@ -441,9 +468,10 @@
 		width: unset;
 		min-height: 150px;
 		right: unset;
-		top: 15px;
-		left: 80px;
-		
+		/* top: 15px;
+		left: 80px; */
+		top: 40px;
+		left: 0;
 		transform: rotate(30deg);
 	}
 	
@@ -556,6 +584,10 @@
 		height: 32px;
 	}
 
+	.woocommerce div.product div.images,.woocommerce-page div.product div.images{
+		width: 100%;
+		margin-right: 0px;
+	}
 }
 
 /* Galaxy S5(portrait) | iPod Touch(landscape) | iPod Touch(portrait) */ 
@@ -582,6 +614,8 @@
 		bottom: -115px;
 		right: -202px;
 	}
-	
+	section#innerpage-banner .accent-bg {
+		top: 60px;
+		left: 50px;
+	}
 }
- 
