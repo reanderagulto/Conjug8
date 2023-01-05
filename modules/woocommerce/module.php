@@ -24,6 +24,10 @@ if( !class_exists('add_woocommerce_support') ){
             add_action('wp_ajax_product_admin_approve', array($this, 'product_admin_approve'));
 			add_action('wp_ajax_nopriv_product_admin_approve', array($this, 'product_admin_approve'));
 
+            // Prescription
+            add_action('wp_ajax_prescription_upload', array($this, 'prescription_upload'));
+			add_action('wp_ajax_nopriv_prescription_upload', array($this, 'prescription_upload'));
+
             // Custom Metabox
             $this->custom_metabox();
         }
@@ -85,6 +89,19 @@ if( !class_exists('add_woocommerce_support') ){
             }
 
             echo "Done";
+        }
+
+        public function prescription_upload(){
+            global $woocommerce;
+            $items = $woocommerce->cart->get_fees();
+            $prescriptionFile = $_POST['file'];
+            // $ret = array(
+            //     "value" => in_array($prescriptionFile, $items)
+            // );            
+            // echo json_encode($ret);
+            $data = var_dump($items);
+            echo $data;
+            wp_die();
         }
 
         function cart_count_retriever() {

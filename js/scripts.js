@@ -13,6 +13,8 @@
             loadPosts();
             popup();
             addedToCart();
+            check_prescription();
+            upload_prescription();
         }
         function onScrollFixed() {
             this.onScrollFixed = function () {
@@ -107,7 +109,7 @@
             let offset = 0;            
             $.ajax({
                 type: 'POST',
-                url: ajaxurl,
+                url: ajax_url,
                 dataType: 'html',
                 data: {
                     action: 'show_more_posts',
@@ -137,7 +139,7 @@
                 paged++;
                 $.ajax({
                     type: 'POST',
-                    url: ajaxurl,
+                    url: ajax_url,
                     dataType: 'html',
                     data: {
                       action: 'show_more_posts',
@@ -225,13 +227,39 @@
         function refreshCartItems(){
             $.ajax({
                 type: 'POST',
-                url: ajaxurl,
+                url: ajax_url,
                 data: {
                   action: 'cart_count_retriever',
                 },
                 success: function (res) {                        
                     $('.header-cart-count').text(res);
                 },
+            });
+        }
+
+        function check_prescription(){
+            let $prescription = $('.fmelisteditem.list_item_1 > li:first-of-type > strong').html();
+            if($prescription !== undefined || $prescription !== ""){
+                console.log("Hello");
+                $('button#place_order').attr("hello");
+            }
+            // let $prescription = ($('.fmelisteditem.list_item_1 > li:first-of-type > strong').html() === undefined ? '' : $('.fmelisteditem.list_item_1 > li:first-of-type > strong').html()); 
+            // $.ajax({
+            //     type: 'POST',
+            //     url: ajax_url,
+            //     data: {
+            //         action: 'prescription_upload',
+            //         file: $prescription,
+            //     },
+            //     success: function (res) {
+            //         console.log(res);
+            //     },
+            // });
+        }
+
+        function upload_prescription(){
+            jQuery(document).on('change', '#fme_checkout_notes_file1', function(evt){
+                console.log("Change");
             });
         }
         /**

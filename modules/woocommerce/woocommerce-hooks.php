@@ -25,6 +25,7 @@ if(!class_exists('woocommerce_hooks')) {
             $this->cash_on_delivery_status();
             $this->pwd_senior_coupon();
             $this->add_upload_notes();
+            $this->checkout_button_prescription();
             add_action( 'add_meta_boxes', [$this, 'add_featured_metabox'] );
             add_action( 'save_post', [$this, 'save_featured_metabox'] );
         }        
@@ -315,7 +316,6 @@ if(!class_exists('woocommerce_hooks')) {
                 'woocommerce_thankyou', 
                 function($order_id){
                     $order = wc_get_order($order_id);
-                    var_dump($order);
                     if(!empty($order->get_items('fee')) > 0 || $order->get_payment_method() == 'cod'){
                         $order->update_status('wc-on-hold');
                     }
@@ -346,6 +346,21 @@ if(!class_exists('woocommerce_hooks')) {
                     }
                 }
             );
+        }
+
+        function checkout_button_prescription(){
+            // add_filter('woocommerce_order_button_html', function($button){
+            //     global $woocommerce;
+            //     $order_button_text = 'Place Order';
+            //     $items = $woocommerce->cart->get_fees();
+            //     $newItems = [];
+            //     if(count($items) === 0){
+            //         echo '<button type="submit" class="button alt" name="woocommerce_checkout_place_order" id="place_order" value="' . esc_attr( $order_button_text ) . '" data-value="' . esc_attr( $order_button_text ) . '" disabled>' . esc_html( $order_button_text ) . '</button>';
+            //     }
+            //     else{
+            //         echo '<button type="submit" class="button alt" name="woocommerce_checkout_place_order" id="place_order" value="' . esc_attr( $order_button_text ) . '" data-value="' . esc_attr( $order_button_text ) . '">' . esc_html( $order_button_text ) . '</button>';
+            //     }
+            // });
         }
         
     }
