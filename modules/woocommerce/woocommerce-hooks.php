@@ -25,7 +25,6 @@ if(!class_exists('woocommerce_hooks')) {
             $this->cash_on_delivery_status();
             $this->pwd_senior_coupon();
             $this->add_upload_notes();
-            $this->checkout_button_prescription();
             add_action( 'add_meta_boxes', [$this, 'add_featured_metabox'] );
             add_action( 'save_post', [$this, 'save_featured_metabox'] );
         }        
@@ -181,12 +180,8 @@ if(!class_exists('woocommerce_hooks')) {
             add_action( 'woocommerce_after_shop_loop_item_title', function(){
                 global $product; 
 
-                $product_id = $product->get_id(); // The product ID
-            
-                // Your custom field "Book author"
+                $product_id = $product->get_id();
                 $generic_name = get_post_meta($product_id, 'aios_genericname', true);
-            
-                // Displaying your custom field under the title
                 echo '<span class="product-generic-name">' . $generic_name . '</span>';
             }, 6 );
             
@@ -230,6 +225,28 @@ if(!class_exists('woocommerce_hooks')) {
                 }
             );
 
+            /* Validate Custom Checkout Fields */
+            add_action(
+                'woocommerce_checkout_process', 
+                function() {
+                    $product_in_cart = $this->is_product_in_cart( array( 681, 685 ) );
+                    if ( ! $_POST['hospital_name'] ){
+                        if($product_in_cart){
+                            wc_add_notice( __( '<strong>Hospital\'s Name</strong> is a required field' ), 'error' );
+                        }
+                    }
+                    if ( ! $_POST['doctor_name'] ){
+                        if($product_in_cart){
+                            wc_add_notice( __( '<strong>Doctor\'s Name</strong> is a required field' ), 'error' );
+                        }
+                    }
+
+                    if ( isset($_POST['prescription_val']) ){
+                        if(empty($_POST['prescription_val']))
+                            wc_add_notice( __( '<strong>Prescription</strong> is a required field' ), 'error' );
+                    }
+                }
+            );
 
             /* Save Custom Checkout Fields in Order Metadata */
             add_action(
@@ -253,6 +270,19 @@ if(!class_exists('woocommerce_hooks')) {
                     echo '<p><strong>'.__('Doctor\'s Name').':</strong> <p>' . get_post_meta( $order->id, 'doctor_name', true ) . '</p></p>';
                 }
             );
+        }
+
+        function is_product_in_cart( $targeted_ids ) {
+            $flag = false;
+            if ( ! is_null( WC()->cart ) ) {
+                foreach( WC()->cart->get_cart() as $cart_item ) {
+                    if ( ! in_array( $cart_item['product_id'], $targeted_ids ) ) {
+                        $flag = true;
+                        break;
+                    }
+                }
+            }
+            return $flag;
         }
 
         function add_featured_metabox(){
@@ -291,6 +321,7 @@ if(!class_exists('woocommerce_hooks')) {
                 'woocommerce_after_order_notes', 
                 function($checkout){
                     echo '<label style="margin-top: 15px; margin-bottom: 5px;"><em>Note: Discounts will be reflected once your ID is validated.</em></label>';
+                    echo '<input type="hidden" name="prescription_val" id="prescription_val">';
                 }
             );
         }
@@ -347,22 +378,6 @@ if(!class_exists('woocommerce_hooks')) {
                 }
             );
         }
-
-        function checkout_button_prescription(){
-            // add_filter('woocommerce_order_button_html', function($button){
-            //     global $woocommerce;
-            //     $order_button_text = 'Place Order';
-            //     $items = $woocommerce->cart->get_fees();
-            //     $newItems = [];
-            //     if(count($items) === 0){
-            //         echo '<button type="submit" class="button alt" name="woocommerce_checkout_place_order" id="place_order" value="' . esc_attr( $order_button_text ) . '" data-value="' . esc_attr( $order_button_text ) . '" disabled>' . esc_html( $order_button_text ) . '</button>';
-            //     }
-            //     else{
-            //         echo '<button type="submit" class="button alt" name="woocommerce_checkout_place_order" id="place_order" value="' . esc_attr( $order_button_text ) . '" data-value="' . esc_attr( $order_button_text ) . '">' . esc_html( $order_button_text ) . '</button>';
-            //     }
-            // });
-        }
-        
     }
  
     $woocommerce_hooks = new woocommerce_hooks();
