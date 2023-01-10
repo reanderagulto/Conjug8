@@ -1931,3 +1931,12 @@ header.header .cart-icon:hover {
 .wpgs-for .slick-arrow {
     display: none !important;
 }
+
+#wpgs-gallery .slick-slider .slick-list .slick-current.slick-active, 
+#wpgs-gallery .gallery-navigation-carousel .slick-slide{
+    background-color: #fff;
+}
+
+#wpgs-gallery .slick-slider .slick-list .slick-current.slick-active img {
+    margin: auto
+}
