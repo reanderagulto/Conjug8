@@ -231,36 +231,30 @@
                 data: {
                   action: 'cart_count_retriever',
                 },
-                success: function (res) {                        
+                success: function (res) {
                     $('.header-cart-count').text(res);
                 },
             });
         }
 
         function check_prescription(){
-            let $prescription = $('.fmelisteditem.list_item_1 > li:first-of-type > strong').html();
-            if($prescription !== undefined || $prescription !== ""){
-                console.log("Hello");
-                $('button#place_order').attr("hello");
+            if($('#fme_checkout_notes_file1').length > 0){
+                let $prescription = $('.fmelisteditem.list_item_1 > li:last-of-type > a').attr('href');
+                $('#prescription_val').val($prescription);
             }
-            // let $prescription = ($('.fmelisteditem.list_item_1 > li:first-of-type > strong').html() === undefined ? '' : $('.fmelisteditem.list_item_1 > li:first-of-type > strong').html()); 
-            // $.ajax({
-            //     type: 'POST',
-            //     url: ajax_url,
-            //     data: {
-            //         action: 'prescription_upload',
-            //         file: $prescription,
-            //     },
-            //     success: function (res) {
-            //         console.log(res);
-            //     },
-            // });
+            else{
+                $('#prescription_val').remove();
+            }
         }
 
         function upload_prescription(){
             jQuery(document).on('change', '#fme_checkout_notes_file1', function(evt){
-                console.log("Change");
+                $('#prescription_val').val(evt.target.files[0].name);
             });
+
+            jQuery(document).on('click', '#fme_checkout_file_view1', function(){
+                $('#prescription_val').val('');
+            })
         }
         /**
          * Instantiate
