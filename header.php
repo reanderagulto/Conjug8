@@ -141,8 +141,7 @@
 		!is_singular('board-members') && !is_post_type_archive( 'board-members' ) && 
 		!is_singular('events') && !is_post_type_archive( 'events' ) && 
 		!is_category( 'blog' ) && !is_single() && 
-		!is_product() && !is_shop() &&
-		!is_404() ): 
+		!is_product() && !is_shop() ): 
 		?>
 
 		<?php
@@ -161,6 +160,7 @@
 			<div class="innerpage-banner-wrap">
 				<h1 class="inner-section-header">
 					<?php echo (!empty($title['main']) ? $title['main'] : get_the_title() ); ?>
+					<?php echo (is_404() ? 'Error 404: Page Not Found' : get_the_title()); ?>
 				</h1>
 			</div>
 			<div class="accent-bg">

@@ -1927,3 +1927,7 @@ header.header .cart-icon:hover {
     font-size: max(2.500vw, 48px);
     font-weight: bold;
 }
+
+.wpgs-for .slick-arrow {
+    display: none !important;
+}
